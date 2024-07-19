@@ -10,6 +10,10 @@ public class Seed : MonoBehaviour
     public GameObject Tower;
     public GameObject Power;
     public GameObject Shield;
+    public float PriceTower;
+    public float PricePower;
+    public float PriceGold;
+    public float PriceShield;
     void Start()
     {
         
@@ -26,6 +30,7 @@ public class Seed : MonoBehaviour
         Debug.Log("Clicked on object: ");
         if (MouseController.NowMouse == mouseState.Gold)
         {
+            if(GoldAndElectricity.gold >= PriceGold)
             Instantiate(Gold, transform.position, Quaternion.identity);
             MouseController.NowMouse = mouseState.None;
         }

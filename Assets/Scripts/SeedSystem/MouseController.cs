@@ -6,7 +6,7 @@ using MouseState;
 public class MouseController : MonoBehaviour
 {
     public static mouseState NowMouse = mouseState.None;
-    public 
+    
     // Start is called before the first frame update
     void Start()
     {
