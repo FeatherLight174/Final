@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Base : MonoBehaviour
 {
+    //HP
+    public float[] fullHP;
+    private float currentHP;
+
     // Current level
     private int level;
 
@@ -25,6 +29,8 @@ public class Base : MonoBehaviour
     {
         m_TimerGold = 0;
         m_TimerElectricity = 0;
+        level = 1;
+        currentHP = fullHP[level - 1];
     }
 
     // Update is called once per frame
@@ -52,12 +58,14 @@ public class Base : MonoBehaviour
             m_TimerGold = 0;
             m_TimerElectricity = 0;
             GoldAndElectricity.gold -= upgrade_2;
+            currentHP = fullHP[level - 1];
         }
         if ((level == 2) && (GoldAndElectricity.gold >= upgrade_3)){
             level = 3;
             m_TimerGold = 0;
             m_TimerElectricity = 0;
             GoldAndElectricity.gold -= upgrade_3;
+            currentHP = fullHP[level - 1];
         }
     }
 }
