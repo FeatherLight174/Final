@@ -59,13 +59,15 @@ public class TowerController : MonoBehaviour
             if (enemyToTower[i].magnitude <= range)
             {
                 enemyWithinRange[i] = true;
+                // 记录敌人与基地距离
+                distanceEnemyBase[i] = enemyToBase[i].magnitude;
             }
             else
             {
                 enemyWithinRange[i] = false;
+                // 记录敌人与基地距离为极大值（无效）
+                distanceEnemyBase[i] = Mathf.Infinity;
             }
-            // 记录敌人与基地距离
-            distanceEnemyBase[i] = enemyToBase[i].magnitude;
         }
         // 防止默认索敌索0号敌人
         bool foundEnemy = false;
