@@ -6,6 +6,7 @@ public class Generator : MonoBehaviour
 {
     // Cost
     public float generatorCost;
+    public float sellRate;
 
     // Basic function
     public float generatingCD;
@@ -35,6 +36,6 @@ public class Generator : MonoBehaviour
 
     void Sell()
     {
-        GoldAndElectricity.gold += (int)((currentHp / fullHP) * generatorCost);
+        GoldAndElectricity.gold += (int)(((currentHp / fullHP) * generatorCost) * sellRate);
     }
 }
