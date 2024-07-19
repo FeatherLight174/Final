@@ -20,7 +20,7 @@ public class Generator : MonoBehaviour
     void Start()
     {
         m_Timer = 0;
-        currentHp = fullHP;
+        currentHP = fullHP;
     }
 
     // Update is called once per frame
@@ -36,6 +36,6 @@ public class Generator : MonoBehaviour
 
     void Sell()
     {
-        GoldAndElectricity.gold += (int)(((currentHp / fullHP) * generatorCost) * sellRate);
+        GoldAndElectricity.gold += (int)(((currentHP / fullHP) * generatorCost) * sellRate);
     }
 }

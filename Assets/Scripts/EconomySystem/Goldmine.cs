@@ -11,7 +11,7 @@ public class Goldmine : MonoBehaviour
 
     // HP
     public float fullHP;
-    private float currentHp;
+    private float currentHP;
 
     // Current level
     private int level;
@@ -32,7 +32,7 @@ public class Goldmine : MonoBehaviour
         currentCost = goldMineCost;
         level = 1;
         m_Timer = 0;
-        currentHp = fullHP;
+        currentHP = fullHP;
     }
 
     // Update is called once per frame
@@ -48,18 +48,18 @@ public class Goldmine : MonoBehaviour
 
     public void Sell()
     {
-        GoldAndElectricity.gold += (int)(((currentHp / fullHP) * goldMineCost) * sellRate);
+        GoldAndElectricity.gold += (int)(((currentHP / fullHP) * goldMineCost) * sellRate);
     }
 
     public void Upgrade()
     {
-        if ((level == 1) && (GoldAndElectricity.gold >= upgrade_2){
+        if ((level == 1) && (GoldAndElectricity.gold >= upgrade_2)){
             level = 2;
             m_Timer = 0;
             GoldAndElectricity.gold -= upgrade_2;
             currentCost += upgrade_2;
         }
-        if ((level == 2) && (GoldAndElectricity.gold >= upgrade_3){
+        if ((level == 2) && (GoldAndElectricity.gold >= upgrade_3)){
             level = 3;
             m_Timer = 0;
             GoldAndElectricity.gold -= upgrade_3;
