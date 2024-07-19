@@ -5,7 +5,8 @@ using UnityEngine;
 public class Goldmine : MonoBehaviour
 {
     //
-    public GameObject panel;
+    public GameObject upgradePanel;
+    public GameObject sellPanel;
 
     // Cost
     public float goldMineCost;
@@ -27,6 +28,9 @@ public class Goldmine : MonoBehaviour
     // Upgrade
     public float upgrade_2;
     public float upgrade_3;
+
+    // Panel flag
+    private int flag = 0;
 
 
     // Start is called before the first frame update
@@ -51,12 +55,23 @@ public class Goldmine : MonoBehaviour
 
     private void OnMouseDown()
     {
-        panel.SetActive(true);
+        if(flag % 2 == 0)
+        {
+            upgradePanel.SetActive(true);
+            sellPanel.SetActive(true);
+        }
+        else if (flag % 2 == 1)
+        {
+            upgradePanel.SetActive(false);
+            sellPanel.SetActive(false);
+        }
+        flag ++;
     }
 
     public void Sell()
     {
         GoldAndElectricity.gold += (int)(((currentHP / fullHP[level - 1]) * goldMineCost) * sellRate);
+        Destroy(gameObject);
     }
 
     public void Upgrade()
