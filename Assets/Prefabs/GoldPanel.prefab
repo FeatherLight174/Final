@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2396227226958167230
+--- !u!1 &6149192133818318460
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3370829094843267253}
-  - component: {fileID: 7284603685524479077}
-  - component: {fileID: -3609014603895119036}
+  - component: {fileID: 4871340982728952986}
+  - component: {fileID: 1180040795845458612}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: Upgrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3370829094843267253
+--- !u!4 &4871340982728952986
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2396227226958167230}
+  m_GameObject: {fileID: 6149192133818318460}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5665567, y: -1.4208956, z: 0}
+  m_LocalPosition: {x: 6.8, y: -3.26, z: -0.087050505}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 7258123842799252645}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7284603685524479077
+--- !u!212 &1180040795845458612
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2396227226958167230}
+  m_GameObject: {fileID: 6149192133818318460}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0.745283, g: 0.6801582, b: 0.20858544, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -85,26 +84,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-3609014603895119036
-MonoBehaviour:
+--- !u!1 &8508804981053885552
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2396227226958167230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd28928e8e091fb418b3171b6d83d062, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 8508804981053885552, guid: 7fcd9edb208f22a4496089f0bad160e0, type: 3}
-  goldMineCost: 1
-  sellRate: 1
-  fullHP:
-  - 0
-  goldMineCD:
-  - 1
-  goldPerTime:
-  - 1
-  upgrade_2: 1
-  upgrade_3: 1
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7258123842799252645}
+  m_Layer: 0
+  m_Name: GoldPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &7258123842799252645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8508804981053885552}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.6811718, y: -0.14069092, z: 0.087050505}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4871340982728952986}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
