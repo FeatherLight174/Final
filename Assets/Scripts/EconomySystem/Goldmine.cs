@@ -14,7 +14,7 @@ public class Goldmine : MonoBehaviour
     private float currentHP;
 
     // Current level
-    private int level;
+    private int level = 1;
 
     // Level function
     public float[] goldMineCD;

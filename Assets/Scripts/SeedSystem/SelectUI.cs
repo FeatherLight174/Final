@@ -23,6 +23,7 @@ public class SelectUI : MonoBehaviour
     public void GoldEvent()
     {
         MouseController.NowMouse = mouseState.Gold;
+        Debug.Log("gold");
     }
 
     public void PowerEvent()
