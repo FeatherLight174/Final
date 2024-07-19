@@ -8,12 +8,12 @@ public class Base : MonoBehaviour
     private int level;
 
     // Level function
-    public float goldMineCD[];
-    public float goldPerTime[];
+    public float[] goldMineCD;
+    public float[] goldPerTime;
     private float m_TimerGold;
 
-    public float GeneratingCD[];
-    public float ElectricityPerTime[];
+    public float[] GeneratingCD;
+    public float[] ElectricityPerTime;
     private float m_TimerElectricity;
 
     // Upgrade

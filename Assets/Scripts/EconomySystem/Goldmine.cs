@@ -17,8 +17,8 @@ public class Goldmine : MonoBehaviour
     private int level;
 
     // Level function
-    public float goldMineCD[];
-    public float goldPerTime[];
+    public float[] goldMineCD;
+    public float[] goldPerTime;
     private float m_Timer;
 
     // Upgrade
