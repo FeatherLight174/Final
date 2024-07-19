@@ -30,8 +30,10 @@ public class Seed : MonoBehaviour
         Debug.Log("Clicked on object: ");
         if (MouseController.NowMouse == mouseState.Gold)
         {
-            if(GoldAndElectricity.gold >= PriceGold)
-            Instantiate(Gold, transform.position, Quaternion.identity);
+            if (GoldAndElectricity.gold >= PriceGold)
+            {
+                Instantiate(Gold, transform.position, Quaternion.identity);
+            }
             MouseController.NowMouse = mouseState.None;
         }
         else if(MouseController.NowMouse == mouseState.Tower)
