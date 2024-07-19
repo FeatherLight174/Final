@@ -1,0 +1,61 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Base : MonoBehaviour
+{
+    // Current level
+    private int level;
+
+    // Level function
+    public float goldMineCD[];
+    public float goldPerTime[];
+    private float m_TimerGold;
+
+    public float GeneratingCD[];
+    public float ElectricityPerTime[];
+    private float m_TimerElectricity;
+
+    // Upgrade
+    public float upgrade_2;
+    public float upgrade_3;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        m_TimerGold = 0;
+        m_TimerElectricity = 0;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        m_TimerGold += Time.deltaTime;
+        if (m_TimerGold >= goldMineCD[level - 1])
+        {
+            GoldAndElectricity.gold += goldPerTime[level - 1];
+            m_TimerGold = 0;
+        }
+        m_TimerElectricity += Time.deltaTime;
+        if (m_TimerElectricity >= GeneratingCD[level - 1])
+        {
+            GoldAndElectricity.electricity += ElectricityPerTime[level - 1];
+            m_TimerElectricity = 0;
+        }
+    }
+
+    public void Upgrade_2()
+    {
+        level = 2;
+        m_TimerGold = 0;
+        m_TimerElectricity = 0;
+        GoldAndElectricity.gold -= upgrade_2;
+    }
+
+    public void Upgrade_3()
+    {
+        level = 3;
+        m_TimerGold = 0;
+        m_TimerElectricity = 0;
+        GoldAndElectricity.gold -= upgrade_3;
+    }
