@@ -44,18 +44,21 @@ public class Base : MonoBehaviour
         }
     }
 
-    public void Upgrade_2()
+    public void Upgrade()
     {
-        level = 2;
-        m_TimerGold = 0;
-        m_TimerElectricity = 0;
-        GoldAndElectricity.gold -= upgrade_2;
+        if ((level == 1) && (GoldAndElectricity.gold >= upgrade_2)
+        {
+            level = 2;
+            m_TimerGold = 0;
+            m_TimerElectricity = 0;
+            GoldAndElectricity.gold -= upgrade_2;
+        }
+        if ((level == 2) && (GoldAndElectricity.gold >= upgrade_3){
+            level = 3;
+            m_TimerGold = 0;
+            m_TimerElectricity = 0;
+            GoldAndElectricity.gold -= upgrade_3;
+        }
     }
+}
 
-    public void Upgrade_3()
-    {
-        level = 3;
-        m_TimerGold = 0;
-        m_TimerElectricity = 0;
-        GoldAndElectricity.gold -= upgrade_3;
-    }
