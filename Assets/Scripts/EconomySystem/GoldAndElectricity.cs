@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GoldAndElectricity : MonoBehaviour
 {   
-    public static int gold;
-    public static int electricity;
+    public static float gold;
+    public static float electricity;
     // Start is called before the first frame update
     void Start()
     {
