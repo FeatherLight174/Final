@@ -59,11 +59,13 @@ public class Goldmine : MonoBehaviour
         {
             upgradePanel.SetActive(true);
             sellPanel.SetActive(true);
+            //feature.SetActive(true);
         }
         else if (flag % 2 == 1)
         {
             upgradePanel.SetActive(false);
             sellPanel.SetActive(false);
+            //feature.SetActive(false);
         }
         flag ++;
     }
