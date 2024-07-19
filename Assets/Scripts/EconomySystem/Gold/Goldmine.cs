@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Goldmine : MonoBehaviour
 {
+    //
+    public GameObject panel;
+
     // Cost
     public float goldMineCost;
     private float currentCost;
@@ -44,6 +47,11 @@ public class Goldmine : MonoBehaviour
             GoldAndElectricity.gold += goldPerTime[level - 1];
             m_Timer = 0;
         }
+    }
+
+    private void OnMouseDown()
+    {
+        panel.SetActive(true);
     }
 
     public void Sell()
