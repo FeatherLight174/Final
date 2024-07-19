@@ -26,15 +26,29 @@ public class Quit : MonoBehaviour
         Time.timeScale = 1.0f;
     }
     // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape) && !isPause)
-        {
-            isPause = true;
-            QuitButton.SetActive(true);
-            ResumeButton.SetActive(true);
-            Time.timeScale = 0.0f;
-        }
+    //void Update()
+    //{
+       // if (Input.GetKeyDown(KeyCode.Escape) && !isPause)
+       // {
+           // isPause = true;
+           // QuitButton.SetActive(true);
+           // ResumeButton.SetActive(true);
+           // Time.timeScale = 0.0f;
+        //}
 
+    //}
+
+    public void ESCEvent()
+    {
+        if (!isPause) 
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                isPause = true;
+                QuitButton.SetActive(true);
+                ResumeButton.SetActive(true);
+                Time.timeScale = 0.0f;
+            }
+        }
     }
 }

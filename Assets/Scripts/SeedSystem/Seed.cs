@@ -14,6 +14,8 @@ public class Seed : MonoBehaviour
     public float PricePower;
     public float PriceGold;
     public float PriceShield;
+
+    private GameObject Placed;
     void Start()
     {
         
@@ -34,7 +36,7 @@ public class Seed : MonoBehaviour
             {
                 if (GoldAndElectricity.gold >= PriceGold)
                 {
-                    Instantiate(Gold, transform.position, Quaternion.identity);
+                    Placed = Instantiate(Gold, transform.position, Quaternion.identity);
                     m_IsActive = false;
                 }
                 MouseController.NowMouse = mouseState.None;
@@ -43,7 +45,7 @@ public class Seed : MonoBehaviour
             {
                 if (GoldAndElectricity.gold >= PriceTower)
                 {
-                    Instantiate(Tower, transform.position, Quaternion.identity);
+                    Placed = Instantiate(Tower, transform.position, Quaternion.identity);
                     m_IsActive = false;
                 }
                 MouseController.NowMouse = mouseState.None;
@@ -52,7 +54,7 @@ public class Seed : MonoBehaviour
             {
                 if (GoldAndElectricity.gold >= PricePower)
                 {
-                    Instantiate(Power, transform.position, Quaternion.identity);
+                    Placed = Instantiate(Power, transform.position, Quaternion.identity);
                     m_IsActive = false;
                 }
                 MouseController.NowMouse = mouseState.None;
@@ -61,11 +63,15 @@ public class Seed : MonoBehaviour
             {
                 if (GoldAndElectricity.gold <= PriceShield)
                 {
-                    Instantiate(Shield, transform.position, Quaternion.identity);
+                    Placed = Instantiate(Shield, transform.position, Quaternion.identity);
                     m_IsActive = false;
                 }
                 MouseController.NowMouse = mouseState.None;
             }
+        }
+        if(Placed == null)
+        {
+            m_IsActive = true;
         }
 
     }    // 调用其他方法处理点击事件，例如改变物体颜色
