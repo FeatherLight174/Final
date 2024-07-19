@@ -20,7 +20,7 @@ public class Generator : MonoBehaviour
     void Start()
     {
         m_Timer = 0;
-        currentHp = fullHP;
+        currentHP = fullHP;
     }
 
     // Update is called once per frame

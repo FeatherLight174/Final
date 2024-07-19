@@ -11,7 +11,7 @@ public class Goldmine : MonoBehaviour
 
     // HP
     public float fullHP;
-    private float currentHp;
+    private float currentHP;
 
     // Current level
     private int level;
@@ -32,7 +32,7 @@ public class Goldmine : MonoBehaviour
         currentCost = goldMineCost;
         level = 1;
         m_Timer = 0;
-        currentHp = fullHP;
+        currentHP = fullHP;
     }
 
     // Update is called once per frame
