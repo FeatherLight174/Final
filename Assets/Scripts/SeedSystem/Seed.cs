@@ -73,7 +73,6 @@ public class Seed : MonoBehaviour
             }
         }
         
-
     }    // 调用其他方法处理点击事件，例如改变物体颜色
         
 }
