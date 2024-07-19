@@ -24,7 +24,10 @@ public class Seed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Placed == null)
+        {
+            m_IsActive = true;
+        }
     }
     private void OnMouseDown()
     {
@@ -69,10 +72,7 @@ public class Seed : MonoBehaviour
                 MouseController.NowMouse = mouseState.None;
             }
         }
-        if(Placed == null)
-        {
-            m_IsActive = true;
-        }
+        
 
     }    // 调用其他方法处理点击事件，例如改变物体颜色
         
