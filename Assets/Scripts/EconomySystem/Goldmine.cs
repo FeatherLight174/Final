@@ -48,7 +48,7 @@ public class Goldmine : MonoBehaviour
 
     public void Sell()
     {
-        GoldAndElectricity.gold += (int)(((currentHp / fullHP) * goldMineCost) * sellRate);
+        GoldAndElectricity.gold += (int)(((currentHP / fullHP) * goldMineCost) * sellRate);
     }
 
     public void Upgrade()

@@ -36,6 +36,6 @@ public class Generator : MonoBehaviour
 
     void Sell()
     {
-        GoldAndElectricity.gold += (int)(((currentHp / fullHP) * generatorCost) * sellRate);
+        GoldAndElectricity.gold += (int)(((currentHP / fullHP) * generatorCost) * sellRate);
     }
 }
