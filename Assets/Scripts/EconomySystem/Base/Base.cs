@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Base : MonoBehaviour
 {
+
+
     //
     public GameObject upgradePanel;
 
 
     //HP
     private float[] fullHP = GameConstant.HomeHP;
-    private float currentHP;
+    public float currentHP;
 
     // Current level
     private int level;
@@ -95,5 +97,6 @@ public class Base : MonoBehaviour
         }
        
     }
+
 }
 
