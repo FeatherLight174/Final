@@ -114,4 +114,8 @@ public class Path1 : MonoBehaviour
     }
 
     public float GetHP() {  return m_Hp; }
+
+    private void OnMouseDown() {
+        return;
+    }
 }
