@@ -15,6 +15,8 @@ public class Path1 : MonoBehaviour
     public float Speed = GameConstant.EnemyMovespeed;
     public bool IsAttacked = false;
 
+    public float showTime = 3f;
+    private float m_Timer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,14 @@ public class Path1 : MonoBehaviour
         {
              m_isAttack=false;
         }
+        if (IsAttacked)
+        {
+            m_Timer += Time.deltaTime;
+            if(m_Timer >= showTime)
+            {
+                IsAttacked = false;
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -59,6 +69,7 @@ public class Path1 : MonoBehaviour
         {
             m_Hp -= GameConstant.BulletAttack;
             IsAttacked = true;
+            m_Timer = 0;
         }
         if (collision.gameObject.CompareTag("Building"))
         {
