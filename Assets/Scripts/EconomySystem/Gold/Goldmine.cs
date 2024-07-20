@@ -54,19 +54,29 @@ public class Goldmine : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Debug.Log(111111);
         if(flag % 2 == 0)
         {
-            upgradePanel.SetActive(true);
+
+            if (level < 3)
+            {
+                upgradePanel.SetActive(true);
+            }
+
+
             sellPanel.SetActive(true);
             //feature.SetActive(true);
         }
-        else if (flag % 2 == 1)
+        if (flag % 2 == 1)
         {
+
             upgradePanel.SetActive(false);
+            
             sellPanel.SetActive(false);
             //feature.SetActive(false);
         }
         flag ++;
+
     }
 
     public void Sell()
@@ -86,6 +96,7 @@ public class Goldmine : MonoBehaviour
             upgradePanel.SetActive(false);
             sellPanel.SetActive(false);
             flag++;
+            return;
         }
         if ((level == 2) && (GoldAndElectricity.gold >= upgrade_3)){
             level = 3;
@@ -96,6 +107,7 @@ public class Goldmine : MonoBehaviour
             upgradePanel.SetActive(false);
             sellPanel.SetActive(false);
             flag++;
+            return;
         }
        
     }

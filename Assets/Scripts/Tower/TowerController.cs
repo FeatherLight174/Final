@@ -14,6 +14,7 @@ public class TowerController : MonoBehaviour
 
 
 
+
     private int flag = 0;
     // Ëþ±àºÅ
     public int towerIndex;

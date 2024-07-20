@@ -39,6 +39,7 @@ public class Seed : MonoBehaviour
             {
                 if (GoldAndElectricity.gold >= PriceGold)
                 {
+                    Debug.Log("sssssssssssss");
                     Placed = Instantiate(Gold, transform.position, Quaternion.identity);
                     m_IsActive = false;
                 }

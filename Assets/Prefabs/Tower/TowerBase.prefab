@@ -159,7 +159,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.49803922, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -219,6 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rangePanel: {fileID: 9131799887718901238}
   sellPanel: {fileID: 4731813263143014475}
+  upgradePanel: {fileID: 0}
   towerIndex: 0
   towerLevel: 0
   rangeBoostFactor: 1
