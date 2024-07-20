@@ -220,7 +220,7 @@ MonoBehaviour:
   shootSpeed: 2
   rotateSpeed: 60
   enemies: []
-  homeOrBase: {fileID: 0}
+  homeOrBase: {fileID: 145140923086931748, guid: 00e1242d1316b444ab0bb2d8f1ba6247, type: 3}
   enemyToBase: []
   enemyToTower: []
   bullet: {fileID: 8986485512482655928, guid: dd25d8c0ff2563a438ee518c62da86a3, type: 3}

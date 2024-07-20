@@ -141,6 +141,6 @@ public class TowerController : MonoBehaviour
     private void Shoot()
     {
         Debug.Log("Shoot!");
-        Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+        Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.25f), transform.rotation);
     }
 }

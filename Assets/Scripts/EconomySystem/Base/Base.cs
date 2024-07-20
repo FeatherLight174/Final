@@ -9,7 +9,7 @@ public class Base : MonoBehaviour
 
 
     //HP
-    private float[] fullHP;
+    private float[] fullHP = GameConstant.HomeHP;
     private float currentHP;
 
     // Current level
