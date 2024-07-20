@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class TowerController : MonoBehaviour
 {
-    // 建筑血量
-    public float health;
+    // 建筑血量（改用HPManager）
+    // public float health;
     // 建筑范围
     public float range;
     // 建筑攻速 (发/秒)
