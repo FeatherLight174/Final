@@ -15,7 +15,7 @@ public class Goldmine : MonoBehaviour
 
     // HP
     private float[] fullHP = GameConstant.HPGold;
-    private float currentHP;
+    public float currentHP;
 
     // Current level
     private int level = 1;

@@ -15,7 +15,7 @@ public class Generator : MonoBehaviour
 
     // HP
     private float fullHP = GameConstant.HPPower;
-    private float currentHP;
+    public float currentHP;
     // Start is called before the first frame update
     void Start()
     {
