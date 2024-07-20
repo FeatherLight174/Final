@@ -84,7 +84,7 @@ public class Path1 : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log(222222);
-        if (collision.gameObject.CompareTag("Building"))
+        if (collision.gameObject.CompareTag("Building") || collision.gameObject.CompareTag("Base"))
         {
             
             m_Tower = collision.gameObject;
@@ -95,7 +95,7 @@ public class Path1 : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Building"))
+        if (collision.gameObject.CompareTag("Building") || collision.gameObject.CompareTag("Base"))
         {
             m_isAttack = false;
             m_Tower = null;
