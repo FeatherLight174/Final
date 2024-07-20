@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5042289183850177828}
   - component: {fileID: -2183230375649316559}
   - component: {fileID: 285878347276396446}
-  - component: {fileID: -1658925334655191628}
   m_Layer: 0
   m_Name: GeneratorSell
   m_TagString: Untagged
@@ -145,22 +144,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generator: {fileID: 1534044938498098678, guid: 1587089a9f814ce4780a71557fe4a7f2, type: 3}
---- !u!114 &-1658925334655191628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4162392912251923228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 1
-  m_Area: 0
-  m_OverrideGenerateLinks: 0
-  m_GenerateLinks: 0
-  m_IgnoreFromBuild: 0
-  m_ApplyToChildren: 1
-  m_AffectedAgents: ffffffff
