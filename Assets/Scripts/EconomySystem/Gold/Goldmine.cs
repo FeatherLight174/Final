@@ -54,7 +54,7 @@ public class Goldmine : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log(111111);
+
         if(flag % 2 == 0)
         {
 
@@ -76,6 +76,32 @@ public class Goldmine : MonoBehaviour
             //feature.SetActive(false);
         }
         flag ++;
+
+    }
+
+    public void Panel()
+    {
+        if (flag % 2 == 0)
+        {
+
+            if (level < 3)
+            {
+                upgradePanel.SetActive(true);
+            }
+
+
+            sellPanel.SetActive(true);
+            //feature.SetActive(true);
+        }
+        if (flag % 2 == 1)
+        {
+
+            upgradePanel.SetActive(false);
+
+            sellPanel.SetActive(false);
+            //feature.SetActive(false);
+        }
+        flag++;
 
     }
 

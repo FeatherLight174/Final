@@ -247,6 +247,7 @@ public class TowerController : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Debug.Log("Mouse");
         if (flag % 2 == 0)
         {
             sellPanel.SetActive(true);

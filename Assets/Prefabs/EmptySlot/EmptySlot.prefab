@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.9528302, g: 0.9528302, b: 0.43746287, a: 1}
+  m_Color: {r: 0.9528302, g: 0.9528302, b: 0.43746287, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gold: {fileID: 2396227226958167230, guid: ddaea9b32ea81374aa336723282abb2c, type: 3}
-  Tower: {fileID: 7440630365389260715, guid: 2224e6a4a9845bf4f922cabfedd95d1d, type: 3}
+  Tower: {fileID: 6211003041880742178, guid: e156aa54208664643a2856cc8c433278, type: 3}
   Power: {fileID: 4354446950988630538, guid: 1587089a9f814ce4780a71557fe4a7f2, type: 3}
   Shield: {fileID: 0}
   PriceTower: 0
