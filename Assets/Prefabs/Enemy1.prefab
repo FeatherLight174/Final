@@ -127,12 +127,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0507e30763df1b443b424bb7a07f7356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Hp: 100
+  m_Hp: 2000
   PathX1: 11
   PathY1: 1
   PathX2: 5
   Speed: 2
   IsAttacked: 0
+  WayPoints: []
   showTime: 3
 --- !u!61 &1476476672232053174
 BoxCollider2D:
