@@ -1,15 +1,16 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GoldAndPower : MonoBehaviour
 {
-    public Text textComponent;
+    public TextMeshProUGUI tmpText;
 
 
     void Update()
     {
         
-    textComponent.text = "Gold " + GoldAndElectricity.gold + "\n"+"Power" + GoldAndElectricity.electricity;
+    tmpText.text = "Gold " + GoldAndElectricity.gold + "\n"+"Power" + GoldAndElectricity.electricity;
             
 
            
