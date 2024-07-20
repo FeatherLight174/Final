@@ -331,6 +331,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6472729940019305279, guid: 2224e6a4a9845bf4f922cabfedd95d1d, type: 3}
+      propertyPath: shootSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6472729940019305279, guid: 2224e6a4a9845bf4f922cabfedd95d1d, type: 3}
+      propertyPath: rotateSpeed
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 7440630365389260715, guid: 2224e6a4a9845bf4f922cabfedd95d1d, type: 3}
       propertyPath: m_Name
       value: TowerBase
@@ -481,6 +489,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4989939955800474387, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
+      propertyPath: Speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989939955800474387, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
+      propertyPath: showTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5526956762559256171, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
       propertyPath: m_Name
       value: EnemyExample(0_Normal) (1)
@@ -657,6 +673,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4989939955800474387, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
+      propertyPath: Speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989939955800474387, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
+      propertyPath: showTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5526956762559256171, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
       propertyPath: m_Name
       value: EnemyExample(0_Normal) (2)
@@ -758,6 +782,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4989939955800474387, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
+      propertyPath: Speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989939955800474387, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
+      propertyPath: showTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5526956762559256171, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
       propertyPath: m_Name
       value: EnemyExample(0_Normal)
