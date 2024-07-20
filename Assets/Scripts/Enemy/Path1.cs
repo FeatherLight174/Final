@@ -43,7 +43,7 @@ public class Path1 : MonoBehaviour
                 gameObject.transform.position -= Vector3.up * Speed * Time.deltaTime;
                 PathY1 -= Time.deltaTime* Speed;
             }
-            else if(PathX1 >= 0)
+            else if(PathX2 >= 0)
             {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
                 PathX2 -= Time.deltaTime * Speed;
