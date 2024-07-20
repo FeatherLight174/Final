@@ -9,6 +9,12 @@ public class Path1 : MonoBehaviour
     private float m_attack = GameConstant.EnemyAttack;
     private bool m_isAttack = false;
     private GameObject m_Tower;
+    public float PathX1 = 11;
+    public float PathY1 = 1;
+    public float PathX2 = 5;
+    public float Speed = GameConstant.EnemyMovespeed;
+    public bool IsAttacked = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,18 +29,43 @@ public class Path1 : MonoBehaviour
             m_Hp = 0;
             Destroy(gameObject);
         }
-        
+        if (!m_isAttack)
+        {
+            if (PathX1 <= 0)
+            {
+                gameObject.transform.position += Vector3.left * Speed*Time.deltaTime;
+                PathX1 -= Time.deltaTime;
+            }
+            else if (PathY1 <= 0)
+            {
+                gameObject.transform.position -= Vector3.up * Speed * Time.deltaTime;
+                PathY1 -= Time.deltaTime;
+            }
+            else
+            {
+                gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
+                PathX2 -= Time.deltaTime;
+            }
+        }
+        else if(m_Tower == null)
+        {
+             m_isAttack=false;
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
             m_Hp -= GameConstant.BulletAttack;
+            IsAttacked = true;
         }
         if (collision.gameObject.CompareTag("Building"))
         {
             m_Tower = collision.gameObject;
+            m_isAttack=true;
         }
     }
+
+    public float GetHP() {  return m_Hp; }
 }
