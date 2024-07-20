@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Path1 : MonoBehaviour
 {
-    public float m_Hp = GameConstant.HPEnemy; 
+    public float m_Hp = GameConstant.HPEnemy;
+    public GameObject parent;
     private float m_v = GameConstant.vFactor;
     private float m_attack = GameConstant.EnemyAttack;
     private float m_attackCD = GameConstant.AttackCD;
@@ -30,7 +31,7 @@ public class Path1 : MonoBehaviour
         if(m_Hp <= 0)
         {
             m_Hp = 0;
-            Destroy(gameObject);
+            Destroy(parent);
         }
         if (!m_isAttack)
         {
