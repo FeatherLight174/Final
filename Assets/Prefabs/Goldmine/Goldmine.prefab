@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8824285153890324908}
   m_Layer: 0
   m_Name: Goldmine
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,12 +183,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5842283649092037929, guid: a0388a390c4539b44a1c6c800b1f63c8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842283649092037929, guid: a0388a390c4539b44a1c6c800b1f63c8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842283649092037929, guid: a0388a390c4539b44a1c6c800b1f63c8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.3334436
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5842283649092037929, guid: a0388a390c4539b44a1c6c800b1f63c8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3591044
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5842283649092037929, guid: a0388a390c4539b44a1c6c800b1f63c8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -250,12 +258,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -3609014603895119036}
     - target: {fileID: 5883026790365631710, guid: cbeb59c51eabdfd498d40c1e2b35889a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883026790365631710, guid: cbeb59c51eabdfd498d40c1e2b35889a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883026790365631710, guid: cbeb59c51eabdfd498d40c1e2b35889a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.98
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5883026790365631710, guid: cbeb59c51eabdfd498d40c1e2b35889a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5883026790365631710, guid: cbeb59c51eabdfd498d40c1e2b35889a, type: 3}
       propertyPath: m_LocalPosition.z

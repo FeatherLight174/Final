@@ -27,7 +27,7 @@ public static class GameConstant
     public static float PriceGold = 10;
     public static float[] GoldCD = new float[3] { 1, 1, 1 };
     public static float[] GoldLevelProduce = new float[3] { 1, 2, 3 };
-    public static float GoldLevel2 = 200;
+    public static float GoldLevel2 = 20;
     public static float GoldLevel3 = 450;
 
     //Power

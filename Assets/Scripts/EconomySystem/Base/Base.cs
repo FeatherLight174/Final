@@ -78,6 +78,8 @@ public class Base : MonoBehaviour
             m_TimerElectricity = 0;
             GoldAndElectricity.gold -= upgrade_2;
             Hp.SetHP(GameConstant.Homelevel2);
+            upgradePanel.SetActive(false);
+            flag++;
         }
         if ((level == 2) && (GoldAndElectricity.gold >= upgrade_3)){
             level = 3;
@@ -85,6 +87,8 @@ public class Base : MonoBehaviour
             m_TimerElectricity = 0;
             GoldAndElectricity.gold -= upgrade_3;
             Hp.SetHP(GameConstant.Homelevel3);
+            upgradePanel.SetActive(false);
+            flag++;
         }
        
     }
