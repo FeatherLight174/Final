@@ -5,10 +5,11 @@ using UnityEngine;
 public class HPManagement : MonoBehaviour
 {
     public float HP;
+    public float MaxHP;
     // Start is called before the first frame update
     void Start()
     {
-        HP = gameObject.
+        
     }
 
     // Update is called once per frame
