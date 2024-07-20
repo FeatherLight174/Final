@@ -34,7 +34,7 @@ public class Path1 : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Building"))
         {
-            
+            m_Tower = collision.gameObject;
         }
     }
 }
