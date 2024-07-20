@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Goldmine : MonoBehaviour
 {
+    
     //
     public GameObject upgradePanel;
     public GameObject sellPanel;
@@ -13,9 +14,6 @@ public class Goldmine : MonoBehaviour
     private float currentCost;
     private float sellRate = GameConstant.SellFactor;
 
-    // HP
-    private float[] fullHP = GameConstant.HPGold;
-    public float currentHP;
 
     // Current level
     private int level = 1;
@@ -32,14 +30,15 @@ public class Goldmine : MonoBehaviour
     // Panel flag
     private int flag = 0;
 
-
+    private HPManagement Hp;
     // Start is called before the first frame update
     void Start()
     {
         currentCost = goldMineCost;
         level = 1;
         m_Timer = 0;
-        currentHP = fullHP[level - 1];
+        Hp = gameObject.GetComponent<HPManagement>();
+
     }
 
     // Update is called once per frame
@@ -50,10 +49,6 @@ public class Goldmine : MonoBehaviour
         {
             GoldAndElectricity.gold += goldPerTime[level - 1];
             m_Timer = 0;
-        }
-        if (currentHP <= 0)
-        {
-            Destroy(gameObject);
         }
     }
 
@@ -76,7 +71,7 @@ public class Goldmine : MonoBehaviour
 
     public void Sell()
     {
-        GoldAndElectricity.gold += (int)(((currentHP / fullHP[level - 1]) * currentCost) * sellRate);
+        GoldAndElectricity.gold += (int)(((Hp.HP / Hp.MaxHP) * currentCost) * sellRate);
         Destroy(gameObject);
     }
 
@@ -87,14 +82,14 @@ public class Goldmine : MonoBehaviour
             m_Timer = 0;
             GoldAndElectricity.gold -= upgrade_2;
             currentCost += upgrade_2;
-            currentHP = fullHP[level - 1];
+            Hp.SetHP(GameConstant.GoldLevel2);
         }
         if ((level == 2) && (GoldAndElectricity.gold >= upgrade_3)){
             level = 3;
             m_Timer = 0;
             GoldAndElectricity.gold -= upgrade_3;
             currentCost += upgrade_3;
-            currentHP = fullHP[level - 1];
+            Hp.SetHP(GameConstant.GoldLevel3);
         }
        
     }

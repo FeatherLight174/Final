@@ -16,9 +16,12 @@ public class Generator : MonoBehaviour
     // HP
     private float fullHP = GameConstant.HPPower;
     public float currentHP;
+
+    private HPManagement Hp;
     // Start is called before the first frame update
     void Start()
     {
+        Hp = gameObject.GetComponent<HPManagement>();
         m_Timer = 0;
         currentHP = fullHP;
     }
@@ -32,14 +35,10 @@ public class Generator : MonoBehaviour
             GoldAndElectricity.electricity += electricityPerTime;
             m_Timer = 0;
         }
-        if (currentHP <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 
     void Sell()
     {
-        GoldAndElectricity.gold += (int)(((currentHP / fullHP) * generatorCost) * sellRate);
+        GoldAndElectricity.gold += (int)(((Hp.HP / Hp.MaxHP) * generatorCost) * sellRate);
     }
 }
