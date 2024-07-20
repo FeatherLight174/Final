@@ -69,6 +69,11 @@ public class Path1 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
+            BulletController bullet = collision.gameObject.GetComponent<BulletController>();
+            if (bullet.hasHit)
+            {
+                return;
+            }
             m_Hp -= GameConstant.BulletAttack;
             IsAttacked = true;
             m_Timer = 0;

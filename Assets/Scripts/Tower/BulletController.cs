@@ -28,6 +28,10 @@ public class BulletController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (pierceCount <= 0)
+        {
+            Destroy(gameObject);
+        }
         transform.position += Time.deltaTime * speed * new Vector3(Mathf.Cos(transform.eulerAngles.z / 180f * Mathf.PI), Mathf.Sin(transform.eulerAngles.z / 180f * Mathf.PI), 0f);
         duration -= Time.deltaTime;
         if (duration < 0)
