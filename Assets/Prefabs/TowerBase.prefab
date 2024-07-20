@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1152103997842543045}
   - component: {fileID: 3165804670440658458}
+  - component: {fileID: 5049448260113762367}
   m_Layer: 0
   m_Name: TowerBase
   m_TagString: Building
@@ -170,6 +171,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5049448260113762367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7440630365389260715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f5912eed921a241a785e6a15a2d845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 250
+  MaxHP: 250
 --- !u!1 &8463419458353823947
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,10 +230,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51a02a2b3b8008043905496c94ea0b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   range: 4
+  rangeBoostFactor: 1
+  rangeBoostConstant: 0
+  rangeReal: 0
   shootSpeed: 2
+  shootSpeedBoostFactor: 1
+  shootSpeedBoostConstant: 0
+  shootSpeedReal: 0
   rotateSpeed: 60
+  rotateSpeedBoostFactor: 1
+  rotateSpeedBoostConstant: 0
+  rotateSpeedReal: 0
+  powerGet: 0
+  powerConsumption: 0
   enemies: []
   homeOrBase: {fileID: 145140923086931748, guid: 00e1242d1316b444ab0bb2d8f1ba6247, type: 3}
   enemyToBase: []
