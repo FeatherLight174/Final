@@ -36,17 +36,17 @@ public class Path1 : MonoBehaviour
             if (PathX1 <= 0)
             {
                 gameObject.transform.position += Vector3.left * Speed*Time.deltaTime;
-                PathX1 -= Time.deltaTime;
+                PathX1 -= Time.deltaTime * Speed;
             }
             else if (PathY1 <= 0)
             {
                 gameObject.transform.position -= Vector3.up * Speed * Time.deltaTime;
-                PathY1 -= Time.deltaTime;
+                PathY1 -= Time.deltaTime* Speed;
             }
             else
             {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
-                PathX2 -= Time.deltaTime;
+                PathX2 -= Time.deltaTime * Speed;
             }
         }
         else if(m_Tower == null)
