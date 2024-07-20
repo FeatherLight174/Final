@@ -33,12 +33,12 @@ public class Path1 : MonoBehaviour
         }
         if (!m_isAttack)
         {
-            if (PathX1 <= 0)
+            if (PathX1 >= 0)
             {
                 gameObject.transform.position += Vector3.left * Speed*Time.deltaTime;
                 PathX1 -= Time.deltaTime * Speed;
             }
-            else if (PathY1 <= 0)
+            else if (PathY1 >= 0)
             {
                 gameObject.transform.position -= Vector3.up * Speed * Time.deltaTime;
                 PathY1 -= Time.deltaTime* Speed;
