@@ -5,16 +5,16 @@ using UnityEngine;
 public class Generator : MonoBehaviour
 {
     // Cost
-    public float generatorCost;
-    public float sellRate;
+    private float generatorCost = GameConstant.PricePower;
+    private float sellRate = GameConstant.SellFactor;
 
     // Basic function
-    public float generatingCD;
-    public float electricityPerTime;
+    private float generatingCD = GameConstant.PowerCD;
+    private float electricityPerTime = GameConstant.PowerProduce;
     private float m_Timer;
 
     // HP
-    public float fullHP;
+    private float fullHP = GameConstant.HPPower;
     private float currentHP;
     // Start is called before the first frame update
     void Start()

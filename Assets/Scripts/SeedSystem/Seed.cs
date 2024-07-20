@@ -10,10 +10,10 @@ public class Seed : MonoBehaviour
     public GameObject Tower;
     public GameObject Power;
     public GameObject Shield;
-    public float PriceTower = GameContanst.PriceTower;
-    public float PricePower = GameContanst.PricePower;
-    public float PriceGold = GameContanst.PriceGold;
-    public float PriceShield = GameContanst.PriceShield;
+    public float PriceTower = GameConstant.PriceTower;
+    public float PricePower = GameConstant.PricePower;
+    public float PriceGold = GameConstant.PriceGold;
+    public float PriceShield = GameConstant.PriceShield;
 
     private GameObject Placed;
     void Start()

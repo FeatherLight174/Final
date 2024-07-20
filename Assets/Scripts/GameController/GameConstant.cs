@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class GameContanst
+public static class GameConstant
 {
 
     public static float SellFactor = 0.75f;
@@ -17,7 +17,7 @@ public static class GameContanst
     public static float[] HomePowerProduce = new float[3] {10,20,30};
     public static float[] HomePowerProduceCD = new float[3] { 2,2,2 };
     public static float[] HomeHP = new float[3] { 1000,2000,3000};
-    public static float Homelevel = 1000;
+    public static float Homelevel2 = 1000;
     public static float Homelevel3 = 1500;
 
 
@@ -31,7 +31,7 @@ public static class GameContanst
     public static float GoldLevel3 = 450;
 
     //Power
-    public static float[] HPPower = new float[3] { 75,125,150};
+    public static float HPPower = 150;
     public static float PricePower = 10;
     public static float PowerCD = 1;
     public static float PowerProduce = 15;

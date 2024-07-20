@@ -9,24 +9,24 @@ public class Base : MonoBehaviour
 
 
     //HP
-    public float[] fullHP;
+    private float[] fullHP;
     private float currentHP;
 
     // Current level
     private int level;
 
     // Level function
-    public float[] goldMineCD = GameConstant.;
-    public float[] goldPerTime = GameConstant.GoldLevelProduce;
+    private float[] goldMineCD = GameConstant.HomeGoldProduceCD;
+    private float[] goldPerTime = GameConstant.HomeGoldProduce;
     private float m_TimerGold;
 
-    public float[] GeneratingCD = GameConstant.;
-    public float[] ElectricityPerTime = GameConstant.;
+    private float[] GeneratingCD = GameConstant.HomePowerProduceCD;
+    private float[] ElectricityPerTime = GameConstant.HomePowerProduce;
     private float m_TimerElectricity;
 
     // Upgrade
-    public float upgrade_2;
-    public float upgrade_3;
+    private float upgrade_2 = GameConstant.Homelevel2;
+    private float upgrade_3 = GameConstant.Homelevel3;
 
     // Panel flag
     private int flag = 0;
