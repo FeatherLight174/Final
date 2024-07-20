@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class TowerController : MonoBehaviour
 {
+    public GameObject rangePanel;
+    public GameObject sellPanel;
+    private int flag = 0;
     // Ëþ±àºÅ
     public int towerIndex;
     // ËþµÈ¼¶
@@ -203,5 +206,26 @@ public class TowerController : MonoBehaviour
     private void Shoot()
     {
         Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.25f), transform.rotation);
+    }
+
+
+    
+
+    private void OnMouseDown()
+    {
+        if (flag % 2 == 0)
+        {
+            sellPanel.SetActive(true);
+            rangePanel.SetActive(true);
+
+            //feature.SetActive(true);
+        }
+        else if (flag % 2 == 1)
+        {
+            sellPanel.SetActive(false);
+            rangePanel.SetActive(false);
+            //feature.SetActive(false);
+        }
+        flag++;
     }
 }
