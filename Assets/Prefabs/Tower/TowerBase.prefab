@@ -221,20 +221,16 @@ MonoBehaviour:
   sellPanel: {fileID: 4731813263143014475}
   towerIndex: 0
   towerLevel: 0
-  range: 4
-  rangeBoostFactor: 0
+  rangeBoostFactor: 1
   rangeBoostConstant: 0
   rangeReal: 0
-  shootSpeed: 2
-  shootSpeedBoostFactor: 0
+  shootSpeedBoostFactor: 1
   shootSpeedBoostConstant: 0
   shootSpeedReal: 0
-  rotateSpeed: 60
-  rotateSpeedBoostFactor: 0
+  rotateSpeedBoostFactor: 1
   rotateSpeedBoostConstant: 0
   rotateSpeedReal: 0
   powerGet: 0
-  powerConsumption: 0
   enemies: []
   homeOrBase: {fileID: 145140923086931748, guid: 00e1242d1316b444ab0bb2d8f1ba6247, type: 3}
   enemyToBase: []
@@ -381,18 +377,6 @@ PrefabInstance:
     - target: {fileID: 355471427789213069, guid: b501149e17d16434e9311ff819dfdaa5, type: 3}
       propertyPath: m_Name
       value: TowerSell
-      objectReference: {fileID: 0}
-    - target: {fileID: 355471427789213069, guid: b501149e17d16434e9311ff819dfdaa5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4458656149897634346, guid: b501149e17d16434e9311ff819dfdaa5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4458656149897634346, guid: b501149e17d16434e9311ff819dfdaa5, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4458656149897634346, guid: b501149e17d16434e9311ff819dfdaa5, type: 3}
       propertyPath: m_LocalPosition.x
