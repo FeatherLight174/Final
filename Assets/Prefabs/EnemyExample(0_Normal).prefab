@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5772630421601280693}
   - component: {fileID: 4126019836676058198}
   - component: {fileID: 4989939955800474387}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyExample(0_Normal)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ MonoBehaviour:
   PathX1: 11
   PathY1: 1
   PathX2: 5
-  Speed: 0.1
+  Speed: 5
   IsAttacked: 0
   showTime: 3
 --- !u!1 &6920720161400052560

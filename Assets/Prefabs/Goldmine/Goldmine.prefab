@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7284603685524479077}
   - component: {fileID: -3609014603895119036}
   - component: {fileID: -2437723080321653613}
+  - component: {fileID: 8824285153890324908}
   m_Layer: 0
   m_Name: Goldmine
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,19 +103,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradePanel: {fileID: 4515882142936296867}
   sellPanel: {fileID: 1050096912552349478}
-  goldMineCost: 1
-  sellRate: 1
-  fullHP:
-  - 1
-  - 1
-  goldMineCD:
-  - 1
-  - 1
-  goldPerTime:
-  - 1
-  - 2
-  upgrade_2: 10
-  upgrade_3: 20
 --- !u!61 &-2437723080321653613
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -160,6 +148,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8824285153890324908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2396227226958167230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f5912eed921a241a785e6a15a2d845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 100
+  MaxHP: 100
 --- !u!1001 &4041774632370025940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168,6 +170,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3370829094843267253}
     m_Modifications:
+    - target: {fileID: -5868331096309056875, guid: a0388a390c4539b44a1c6c800b1f63c8, type: 3}
+      propertyPath: goldmine
+      value: 
+      objectReference: {fileID: -3609014603895119036}
     - target: {fileID: 3928815669574073074, guid: a0388a390c4539b44a1c6c800b1f63c8, type: 3}
       propertyPath: m_Name
       value: Sell
@@ -177,12 +183,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5842283649092037929, guid: a0388a390c4539b44a1c6c800b1f63c8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842283649092037929, guid: a0388a390c4539b44a1c6c800b1f63c8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842283649092037929, guid: a0388a390c4539b44a1c6c800b1f63c8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.3334436
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5842283649092037929, guid: a0388a390c4539b44a1c6c800b1f63c8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.3591044
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5842283649092037929, guid: a0388a390c4539b44a1c6c800b1f63c8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -244,12 +258,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -3609014603895119036}
     - target: {fileID: 5883026790365631710, guid: cbeb59c51eabdfd498d40c1e2b35889a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883026790365631710, guid: cbeb59c51eabdfd498d40c1e2b35889a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883026790365631710, guid: cbeb59c51eabdfd498d40c1e2b35889a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.98
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5883026790365631710, guid: cbeb59c51eabdfd498d40c1e2b35889a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5883026790365631710, guid: cbeb59c51eabdfd498d40c1e2b35889a, type: 3}
       propertyPath: m_LocalPosition.z

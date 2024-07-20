@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
+    public bool hasHit = false; 
     // 子弹最大射程倍数
     public float maxRangeTimes = 1; 
     // 子弹射程（最大距离为炮塔范围的↑倍）
@@ -40,15 +41,21 @@ public class BulletController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (pierceCount <= 0)
+        {
+            hasHit = true;
+            Destroy(gameObject);
+        }
+        if (hasHit)
+        {
+            return;
+        }
         Debug.Log("Hit sth.");
         if (other.gameObject.CompareTag("Enemy"))
         {
             pierceCount--;
             Debug.Log("Hit.");
         }
-        if (pierceCount <= 0)
-        {
-            Destroy(gameObject);
-        }
+        
     }
 }

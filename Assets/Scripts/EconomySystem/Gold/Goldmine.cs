@@ -83,6 +83,9 @@ public class Goldmine : MonoBehaviour
             GoldAndElectricity.gold -= upgrade_2;
             currentCost += upgrade_2;
             Hp.SetHP(GameConstant.GoldLevel2);
+            upgradePanel.SetActive(false);
+            sellPanel.SetActive(false);
+            flag++;
         }
         if ((level == 2) && (GoldAndElectricity.gold >= upgrade_3)){
             level = 3;
@@ -90,6 +93,9 @@ public class Goldmine : MonoBehaviour
             GoldAndElectricity.gold -= upgrade_3;
             currentCost += upgrade_3;
             Hp.SetHP(GameConstant.GoldLevel3);
+            upgradePanel.SetActive(false);
+            sellPanel.SetActive(false);
+            flag++;
         }
        
     }

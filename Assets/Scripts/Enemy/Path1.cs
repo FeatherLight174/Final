@@ -73,10 +73,17 @@ public class Path1 : MonoBehaviour
             IsAttacked = true;
             m_Timer = 0;
         }
+        
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(222222);
         if (collision.gameObject.CompareTag("Building"))
         {
+            
             m_Tower = collision.gameObject;
-            m_isAttack=true;
+            m_isAttack = true;
             StartCoroutine(AttackBuilding());
         }
     }
@@ -96,6 +103,7 @@ public class Path1 : MonoBehaviour
         while (m_isAttack && m_Tower != null)
         {
             // 调用建筑的减少血量方法
+            Debug.Log(111111);
             m_Tower.GetComponent<HPManagement>().TakeDamage(m_attack);
             yield return new WaitForSeconds(m_attackCD);
         }

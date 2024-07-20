@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Generator : MonoBehaviour
 {
+    // Panel
+    public GameObject sellPanel;
+
     // Cost
     private float generatorCost = GameConstant.PricePower;
     private float sellRate = GameConstant.SellFactor;
@@ -18,12 +21,30 @@ public class Generator : MonoBehaviour
     public float currentHP;
 
     private HPManagement Hp;
+
+    // Panel flag
+    private int flag = 0;
     // Start is called before the first frame update
     void Start()
     {
         Hp = gameObject.GetComponent<HPManagement>();
         m_Timer = 0;
         currentHP = fullHP;
+    }
+
+    private void OnMouseDown()
+    {
+        if (flag % 2 == 0)
+        {
+            sellPanel.SetActive(true);
+            //feature.SetActive(true);
+        }
+        else if (flag % 2 == 1)
+        {
+            sellPanel.SetActive(false);
+            //feature.SetActive(false);
+        }
+        flag++;
     }
 
     // Update is called once per frame
@@ -37,8 +58,9 @@ public class Generator : MonoBehaviour
         }
     }
 
-    void Sell()
+    public void Sell()
     {
         GoldAndElectricity.gold += (int)(((Hp.HP / Hp.MaxHP) * generatorCost) * sellRate);
+        Destroy(gameObject);
     }
 }
