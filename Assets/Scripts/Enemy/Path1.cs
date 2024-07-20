@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Path1 : MonoBehaviour
 {
-    private float m_Hp = GameContanst.HPEnemy; 
-    private float m_v = GameContanst.vFactor;
-    private float m_attack = GameContanst.EnemyAttack;
+    private float m_Hp = GameConstant.HPEnemy; 
+    private float m_v = GameConstant.vFactor;
+    private float m_attack = GameConstant.EnemyAttack;
     private bool m_isAttack = false;
     private GameObject m_Tower;
     // Start is called before the first frame update
@@ -30,7 +30,7 @@ public class Path1 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            m_Hp -= GameContanst.BulletAttack;
+            m_Hp -= GameConstant.BulletAttack;
         }
         if (collision.gameObject.CompareTag("Building"))
         {
