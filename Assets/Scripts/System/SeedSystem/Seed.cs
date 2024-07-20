@@ -40,19 +40,21 @@ public class Seed : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             enemy += 1;
+            Debug.Log("Enter");
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             enemy -= 1;
+            Debug.Log("Exit");
         }
     }
     private void OnMouseDown()
