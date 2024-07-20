@@ -15,6 +15,7 @@ public class Seed : MonoBehaviour
     public float PriceGold = GameConstant.PriceGold;
     public float PriceShield = GameConstant.PriceShield;
 
+    private int enemy = 0;
     private GameObject Placed;
     void Start()
     {
@@ -24,9 +25,34 @@ public class Seed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(enemy > 0)
+        {
+            m_IsActive = false;
+        }
+        else if(enemy <= 0)
+        {
+            m_IsActive=true;
+            enemy = 0;
+        }
         if (Placed == null)
         {
             m_IsActive = true;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            enemy += 1;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            enemy -= 1;
         }
     }
     private void OnMouseDown()
