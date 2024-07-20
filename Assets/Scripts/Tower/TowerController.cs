@@ -18,7 +18,7 @@ public class TowerController : MonoBehaviour
     // 建筑血量（改用HPManager）
     // public float health;
     // 无电力时建筑范围
-    public float range;
+    private float range;
     // 电力范围加成因数（>1，下同）
     public float rangeBoostFactor;
     // 电力范围加成常数
@@ -26,9 +26,9 @@ public class TowerController : MonoBehaviour
     // 实际范围
     public float rangeReal;
     // 无电力时建筑攻速 (发/秒)
-    public float shootSpeed;
+    private float shootSpeed;
     // 攻速计时器
-    float shootTimer;
+    private float shootTimer;
     // 电力射速加成因数
     public float shootSpeedBoostFactor;
     // 电力射速加成常数
@@ -36,7 +36,7 @@ public class TowerController : MonoBehaviour
     // 实际攻速
     public float shootSpeedReal;
     // 无电力时建筑转速
-    public float rotateSpeed;
+    private float rotateSpeed;
     // 电力转速加成因数
     public float rotateSpeedBoostFactor;
     // 电力转速加成常数
@@ -46,7 +46,7 @@ public class TowerController : MonoBehaviour
     // 实际获取电量
     public float powerGet;
     // 建筑电力消耗量
-    public float powerConsumption;
+    private float powerConsumption;
     // [0, 1] 的数字，代表是否满电
     private float powerPercentage;
     // 建筑子弹速度（弃用）
@@ -78,8 +78,6 @@ public class TowerController : MonoBehaviour
     // 不要填0！
     // DO NOT PUT "ZERO" HERE！
     public float angleDelta;
-    // 范围圆
-    public GameObject rangeDisplay;
 
     void Start()
     {
@@ -117,7 +115,7 @@ public class TowerController : MonoBehaviour
             shootSpeedReal = shootSpeed;
             rotateSpeedReal = rotateSpeed;
         }
-        rangeDisplay.transform.localScale = new Vector3(2f * rangeReal, 2f * rangeReal, 1f);
+        rangePanel.transform.localScale = new Vector3(2f * rangeReal, 2f * rangeReal, 1f);
         // 填弹
         shootTimer += Time.deltaTime;
         shootInterval = 1 / shootSpeedReal;
