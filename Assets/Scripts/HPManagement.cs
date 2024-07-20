@@ -8,7 +8,7 @@ public class HPManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HP = gameObject.
+        
     }
 
     // Update is called once per frame
