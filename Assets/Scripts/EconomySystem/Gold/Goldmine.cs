@@ -9,25 +9,25 @@ public class Goldmine : MonoBehaviour
     public GameObject sellPanel;
 
     // Cost
-    public float goldMineCost;
+    private float goldMineCost = GameConstant.PriceGold;
     private float currentCost;
-    public float sellRate;
+    private float sellRate = GameConstant.SellFactor;
 
     // HP
-    public float[] fullHP;
+    private float[] fullHP = GameConstant.HPGold;
     private float currentHP;
 
     // Current level
     private int level = 1;
 
     // Level function
-    public float[] goldMineCD;
-    public float[] goldPerTime;
+    private float[] goldMineCD = GameConstant.GoldCD;
+    private float[] goldPerTime = GameConstant.GoldLevelProduce;
     private float m_Timer;
 
     // Upgrade
-    public float upgrade_2;
-    public float upgrade_3;
+    private float upgrade_2 = GameConstant.GoldLevel2;
+    private float upgrade_3 = GameConstant.GoldLevel3;
 
     // Panel flag
     private int flag = 0;
@@ -51,6 +51,10 @@ public class Goldmine : MonoBehaviour
             GoldAndElectricity.gold += goldPerTime[level - 1];
             m_Timer = 0;
         }
+        if (currentHP <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnMouseDown()
@@ -72,7 +76,7 @@ public class Goldmine : MonoBehaviour
 
     public void Sell()
     {
-        GoldAndElectricity.gold += (int)(((currentHP / fullHP[level - 1]) * goldMineCost) * sellRate);
+        GoldAndElectricity.gold += (int)(((currentHP / fullHP[level - 1]) * currentCost) * sellRate);
         Destroy(gameObject);
     }
 
@@ -92,5 +96,6 @@ public class Goldmine : MonoBehaviour
             currentCost += upgrade_3;
             currentHP = fullHP[level - 1];
         }
+       
     }
 }

@@ -4,25 +4,32 @@ using UnityEngine;
 
 public class Base : MonoBehaviour
 {
+    //
+    public GameObject upgradePanel;
+
+
     //HP
-    public float[] fullHP;
+    private float[] fullHP;
     private float currentHP;
 
     // Current level
     private int level;
 
     // Level function
-    public float[] goldMineCD;
-    public float[] goldPerTime;
+    private float[] goldMineCD = GameConstant.HomeGoldProduceCD;
+    private float[] goldPerTime = GameConstant.HomeGoldProduce;
     private float m_TimerGold;
 
-    public float[] GeneratingCD;
-    public float[] ElectricityPerTime;
+    private float[] GeneratingCD = GameConstant.HomePowerProduceCD;
+    private float[] ElectricityPerTime = GameConstant.HomePowerProduce;
     private float m_TimerElectricity;
 
     // Upgrade
-    public float upgrade_2;
-    public float upgrade_3;
+    private float upgrade_2 = GameConstant.Homelevel2;
+    private float upgrade_3 = GameConstant.Homelevel3;
+
+    // Panel flag
+    private int flag = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +55,25 @@ public class Base : MonoBehaviour
             GoldAndElectricity.electricity += ElectricityPerTime[level - 1];
             m_TimerElectricity = 0;
         }
+        if (currentHP <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        if (flag % 2 == 0)
+        {
+            upgradePanel.SetActive(true);
+            //feature.SetActive(true);
+        }
+        else if (flag % 2 == 1)
+        {
+            upgradePanel.SetActive(false);
+            //feature.SetActive(false);
+        }
+        flag++;
     }
 
     public void Upgrade()
@@ -67,6 +93,7 @@ public class Base : MonoBehaviour
             GoldAndElectricity.gold -= upgrade_3;
             currentHP = fullHP[level - 1];
         }
+       
     }
 }
 
