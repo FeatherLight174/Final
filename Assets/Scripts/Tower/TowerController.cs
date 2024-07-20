@@ -9,17 +9,16 @@ public class TowerController : MonoBehaviour
     public GameObject rangePanel;
     public GameObject sellPanel;
     public GameObject upgradePanel;
-    private float cost = GameConstant.PriceTower;
     private float sellRate = GameConstant.SellFactor;
 
+    public HPManagement scriptHPManagement;
 
-
-
+    // 判断是否出现UI
     private int flag = 0;
     // 塔编号
     public int towerIndex;
     // 塔等级
-    public int towerLevel;
+    public int towerLevel = 1;
     // 注意：先乘后加，避免除以0问题
     // 建筑是否用电（自动判断）
     private bool consumesPower;
@@ -86,6 +85,7 @@ public class TowerController : MonoBehaviour
     // 不要填0！
     // DO NOT PUT "ZERO" HERE！
     public float angleDelta;
+    private float currentCost;
 
     void Start()
     {
@@ -215,7 +215,25 @@ public class TowerController : MonoBehaviour
     }
 
 
-    
+    public void Sell()
+    {
+        currentCost = 0;
+        for (int i = 0; i < towerLevel; i++)
+        {
+            currentCost += GameConstant.towerUpgradeCost[towerIndex, i];
+        }
+        GoldAndElectricity.gold += (int)(scriptHPManagement.HP / scriptHPManagement.MaxHP * currentCost * sellRate);
+        Destroy(gameObject);
+    }
+    public void Upgrade()
+    {
+        if (GoldAndElectricity.gold >= GameConstant.towerUpgradeCost[towerIndex, towerLevel])
+        {
+            GoldAndElectricity.gold -= (int)(GameConstant.towerUpgradeCost[towerIndex, towerLevel]);
+            towerLevel++;
+            scriptHPManagement.SetHP(GameConstant.towerHealth[towerIndex, towerLevel]);
+        }
+    }
 
     private void OnMouseDown()
     {
