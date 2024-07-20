@@ -13,9 +13,10 @@ public class Path1 : MonoBehaviour
     private float m_attackCD = GameConstant.AttackCD;
     private bool m_isAttack = false;
     private GameObject m_Tower;
-    public float PathX1 = 11;
+    public Vector3 Position1 = new Vector3(-3, 3, 0);
     public float PathY1 = 1;
-    public float PathX2 = 5;
+    public Vector3 Position2 = new Vector3(-3,1, 0);
+    public Vector3 Position3 = new Vector3(-8,2, 0);
     public float Speed = GameConstant.EnemyMovespeed;
     public bool IsAttacked = false;
 
@@ -39,20 +40,18 @@ public class Path1 : MonoBehaviour
         }
         if (!m_isAttack)
         {
-            if (PathX1 >= 0)
+            if (gameObject.transform.position.x >= Position1.x)
             {
                 gameObject.transform.position += Vector3.left * Speed*Time.deltaTime;
-                PathX1 -= Time.deltaTime * Speed;
             }
-            else if (PathY1 >= 0)
+            else if (gameObject.transform.position.y >= Position2.y)
             {
                 gameObject.transform.position -= Vector3.up * Speed * Time.deltaTime;
-                PathY1 -= Time.deltaTime* Speed;
             }
-            else if(PathX2 >= 0)
+            else if(gameObject.transform.position.x >= Position3.x)
             {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
-                PathX2 -= Time.deltaTime * Speed;
+                
             }
         }
         else if(m_Tower == null)
@@ -88,7 +87,6 @@ public class Path1 : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(222222);
         if (collision.gameObject.CompareTag("Building") || collision.gameObject.CompareTag("Base"))
         {
             
