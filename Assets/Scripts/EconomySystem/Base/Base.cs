@@ -55,6 +55,10 @@ public class Base : MonoBehaviour
             GoldAndElectricity.electricity += ElectricityPerTime[level - 1];
             m_TimerElectricity = 0;
         }
+        if (currentHP <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnMouseDown()
@@ -89,6 +93,7 @@ public class Base : MonoBehaviour
             GoldAndElectricity.gold -= upgrade_3;
             currentHP = fullHP[level - 1];
         }
+       
     }
 }
 

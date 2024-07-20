@@ -32,6 +32,10 @@ public class Generator : MonoBehaviour
             GoldAndElectricity.electricity += electricityPerTime;
             m_Timer = 0;
         }
+        if (currentHP <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Sell()

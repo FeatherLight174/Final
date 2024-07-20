@@ -51,6 +51,10 @@ public class Goldmine : MonoBehaviour
             GoldAndElectricity.gold += goldPerTime[level - 1];
             m_Timer = 0;
         }
+        if (currentHP <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnMouseDown()
@@ -92,5 +96,6 @@ public class Goldmine : MonoBehaviour
             currentCost += upgrade_3;
             currentHP = fullHP[level - 1];
         }
+       
     }
 }
