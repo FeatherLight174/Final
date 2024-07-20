@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Base : MonoBehaviour
 {
+
+
     //
     public GameObject upgradePanel;
 
@@ -95,5 +97,6 @@ public class Base : MonoBehaviour
         }
        
     }
+
 }
 
