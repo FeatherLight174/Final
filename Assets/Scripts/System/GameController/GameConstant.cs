@@ -69,6 +69,8 @@ public static class GameConstant
     {{8f, 9f, 10f}, {1f, 2f, 3f}};
     public static float[,] towerPowerConsumption = new float[2, 3]
     {{0f, 0f, 0f}, {1f, 2f, 3f}};
+    public static float[,] towerUpgradeCost = new float[2, 3]
+    {{10f, 10f, 20f}, {1f, 2f, 3f}};
 
     //Bullet
     public static float BulletAttack = 10;
