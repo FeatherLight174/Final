@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class TowerController : MonoBehaviour
 {
+    public GameObject rangePanel;
+    public GameObject sellPanel;
+    private int flag = 0;
     // 塔编号
     public int towerIndex;
     // 塔等级
@@ -15,7 +18,7 @@ public class TowerController : MonoBehaviour
     // 建筑血量（改用HPManager）
     // public float health;
     // 无电力时建筑范围
-    public float range;
+    private float range;
     // 电力范围加成因数（>1，下同）
     public float rangeBoostFactor;
     // 电力范围加成常数
@@ -23,9 +26,9 @@ public class TowerController : MonoBehaviour
     // 实际范围
     public float rangeReal;
     // 无电力时建筑攻速 (发/秒)
-    public float shootSpeed;
+    private float shootSpeed;
     // 攻速计时器
-    float shootTimer;
+    private float shootTimer;
     // 电力射速加成因数
     public float shootSpeedBoostFactor;
     // 电力射速加成常数
@@ -33,7 +36,7 @@ public class TowerController : MonoBehaviour
     // 实际攻速
     public float shootSpeedReal;
     // 无电力时建筑转速
-    public float rotateSpeed;
+    private float rotateSpeed;
     // 电力转速加成因数
     public float rotateSpeedBoostFactor;
     // 电力转速加成常数
@@ -43,7 +46,7 @@ public class TowerController : MonoBehaviour
     // 实际获取电量
     public float powerGet;
     // 建筑电力消耗量
-    public float powerConsumption;
+    private float powerConsumption;
     // [0, 1] 的数字，代表是否满电
     private float powerPercentage;
     // 建筑子弹速度（弃用）
@@ -112,6 +115,7 @@ public class TowerController : MonoBehaviour
             shootSpeedReal = shootSpeed;
             rotateSpeedReal = rotateSpeed;
         }
+        rangePanel.transform.localScale = new Vector3(2f * rangeReal, 2f * rangeReal, 1f);
         // 填弹
         shootTimer += Time.deltaTime;
         shootInterval = 1 / shootSpeedReal;
@@ -200,5 +204,26 @@ public class TowerController : MonoBehaviour
     private void Shoot()
     {
         Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.25f), transform.rotation);
+    }
+
+
+    
+
+    private void OnMouseDown()
+    {
+        if (flag % 2 == 0)
+        {
+            sellPanel.SetActive(true);
+            rangePanel.SetActive(true);
+
+            //feature.SetActive(true);
+        }
+        else if (flag % 2 == 1)
+        {
+            sellPanel.SetActive(false);
+            rangePanel.SetActive(false);
+            //feature.SetActive(false);
+        }
+        flag++;
     }
 }
