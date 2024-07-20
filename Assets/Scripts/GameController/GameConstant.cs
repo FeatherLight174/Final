@@ -46,6 +46,7 @@ public static class GameConstant
     public static float vFactor = 1.0f;
     public static float EnemyAttack = 10;
     public static float EnemyMovespeed = 0.1f;
+    public static float AttackCD = 0.5f;
 
 
     //Bullet
