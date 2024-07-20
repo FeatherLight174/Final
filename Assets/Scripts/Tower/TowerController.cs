@@ -75,6 +75,8 @@ public class TowerController : MonoBehaviour
     // ²»ÒªÌî0£¡
     // DO NOT PUT "ZERO" HERE£¡
     public float angleDelta;
+    // ·¶Î§Ô²
+    public GameObject rangeDisplay;
 
     void Start()
     {
@@ -112,6 +114,7 @@ public class TowerController : MonoBehaviour
             shootSpeedReal = shootSpeed;
             rotateSpeedReal = rotateSpeed;
         }
+        rangeDisplay.transform.localScale = new Vector3(2f * rangeReal, 2f * rangeReal, 1f);
         // Ìîµ¯
         shootTimer += Time.deltaTime;
         shootInterval = 1 / shootSpeedReal;

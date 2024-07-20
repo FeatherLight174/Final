@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2094839970060841320}
   m_Layer: 0
   m_Name: Triangle
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,6 +94,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1152103997842543045}
   - component: {fileID: 3165804670440658458}
+  - component: {fileID: 6310928187819887025}
+  - component: {fileID: 4713693134144587271}
   m_Layer: 0
   m_Name: TowerBase
   m_TagString: Building
@@ -171,6 +173,65 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6310928187819887025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7440630365389260715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f5912eed921a241a785e6a15a2d845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 100
+  MaxHP: 100
+--- !u!61 &4713693134144587271
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7440630365389260715}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &8463419458353823947
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,18 +277,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51a02a2b3b8008043905496c94ea0b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangePanel: {fileID: 9131799887718901238}
-  sellPanel: {fileID: 4731813263143014475}
-  health: 100
+  towerIndex: 0
+  towerLevel: 0
   range: 4
+  rangeBoostFactor: 0
+  rangeBoostConstant: 0
+  rangeReal: 0
   shootSpeed: 2
+  shootSpeedBoostFactor: 0
+  shootSpeedBoostConstant: 0
+  shootSpeedReal: 0
   rotateSpeed: 60
+  rotateSpeedBoostFactor: 0
+  rotateSpeedBoostConstant: 0
+  rotateSpeedReal: 0
+  powerGet: 0
+  powerConsumption: 0
   enemies: []
   homeOrBase: {fileID: 145140923086931748, guid: 00e1242d1316b444ab0bb2d8f1ba6247, type: 3}
   enemyToBase: []
   enemyToTower: []
   bullet: {fileID: 8986485512482655928, guid: dd25d8c0ff2563a438ee518c62da86a3, type: 3}
   angleDelta: 2
+  rangeDisplay: {fileID: 9131799887718901238}
 --- !u!1 &9131799887718901238
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,18 +396,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerSell
       objectReference: {fileID: 0}
-    - target: {fileID: 355471427789213069, guid: b501149e17d16434e9311ff819dfdaa5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4458656149897634346, guid: b501149e17d16434e9311ff819dfdaa5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4458656149897634346, guid: b501149e17d16434e9311ff819dfdaa5, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 4458656149897634346, guid: b501149e17d16434e9311ff819dfdaa5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -381,11 +441,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b501149e17d16434e9311ff819dfdaa5, type: 3}
---- !u!1 &4731813263143014475 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 355471427789213069, guid: b501149e17d16434e9311ff819dfdaa5, type: 3}
-  m_PrefabInstance: {fileID: 4991154380019490246}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8693196686114177004 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4458656149897634346, guid: b501149e17d16434e9311ff819dfdaa5, type: 3}
