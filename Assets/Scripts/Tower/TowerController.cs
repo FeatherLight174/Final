@@ -11,18 +11,20 @@ public class TowerController : MonoBehaviour
     public float range;
     // 建筑攻速 (发/秒)
     public float shootSpeed;
+    // 攻速计时器
+    float shootTimer;
     // 建筑转速
     public float rotateSpeed;
-    // 建筑子弹速度
-    public float bulletSpeed;
-    // 建筑攻击力
-    public float damage;
+    // 建筑子弹速度（弃用）
+    // public float bulletSpeed;
+    // 建筑攻击力（弃用）
+    // public float damage;
     // 敌人存储
     public GameObject[] enemies;
     // 基地存储
     public GameObject homeOrBase;
-    // 索敌间隔
-    public float enemyIntervalTime;
+    // 索敌间隔（弃用）
+    // public float enemyIntervalTime;
     // 从敌人指向基地的向量
     public Vector3[] enemyToBase;
     // 从敌人指向塔（自己）的向量
@@ -33,6 +35,15 @@ public class TowerController : MonoBehaviour
     float[] distanceEnemyBase;
     // 最近范围内敌人到基地距离的敌人编号（0开始）
     int minValidEnemyBaseDistanceIndex = 0;
+    // 攻速的倒数，用于比较时间
+    float shootInterval;
+    // 打出的子弹
+    // 伤害等由子弹自身决定，因此要选取正确的子弹
+    public GameObject bullet;
+    // 如果实际瞄准方向与应瞄准方向小于这个值，开始发射子弹。（数学近似有问题）
+    // 不要填0！
+    // DO NOT PUT "ZERO" HERE！
+    public float angleDelta;
 
     void Start()
     {
@@ -42,6 +53,9 @@ public class TowerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // 填弹
+        shootTimer += Time.deltaTime;
+        shootInterval = 1 / shootSpeed;
         // 找到所有敌人，放在组enemies中
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         // 对每个敌人计算
@@ -90,7 +104,6 @@ public class TowerController : MonoBehaviour
             // 以最大转速向敌人旋转
             // 逆时针
             Vector3 direction = new Vector3(Mathf.Cos(transform.eulerAngles.z * Mathf.PI / 180), Mathf.Sin(transform.eulerAngles.z * Mathf.PI / 180), 0f);
-            Debug.Log(minValidEnemyBaseDistanceIndex);
             if (Vector3.Dot(direction, -enemyToTower[minValidEnemyBaseDistanceIndex]) < 0)
             {
                 if (Mathf.Atan((-Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) + enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x) / (1 + Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) * enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x)) / Mathf.PI * 180f < 0)
@@ -116,5 +129,18 @@ public class TowerController : MonoBehaviour
                 }
             }
         }
+        if (foundEnemy && (Mathf.Abs(Mathf.Atan((-Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) + enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x) / (1 + Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) * enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x)) / Mathf.PI * 180f) <= angleDelta))
+        {
+            if (shootTimer >= shootInterval)
+            {
+                shootTimer = 0;
+                Shoot();
+            }
+        }
+    }
+    private void Shoot()
+    {
+        Debug.Log("Shoot!");
+        Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.25f), transform.rotation);
     }
 }
