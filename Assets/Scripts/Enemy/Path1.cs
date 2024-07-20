@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Path1 : MonoBehaviour
 {
-    private float m_Hp = GameConstant.HPEnemy; 
+    public float m_Hp = GameConstant.HPEnemy; 
     private float m_v = GameConstant.vFactor;
     private float m_attack = GameConstant.EnemyAttack;
     private bool m_isAttack = false;
@@ -59,6 +59,7 @@ public class Path1 : MonoBehaviour
             if(m_Timer >= showTime)
             {
                 IsAttacked = false;
+                m_Timer = 0;
             }
         }
     }
