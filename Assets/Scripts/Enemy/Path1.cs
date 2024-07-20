@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Path1 : MonoBehaviour
 {
-    private float m_Hp = GameConstant.HPEnemy; 
+    public float m_Hp = GameConstant.HPEnemy; 
     private float m_v = GameConstant.vFactor;
     private float m_attack = GameConstant.EnemyAttack;
+    private float m_attackCD = GameConstant.AttackCD;
     private bool m_isAttack = false;
     private GameObject m_Tower;
     public float PathX1 = 11;
@@ -59,6 +60,7 @@ public class Path1 : MonoBehaviour
             if(m_Timer >= showTime)
             {
                 IsAttacked = false;
+                m_Timer = 0;
             }
         }
     }
@@ -75,6 +77,26 @@ public class Path1 : MonoBehaviour
         {
             m_Tower = collision.gameObject;
             m_isAttack=true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Building"))
+        {
+            m_isAttack = false;
+            m_Tower = null;
+            StopCoroutine(AttackBuilding());
+        }
+    }
+
+    IEnumerator AttackBuilding()
+    {
+        while (m_isAttack && m_Tower != null)
+        {
+            // 调用建筑的减少血量方法
+            //m_Tower.GetComponent<>().TakeDamage(m_attack);
+            yield return new WaitForSeconds(m_attackCD);
         }
     }
 
