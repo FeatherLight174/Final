@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4989939955800474387}
   - component: {fileID: 1476476672232053174}
   m_Layer: 6
-  m_Name: EnemyExample(0_Normal)
+  m_Name: Enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,7 +114,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &4989939955800474387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,11 +127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0507e30763df1b443b424bb7a07f7356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Hp: 200
+  m_Hp: 100
   PathX1: 11
   PathY1: 1
   PathX2: 5
-  Speed: 5
+  Speed: 2
   IsAttacked: 0
   showTime: 3
 --- !u!61 &1476476672232053174
