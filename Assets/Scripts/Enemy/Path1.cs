@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Path1 : MonoBehaviour
 {
+
+    //public NavMeshAgent Nav;
     public float m_Hp = GameConstant.HPEnemy; 
     private float m_v = GameConstant.vFactor;
     private float m_attack = GameConstant.EnemyAttack;
@@ -16,12 +19,14 @@ public class Path1 : MonoBehaviour
     public float Speed = GameConstant.EnemyMovespeed;
     public bool IsAttacked = false;
 
+    public Transform[] WayPoints;
     public float showTime = 3f;
     private float m_Timer = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Nav = GetComponent<NavMeshAgent>();
+        //Nav.SetDestination(WayPoints[0].position);
     }
 
     // Update is called once per frame

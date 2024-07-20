@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1031196901499907406}
   - component: {fileID: 520757297268314354}
   - component: {fileID: 2279561664243747110}
+  - component: {fileID: 4704044587357627691}
   m_Layer: 0
   m_Name: Base
   m_TagString: Base
@@ -160,6 +161,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 10000
   MaxHP: 10000
+--- !u!114 &4704044587357627691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145140923086931748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &774622083306020694
 PrefabInstance:
   m_ObjectHideFlags: 0
