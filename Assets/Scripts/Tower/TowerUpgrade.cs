@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoldUpgrade : MonoBehaviour
+public class TowerUpgrade : MonoBehaviour
 {
-    public Goldmine goldmine;
+    public TowerController tower;
     private void OnMouseDown()
     {
-        goldmine.Upgrade();
+        tower.Upgrade();
     }
 }
