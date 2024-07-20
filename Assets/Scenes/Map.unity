@@ -409,7 +409,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4989939955800474387, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
       propertyPath: Speed
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5526956762559256171, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
       propertyPath: m_Name
@@ -2833,14 +2833,6 @@ PrefabInstance:
     - target: {fileID: 145140923086931748, guid: 00e1242d1316b444ab0bb2d8f1ba6247, type: 3}
       propertyPath: m_Name
       value: Base
-      objectReference: {fileID: 0}
-    - target: {fileID: 2279561664243747110, guid: 00e1242d1316b444ab0bb2d8f1ba6247, type: 3}
-      propertyPath: HP
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: 2279561664243747110, guid: 00e1242d1316b444ab0bb2d8f1ba6247, type: 3}
-      propertyPath: MaxHP
-      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8095138893697574101, guid: 00e1242d1316b444ab0bb2d8f1ba6247, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11836,6 +11828,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4989939955800474387, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
+      propertyPath: Speed
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5526956762559256171, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
       propertyPath: m_Name
       value: EnemyExample(0_Normal) (2)
@@ -12824,7 +12820,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4989939955800474387, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
       propertyPath: Speed
-      value: 5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5526956762559256171, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
       propertyPath: m_Name

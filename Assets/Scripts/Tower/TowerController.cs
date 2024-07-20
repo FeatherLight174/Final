@@ -12,9 +12,10 @@ public class TowerController : MonoBehaviour
     private float sellRate = GameConstant.SellFactor;
 
     public HPManagement scriptHPManagement;
+    public GameObject basePart;
 
     // 判断是否出现UI
-    private int flag = 0;
+    public int flag = 0;
     // 塔编号
     public int towerIndex;
     // 塔等级
@@ -62,8 +63,8 @@ public class TowerController : MonoBehaviour
     // public float damage;
     // 敌人存储
     public GameObject[] enemies;
-    // 基地存储
-    public GameObject homeOrBase;
+    // 基地存储（自动调用tag为"Base"的游戏物体）
+    private GameObject homeOrBase;
     // 索敌间隔（弃用）
     // public float enemyIntervalTime;
     // 从敌人指向基地的向量
@@ -89,10 +90,16 @@ public class TowerController : MonoBehaviour
 
     void Start()
     {
-        powerConsumption = GameConstant.towerPowerConsumption[towerIndex, towerLevel];
-        range = GameConstant.towerRange[towerIndex, towerLevel];
-        rotateSpeed = GameConstant.towerRotateSpeed[towerIndex, towerLevel];
-        shootSpeed = GameConstant.towerShootSpeed[towerIndex, towerLevel];
+        homeOrBase = GameObject.FindWithTag("Base");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        powerConsumption = GameConstant.towerPowerConsumption[towerIndex, towerLevel - 1];
+        range = GameConstant.towerRange[towerIndex, towerLevel - 1];
+        rotateSpeed = GameConstant.towerRotateSpeed[towerIndex, towerLevel - 1];
+        shootSpeed = GameConstant.towerShootSpeed[towerIndex, towerLevel - 1];
         if (powerConsumption > 0)
         {
             consumesPower = true;
@@ -101,11 +108,6 @@ public class TowerController : MonoBehaviour
         {
             consumesPower = false;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         if (consumesPower == true)
         {
             // 电量百分比
@@ -217,21 +219,29 @@ public class TowerController : MonoBehaviour
 
     public void Sell()
     {
+        sellPanel.SetActive(false);
+        upgradePanel.SetActive(false);
+        rangePanel.SetActive(false);
+        flag++;
         currentCost = 0;
         for (int i = 0; i < towerLevel; i++)
         {
             currentCost += GameConstant.towerUpgradeCost[towerIndex, i];
         }
         GoldAndElectricity.gold += (int)(scriptHPManagement.HP / scriptHPManagement.MaxHP * currentCost * sellRate);
-        Destroy(gameObject);
+        Destroy(basePart);
     }
     public void Upgrade()
     {
+        sellPanel.SetActive(false);
+        upgradePanel.SetActive(false);
+        rangePanel.SetActive(false);
+        flag++;
         if (GoldAndElectricity.gold >= GameConstant.towerUpgradeCost[towerIndex, towerLevel])
         {
             GoldAndElectricity.gold -= (int)(GameConstant.towerUpgradeCost[towerIndex, towerLevel]);
-            towerLevel++;
             scriptHPManagement.SetHP(GameConstant.towerHealth[towerIndex, towerLevel]);
+            towerLevel++;
         }
     }
 
@@ -240,6 +250,14 @@ public class TowerController : MonoBehaviour
         if (flag % 2 == 0)
         {
             sellPanel.SetActive(true);
+            if (towerLevel <= 2)
+            {
+                upgradePanel.SetActive(true);
+            }
+            else
+            {
+                upgradePanel.SetActive(false);
+            }
             rangePanel.SetActive(true);
 
             //feature.SetActive(true);
@@ -247,6 +265,7 @@ public class TowerController : MonoBehaviour
         else if (flag % 2 == 1)
         {
             sellPanel.SetActive(false);
+            upgradePanel.SetActive(false);
             rangePanel.SetActive(false);
             //feature.SetActive(false);
         }
