@@ -5,8 +5,15 @@ using UnityEngine;
 
 public class TowerController : MonoBehaviour
 {
+    // Upgrade
     public GameObject rangePanel;
     public GameObject sellPanel;
+    public GameObject upgradePanel;
+    private float cost = GameConstant.PriceTower;
+    private float sellRate = GameConstant.SellFactor;
+
+
+
     private int flag = 0;
     // Ëþ±àºÅ
     public int towerIndex;
