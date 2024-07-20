@@ -5,19 +5,47 @@ using UnityEngine;
 
 public class TowerController : MonoBehaviour
 {
-    public GameObject rangePanel;
-    public GameObject sellPanel;
-    private int flag = 0;
-    // 建筑血量
-    public float health;
-    // 建筑范围
+    // 塔编号
+    public int towerIndex;
+    // 塔等级
+    public int towerLevel;
+    // 注意：先乘后加，避免除以0问题
+    // 建筑是否用电（自动判断）
+    private bool consumesPower;
+    // 建筑血量（改用HPManager）
+    // public float health;
+    // 无电力时建筑范围
     public float range;
-    // 建筑攻速 (发/秒)
+    // 电力范围加成因数（>1，下同）
+    public float rangeBoostFactor;
+    // 电力范围加成常数
+    public float rangeBoostConstant;
+    // 实际范围
+    public float rangeReal;
+    // 无电力时建筑攻速 (发/秒)
     public float shootSpeed;
     // 攻速计时器
     float shootTimer;
-    // 建筑转速
+    // 电力射速加成因数
+    public float shootSpeedBoostFactor;
+    // 电力射速加成常数
+    public float shootSpeedBoostConstant;
+    // 实际攻速
+    public float shootSpeedReal;
+    // 无电力时建筑转速
     public float rotateSpeed;
+    // 电力转速加成因数
+    public float rotateSpeedBoostFactor;
+    // 电力转速加成常数
+    public float rotateSpeedBoostConstant;
+    // 实际转速
+    public float rotateSpeedReal;
+    // 实际获取电量
+    public float powerGet;
+    // 建筑电力消耗量
+    public float powerConsumption;
+    // [0, 1] 的数字，代表是否满电
+    private float powerPercentage;
     // 建筑子弹速度（弃用）
     // public float bulletSpeed;
     // 建筑攻击力（弃用）
@@ -50,15 +78,43 @@ public class TowerController : MonoBehaviour
 
     void Start()
     {
-
+        powerConsumption = GameConstant.towerPowerConsumption[towerIndex, towerLevel];
+        range = GameConstant.towerRange[towerIndex, towerLevel];
+        rotateSpeed = GameConstant.towerRotateSpeed[towerIndex, towerLevel];
+        shootSpeed = GameConstant.towerShootSpeed[towerIndex, towerLevel];
+        if (powerConsumption > 0)
+        {
+            consumesPower = true;
+        }
+        else
+        {
+            consumesPower = false;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (consumesPower == true)
+        {
+            // 电量百分比
+            powerPercentage = Mathf.Max(powerGet / powerConsumption, 1f);
+            // 真实范围计算
+            rangeReal = range * (1 + (rangeBoostFactor - 1) * powerPercentage) + rangeBoostConstant * powerPercentage;
+            // 真实攻速计算
+            shootSpeedReal = shootSpeed * (1 + (shootSpeedBoostFactor - 1) * powerPercentage) + shootSpeedBoostConstant * powerPercentage;
+            // 真实转速计算
+            rotateSpeedReal = rotateSpeed * (1 + (rotateSpeedBoostFactor - 1) * powerPercentage) + rotateSpeedBoostConstant * powerPercentage;
+        }
+        else
+        {
+            rangeReal = range;
+            shootSpeedReal = shootSpeed;
+            rotateSpeedReal = rotateSpeed;
+        }
         // 填弹
         shootTimer += Time.deltaTime;
-        shootInterval = 1 / shootSpeed;
+        shootInterval = 1 / shootSpeedReal;
         // 找到所有敌人，放在组enemies中
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         // 对每个敌人计算
@@ -73,7 +129,7 @@ public class TowerController : MonoBehaviour
             // 敌人到塔向量
             enemyToTower[i] = transform.position - enemies[i].transform.position;
             // 检测敌人是否在塔内部
-            if (enemyToTower[i].magnitude <= range)
+            if (enemyToTower[i].magnitude <= rangeReal)
             {
                 enemyWithinRange[i] = true;
                 // 记录敌人与基地距离
@@ -111,11 +167,11 @@ public class TowerController : MonoBehaviour
             {
                 if (Mathf.Atan((-Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) + enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x) / (1 + Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) * enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x)) / Mathf.PI * 180f < 0)
                 {
-                    transform.Rotate(0f, 0f, Mathf.Max(Mathf.Atan((-Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) + enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x) / (1 + Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) * enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x)) / Mathf.PI * 180f, Time.deltaTime * rotateSpeed), Space.Self);
+                    transform.Rotate(0f, 0f, Mathf.Max(Mathf.Atan((-Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) + enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x) / (1 + Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) * enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x)) / Mathf.PI * 180f, Time.deltaTime * rotateSpeedReal), Space.Self);
                 }
                 else
                 {
-                    transform.Rotate(0f, 0f, Mathf.Min(Mathf.Atan((-Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) + enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x) / (1 + Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) * enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x)) / Mathf.PI * 180f, -Time.deltaTime * rotateSpeed), Space.Self);
+                    transform.Rotate(0f, 0f, Mathf.Min(Mathf.Atan((-Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) + enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x) / (1 + Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) * enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x)) / Mathf.PI * 180f, -Time.deltaTime * rotateSpeedReal), Space.Self);
                 }
             }
             else
@@ -123,12 +179,12 @@ public class TowerController : MonoBehaviour
                 // 逆时针
                 if (Mathf.Atan((-Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) + enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x) / (1 + Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) * enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x)) / Mathf.PI * 180f > 0)
                 {
-                    transform.Rotate(0f, 0f, Mathf.Min(Mathf.Atan((-Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) + enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x) / (1 + Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) * enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x)) / Mathf.PI * 180f, Time.deltaTime * rotateSpeed), Space.Self);
+                    transform.Rotate(0f, 0f, Mathf.Min(Mathf.Atan((-Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) + enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x) / (1 + Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) * enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x)) / Mathf.PI * 180f, Time.deltaTime * rotateSpeedReal), Space.Self);
                 }
                 // 顺时针
                 else
                 {
-                    transform.Rotate(0f, 0f, Mathf.Max(Mathf.Atan((-Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) + enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x) / (1 + Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) * enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x)) / Mathf.PI * 180f, -Time.deltaTime * rotateSpeed), Space.Self);
+                    transform.Rotate(0f, 0f, Mathf.Max(Mathf.Atan((-Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) + enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x) / (1 + Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) * enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x)) / Mathf.PI * 180f, -Time.deltaTime * rotateSpeedReal), Space.Self);
                 }
             }
         }
@@ -143,25 +199,6 @@ public class TowerController : MonoBehaviour
     }
     private void Shoot()
     {
-        Debug.Log("Shoot!");
         Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.25f), transform.rotation);
-    }
-
-    private void OnMouseDown()
-    {
-        if (flag % 2 == 0)
-        {
-            sellPanel.SetActive(true);
-            rangePanel.SetActive(true);
-
-            //feature.SetActive(true);
-        }
-        else if (flag % 2 == 1)
-        {
-            sellPanel.SetActive(false);
-            rangePanel.SetActive(false);
-            //feature.SetActive(false);
-        }
-        flag++;
     }
 }

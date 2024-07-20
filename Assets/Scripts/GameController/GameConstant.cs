@@ -48,6 +48,27 @@ public static class GameConstant
     public static float EnemyMovespeed = 0.1f;
     public static float AttackCD = 0.5f;
 
+    // Towers
+    // 注意改new float[行, 列]的行、列值
+    /* 塔编号目录
+     * new float[塔编号, 等级(0开始)]
+     * 0. 测试塔（之后得改的！）
+     * 1. ？
+    */
+    public static float[,] towerHealth = new float[2, 3]
+    {{100f, 150f, 250f}, {1f, 2f, 3f}};
+    public static float[,] towerRange = new float[2, 3]
+    {{4f, 5f, 6f}, {1f, 2f, 3f}};
+    public static float[,] towerShootSpeed = new float[2, 3]
+    {{2f, 2.25f, 2.5f}, {1f, 2f ,3f}};
+    public static float[,] towerRotateSpeed = new float[2, 3]
+    {{90f, 105f, 120f}, {1f, 2f, 3f}};
+    public static float[,] towerDamage = new float[2, 3]
+    {{10f, 12f, 15f}, {1f, 2f, 3f}};
+    public static float[,] towerBulletSpeed = new float[2, 3]
+    {{8f, 9f, 10f}, {1f, 2f, 3f}};
+    public static float[,] towerPowerConsumption = new float[2, 3]
+    {{0f, 0f, 0f}, {1f, 2f, 3f}};
 
     //Bullet
     public static float BulletAttack = 10;
