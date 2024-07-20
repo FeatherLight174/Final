@@ -108,7 +108,6 @@ public class Path1 : MonoBehaviour
         while (m_isAttack && m_Tower != null)
         {
             // 调用建筑的减少血量方法
-            Debug.Log(111111);
             m_Tower.GetComponent<HPManagement>().TakeDamage(m_attack);
             yield return new WaitForSeconds(m_attackCD);
         }

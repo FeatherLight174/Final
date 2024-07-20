@@ -58,7 +58,10 @@ public class Base : MonoBehaviour
     {
         if (flag % 2 == 0)
         {
-            upgradePanel.SetActive(true);
+            if (level < 3)
+            {
+                upgradePanel.SetActive(true);
+            }
             //feature.SetActive(true);
         }
         else if (flag % 2 == 1)
@@ -80,6 +83,7 @@ public class Base : MonoBehaviour
             Hp.SetHP(GameConstant.Homelevel2);
             upgradePanel.SetActive(false);
             flag++;
+            return;
         }
         if ((level == 2) && (GoldAndElectricity.gold >= upgrade_3)){
             level = 3;
@@ -89,6 +93,7 @@ public class Base : MonoBehaviour
             Hp.SetHP(GameConstant.Homelevel3);
             upgradePanel.SetActive(false);
             flag++;
+            return;
         }
        
     }
