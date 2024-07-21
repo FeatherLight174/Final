@@ -25,16 +25,26 @@ public class EnemyGeneratorPos1 : MonoBehaviour
     {
         if (Clock.NowHour <=20 || Clock.NowHour <= 3)
         {
-            int num = Random.Range(min[5], max[5] + 1);
+            int num = Random.Range(min[5], max[5] + 1) * (int)(1 + factor * Clock.Day);
             for (int index = 0; index <= num; num++)
             {
-                int i = Random.Range(0, enemy.Length) * (int)(1 + factor * Clock.Day);
+                int i = Random.Range(0, enemy.Length);
                 Instantiate(enemy[i], gameObject.transform.position, Quaternion.identity);
             }
         }
         else if (Clock.NowHour <=4 && Clock.NowHour <= 8)
         {
-            int num = Random.Range(min[0], max[0] + 1);
+            int num = Random.Range(min[0], max[0] + 1) * (int)(1 + factor * Clock.Day);
+            for (int index = 0; index <= num; num++)
+            {
+                int i = Random.Range(0, enemy.Length);
+                Instantiate(enemy[i], gameObject.transform.position, Quaternion.identity);
+            }
+        }
+
+        else if (Clock.NowHour >= 8 && Clock.NowHour <= 11)
+        {
+            int num = Random.Range(min[1], max[1] + 1) * (int)(1 + factor * Clock.Day);
             for (int index = 0; index <= num; num++)
             {
                 int i = 0;
@@ -42,59 +52,37 @@ public class EnemyGeneratorPos1 : MonoBehaviour
             }
         }
 
-        else if (Clock.NowHour >= 8 && Clock.NowHour <= 11)
-        {
-            int num = Random.Range(min[1], max[1] + 1);
-            for (int index = 0; index <= num; num++)
-            {
-                int i = Random.Range(0, enemy.Length) * (int)(1 + factor * Clock.Day);
-                Instantiate(enemy[i], gameObject.transform.position, Quaternion.identity);
-            }
-        }
-
         else if (Clock.NowHour>= 12 && Clock.NowHour <= 14)
         {
-            int num = Random.Range(min[2], max[2] + 1);
+            int num = Random.Range(min[2], max[2] + 1) * (int)(1 + factor * Clock.Day);
             for (int index = 0; index <= num; num++)
             {
-                int i = Random.Range(0, enemy.Length) * (int)(1 + factor * Clock.Day);
+                int i = Random.Range(0, enemy.Length);
                 Instantiate(enemy[i], gameObject.transform.position, Quaternion.identity);
             }
         }
 
         else if (Clock.NowHour >= 14 && Clock.NowHour <= 18)
         {
-            int num = Random.Range(min[3], max[3] + 1);
+            int num = Random.Range(min[3], max[3] + 1) * (int)(1 + factor * Clock.Day);
             for (int index = 0; index <= num; num++)
             {
-                int i = Random.Range(0, enemy.Length) * (int)(1 + factor * Clock.Day);
+                int i = Random.Range(0, enemy.Length);
                 Instantiate(enemy[i], gameObject.transform.position, Quaternion.identity);
             }
         }
 
         else if (Clock.NowHour == 19)
         {
-            int num = Random.Range(min[4], max[4] + 1);
+            int num = Random.Range(min[4], max[4] + 1) * (int)(1 + factor * Clock.Day);
             for (int index = 0; index <= num; num++)
             {
-                int i = Random.Range(0, enemy.Length) * (int)(1 + factor * Clock.Day);
+                int i = Random.Range(0, enemy.Length) ;
                 Instantiate(enemy[i], gameObject.transform.position, Quaternion.identity);
             }
         }
 
         
     }
-    private void Awake()
-    {
-        // 如果实例不存在，设置实例并保留
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // 在场景切换时保留该物体
-        }
-        else
-        {
-            Destroy(gameObject); // 如果已有实例存在，销毁新创建的实例
-        }
-    }
+
 }
