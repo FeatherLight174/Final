@@ -3,86 +3,64 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyGeneratorPos1 : MonoBehaviour
-{
-    public static GameConstant Instance { get; private set; }
+{ 
 
     public GameObject[] enemy;
+    public float TimerMorning = 1;
+    public float TimerAfternoon = 1;
+    public float TimerNight = 1;
+    public float TimerDawn = 1;
     public float factor = 0.5f;
     private int[] min = new int[6] { 1,3,3,5,6,7};
-    private int[]  max= new int[6] { 3,5,5,8,9,13};
     private float m_timer = 0;
     // Update is called once per frame
     void Update()
     {
-        
-       
+        m_timer += Time.deltaTime;
 
-            
-            
-    }
-
-    public void Generate()
-    {
-        if (Clock.NowHour <=20 || Clock.NowHour <= 3)
+        if (Clock.NowHour > 6 && Clock.NowHour <=12)
         {
-            int num = Random.Range(min[5], max[5] + 1) * (int)(1 + factor * Clock.Day);
-            for (int index = 0; index <= num; num++)
+            if(m_timer >= TimerMorning - Clock.Day *factor)
             {
-                int i = Random.Range(0, enemy.Length);
-                Instantiate(enemy[i], gameObject.transform.position, Quaternion.identity);
+                Instantiate(enemy[0],gameObject.transform.position,Quaternion.identity);
+                m_timer = 0;
             }
         }
-        else if (Clock.NowHour <=4 && Clock.NowHour <= 8)
+        else if (Clock.NowHour > 12 && Clock.NowHour <= 18)
         {
-            int num = Random.Range(min[0], max[0] + 1) * (int)(1 + factor * Clock.Day);
-            for (int index = 0; index <= num; num++)
+            if (m_timer >= TimerAfternoon - Clock.Day * factor)
             {
-                int i = Random.Range(0, enemy.Length);
-                Instantiate(enemy[i], gameObject.transform.position, Quaternion.identity);
+                Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
+                m_timer = 0;
             }
         }
 
-        else if (Clock.NowHour >= 8 && Clock.NowHour <= 11)
+        else if (Clock.NowHour > 18 || Clock.NowHour <= 2)
         {
-            int num = Random.Range(min[1], max[1] + 1) * (int)(1 + factor * Clock.Day);
-            for (int index = 0; index <= num; num++)
+            if (m_timer >= TimerNight - Clock.Day * factor)
             {
-                int i = 0;
-                Instantiate(enemy[i], gameObject.transform.position, Quaternion.identity);
+                Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
+                m_timer = 0;
             }
         }
 
-        else if (Clock.NowHour>= 12 && Clock.NowHour <= 14)
+        else if (Clock.NowHour >= 3 && Clock.NowHour <= 6)
         {
-            int num = Random.Range(min[2], max[2] + 1) * (int)(1 + factor * Clock.Day);
-            for (int index = 0; index <= num; num++)
+            if (m_timer >= TimerDawn - Clock.Day * factor)
             {
-                int i = Random.Range(0, enemy.Length);
-                Instantiate(enemy[i], gameObject.transform.position, Quaternion.identity);
-            }
-        }
-
-        else if (Clock.NowHour >= 14 && Clock.NowHour <= 18)
-        {
-            int num = Random.Range(min[3], max[3] + 1) * (int)(1 + factor * Clock.Day);
-            for (int index = 0; index <= num; num++)
-            {
-                int i = Random.Range(0, enemy.Length);
-                Instantiate(enemy[i], gameObject.transform.position, Quaternion.identity);
-            }
-        }
-
-        else if (Clock.NowHour == 19)
-        {
-            int num = Random.Range(min[4], max[4] + 1) * (int)(1 + factor * Clock.Day);
-            for (int index = 0; index <= num; num++)
-            {
-                int i = Random.Range(0, enemy.Length) ;
-                Instantiate(enemy[i], gameObject.transform.position, Quaternion.identity);
+                Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
+                m_timer = 0;
             }
         }
 
         
+
+
     }
+
 
 }
+
+    
+
+

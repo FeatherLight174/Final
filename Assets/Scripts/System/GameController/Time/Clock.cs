@@ -8,7 +8,7 @@ public class Clock : MonoBehaviour
     public static float DayTime = 0;
     public static int Day = 0;
     public static int NowHour = 0;
-    public EnemyGeneratorPos1 Enemy;
+
 
     public float RedMin = 76;
     public float RedMax = 255;
@@ -41,7 +41,7 @@ public class Clock : MonoBehaviour
         if (DayTime >= GameConstant.HourTime)
         {
             NowHour++;
-            Enemy.Generate();
+            
             DayTime = 0;
             if (NowHour == 24)
             {
