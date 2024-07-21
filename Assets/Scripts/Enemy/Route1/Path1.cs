@@ -24,6 +24,7 @@ public class Path1 : MonoBehaviour
     public Transform[] WayPoints;
     public float showTime = 3f;
     private float m_Timer = 0;
+    private float m_DieTimer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,8 +38,16 @@ public class Path1 : MonoBehaviour
     {
         if(m_Hp <= 0)
         {
+            m_DieTimer += Time.deltaTime;
             m_Hp = 0;
-            Destroy(gameObject);
+            animator.SetBool("Die", true);
+            if (m_DieTimer >= 0.5f)
+            {
+                Destroy(gameObject);
+            }
+            
+
+            
         }
         if (!m_isAttack)
         {
@@ -96,6 +105,7 @@ public class Path1 : MonoBehaviour
             
             m_Tower = collision.gameObject;
             m_isAttack = true;
+            animator.SetBool("Attack", false);
             StartCoroutine(AttackBuilding());
         }
     }
@@ -123,6 +133,7 @@ public class Path1 : MonoBehaviour
     public float GetHP() {  return m_Hp; }
 
     private void OnMouseDown() {
+        Debug.Log("112345");
         return;
     }
 }

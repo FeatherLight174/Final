@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1476476672232053174}
   - component: {fileID: 2391332180332875013}
   m_Layer: 6
-  m_Name: Enemy1
+  m_Name: "\u6E90\u77F3\u866B"
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 385b1bc7ba6e2eb48924f50464cf287d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0507e30763df1b443b424bb7a07f7356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Hp: 2000
+  m_Hp: 200
   Position1: {x: -3, y: 3, z: 0}
   PathY1: 1
   Position2: {x: -3, y: 1, z: 0}
@@ -192,7 +192,7 @@ Animator:
   m_GameObject: {fileID: 5526956762559256171}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 041887ec8b1fea44ba4c4bcd3d5221c5, type: 2}
+  m_Controller: {fileID: 9100000, guid: d45bd7c855c1fdc4698387d115807618, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
