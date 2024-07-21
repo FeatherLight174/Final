@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyGenerator : MonoBehaviour
+public class EnemyGeneratorPos1 : MonoBehaviour
 {
     public GameObject[] enemy;
     public float Timer = 3;
