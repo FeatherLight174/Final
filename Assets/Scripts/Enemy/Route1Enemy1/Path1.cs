@@ -70,6 +70,7 @@ public class Path1 : MonoBehaviour
         else if(m_Tower == null)
         {
              m_isAttack=false;
+            animator.SetBool("Attack", false);
         }
         if (IsAttacked)
         {
