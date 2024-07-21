@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BulletController : MonoBehaviour
@@ -20,6 +21,8 @@ public class BulletController : MonoBehaviour
     // public float knockback;
     // ×Óµ¯´©Í¸ÊýÁ¿
     public int pierceCount = 1;
+
+    private GameObject m_enemy;
     void Start()
     {
         duration = maxRangeTimes * range / speed;
@@ -54,11 +57,13 @@ public class BulletController : MonoBehaviour
         {
             return;
         }
-        Debug.Log("Hit sth.");
+        //Debug.Log("Hit sth.");
         if (other.gameObject.CompareTag("Enemy"))
         {
+            m_enemy = other.gameObject;
+            m_enemy.GetComponent<HPManagement>().TakeDamage(GameConstant.BulletAttack);
             pierceCount--;
-            Debug.Log("Hit.");
+            //Debug.Log("Hit.");
         }
         
     }
