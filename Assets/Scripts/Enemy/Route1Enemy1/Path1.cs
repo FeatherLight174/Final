@@ -7,7 +7,8 @@ public class Path1 : MonoBehaviour
 {
 
     //public NavMeshAgent Nav;
-    public float m_Hp = GameConstant.HPEnemy; 
+    private HPManagement m_hp;
+    private float m_nowHp;
     private float m_v = GameConstant.vFactor;
     private float m_attack = GameConstant.EnemyAttack;
     private float m_attackCD = GameConstant.AttackCD;
@@ -29,6 +30,7 @@ public class Path1 : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        m_hp = GetComponent<HPManagement>();
         //Nav = GetComponent<NavMeshAgent>();
         //Nav.SetDestination(WayPoints[0].position);
     }
@@ -36,10 +38,11 @@ public class Path1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(m_Hp <= 0)
+        m_nowHp = m_hp.HP;
+        if(m_nowHp <= 0)
         {
             m_DieTimer += Time.deltaTime;
-            m_Hp = 0;
+            m_nowHp = 0;
             animator.SetBool("Die", true);
             if (m_DieTimer >= 0.5f)
             {
@@ -92,7 +95,6 @@ public class Path1 : MonoBehaviour
             {
                 return;
             }
-            m_Hp -= GameConstant.BulletAttack;
             IsAttacked = true;
             m_Timer = 0;
         }
@@ -132,8 +134,10 @@ public class Path1 : MonoBehaviour
         }
     }
 
-    public float GetHP() {  return m_Hp; }
-
+    public float GetHP()
+    {
+        return m_nowHp;
+    }
     private void OnMouseDown() {
 
         return;

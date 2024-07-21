@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4989939955800474387}
   - component: {fileID: 1476476672232053174}
   - component: {fileID: 2391332180332875013}
+  - component: {fileID: 6798640470520907721}
   m_Layer: 6
   m_Name: "\u6E90\u77F3\u866B"
   m_TagString: Enemy
@@ -128,7 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0507e30763df1b443b424bb7a07f7356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Hp: 200
   Position1: {x: -3, y: 3, z: 0}
   PathY1: 1
   Position2: {x: -3, y: 1, z: 0}
@@ -203,6 +203,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6798640470520907721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526956762559256171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f5912eed921a241a785e6a15a2d845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 200
+  MaxHP: 200
 --- !u!1 &6920720161400052560
 GameObject:
   m_ObjectHideFlags: 0
