@@ -12488,9 +12488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52e70c080935c046bdf61832b3ba415, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy:
-  - {fileID: 5526956762559256171, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
-  - {fileID: 5526956762559256171, guid: 8305c5d5fbdcbbd48a15e4ca3b3b40e4, type: 3}
+  enemy: []
   TimerMorning: 1
   TimerAfternoon: 1
   TimerNight: 1

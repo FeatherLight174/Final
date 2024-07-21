@@ -18,7 +18,7 @@ public class Path1 : MonoBehaviour
     public float PathY1 = 1;
     public Vector3 Position2 = new Vector3(-3,1, 0);
     public Vector3 Position3 = new Vector3(-8,2, 0);
-    public float Speed = GameConstant.EnemyMovespeed;
+    private float Speed = GameConstant.EnemyMovespeed;
     public bool IsAttacked = false;
     private Animator animator;
 
