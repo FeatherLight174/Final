@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Path3 : MonoBehaviour
+public class Path7 : MonoBehaviour
 {
-    public float m_Hp = GameConstant.HPEnemy;
-    private float m_v = GameConstant.vFactor;
-    private float m_attack = GameConstant.EnemyAttack;
-    private float m_attackCD = GameConstant.AttackCD;
+    public float m_Hp = GameConstant.HPEnemy2;
+    private float m_v = GameConstant.vFactor2;
+    private float m_attack = GameConstant.EnemyAttack2;
+    private float m_attackCD = GameConstant.AttackCD2;
     private bool m_isAttack = false;
     private GameObject m_Tower;
     public float PathX1 = -8;
 
-    public float Speed = GameConstant.EnemyMovespeed;
+    public float Speed = GameConstant.EnemyMovespeed2;
     public bool IsAttacked = false;
 
     public float showTime = 3f;
@@ -80,6 +80,7 @@ public class Path3 : MonoBehaviour
 
             m_Tower = collision.gameObject;
             m_isAttack = true;
+            animator.SetBool("Attack", true);
             StartCoroutine(AttackBuilding());
         }
     }
@@ -89,6 +90,7 @@ public class Path3 : MonoBehaviour
         if (collision.gameObject.CompareTag("Building") || collision.gameObject.CompareTag("Base"))
         {
             m_isAttack = false;
+            animator.SetBool("Attack", false);
             m_Tower = null;
             StopCoroutine(AttackBuilding());
         }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthBarAlpha : MonoBehaviour
+public class HealthBarAlphaPath1 : MonoBehaviour
 {
     public Path1 scriptPath1;
     private float alphaValue;

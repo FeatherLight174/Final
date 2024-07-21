@@ -47,14 +47,20 @@ public static class GameConstant
 
     public static float HPShield = 750;
 
-    //Enemy
+    //源石虫
     //记录了敌人的血量，速度因数，普通敌人人的攻击力，攻击间隔
-    public static float HPEnemy = 2000;
+    public static float HPEnemy = 200;
     public static float vFactor = 1.0f;
     public static float EnemyAttack = 10;
-    public static float EnemyMovespeed = 0.1f;
-    public static float AttackCD = 0.5f;
+    public static float EnemyMovespeed = 2f;
+    public static float AttackCD = 1f;
 
+    // 破阵者
+    public static float HPEnemy2 = 120;
+    public static float vFactor2 = 1.0f;
+    public static float EnemyAttack2 = 20;
+    public static float EnemyMovespeed2 = 4f;
+    public static float AttackCD2 = 0.5f;
     // Towers
     // 注意改new float[行, 列]的行、列值
     /* 塔编号目录
