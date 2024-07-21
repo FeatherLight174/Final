@@ -12,6 +12,7 @@ public class GoldAndElectricity : MonoBehaviour
     {
         gold = 100;
         electricity = 0;
+        Debug.Log(gold);
     }
 
     // Update is called once per frame

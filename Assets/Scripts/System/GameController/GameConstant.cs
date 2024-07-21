@@ -4,7 +4,7 @@ public class GameConstant : MonoBehaviour
 
     public static float SellFactor = 0.5f;
 
-    public static float PriceTower = 50;
+    public static float PriceTower = 100;
     public static float PriceShield  = 10;
 
     //时间系统
@@ -15,8 +15,8 @@ public class GameConstant : MonoBehaviour
     public static float SpeedFactorNight = 0.75f;
  
     //Home
-    public static float[] HomeGoldProduce = new float[3] { 2, 3, 4 }; 
-    public static float[] HomeGoldProduceCD = new float[3] { 3,3,2 };
+    public static float[] HomeGoldProduce = new float[3] { 1, 1, 4 }; 
+    public static float[] HomeGoldProduceCD = new float[3] { 1,1,2 };
     public static float[] HomePowerProduce = new float[3] {0,0,5};
     public static float[] HomePowerProduceCD = new float[3] { 2,2,10 };
     public static float[] HomeHP = new float[3] { 1000,2000,4000};
@@ -46,11 +46,11 @@ public class GameConstant : MonoBehaviour
 
     //源石虫
     //记录了敌人的血量，速度因数，普通敌人人的攻击力，攻击间隔
-    public static float HPEnemy = 200;
+    public static float HPEnemy = 100;
     public static float vFactor = 1.0f;
     public static float EnemyAttack = 10;
     public static float EnemyMovespeed = 1f;
-    public static float AttackCD = 1.5f;
+    public static float AttackCD = 2f;
 
     // 破阵者
     public static float HPEnemy2 = 120;
