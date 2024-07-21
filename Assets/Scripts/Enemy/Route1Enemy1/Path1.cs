@@ -105,7 +105,7 @@ public class Path1 : MonoBehaviour
             
             m_Tower = collision.gameObject;
             m_isAttack = true;
-            animator.SetBool("Attack", false);
+            animator.SetBool("Attack", true);
             StartCoroutine(AttackBuilding());
         }
     }
@@ -115,6 +115,7 @@ public class Path1 : MonoBehaviour
         if (collision.gameObject.CompareTag("Building") || collision.gameObject.CompareTag("Base"))
         {
             m_isAttack = false;
+            animator.SetBool("Attack", false);
             m_Tower = null;
             StopCoroutine(AttackBuilding());
         }
@@ -133,7 +134,7 @@ public class Path1 : MonoBehaviour
     public float GetHP() {  return m_Hp; }
 
     private void OnMouseDown() {
-        Debug.Log("112345");
+
         return;
     }
 }
