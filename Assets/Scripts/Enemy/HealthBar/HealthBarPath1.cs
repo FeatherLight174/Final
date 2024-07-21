@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthBar : MonoBehaviour
+public class HealthBarPath1 : MonoBehaviour
 {
     public Path1 scriptPath1;
     private SpriteRenderer valueBar;

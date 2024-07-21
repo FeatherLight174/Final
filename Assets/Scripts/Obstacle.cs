@@ -2,22 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoldAndElectricity : MonoBehaviour
-{   
-    public static float gold;
-    public static float electricity;
-
+public class Obstacle : MonoBehaviour
+{
     // Start is called before the first frame update
     void Start()
     {
-        gold = 100;
-        electricity = 0;
-        Debug.Log(gold);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+    }
 
+    void OnMouseDown()
+    {
+       
     }
 }
