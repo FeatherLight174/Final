@@ -425,6 +425,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyExample(0_Normal) (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5733093301337142444, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6610786161847543633, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7
@@ -435,7 +439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6610786161847543633, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6610786161847543633, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11827,6 +11831,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyExample(0_Normal) (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5733093301337142444, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6610786161847543633, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7
@@ -11837,7 +11845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6610786161847543633, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6610786161847543633, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12932,6 +12940,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyExample(0_Normal)
       objectReference: {fileID: 0}
+    - target: {fileID: 5733093301337142444, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6610786161847543633, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7
@@ -12942,7 +12954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6610786161847543633, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6610786161847543633, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13529,9 +13541,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Hp: 200
-  PathX1: 11
+  Position1: {x: -3, y: 3, z: 0}
   PathY1: 1
-  PathX2: 5
+  Position2: {x: -3, y: 1, z: 0}
+  Position3: {x: -8, y: 2, z: 0}
   Speed: 1
   IsAttacked: 0
   WayPoints: []
