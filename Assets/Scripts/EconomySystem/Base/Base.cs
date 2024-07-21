@@ -54,7 +54,7 @@ public class Base : MonoBehaviour
             GoldAndElectricity.electricity += ElectricityPerTime[level - 1];
             m_TimerElectricity = 0;
         }
-        if (upgradePanel.activeSelf)
+        if (!upgradePanel.activeSelf)
         {
             flag = 0;
         }
