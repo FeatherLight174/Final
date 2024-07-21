@@ -6,8 +6,8 @@ using UnityEngine.Rendering.Universal;
 public class Clock : MonoBehaviour
 {
     public static float DayTime = 0;
-    public static int Day = 0;
-    public static int NowHour = 0;
+    public static int Day = 1;
+    public static int NowHour = 6;
 
 
     public float RedMin = 76;
@@ -54,7 +54,7 @@ public class Clock : MonoBehaviour
 
         m_sunLight.color = new Color(m_nowRed / 255, m_nowGreen / 255, m_nowBlue / 255, 1);
         m_sunLight.intensity = m_nowIntensity;
-        Debug.Log(m_sunLight.color + " " + NowHour);
+        //Debug.Log(m_sunLight.color + " " + NowHour);
     }
 
     void UpdateLightProperties()
