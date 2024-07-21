@@ -38,6 +38,7 @@ public class Goldmine : MonoBehaviour
         level = 1;
         m_Timer = 0;
         Hp = gameObject.GetComponent<HPManagement>();
+        Hp.SetHP(GameConstant.HPGold[level - 1]);
 
     }
 
@@ -127,7 +128,7 @@ public class Goldmine : MonoBehaviour
             m_Timer = 0;
             GoldAndElectricity.gold -= upgrade_2;
             currentCost += upgrade_2;
-            Hp.SetHP(GameConstant.GoldLevel2);
+            Hp.SetHP(GameConstant.HPGold[level - 1]);
             upgradePanel.SetActive(false);
             sellPanel.SetActive(false);
             flag++;
@@ -138,7 +139,7 @@ public class Goldmine : MonoBehaviour
             m_Timer = 0;
             GoldAndElectricity.gold -= upgrade_3;
             currentCost += upgrade_3;
-            Hp.SetHP(GameConstant.GoldLevel3);
+            Hp.SetHP(GameConstant.HPGold[level - 1]);
             upgradePanel.SetActive(false);
             sellPanel.SetActive(false);
             flag++;

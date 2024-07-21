@@ -33,10 +33,12 @@ public class Base : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         m_TimerGold = 0;
         m_TimerElectricity = 0;
         level = 1;
         Hp = gameObject.GetComponent<HPManagement>();
+        Hp.SetHP(GameConstant.HomeHP[level-1]);
     }
 
     // Update is called once per frame
@@ -87,7 +89,7 @@ public class Base : MonoBehaviour
             m_TimerGold = 0;
             m_TimerElectricity = 0;
             GoldAndElectricity.gold -= upgrade_2;
-            Hp.SetHP(GameConstant.Homelevel2);
+            Hp.SetHP(GameConstant.HomeHP[level-1]);
             upgradePanel.SetActive(false);
             flag++;
             return;
@@ -97,7 +99,7 @@ public class Base : MonoBehaviour
             m_TimerGold = 0;
             m_TimerElectricity = 0;
             GoldAndElectricity.gold -= upgrade_3;
-            Hp.SetHP(GameConstant.Homelevel3);
+            Hp.SetHP(GameConstant.HomeHP[level-1]);
             upgradePanel.SetActive(false);
             flag++;
             return;

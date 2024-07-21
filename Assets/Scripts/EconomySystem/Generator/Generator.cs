@@ -30,6 +30,7 @@ public class Generator : MonoBehaviour
         Hp = gameObject.GetComponent<HPManagement>();
         m_Timer = 0;
         currentHP = fullHP;
+        Hp.SetHP(GameConstant.HPPower);
     }
 
     private void OnMouseDown()

@@ -10,10 +10,10 @@ public class Seed : MonoBehaviour
     public GameObject Tower;
     public GameObject Power;
     public GameObject Shield;
-    public float PriceTower = GameConstant.PriceTower;
-    public float PricePower = GameConstant.PricePower;
-    public float PriceGold = GameConstant.PriceGold;
-    public float PriceShield = GameConstant.PriceShield;
+    private float PriceTower = GameConstant.PriceTower;
+    private float PricePower = GameConstant.PricePower;
+    private float PriceGold = GameConstant.PriceGold;
+    private float PriceShield = GameConstant.PriceShield;
 
     private int enemy = 0;
     private GameObject Placed;
@@ -51,6 +51,8 @@ public class Seed : MonoBehaviour
             {
                 if (GoldAndElectricity.gold >= PriceGold)
                 {
+                    Debug.Log(PriceGold);
+                    GoldAndElectricity.gold -= PriceGold;
                     Debug.Log("sssssssssssss");
                     Placed = Instantiate(Gold, transform.position, Quaternion.identity);
                     m_IsActive = false;
@@ -61,6 +63,7 @@ public class Seed : MonoBehaviour
             {
                 if (GoldAndElectricity.gold >= PriceTower)
                 {
+                    GoldAndElectricity.gold -= PriceTower;
                     Placed = Instantiate(Tower, transform.position, Quaternion.identity);
                     m_IsActive = false;
                 }
@@ -70,6 +73,7 @@ public class Seed : MonoBehaviour
             {
                 if (GoldAndElectricity.gold >= PricePower)
                 {
+                    GoldAndElectricity.gold -= PricePower;
                     Placed = Instantiate(Power, transform.position, Quaternion.identity);
                     m_IsActive = false;
                 }
@@ -79,6 +83,7 @@ public class Seed : MonoBehaviour
             {
                 if (GoldAndElectricity.gold <= PriceShield)
                 {
+                    GoldAndElectricity.gold -= PriceShield;
                     Placed = Instantiate(Shield, transform.position, Quaternion.identity);
                     m_IsActive = false;
                 }
