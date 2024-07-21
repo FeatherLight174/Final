@@ -50,7 +50,10 @@ public class Generator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_Timer += Time.deltaTime;
+        if ((Clock.NowHour >= 8) && (Clock.NowHour <= 18))
+        {
+            m_Timer += Time.deltaTime;
+        }
         if (m_Timer >= generatingCD)
         {
             GoldAndElectricity.electricity += electricityPerTime;

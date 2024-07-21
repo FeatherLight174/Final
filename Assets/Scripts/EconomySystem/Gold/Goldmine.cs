@@ -44,7 +44,10 @@ public class Goldmine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_Timer += Time.deltaTime;
+        if((Clock.NowHour >= 8)&&(Clock.NowHour <= 18))
+        {
+            m_Timer += Time.deltaTime;
+        }
         if (m_Timer >= goldMineCD[level - 1])
         {
             GoldAndElectricity.gold += goldPerTime[level - 1];
