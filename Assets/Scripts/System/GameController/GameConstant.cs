@@ -16,7 +16,7 @@ public class GameConstant : MonoBehaviour
  
     //Home
     public static float[] HomeGoldProduce = new float[3] { 2, 3, 4 }; 
-    public static float[] HomeGoldProduceCD = new float[3] { 5,5,3 };
+    public static float[] HomeGoldProduceCD = new float[3] { 3,3,2 };
     public static float[] HomePowerProduce = new float[3] {0,0,5};
     public static float[] HomePowerProduceCD = new float[3] { 2,2,10 };
     public static float[] HomeHP = new float[3] { 1000,2000,4000};
@@ -28,8 +28,8 @@ public class GameConstant : MonoBehaviour
     //Gold
     public static float[] HPGold = new float[3] { 100,150,200};
     public static float PriceGold = 10;
-    public static float[] GoldCD = new float[3] { 5, 4, 2 };
-    public static float[] GoldLevelProduce = new float[3] { 4, 5, 5 };
+    public static float[] GoldCD = new float[3] { 3, 3, 2 };
+    public static float[] GoldLevelProduce = new float[3] { 4, 6, 6 };
     public static float GoldLevel2 = 100;
     public static float GoldLevel3 = 250;
 
@@ -49,14 +49,14 @@ public class GameConstant : MonoBehaviour
     public static float HPEnemy = 200;
     public static float vFactor = 1.0f;
     public static float EnemyAttack = 10;
-    public static float EnemyMovespeed = 2f;
-    public static float AttackCD = 1f;
+    public static float EnemyMovespeed = 1f;
+    public static float AttackCD = 1.5f;
 
     // 破阵者
     public static float HPEnemy2 = 120;
     public static float vFactor2 = 1.0f;
     public static float EnemyAttack2 = 20;
-    public static float EnemyMovespeed2 = 4f;
+    public static float EnemyMovespeed2 = 3f;
     public static float AttackCD2 = 0.5f;
     // Towers
     // 注意改new float[行, 列]的行、列值

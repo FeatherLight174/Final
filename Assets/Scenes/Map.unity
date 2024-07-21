@@ -13314,6 +13314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1774859511}
+  - component: {fileID: 1774859512}
   m_Layer: 0
   m_Name: GameConstant
   m_TagString: Untagged
@@ -13336,6 +13337,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1774859512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774859510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e48575dfe3f134aae44a1baa2ee94a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1781385130 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8667206263835229360, guid: b00aa9c545cd76244ba41e9defca7c8c, type: 3}
@@ -13438,7 +13451,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0507e30763df1b443b424bb7a07f7356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Hp: 200
   Position1: {x: -3, y: 3, z: 0}
   PathY1: 1
   Position2: {x: -3, y: 1, z: 0}
@@ -16060,7 +16072,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 2
-      m_TileSpriteIndex: 16
+      m_TileSpriteIndex: 17
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -16667,10 +16679,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: adc53edaf4ab338478da67bc915e122e, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: adc53edaf4ab338478da67bc915e122e, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 118
     m_Data:
