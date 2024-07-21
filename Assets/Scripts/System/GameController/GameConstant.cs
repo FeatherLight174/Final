@@ -9,10 +9,13 @@ public static class GameConstant
 
     public static float PriceTower = 10;
     public static float PriceShield  = 10;
-    
-    //时间系统
-    //包含了一天是多长时间，在这一天当中
 
+    //时间系统
+    //包含了一天是多长时间，在这一天当中的小时
+    public static float DayTime = 360;
+    public static float HourTime = 15;
+    public static float AttackFactorNight = 1.5f;
+    public static float SpeedFactorNight = 0.75f;
  
     //Home
     public static float[] HomeGoldProduce = new float[3] { 2, 4, 6 }; 
