@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public static class GameConstant
+public class GameConstant : MonoBehaviour
 {
 
     public static float SellFactor = 0.75f;
