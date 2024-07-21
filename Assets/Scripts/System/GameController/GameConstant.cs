@@ -7,7 +7,7 @@ public static class GameConstant
 
     public static float SellFactor = 0.75f;
 
-    public static float PriceTower = 10;
+    public static float PriceTower = 20;
     public static float PriceShield  = 10;
 
     //时间系统
