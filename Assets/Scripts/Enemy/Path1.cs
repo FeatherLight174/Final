@@ -19,6 +19,7 @@ public class Path1 : MonoBehaviour
     public Vector3 Position3 = new Vector3(-8,2, 0);
     public float Speed = GameConstant.EnemyMovespeed;
     public bool IsAttacked = false;
+    private Animator animator;
 
     public Transform[] WayPoints;
     public float showTime = 3f;
@@ -26,6 +27,7 @@ public class Path1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         //Nav = GetComponent<NavMeshAgent>();
         //Nav.SetDestination(WayPoints[0].position);
     }
@@ -42,6 +44,8 @@ public class Path1 : MonoBehaviour
         {
             if (gameObject.transform.position.x >= Position1.x)
             {
+                animator.SetBool("Left", true);
+                animator.SetBool("Right", false);
                 gameObject.transform.position += Vector3.left * Speed*Time.deltaTime;
             }
             else if (gameObject.transform.position.y >= Position2.y)
