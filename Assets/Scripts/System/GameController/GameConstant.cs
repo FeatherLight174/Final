@@ -49,7 +49,7 @@ public class GameConstant : MonoBehaviour
     public static float HPEnemy = 100;
     public static float vFactor = 1.0f;
     public static float EnemyAttack = 10;
-    public static float EnemyMovespeed = 1f;
+    public static float EnemyMovespeed = 0.75f;
     public static float AttackCD = 2f;
 
     // ∆∆’Û’ﬂ
