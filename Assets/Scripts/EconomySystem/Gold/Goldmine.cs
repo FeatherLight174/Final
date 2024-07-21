@@ -50,6 +50,11 @@ public class Goldmine : MonoBehaviour
             GoldAndElectricity.gold += goldPerTime[level - 1];
             m_Timer = 0;
         }
+        if ((upgradePanel.activeSelf)|| (sellPanel.activeSelf))
+        {
+            flag = 0;
+        }
+
     }
 
     private void OnMouseDown()

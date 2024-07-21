@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Base : MonoBehaviour
 {
+    //
+
 
 
     //
@@ -52,6 +54,10 @@ public class Base : MonoBehaviour
             GoldAndElectricity.electricity += ElectricityPerTime[level - 1];
             m_TimerElectricity = 0;
         }
+        if (upgradePanel.activeSelf)
+        {
+            flag = 0;
+        }
     }
 
     private void OnMouseDown()
@@ -70,6 +76,7 @@ public class Base : MonoBehaviour
             //feature.SetActive(false);
         }
         flag++;
+        
     }
 
     public void Upgrade()
