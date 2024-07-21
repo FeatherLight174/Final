@@ -9,6 +9,9 @@ public static class GameConstant
 
     public static float PriceTower = 10;
     public static float PriceShield  = 10;
+    
+    //时间系统
+    //包含了一天是多长时间，在这一天当中
 
  
     //Home
@@ -42,6 +45,7 @@ public static class GameConstant
     public static float HPShield = 750;
 
     //Enemy
+    //记录了敌人的血量，速度因数，普通敌人人的攻击力，攻击间隔
     public static float HPEnemy = 2000;
     public static float vFactor = 1.0f;
     public static float EnemyAttack = 10;
@@ -73,6 +77,7 @@ public static class GameConstant
     {{10f, 10f, 20f}, {1f, 2f, 3f}};
 
     //Bullet
+    //普通子弹
     public static float BulletAttack = 10;
 
 }

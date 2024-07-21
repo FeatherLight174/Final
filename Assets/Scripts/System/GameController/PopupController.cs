@@ -42,6 +42,11 @@ public class PopupController : MonoBehaviour
             // 如果弹窗已激活且点击在弹窗物体外部，隐藏弹窗
             if (Sell.activeSelf || Upgrade.activeSelf)
             {
+                if (gameObject.GetComponent<Collider2D>().OverlapPoint(mousePosition))
+                {
+                    return;
+                }
+                //Debug.Log("testS");
                 Sell.SetActive(false);
                 Upgrade.SetActive(false);
                 return;
