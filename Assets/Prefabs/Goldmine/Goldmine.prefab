@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -3609014603895119036}
   - component: {fileID: -2437723080321653613}
   - component: {fileID: 8824285153890324908}
+  - component: {fileID: 5454607380206633684}
   m_Layer: 1
   m_Name: Goldmine
   m_TagString: Building
@@ -35,6 +36,7 @@ Transform:
   m_Children:
   - {fileID: 3527467644666065886}
   - {fileID: 7567369653847955709}
+  - {fileID: 1101760858062307232}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7284603685524479077
@@ -162,6 +164,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   MaxHP: 100
+--- !u!114 &5454607380206633684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2396227226958167230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e221851653978b04086e1b6318ef27bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sell: {fileID: 1050096912552349478}
+  Upgrade: {fileID: 4515882142936296867}
+  Range: {fileID: 6662214824716559938}
+--- !u!1 &6662214824716559938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1101760858062307232}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1101760858062307232
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6662214824716559938}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.10566664, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3370829094843267253}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4041774632370025940
 PrefabInstance:
   m_ObjectHideFlags: 0
