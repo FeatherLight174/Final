@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1476476672232053174}
   - component: {fileID: 2391332180332875013}
   - component: {fileID: 4426392386679087934}
+  - component: {fileID: 4776162308024854738}
   m_Layer: 6
   m_Name: "\u7834\u9635\u8005"
   m_TagString: Enemy
@@ -194,15 +195,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a85ffd283069e234cbf6fcb106da6241, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Hp: 120
+  m_Hp: 150
   Position1: {x: -3, y: 3, z: 0}
   PathY1: 1
   Position2: {x: -3, y: 1, z: 0}
   Position3: {x: -8, y: 2, z: 0}
-  Speed: 4
+  Speed: 3
   IsAttacked: 0
   WayPoints: []
   showTime: 3
+--- !u!114 &4776162308024854738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526956762559256171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f5912eed921a241a785e6a15a2d845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 150
+  MaxHP: 150
 --- !u!1 &6920720161400052560
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +229,7 @@ GameObject:
   - component: {fileID: 4413917366715498245}
   - component: {fileID: 4396155808875965505}
   - component: {fileID: 7570987794335991696}
+  - component: {fileID: 2922367155073604459}
   m_Layer: 0
   m_Name: HealthBarValue
   m_TagString: Untagged
@@ -295,13 +311,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6920720161400052560}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e555a5e88135354c9b92fd169363c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scriptPath1: {fileID: 0}
   fadeTime: 1
+--- !u!114 &2922367155073604459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6920720161400052560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07683645549af0d43af2535a17cebd51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptPath5: {fileID: 4426392386679087934}
+  fadeTime: 0
 --- !u!1 &8221473824625941716
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,6 +343,7 @@ GameObject:
   - component: {fileID: 7273322237013845892}
   - component: {fileID: 4922765043355495963}
   - component: {fileID: 6419786667212246724}
+  - component: {fileID: 6804327317878248217}
   m_Layer: 0
   m_Name: HealthBarBottom
   m_TagString: Untagged
@@ -403,6 +434,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scriptPath1: {fileID: 0}
   fadeTime: 1
+--- !u!114 &6804327317878248217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8221473824625941716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0020592ad02a8764f8db91191ed266ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptPath5: {fileID: 4426392386679087934}
+  fadeTime: 0
 --- !u!1 &8342435791001689454
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,6 +459,7 @@ GameObject:
   - component: {fileID: 4391837317664361568}
   - component: {fileID: 4611323081538407701}
   - component: {fileID: 1584398025968504804}
+  - component: {fileID: 8834118105378861463}
   m_Layer: 0
   m_Name: HealthBarValueFull
   m_TagString: Untagged
@@ -495,10 +541,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8342435791001689454}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b39b685635b5aff48a7a61644faf4c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scriptPath1: {fileID: 0}
   fadeTime: 1
+--- !u!114 &8834118105378861463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8342435791001689454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0020592ad02a8764f8db91191ed266ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptPath5: {fileID: 4426392386679087934}
+  fadeTime: 0
