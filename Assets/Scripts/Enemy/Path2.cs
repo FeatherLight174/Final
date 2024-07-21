@@ -10,18 +10,19 @@ public class Path2 : MonoBehaviour
     private float m_attackCD = GameConstant.AttackCD;
     private bool m_isAttack = false;
     private GameObject m_Tower;
-    public float PathX1 = 15;
-    public float PathY1 = 1;
-    public float PathX2 = 1;
+    public float PathX1 = -4;
+    public float PathY1 = 0;
+    public float PathX2 = -8;
     public float Speed = GameConstant.EnemyMovespeed;
     public bool IsAttacked = false;
 
     public float showTime = 3f;
+    private Animator animator;
     private float m_Timer = 0;
     // Start is called before the first frame update
     void Start()
     {
-
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -34,20 +35,17 @@ public class Path2 : MonoBehaviour
         }
         if (!m_isAttack)
         {
-            if (PathX1 >= 0)
+            if (gameObject.transform.position.x >= PathX1)
             {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
-                PathX1 -= Time.deltaTime * Speed;
             }
-            else if (PathY1 >= 0)
+            else if (gameObject.transform.position.y >= PathY1)
             {
                 gameObject.transform.position -= Vector3.up * Speed * Time.deltaTime;
-                PathY1 -= Time.deltaTime * Speed;
             }
-            else if (PathX2 >= 0)
+            else if (gameObject.transform.position.x >=PathX2)
             {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
-                PathX2 -= Time.deltaTime * Speed;
             }
         }
         else if (m_Tower == null)
