@@ -8,6 +8,7 @@ TagManager:
   - Building
   - Bullet
   - Base
+  - Obstacle
   layers:
   - Default
   - TransparentFX
