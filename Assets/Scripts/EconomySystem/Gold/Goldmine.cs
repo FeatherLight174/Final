@@ -51,6 +51,7 @@ public class Goldmine : MonoBehaviour
         }
         if (m_Timer >= goldMineCD[level - 1])
         {
+
             GoldAndElectricity.gold += goldPerTime[level - 1];
             m_Timer = 0;
         }

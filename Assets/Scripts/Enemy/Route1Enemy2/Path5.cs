@@ -20,6 +20,7 @@ public class Path5 : MonoBehaviour
     public float Speed = GameConstant.EnemyMovespeed2;
     public bool IsAttacked = false;
     private Animator animator;
+    private bool isDead = false;
 
     public Transform[] WayPoints;
     public float showTime = 3f;
@@ -40,6 +41,7 @@ public class Path5 : MonoBehaviour
         {
             m_DieTimer += Time.deltaTime;
             m_Hp = 0;
+            isDead = true;
             animator.SetBool("Die", true);
             if (m_DieTimer >= 0.5f)
             {
@@ -49,7 +51,7 @@ public class Path5 : MonoBehaviour
 
             
         }
-        if (!m_isAttack)
+        if (!m_isAttack&&!isDead)
         {
             if (gameObject.transform.position.x >= Position1.x)
             {
