@@ -2,9 +2,9 @@ using UnityEngine;
 public class GameConstant : MonoBehaviour
 {
 
-    public static float SellFactor = 0.75f;
+    public static float SellFactor = 0.5f;
 
-    public static float PriceTower = 20;
+    public static float PriceTower = 50;
     public static float PriceShield  = 10;
 
     //时间系统
@@ -27,11 +27,11 @@ public class GameConstant : MonoBehaviour
 
     //Gold
     public static float[] HPGold = new float[3] { 100,150,200};
-    public static float PriceGold = 10;
-    public static float[] GoldCD = new float[3] { 3, 3, 2 };
-    public static float[] GoldLevelProduce = new float[3] { 4, 6, 6 };
-    public static float GoldLevel2 = 100;
-    public static float GoldLevel3 = 250;
+    public static float PriceGold = 30;
+    public static float[] GoldCD = new float[3] { 2, 3, 3 };
+    public static float[] GoldLevelProduce = new float[3] { 2, 4, 6 };
+    public static float GoldLevel2 = 120;
+    public static float GoldLevel3 = 300;
 
     //Power
     public static float HPPower = 500;
