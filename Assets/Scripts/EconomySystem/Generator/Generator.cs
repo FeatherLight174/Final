@@ -56,6 +56,10 @@ public class Generator : MonoBehaviour
             GoldAndElectricity.electricity += electricityPerTime;
             m_Timer = 0;
         }
+        if ((sellPanel.activeSelf))
+        {
+            flag = 0;
+        }
     }
 
     public void Sell()
