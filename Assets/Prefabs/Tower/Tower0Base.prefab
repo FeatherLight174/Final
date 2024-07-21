@@ -239,7 +239,6 @@ GameObject:
   - component: {fileID: 622029344787466776}
   - component: {fileID: 5716830625695122399}
   - component: {fileID: 8943062339390173886}
-  - component: {fileID: 2175878014372176430}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -343,21 +342,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2175878014372176430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6081412915186209811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e221851653978b04086e1b6318ef27bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Sell: {fileID: 8941662186441827994}
-  Upgrade: {fileID: 2979271691775435818}
-  Range: {fileID: 6524938235564979107}
 --- !u!1 &6211003041880742178
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +354,7 @@ GameObject:
   - component: {fileID: 2382386779193870381}
   - component: {fileID: 3052469068701278348}
   - component: {fileID: 2422648091977231588}
+  - component: {fileID: 2019276007166819786}
   m_Layer: 0
   m_Name: Tower0Base
   m_TagString: Building
@@ -507,6 +492,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   MaxHP: 100
+--- !u!114 &2019276007166819786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6211003041880742178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e221851653978b04086e1b6318ef27bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sell: {fileID: 8941662186441827994}
+  Upgrade: {fileID: 2979271691775435818}
+  Range: {fileID: 6524938235564979107}
 --- !u!1 &6524938235564979107
 GameObject:
   m_ObjectHideFlags: 0
