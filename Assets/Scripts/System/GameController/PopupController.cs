@@ -7,6 +7,8 @@ public class PopupController : MonoBehaviour
     public GameObject Upgrade;
     public GameObject Range;
 
+    private int m_firstTime = 1;
+
     void Start()
     {
         // 缓存弹窗物体的 Collider2D 组件
@@ -57,6 +59,14 @@ public class PopupController : MonoBehaviour
                 Sell.SetActive(true);
                 Upgrade.SetActive(true);
                 Range.SetActive(true);
+            }
+
+            if(m_firstTime != 0)
+            {
+                Sell.SetActive(false);
+                Upgrade.SetActive(false);
+                Range.SetActive(false);
+                m_firstTime = 0;
             }
         }
     }
