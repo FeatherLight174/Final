@@ -61,6 +61,12 @@ public class BulletController : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             m_enemy = other.gameObject;
+            //Debug.Log("DIE");
+            //if (m_enemy.GetComponent<HPManagement>().HP <= GameConstant.BulletAttack)
+            //{
+                //m_enemy.GetComponent<AudioSource>().Play();
+                //Debug.Log("DIE");
+            //}
             m_enemy.GetComponent<HPManagement>().TakeDamage(GameConstant.BulletAttack);
             pierceCount--;
             //Debug.Log("Hit.");

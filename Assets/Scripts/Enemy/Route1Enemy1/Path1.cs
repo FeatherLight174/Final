@@ -26,6 +26,7 @@ public class Path1 : MonoBehaviour
     public float showTime = 3f;
     private float m_Timer = 0;
     private float m_DieTimer = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,7 @@ public class Path1 : MonoBehaviour
         m_nowHp = m_hp.HP;
         if(m_nowHp <= 0)
         {
+            
             m_DieTimer += Time.deltaTime;
             m_nowHp = 0;
             animator.SetBool("Die", true);
