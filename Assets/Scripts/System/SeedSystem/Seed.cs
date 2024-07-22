@@ -15,7 +15,7 @@ public class Seed : MonoBehaviour
     private float PricePower = GameConstant.PricePower;
     private float PriceGold = GameConstant.PriceGold;
     private float PriceShield = GameConstant.PriceShield;
-    private float PriceQuickTower = 75;
+    private float PriceQuickTower = GameConstant.PriceQuickTower;
     public static bool goldIsFree = false;
     public static bool towerIsFree = false;
     private bool day2GoldCanBeFree = true;
