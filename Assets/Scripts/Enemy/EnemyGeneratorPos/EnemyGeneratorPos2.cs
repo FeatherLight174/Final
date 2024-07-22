@@ -17,7 +17,7 @@ public class EnemyGeneratorPos2 : MonoBehaviour
     private bool hasDown = false;
 
     // Day2
-    private int day2_interval2 = 2
+    private int day2_interval2 = 2;
     private int day2_interval3 = 3;
     private int day2_interval4 = 4;
 

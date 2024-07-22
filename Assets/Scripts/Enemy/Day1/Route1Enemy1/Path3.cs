@@ -14,7 +14,6 @@ public class Path3 : MonoBehaviour
     public float Speed = GameConstant.EnemyMovespeed;
 
     private Animator animator;
-    private float m_Timer = 0;
     // Start is called before the first frame update
     void Start()
     {

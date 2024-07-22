@@ -14,12 +14,10 @@ public class Path4 : MonoBehaviour
     public float PathY1 = 1;
     public float PathX2 = -8;
     public float Speed = GameConstant.EnemyMovespeed;
-    public bool IsAttacked = false;
 
     public float showTime = 3f;
 
     private Animator animator;
-    private float m_Timer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,15 +54,6 @@ public class Path4 : MonoBehaviour
         {
             m_isAttack = false;
             animator.SetBool("Attack", false);
-        }
-        if (IsAttacked)
-        {
-            m_Timer += Time.deltaTime;
-            if (m_Timer >= showTime)
-            {
-                IsAttacked = false;
-                m_Timer = 0;
-            }
         }
     }
 

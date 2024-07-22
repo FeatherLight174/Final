@@ -21,9 +21,6 @@ public class Path1 : MonoBehaviour
     private float Speed = GameConstant.EnemyMovespeed;
     private Animator animator;
 
-    private float m_Timer = 0;
-    private float m_DieTimer = 0;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -66,19 +63,6 @@ public class Path1 : MonoBehaviour
             m_isAttack = false;
             animator.SetBool("Attack", false);
         }
-    }
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            BulletController bullet = collision.gameObject.GetComponent<BulletController>();
-            if (bullet.hasHit)
-            {
-                return;
-            }
-            m_Timer = 0;
-        }
-        
     }
 
     void OnCollisionEnter2D(Collision2D collision)
