@@ -53,7 +53,6 @@ public class Path3 : MonoBehaviour
             {
                 return;
             }
-            m_Timer = 0;
         }
 
     }
