@@ -25,7 +25,7 @@ public class DayBomb : MonoBehaviour
             m_timer += Time.deltaTime;
             if (m_timer <= 1)
             {
-                Debug.Log(sp.color.a + fadeSpeed * Time.deltaTime);
+
                 sp.color = new Color(sp.color.r, sp.color.g, sp.color.b, sp.color.a + fadeSpeed * Time.deltaTime);
             }
             else if (m_timer > 1)

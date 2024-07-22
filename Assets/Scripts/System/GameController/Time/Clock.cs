@@ -15,7 +15,7 @@ public class Clock : MonoBehaviour
     
     public static float DayTime = 0;
     public static int Day = 2;
-    public static int NowHour = 16;
+    public static int NowHour = 7;
 
 
     public float RedMin = 76;
