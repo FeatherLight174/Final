@@ -15,6 +15,14 @@ public class TowerPrice : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tmpText.text = "Tower: " + GameConstant.PriceTower;
+        if (Seed.towerIsFree)
+        {
+            tmpText.text = "Tower: Free!";
+        }
+        else
+        {
+            tmpText.text = "Tower: " + GameConstant.PriceTower;
+        }
+       
     }
 }

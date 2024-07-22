@@ -17,19 +17,28 @@ public class EnemyGeneratorPos2 : MonoBehaviour
     private bool hasDown = false;
 
     // Day2
-    private int day2_interval2 = 2
+    private int day2_interval2 = 2;
     private int day2_interval3 = 3;
     private int day2_interval4 = 4;
+    private int day2_interval5 = 5;
 
-    private int day2_9_count = 3;
-    private int day2_10_count = 3;
-    private int day2_11_count = 3;
-    private int day2_12_count = 3;
-    private int day2_13_count = 3;
-    private int day2_14_count = 3;
-    private int day2_15_count = 3;
-    private int day2_16_count = 3;
-    private int day2_17_count = 3;
+    private int day2_9_count = 2;
+    private int day2_10_count = 2;
+    private int day2_11_count = 2;
+    private int day2_12_count = 2;
+    private int day2_13_count = 2;
+    private int day2_14_count = 2;
+    private int day2_15_count = 4;
+    private int day2_16_count = 2;
+    private int day2_16_count_2 = 1;
+    private int day2_17_count = 2;
+
+
+    private int day2_19_count = 4;
+    private int day2_20_count = 2;
+    private int day2_21_count = 3;
+    private int day2_22_count = 4;
+    private int day2_23_count = 2;
 
 
 
@@ -45,38 +54,12 @@ public class EnemyGeneratorPos2 : MonoBehaviour
     {
         m_timer += Time.deltaTime;
         m_timer2 += Time.deltaTime;
-        if (Clock.NowHour == 18)
-        {
-            hasDown = false;
-            if (hasUp == false)
-            {
-                GameConstant.EnemyMovespeed = GameConstant.EnemyMovespeed *= 2f;
-                Debug.Log(GameConstant.EnemyMovespeed);
-                GameConstant.EnemyAttack = GameConstant.EnemyAttack * 1.5f;
-                GameConstant.EnemyMovespeed2 = GameConstant.EnemyMovespeed2 * 1.5f;
-                GameConstant.EnemyAttack2 = GameConstant.EnemyAttack2 * 1.2f;
-                hasUp = true;
-            }
 
-        }
-        else if (Clock.NowHour == 5)
-        {
-            hasUp = false;
-            if (hasDown == false)
-            {
-                GameConstant.EnemyMovespeed /= 2f;
-                GameConstant.EnemyAttack /= 1.5f;
-                GameConstant.EnemyMovespeed2 /= 1.5f;
-                GameConstant.EnemyAttack2 /= 1.2f;
-                hasDown = true;
-            }
-
-        }
         if ((Clock.NowHour == 9) && (Clock.Day == 2))
         {
             if (day2_9_count > 0)
             {
-                if (m_timer >= day2_interval4)
+                if (m_timer >= day2_interval5)
                 {
                     Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                     m_timer = 0;
@@ -88,7 +71,7 @@ public class EnemyGeneratorPos2 : MonoBehaviour
         {
             if (day2_10_count > 0)
             {
-                if (m_timer >= day2_interval4)
+                if (m_timer >= day2_interval5)
                 {
                     Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                     m_timer = 0;
@@ -101,7 +84,7 @@ public class EnemyGeneratorPos2 : MonoBehaviour
         {
             if (day2_11_count > 0)
             {
-                if (m_timer >= day2_interval4)
+                if (m_timer >= day2_interval5)
                 {
                     Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                     m_timer = 0;
@@ -140,7 +123,7 @@ public class EnemyGeneratorPos2 : MonoBehaviour
         {
             if (day2_14_count > 0)
             {
-                if (m_timer >= day2_interval4)
+                if (m_timer >= day2_interval2)
                 {
                     Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                     m_timer = 0;
@@ -153,7 +136,7 @@ public class EnemyGeneratorPos2 : MonoBehaviour
         {
             if (day2_15_count > 0)
             {
-                if (m_timer >= day2_interval4)
+                if (m_timer >= day2_interval3)
                 {
                     Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                     m_timer = 0;
@@ -166,13 +149,24 @@ public class EnemyGeneratorPos2 : MonoBehaviour
         {
             if (day2_16_count > 0)
             {
-                if (m_timer >= day2_interval4)
+                if (m_timer >= day2_interval5)
                 {
                     Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                     m_timer = 0;
                     day2_16_count--;
                 }
+            
             }
+            /*if (day2_16_count_2 > 0)
+            {
+                if (m_timer2 >= day2_interval5)
+                {
+                    Instantiate(enemy[1], gameObject.transform.position, Quaternion.identity);
+                    m_timer2 = 0;
+                    day2_16_count_2--;
+                }
+
+            }*/
 
         }
         else if ((Clock.NowHour == 17) && (Clock.Day == 2))
@@ -188,7 +182,19 @@ public class EnemyGeneratorPos2 : MonoBehaviour
             }
 
         }
+        else if ((Clock.NowHour == 19) && (Clock.Day == 2))
+        {
+            if (day2_19_count > 0)
+            {
+                if (m_timer >= day2_interval4)
+                {
+                    Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
+                    m_timer = 0;
+                    day2_19_count--;
+                }
+            }
 
+        }
 
 
     }

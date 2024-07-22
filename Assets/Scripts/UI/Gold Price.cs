@@ -15,6 +15,15 @@ public class GoldPrice : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tmpText.text = "Goldmine: " + GameConstant.PriceGold;
+        if (Seed.goldIsFree)
+        {
+            tmpText.text = "Goldmine: Free!" ;
+        }
+        else
+        {
+            tmpText.text = "Goldmine: " + GameConstant.PriceGold;
+        }
+        
+        
     }
 }

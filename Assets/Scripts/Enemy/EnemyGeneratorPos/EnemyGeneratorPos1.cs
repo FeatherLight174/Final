@@ -34,7 +34,7 @@ public class EnemyGeneratorPos1 : MonoBehaviour
     private int day1_21_count = 4;  
     private int day1_22_count = 4;
     private int day1_22_count2 = 3;
-    private int day1_23_count = 8;
+    private int day1_23_count = 6;
    
 
     // Day2
@@ -43,11 +43,12 @@ public class EnemyGeneratorPos1 : MonoBehaviour
     private int day2_interval2 = 1;
     private int day2_interval3 = 2;
     private int day2_interval7 = 7;
+    private int day2_interval4 = 4;
 
     private int day2_0_count = 4;
     private int day2_1_count = 4;
     private int day2_2_count_2 = 1;
-    private int day2_2_count = 8;
+    private int day2_2_count = 6;
     private int day2_3_count = 3;
     private int day2_4_count = 2;
     private int day2_5_count = 2;
@@ -56,10 +57,13 @@ public class EnemyGeneratorPos1 : MonoBehaviour
     private int day2_7_count = 3;
     private int day2_8_count = 3;
     private int day2_9_count = 3;
-    private int day2_10_count = 3;
-    private int day2_11_count1 = 5;
-    private int day2_11_count2 = 5;
+    private int day2_10_count = 2;
+    private int day2_11_count1 = 4;
+    private int day2_11_count2 = 4;
     private int day2_12_count_2 = 1;
+    private int day2_13_count = 2;
+    private int day2_14_count = 3;
+    private int day2_15_count = 4;
     
 
     // Update is called once per frame
@@ -75,7 +79,7 @@ public class EnemyGeneratorPos1 : MonoBehaviour
                 GameConstant.EnemyMovespeed = GameConstant.EnemyMovespeed *= 2f;
                 Debug.Log(GameConstant.EnemyMovespeed);
                 GameConstant.EnemyAttack = GameConstant.EnemyAttack * 1.5f;
-                GameConstant.EnemyMovespeed2 = GameConstant.EnemyMovespeed2 * 1.5f;
+                GameConstant.EnemyMovespeed2 = GameConstant.EnemyMovespeed2 * 2f;
                 GameConstant.EnemyAttack2 = GameConstant.EnemyAttack2 * 1.2f;
                 hasUp = true;
             }
@@ -88,7 +92,7 @@ public class EnemyGeneratorPos1 : MonoBehaviour
             {
                 GameConstant.EnemyMovespeed /= 2f;
                 GameConstant.EnemyAttack /= 1.5f;
-                GameConstant.EnemyMovespeed2 /= 1.5f;
+                GameConstant.EnemyMovespeed2 /= 2f;
                 GameConstant.EnemyAttack2 /= 1.2f;
                 hasDown = true;
             }
@@ -402,7 +406,42 @@ public class EnemyGeneratorPos1 : MonoBehaviour
                 }
             }
         }
-
+        else if ((Clock.NowHour == 13) && (Clock.Day == 2))
+        {
+            if (day2_13_count > 0)
+            {
+                if (m_timer >= day2_interval7)
+                {
+                    Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
+                    m_timer = 0;
+                    day2_13_count--;
+                }
+            }
+        }
+        else if ((Clock.NowHour == 14) && (Clock.Day == 2))
+        {
+            if (day2_14_count > 0)
+            {
+                if (m_timer >= day2_interval4)
+                {
+                    Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
+                    m_timer = 0;
+                    day2_14_count--;
+                }
+            }
+        }
+        else if ((Clock.NowHour == 15) && (Clock.Day == 2))
+        {
+            if (day2_15_count > 0)
+            {
+                if (m_timer >= day2_interval3)
+                {
+                    Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
+                    m_timer = 0;
+                    day2_15_count--;
+                }
+            }
+        }
 
 
 
