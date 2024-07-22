@@ -28,7 +28,6 @@ public class Rout2Path1 : MonoBehaviour
     private GameObject m_Tower;
 
     public float showTime = 3f;
-    private float m_Timer = 0;
     private float m_DieTimer = 0;
     private float m_v = GameConstant.vFactor;
     private float m_attack = GameConstant.EnemyAttack;
@@ -136,7 +135,6 @@ public class Rout2Path1 : MonoBehaviour
                 return;
             }
             IsAttacked = true;
-            m_Timer = 0;
         }
 
     }
