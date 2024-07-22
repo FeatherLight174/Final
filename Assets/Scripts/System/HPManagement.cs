@@ -30,7 +30,14 @@ public class HPManagement : MonoBehaviour
         else
         {
             // 如果没有destroy音源，直接销毁对象
-            Destroy(gameObject,destroy.clip.length);
+            if (destroy != null)
+            {
+                Destroy(gameObject, destroy.clip.length);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
