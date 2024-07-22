@@ -277,10 +277,10 @@ public class EnemyGeneratorPos1 : MonoBehaviour
             }
             if (day2_4_count > 0)
             {
-                if (m_timer >= day2_interval)
+                if (m_timer2 >= day2_interval)
                 {
                     Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
-                    m_timer = 0;
+                    m_timer2 = 0;
                     day2_4_count--;
                 }
             }
