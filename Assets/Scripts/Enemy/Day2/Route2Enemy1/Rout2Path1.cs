@@ -5,7 +5,7 @@ using UnityEngine;
 public class Rout2Path1 : MonoBehaviour
 {
 
-    public float Speed = 1;
+    private float Speed = GameConstant.EnemyMovespeed;
 
     public float PosX1 = 14;
     public float PosX2 = 13;
@@ -61,13 +61,13 @@ public class Rout2Path1 : MonoBehaviour
         }
         if (!m_isAttack)
         {
-            //Debug.Log("!!!");
+
             if (gameObject.transform.position.x >= PosX1)
             {
-                //animator.SetBool("Left", true);
-                //animator.SetBool("Right", false);
+                animator.SetBool("Left", true);
+                animator.SetBool("Right", false);
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
-                //Debug.Log("Move");
+
             }
             else if (gameObject.transform.position.y >= PosY1 && !m_isup)
             {

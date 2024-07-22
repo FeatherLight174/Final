@@ -157,7 +157,7 @@ public class EnemyGeneratorPos2 : MonoBehaviour
                 }
             
             }
-            /*if (day2_16_count_2 > 0)
+            if (day2_16_count_2 > 0)
             {
                 if (m_timer2 >= day2_interval5)
                 {
@@ -166,7 +166,7 @@ public class EnemyGeneratorPos2 : MonoBehaviour
                     day2_16_count_2--;
                 }
 
-            }*/
+            }
 
         }
         else if ((Clock.NowHour == 17) && (Clock.Day == 2))
