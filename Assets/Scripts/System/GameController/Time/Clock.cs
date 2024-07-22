@@ -45,17 +45,19 @@ public class Clock : MonoBehaviour
 
     void Update()
     {
-        if(NowHour == 21 && !m_isNight)
+        if(NowHour == 22 && !m_isNight)
         {
             Night.Play();
+            Afternoon.Pause();
             m_isNight = true;
         }
         else if(NowHour == 13 && !m_isAfter)
         {
             Afternoon.Play();
+            morning.Pause();
             m_isAfter = true;
         }
-        else if(NowHour == 8 && !m_isMorning)
+        else if(NowHour == 7 && !m_isMorning)
         {
             morning.Play();
             m_isMorning = true;
