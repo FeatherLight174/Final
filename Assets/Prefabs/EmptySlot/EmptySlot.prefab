@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -102,10 +102,7 @@ MonoBehaviour:
   Tower: {fileID: 6211003041880742178, guid: e156aa54208664643a2856cc8c433278, type: 3}
   Power: {fileID: 4354446950988630538, guid: 1587089a9f814ce4780a71557fe4a7f2, type: 3}
   Shield: {fileID: 0}
-  PriceTower: 0
-  PricePower: 0
-  PriceGold: 0
-  PriceShield: 0
+  QuickTower: {fileID: 6211003041880742178, guid: 98f30acc9d6d686489869e8fb224afcb, type: 3}
 --- !u!61 &-2444011954706994697
 BoxCollider2D:
   m_ObjectHideFlags: 0

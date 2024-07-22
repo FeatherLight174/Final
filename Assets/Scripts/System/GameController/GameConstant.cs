@@ -3,7 +3,7 @@ public class GameConstant : MonoBehaviour
 {
 
     public static float SellFactor = 0.5f;
-
+    public static float PriceQuickTower = 75;
     public static float PriceTower = 50;
     public static float PriceShield  = 10;
 
@@ -73,11 +73,11 @@ public class GameConstant : MonoBehaviour
     public static float[] towerRangeNightFactor = new float[2]
     {0.75f, 0.75f};
     public static float[,] towerShootSpeed = new float[2, 3]
-    {{1f, 1.5f, 2f}, {2f, 2.5f ,3f}};
+    {{1f, 1.5f, 2f}, {3f, 4f ,5f}};
     public static float[,] towerRotateSpeed = new float[2, 3]
-    {{90f, 105f, 120f}, {90f, 105f, 120f}};
+    {{90f, 105f, 120f}, {120f, 135f, 150f}};
     public static float[,] towerDamage = new float[2, 3]
-    {{10f, 12f, 15f}, {4f, 4.5f, 5f}};
+    {{10f, 12f, 15f}, {3f, 3.5f, 4f}};
     public static float[] towerDamageNightFactor = new float[2]
     {1.3f, 1.3f};
     public static float[,] towerBulletSpeed = new float[2, 3]
