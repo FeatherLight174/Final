@@ -20,8 +20,8 @@ public class TowerController : MonoBehaviour
 
     // 游戏内时间
     public float dayTime;
-    // 是否夜晚（方便计算，用整数1代表是）
-    private int isNight;
+    // 是否夜晚
+    private bool isNight;
 
 
     // 塔编号
@@ -129,11 +129,11 @@ public class TowerController : MonoBehaviour
         dayTime = Clock.NowHour;
         if (dayTime >= 6 && dayTime < 18)
         {
-            isNight = 0;
+            isNight = false;
         }
         else 
         {
-            isNight = 1;
+            isNight = true;
         }
         powerConsumption = GameConstant.towerPowerConsumption[towerIndex, towerLevel - 1];
         range = GameConstant.towerRange[towerIndex, towerLevel - 1];
@@ -164,7 +164,7 @@ public class TowerController : MonoBehaviour
             shootSpeedReal = shootSpeed;
             rotateSpeedReal = rotateSpeed;
         }
-        if (isNight == 1)
+        if (isNight)
         {
             rangeReal = rangeReal * rangeNightFactor;
         }

@@ -58,6 +58,7 @@ public class GameConstant : MonoBehaviour
     public static float EnemyAttack2 = 25;
     public static float EnemyMovespeed2 = 3f;
     public static float AttackCD2 = 0.5f;
+
     // Towers
     // 注意改new float[行, 列]的行、列值
     /* 塔编号目录
@@ -84,7 +85,17 @@ public class GameConstant : MonoBehaviour
     public static float[,] towerPowerConsumption = new float[2, 3]
     {{0f, 0f, 0f}, {1f, 2f, 3f}};
     public static float[,] towerUpgradeCost = new float[2, 3]
-    {{10f, 10f, 20f}, {1f, 2f, 3f}};
+    {{50f, 50f, 80f}, {1f, 2f, 3f}};
+
+    // Wall
+    public static float[] wallHealth = new float[3]
+    {500f, 1000f, 2000f};
+    public static float[] wallRecovery = new float[3]
+    {0f, 10f, 30f};
+    public static float[] wallPowerConsumption = new float[3]
+    {0f, 10f, 30f};
+    public static float[] wallUpgradeCost = new float[3]
+    {50f, 50f, 100f};
 
     //Bullet
     //普通子弹
