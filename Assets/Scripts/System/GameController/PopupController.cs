@@ -6,11 +6,13 @@ public class PopupController : MonoBehaviour
     private Collider2D popupCollider;
     public GameObject Upgrade;
     public GameObject Range;
+    private TowerBeingAttacked towerAttacked;
 
     private int m_firstTime = 1;
 
     void Start()
     {
+        towerAttacked = GetComponent<TowerBeingAttacked>();
         // 缓存弹窗物体的 Collider2D 组件
         if (Sell != null)
         {
@@ -64,6 +66,7 @@ public class PopupController : MonoBehaviour
                 Sell.SetActive(true);
                 Upgrade.SetActive(true);
                 Range.SetActive(true);
+                towerAttacked.IsAttacked = towerAttacked.showTime;
             }
 
             if(m_firstTime != 0)

@@ -14,6 +14,7 @@ public class HPManagement : MonoBehaviour
         if (HP <= 0)
         {
             PlayDeathSound();
+            HP = 0;
         }
     }
 
