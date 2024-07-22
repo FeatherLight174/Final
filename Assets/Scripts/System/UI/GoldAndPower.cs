@@ -10,7 +10,8 @@ public class GoldAndPower : MonoBehaviour
     void Update()
     {
         
-    tmpText.text = "Gold " + GoldAndElectricity.gold + "\n"+"Power" + GoldAndElectricity.electricity;
+    tmpText.text = "Gold " + GoldAndElectricity.gold + "\n"+"Power" + GoldAndElectricity.electricity + "\n" + "Day"
+             + Clock.Day + " " + "Hour" + Clock.NowHour;
             
 
            
