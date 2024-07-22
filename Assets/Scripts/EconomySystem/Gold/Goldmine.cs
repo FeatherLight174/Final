@@ -119,6 +119,7 @@ public class Goldmine : MonoBehaviour
     public void Sell()
     {
         GoldAndElectricity.gold += (int)(((Hp.HP / Hp.MaxHP) * currentCost) * sellRate);
+        GameConstant.PriceGold -= 10;
         Destroy(gameObject);
     }
 
