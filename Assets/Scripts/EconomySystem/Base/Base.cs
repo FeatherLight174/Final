@@ -12,7 +12,7 @@ public class Base : MonoBehaviour
     public GameObject upgradePanel;
     private HPManagement Hp;
     // Current level
-    private int level;
+    public static int level;
 
     // Level function
     private float[] goldMineCD = GameConstant.HomeGoldProduceCD;
