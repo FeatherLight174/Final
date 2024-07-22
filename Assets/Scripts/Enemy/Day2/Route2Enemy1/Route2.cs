@@ -7,7 +7,7 @@ public class Route2 : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private float Speed = 0.54f;
+    private float Speed = 0.52f;
 
     public float PosX1 = 14;
     public float PosX2 = 13;
