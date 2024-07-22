@@ -25,6 +25,10 @@ public class Seed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PriceTower = GameConstant.PriceTower;
+        PricePower = GameConstant.PricePower;
+        PriceGold = GameConstant.PriceGold;
+        PriceShield = GameConstant.PriceShield;
         if(enemy > 0)
         {
             m_IsActive = false;
@@ -53,7 +57,7 @@ public class Seed : MonoBehaviour
                 {
                     Debug.Log(PriceGold);
                     GoldAndElectricity.gold -= PriceGold;
-                    Debug.Log("sssssssssssss");
+                    GameConstant.PriceGold += 10; 
                     Placed = Instantiate(Gold, transform.position, Quaternion.identity);
                     m_IsActive = false;
                 }
