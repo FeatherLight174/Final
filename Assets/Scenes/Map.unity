@@ -15385,7 +15385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2071369020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15666,6 +15666,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a17e9c51d0e4849845a2dd41b5309e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Night: {fileID: 0}
+  morning: {fileID: 0}
+  Afternoon: {fileID: 0}
   RedMin: 76
   RedMax: 255
   GreenMax: 255

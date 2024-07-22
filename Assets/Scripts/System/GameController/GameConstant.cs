@@ -15,8 +15,8 @@ public class GameConstant : MonoBehaviour
     public static float SpeedFactorNight = 0.75f;
  
     //Home
-    public static float[] HomeGoldProduce = new float[3] { 1, 1, 4 }; 
-    public static float[] HomeGoldProduceCD = new float[3] { 1,1,2 };
+    public static float[] HomeGoldProduce = new float[3] { 2, 3, 3 }; 
+    public static float[] HomeGoldProduceCD = new float[3] { 2,2,1 };
     public static float[] HomePowerProduce = new float[3] {0,0,5};
     public static float[] HomePowerProduceCD = new float[3] { 2,2,10 };
     public static float[] HomeHP = new float[3] { 1000,2000,4000};
@@ -27,8 +27,8 @@ public class GameConstant : MonoBehaviour
 
     //Gold
     public static float[] HPGold = new float[3] { 100,150,200};
-    public static float PriceGold = 30;
-    public static float[] GoldCD = new float[3] { 2, 3, 3 };
+    public static float PriceGold = 50;
+    public static float[] GoldCD = new float[3] { 6, 6, 4 };
     public static float[] GoldLevelProduce = new float[3] { 2, 4, 6 };
     public static float GoldLevel2 = 120;
     public static float GoldLevel3 = 300;
