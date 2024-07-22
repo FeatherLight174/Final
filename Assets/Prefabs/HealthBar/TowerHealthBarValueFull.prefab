@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1582784919199953493}
   - component: {fileID: 1656035295803110176}
-  - component: {fileID: 4393603551295484369}
+  - component: {fileID: 8361161699771910784}
   m_Layer: 0
-  m_Name: HealthBarValueFull
+  m_Name: TowerHealthBarValueFull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4393603551295484369
+--- !u!114 &8361161699771910784
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6540237780719199067}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b39b685635b5aff48a7a61644faf4c10, type: 3}
+  m_Script: {fileID: 11500000, guid: 44995a3ad7ec85f4b85dfd6d4ac203a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fadeTime: 1
