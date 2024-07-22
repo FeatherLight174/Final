@@ -1,23 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class Path8 : MonoBehaviour
+public class Path7 : MonoBehaviour
 {
-    public float m_Hp = GameConstant.HPEnemy2;
     private float m_v = GameConstant.vFactor2;
     private float m_attack = GameConstant.EnemyAttack2;
     private float m_attackCD = GameConstant.AttackCD2;
     private bool m_isAttack = false;
     private GameObject m_Tower;
-    public float PathX1 = -4;
-    public float PathY1 = 1;
-    public float PathX2 = -8;
-    public float Speed = GameConstant.EnemyMovespeed2;
-    public bool IsAttacked = false;
+    public float PathX1 = -8;
 
-    public float showTime = 3f;
+    public float Speed = GameConstant.EnemyMovespeed2;
 
     private Animator animator;
     private float m_Timer = 0;
@@ -30,59 +24,25 @@ public class Path8 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_Hp <= 0)
+        if (gameObject.GetComponent<HPManagement>().HP <= 0)
         {
-            m_Hp = 0;
-            Destroy(gameObject);
+            animator.SetBool("Die", true);
+
         }
         if (!m_isAttack)
         {
             if (gameObject.transform.position.x >= PathX1)
             {
-                animator.SetBool("Left", true);
-                animator.SetBool("Right", false);
-                gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
-            }
-            else if (gameObject.transform.position.y >= PathY1)
-            {
-                gameObject.transform.position -= Vector3.up * Speed * Time.deltaTime;
-            }
-            else if (gameObject.transform.position.x >= PathX2)
-            {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
 
             }
+           
         }
         else if (m_Tower == null)
         {
             m_isAttack = false;
             animator.SetBool("Attack", false);
         }
-        if (IsAttacked)
-        {
-            m_Timer += Time.deltaTime;
-            if (m_Timer >= showTime)
-            {
-                IsAttacked = false;
-                m_Timer = 0;
-            }
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            BulletController bullet = collision.gameObject.GetComponent<BulletController>();
-            if (bullet.hasHit)
-            {
-                return;
-            }
-            m_Hp -= GameConstant.BulletAttack;
-            IsAttacked = true;
-            m_Timer = 0;
-        }
-
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -119,8 +79,6 @@ public class Path8 : MonoBehaviour
             yield return new WaitForSeconds(m_attackCD);
         }
     }
-
-    public float GetHP() { return m_Hp; }
 
     private void OnMouseDown()
     {

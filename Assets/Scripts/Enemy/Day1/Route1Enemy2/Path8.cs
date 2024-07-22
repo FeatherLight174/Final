@@ -3,21 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Path4 : MonoBehaviour
+public class Path8 : MonoBehaviour
 {
-    public float m_Hp = GameConstant.HPEnemy;
-    private float m_v = GameConstant.vFactor;
-    private float m_attack = GameConstant.EnemyAttack;
-    private float m_attackCD = GameConstant.AttackCD;
+    private float m_v = GameConstant.vFactor2;
+    private float m_attack = GameConstant.EnemyAttack2;
+    private float m_attackCD = GameConstant.AttackCD2;
     private bool m_isAttack = false;
     private GameObject m_Tower;
     public float PathX1 = -4;
     public float PathY1 = 1;
     public float PathX2 = -8;
-    public float Speed = GameConstant.EnemyMovespeed;
-    public bool IsAttacked = false;
-
-    public float showTime = 3f;
+    public float Speed = GameConstant.EnemyMovespeed2;
 
     private Animator animator;
     private float m_Timer = 0;
@@ -30,10 +26,10 @@ public class Path4 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (m_Hp <= 0)
+        if (gameObject.GetComponent<HPManagement>().HP <= 0)
         {
-            m_Hp = 0;
-            Destroy(gameObject);
+            animator.SetBool("Die", true);
+
         }
         if (!m_isAttack)
         {
@@ -58,31 +54,6 @@ public class Path4 : MonoBehaviour
             m_isAttack = false;
             animator.SetBool("Attack", false);
         }
-        if (IsAttacked)
-        {
-            m_Timer += Time.deltaTime;
-            if (m_Timer >= showTime)
-            {
-                IsAttacked = false;
-                m_Timer = 0;
-            }
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            BulletController bullet = collision.gameObject.GetComponent<BulletController>();
-            if (bullet.hasHit)
-            {
-                return;
-            }
-            m_Hp -= GameConstant.BulletAttack;
-            IsAttacked = true;
-            m_Timer = 0;
-        }
-
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -119,8 +90,6 @@ public class Path4 : MonoBehaviour
             yield return new WaitForSeconds(m_attackCD);
         }
     }
-
-    public float GetHP() { return m_Hp; }
 
     private void OnMouseDown()
     {
