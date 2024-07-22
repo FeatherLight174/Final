@@ -5,26 +5,65 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    public bool hasHit = false; 
+    // 多次击中问题校正
+    public bool hasHit = false;
+
+    // 是否夜
+    private bool isNight;
+
+    // （在常数表查找）子弹种类（与塔索引相同）
+    public int bulletIndex;
+    // （在常数表查找）子弹等级（注意写索引，一级索引为0）
+    public int bulletLevel;
+
     // 子弹最大射程倍数
     public float maxRangeTimes = 1; 
     // 子弹射程（最大距离为炮塔范围的↑倍）
     // 注意这里要填一倍射程！
-    public float range;
+    private float range;
+    private float rangeNightFactor;
+    public float rangePowerBoostFactor;
+    public float rangePowerBoostConstant;
+
     // 子弹持续时间（自动计算）
     private float duration;
-    // 子弹伤害
-    public float damage;
-    // 子弹速度
-    public float speed;
+
+    // 子弹伤害（由常数表决定）
+    private float damage;
+    private float damageNightFactor;
+
+    // 子弹速度（由常数表决定）
+    private float speed;
+
     // 子弹击退（未启用）
     // public float knockback;
+
     // 子弹穿透数量
     public int pierceCount = 1;
 
     private GameObject m_enemy;
+
     void Start()
     {
+        if (Clock.NowHour >= 6 && Clock.NowHour < 18)
+        {
+            isNight = false;
+        }
+        else
+        {
+            isNight = true;
+        }
+        speed = GameConstant.towerBulletSpeed[bulletIndex, bulletLevel];
+        range = GameConstant.towerRange[bulletIndex, bulletLevel];
+        rangeNightFactor = GameConstant.towerRangeNightFactor[bulletIndex];
+        damage = GameConstant.towerDamage[bulletIndex, bulletLevel];
+        damageNightFactor = GameConstant.towerDamageNightFactor[bulletIndex];
+        if (isNight)
+        {
+            range = range * rangeNightFactor;
+            damage = damage * damageNightFactor;
+        }
+
         duration = maxRangeTimes * range / speed;
     }
 
@@ -48,6 +87,7 @@ public class BulletController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //Debug.Log("Hit sth.");
         if (pierceCount <= 0)
         {
             hasHit = true;
@@ -57,17 +97,16 @@ public class BulletController : MonoBehaviour
         {
             return;
         }
-        //Debug.Log("Hit sth.");
         if (other.gameObject.CompareTag("Enemy"))
         {
             m_enemy = other.gameObject;
             //Debug.Log("DIE");
             //if (m_enemy.GetComponent<HPManagement>().HP <= GameConstant.BulletAttack)
             //{
-                //m_enemy.GetComponent<AudioSource>().Play();
-                //Debug.Log("DIE");
+            //m_enemy.GetComponent<AudioSource>().Play();
+            //Debug.Log("DIE");
             //}
-            m_enemy.GetComponent<HPManagement>().TakeDamage(GameConstant.BulletAttack);
+            m_enemy.GetComponent<HPManagement>().TakeDamage(damage);
             pierceCount--;
             //Debug.Log("Hit.");
         }

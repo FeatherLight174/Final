@@ -69,12 +69,16 @@ public class GameConstant : MonoBehaviour
     {{100f, 150f, 250f}, {1f, 2f, 3f}};
     public static float[,] towerRange = new float[2, 3]
     {{4f, 5f, 6f}, {1f, 2f, 3f}};
+    public static float[] towerRangeNightFactor = new float[2]
+    {0.75f, 0.75f};
     public static float[,] towerShootSpeed = new float[2, 3]
     {{1f, 1.5f, 2f}, {1f, 2f ,3f}};
     public static float[,] towerRotateSpeed = new float[2, 3]
     {{90f, 105f, 120f}, {1f, 2f, 3f}};
     public static float[,] towerDamage = new float[2, 3]
     {{10f, 12f, 15f}, {1f, 2f, 3f}};
+    public static float[] towerDamageNightFactor = new float[2]
+    {1.3f, 1.3f};
     public static float[,] towerBulletSpeed = new float[2, 3]
     {{8f, 9f, 10f}, {1f, 2f, 3f}};
     public static float[,] towerPowerConsumption = new float[2, 3]
@@ -85,5 +89,6 @@ public class GameConstant : MonoBehaviour
     //Bullet
     //普通子弹
     public static float BulletAttack = 10;
-
+    // [塔编号, 塔等级]子弹伤害、速度
+    // 子弹的伤害、速度写在了Towers里（上面）
 }

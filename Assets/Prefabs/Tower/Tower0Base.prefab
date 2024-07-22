@@ -279,11 +279,12 @@ MonoBehaviour:
   upgradePanel: {fileID: 2979271691775435818}
   scriptHPManagement: {fileID: 2422648091977231588}
   basePart: {fileID: 6211003041880742178}
-  flag: 0
+  dayTime: 0
   towerIndex: 0
   towerLevel: 1
   rangeBoostFactor: 1
   rangeBoostConstant: 0
+  rangeNightFactor: 0
   rangeReal: 0
   shootSpeedBoostFactor: 1
   shootSpeedBoostConstant: 0
@@ -295,7 +296,10 @@ MonoBehaviour:
   enemies: []
   enemyToBase: []
   enemyToTower: []
-  bullet: {fileID: 8986485512482655928, guid: dd25d8c0ff2563a438ee518c62da86a3, type: 3}
+  bullets:
+  - {fileID: 2375399260246832811, guid: 9dcf283b34c26b547ad2fc2c21278654, type: 3}
+  - {fileID: 922156619555845471, guid: e6ee3b3194ae3ed45aa12dbeb747380f, type: 3}
+  - {fileID: 6094257263853715153, guid: 365aaac8421dce648a0de64f20d77126, type: 3}
   angleDelta: 2
 --- !u!61 &8943062339390173886
 BoxCollider2D:
@@ -492,6 +496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   MaxHP: 100
+  destroy: {fileID: 0}
 --- !u!114 &2019276007166819786
 MonoBehaviour:
   m_ObjectHideFlags: 0
