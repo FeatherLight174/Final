@@ -229,7 +229,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4413917366715498245}
   - component: {fileID: 4396155808875965505}
-  - component: {fileID: 7570987794335991696}
   - component: {fileID: 2922367155073604459}
   m_Layer: 0
   m_Name: HealthBarValue
@@ -305,20 +304,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7570987794335991696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6920720161400052560}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e555a5e88135354c9b92fd169363c9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptPath1: {fileID: 0}
-  fadeTime: 1
 --- !u!114 &2922367155073604459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,7 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptPath5: {fileID: 4426392386679087934}
-  fadeTime: 0
+  fadeTime: 1
 --- !u!1 &8221473824625941716
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,8 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7273322237013845892}
   - component: {fileID: 4922765043355495963}
-  - component: {fileID: 6419786667212246724}
-  - component: {fileID: 6804327317878248217}
+  - component: {fileID: 3465692024242282987}
   m_Layer: 0
   m_Name: HealthBarBottom
   m_TagString: Untagged
@@ -421,21 +405,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6419786667212246724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8221473824625941716}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b39b685635b5aff48a7a61644faf4c10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptPath1: {fileID: 0}
-  fadeTime: 1
---- !u!114 &6804327317878248217
+--- !u!114 &3465692024242282987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -444,11 +414,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8221473824625941716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0020592ad02a8764f8db91191ed266ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 6efc6eb591bae4140b70fc2065cc89ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptPath5: {fileID: 4426392386679087934}
-  fadeTime: 0
+  scriptPath1: {fileID: 4426392386679087934}
+  fadeTime: 1
 --- !u!1 &8342435791001689454
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,8 +429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4391837317664361568}
   - component: {fileID: 4611323081538407701}
-  - component: {fileID: 1584398025968504804}
-  - component: {fileID: 8834118105378861463}
+  - component: {fileID: 3560936017409121705}
   m_Layer: 0
   m_Name: HealthBarValueFull
   m_TagString: Untagged
@@ -535,21 +504,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1584398025968504804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8342435791001689454}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b39b685635b5aff48a7a61644faf4c10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptPath1: {fileID: 0}
-  fadeTime: 1
---- !u!114 &8834118105378861463
+--- !u!114 &3560936017409121705
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -558,8 +513,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8342435791001689454}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0020592ad02a8764f8db91191ed266ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 6efc6eb591bae4140b70fc2065cc89ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptPath5: {fileID: 4426392386679087934}
-  fadeTime: 0
+  scriptPath1: {fileID: 4426392386679087934}
+  fadeTime: 1

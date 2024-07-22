@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptPath1: {fileID: 4498860483963042381}
-  fadeTime: 0
+  fadeTime: 1
 --- !u!1 &8221473824625941716
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptPath: {fileID: 4498860483963042381}
-  fadeTime: 0
+  fadeTime: 1
 --- !u!1 &8342435791001689454
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,4 +620,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptPath: {fileID: 4498860483963042381}
-  fadeTime: 0
+  fadeTime: 1
