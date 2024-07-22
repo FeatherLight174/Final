@@ -22,22 +22,22 @@ public class EnemyGeneratorPos3 : MonoBehaviour
     private int day2_interval4 = 4;
     private int day2_interval5 = 5;
 
-    private int day2_9_count = 2;
-    private int day2_10_count = 2;
-    private int day2_11_count = 2;
-    private int day2_12_count = 2;
-    private int day2_13_count = 2;
-    private int day2_14_count = 2;
-    private int day2_15_count = 4;
+    private int day2_9_count = 1;
+    private int day2_10_count = 1;
+    private int day2_11_count = 1;
+    private int day2_12_count = 1;
+    private int day2_13_count = 1;
+    private int day2_14_count = 1;
+    private int day2_15_count = 2;
     private int day2_16_count = 2;
     private int day2_16_count_2 = 1;
     private int day2_17_count = 2;
 
 
-    private int day2_19_count = 4;
+    private int day2_19_count = 2;
     private int day2_20_count = 2;
-    private int day2_21_count = 3;
-    private int day2_22_count = 4;
+    private int day2_21_count = 2;
+    private int day2_22_count = 2;
     private int day2_23_count = 2;
 
 
