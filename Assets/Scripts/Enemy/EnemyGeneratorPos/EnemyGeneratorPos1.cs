@@ -76,8 +76,8 @@ public class EnemyGeneratorPos1 : MonoBehaviour
             hasDown = false;
             if(hasUp == false)
             {
-                GameConstant.EnemyMovespeed = GameConstant.EnemyMovespeed *= 2f;
-                Debug.Log(GameConstant.EnemyMovespeed);
+                GameConstant.EnemyMovespeed = GameConstant.EnemyMovespeed * 2f;
+
                 GameConstant.EnemyAttack = GameConstant.EnemyAttack * 1.5f;
                 GameConstant.EnemyMovespeed2 = GameConstant.EnemyMovespeed2 * 2f;
                 GameConstant.EnemyAttack2 = GameConstant.EnemyAttack2 * 1.2f;
