@@ -14213,7 +14213,6 @@ MonoBehaviour:
   Position2: {x: -3, y: 1, z: 0}
   Position3: {x: -8, y: 2, z: 0}
   IsAttacked: 0
-  Death: {fileID: 0}
   WayPoints: []
   showTime: 3
 --- !u!1001 &1793598868
