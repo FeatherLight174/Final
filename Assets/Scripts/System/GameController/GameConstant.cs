@@ -10,7 +10,7 @@ public class GameConstant : MonoBehaviour
     //时间系统
     //包含了一天是多长时间，在这一天当中的小时
     public static float DayTime = 360;
-    public static float HourTime = 5;
+    public static float HourTime = 15;
     public static float AttackFactorNight = 1.5f;
     public static float SpeedFactorNight = 0.75f;
  

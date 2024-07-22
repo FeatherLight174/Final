@@ -5,6 +5,14 @@ using UnityEngine.Rendering.Universal;
 
 public class Clock : MonoBehaviour
 {
+
+    public AudioSource Night;
+    private bool m_isNight = false;
+    public AudioSource morning;
+    private bool m_isMorning = false;
+    public AudioSource Afternoon;
+    private bool m_isAfter = false;
+    
     public static float DayTime = 0;
     public static int Day = 1;
     public static int NowHour = 6;
@@ -37,6 +45,21 @@ public class Clock : MonoBehaviour
 
     void Update()
     {
+        if(NowHour == 21 && !m_isNight)
+        {
+            Night.Play();
+            m_isNight = true;
+        }
+        else if(NowHour == 13 && !m_isAfter)
+        {
+            Afternoon.Play();
+            m_isAfter = true;
+        }
+        else if(NowHour == 8 && !m_isMorning)
+        {
+            morning.Play();
+            m_isMorning = true;
+        }
         DayTime += Time.deltaTime;
         if (DayTime >= GameConstant.HourTime)
         {
@@ -46,6 +69,9 @@ public class Clock : MonoBehaviour
             if (NowHour == 24)
             {
                 Day++;
+                m_isAfter = false;
+                m_isMorning = false;
+                m_isNight = false;
                 NowHour = 0;
             }
         }
