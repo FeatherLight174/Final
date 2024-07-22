@@ -22,7 +22,7 @@ public class Boom : MonoBehaviour
             {
                 boom.SetActive(true);
             }
-            if(m_timer >= 6.3)
+            if(m_timer >= 6)
             {
                 boom.SetActive(false);
             }
