@@ -3,20 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthBarAlphaPath1 : MonoBehaviour
+public class HealthBarAlpha : MonoBehaviour
 {
-    public Path1 scriptPath1;
+    private EnemyBeingAttacked enemy;
     private float alphaValue;
     public float fadeTime;
     private SpriteRenderer bar;
     void Start()
     {
         bar = GetComponent<SpriteRenderer>();
+        enemy = GetComponentInParent<EnemyBeingAttacked>();
     }
 
     void Update()
     {
-        if (scriptPath1.IsAttacked)
+        if (enemy.IsAttacked >= 0)
         {
             alphaValue = 1f;
         }
