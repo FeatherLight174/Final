@@ -20,7 +20,7 @@ public class TowerBeingAttacked : MonoBehaviour
     {
         nowHP = scriptHP.HP;
         IsAttacked -= Time.deltaTime;
-        if (prevHP > nowHP)
+        if (prevHP != nowHP)
         {
             IsAttacked = showTime;
             prevHP = nowHP;
