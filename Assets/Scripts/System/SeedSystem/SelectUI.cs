@@ -40,4 +40,9 @@ public class SelectUI : MonoBehaviour
     {
         MouseController.NowMouse=mouseState.Shield;
     }
+
+    public void QuickTowerEvent()
+    {
+        MouseController.NowMouse = mouseState.TowerQuick;
+    }
 }
