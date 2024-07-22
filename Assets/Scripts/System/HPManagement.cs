@@ -22,7 +22,7 @@ public class HPManagement : MonoBehaviour
         if (destroy != null && !destroy.isPlaying)
         {
             destroy.Play();
-            Debug.Log("DIE12457579789");
+            //Debug.Log("DIE12457579789");
 
             // 延迟销毁对象，确保音效播放完毕
             Destroy(gameObject, destroy.clip.length);
