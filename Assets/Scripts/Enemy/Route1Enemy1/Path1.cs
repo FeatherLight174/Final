@@ -22,7 +22,7 @@ public class Path1 : MonoBehaviour
     public bool IsAttacked = false;
     private Animator animator;
 
-    public Transform[] WayPoints;
+
     public float showTime = 3f;
     private float m_Timer = 0;
     private float m_DieTimer = 0;

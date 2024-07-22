@@ -48,7 +48,7 @@ public class Seed : MonoBehaviour
     private void OnMouseDown()
     {
         // 当鼠标点击触发器时执行此方法
-        Debug.Log("Clicked on object: ");
+        //Debug.Log("Clicked on object: ");
         if (m_IsActive)
         {
             if (MouseController.NowMouse == mouseState.Gold)

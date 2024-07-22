@@ -36,7 +36,7 @@ public class HPManagement : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject);
+                Destroy(gameObject,0.5f);
             }
         }
     }
