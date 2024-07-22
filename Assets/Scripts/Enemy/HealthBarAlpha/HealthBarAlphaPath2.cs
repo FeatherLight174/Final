@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HealthBarAlphaPath5 : MonoBehaviour
 {
-    public Path5 scriptPath5;
+    public Path5 scriptPath1;
     private float alphaValue;
     public float fadeTime;
     private SpriteRenderer bar;
@@ -16,7 +16,7 @@ public class HealthBarAlphaPath5 : MonoBehaviour
 
     void Update()
     {
-        if (scriptPath5.IsAttacked)
+        if (scriptPath1.IsAttacked)
         {
             alphaValue = 1f;
         }
