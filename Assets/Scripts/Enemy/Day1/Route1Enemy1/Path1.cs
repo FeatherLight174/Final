@@ -46,6 +46,7 @@ public class Path1 : MonoBehaviour
             {
                 animator.SetBool("Left", true);
                 animator.SetBool("Right", false);
+                Debug.Log("move");
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
             }
             else if (gameObject.transform.position.y >= Position2.y)
