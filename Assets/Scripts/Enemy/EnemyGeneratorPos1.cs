@@ -41,6 +41,8 @@ public class EnemyGeneratorPos1 : MonoBehaviour
 
     private int day2_interval = 3;
     private int day2_interval2 = 1;
+    private int day2_interval3 = 2;
+    private int day2_interval7 = 7;
 
     private int day2_0_count = 4;
     private int day2_1_count = 4;
@@ -49,6 +51,16 @@ public class EnemyGeneratorPos1 : MonoBehaviour
     private int day2_3_count = 3;
     private int day2_4_count = 2;
     private int day2_5_count = 2;
+
+    private int day2_6_count = 3;
+    private int day2_7_count = 3;
+    private int day2_8_count = 3;
+    private int day2_9_count = 3;
+    private int day2_10_count = 3;
+    private int day2_11_count1 = 5;
+    private int day2_11_count2 = 5;
+    private int day2_12_count_2 = 1;
+    
 
     // Update is called once per frame
     void Update()
@@ -297,6 +309,103 @@ public class EnemyGeneratorPos1 : MonoBehaviour
                 }
             }
         }
+        else if ((Clock.NowHour == 6) && (Clock.Day == 2))
+        {
+            if (day2_6_count > 0)
+            {
+                if (m_timer >= day2_interval)
+                {
+                    Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
+                    m_timer = 0;
+                    day2_6_count--;
+                }
+            }
+        }
+        else if ((Clock.NowHour == 7) && (Clock.Day == 2))
+        {
+            if (day2_7_count > 0)
+            {
+                if (m_timer >= day2_interval)
+                {
+                    Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
+                    m_timer = 0;
+                    day2_7_count--;
+                }
+            }
+        }
+        else if ((Clock.NowHour == 8) && (Clock.Day == 2))
+        {
+            if (day2_8_count > 0)
+            {
+                if (m_timer >= day2_interval)
+                {
+                    Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
+                    m_timer = 0;
+                    day2_8_count--;
+                }
+            }
+        }
+        else if ((Clock.NowHour == 9) && (Clock.Day == 2))
+        {
+            if (day2_9_count > 0)
+            {
+                if (m_timer >= day2_interval)
+                {
+                    Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
+                    m_timer = 0;
+                    day2_9_count--;
+                }
+            }
+        }
+        else if ((Clock.NowHour == 10) && (Clock.Day == 2))
+        {
+            if (day2_10_count > 0)
+            {
+                if (m_timer >= day2_interval)
+                {
+                    Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
+                    m_timer = 0;
+                    day2_10_count--;
+                }
+            }
+        }
+        else if ((Clock.NowHour == 11) && (Clock.Day == 2))
+        {
+            if (day2_11_count1 > 0)
+            {
+                if (m_timer >= day2_interval3)
+                {
+                    Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
+                    m_timer = 0;
+                    day2_11_count1--;
+                }
+            }
+            if (day2_11_count2 > 0)
+            {
+                if (m_timer >= day2_interval2)
+                {
+                    Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
+                    m_timer = 0;
+                    day2_11_count2--;
+                }
+            }
+        }
+        else if ((Clock.NowHour == 12) && (Clock.Day == 2))
+        {
+            if (day2_12_count_2 > 0)
+            {
+                if (m_timer >= day2_interval7)
+                {
+                    Instantiate(enemy[1], gameObject.transform.position, Quaternion.identity);
+                    m_timer = 0;
+                    day2_12_count_2--;
+                }
+            }
+        }
+
+
+
+
     }
 }
     
