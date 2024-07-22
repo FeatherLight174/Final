@@ -13,7 +13,7 @@ public class Rout1Path1 : MonoBehaviour
     public float PathX2 = -8;
     public float PathY1 = 2;
 
-    public float Speed = GameConstant.EnemyMovespeed;
+    private float Speed = GameConstant.EnemyMovespeed;
 
     private Animator animator;
     // Start is called before the first frame update
