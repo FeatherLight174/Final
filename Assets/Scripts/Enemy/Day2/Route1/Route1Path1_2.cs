@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rout1Path1 : MonoBehaviour
+public class Rout1Path1_2 : MonoBehaviour
 {
-    private float m_v = GameConstant.vFactor;
-    private float m_attack = GameConstant.EnemyAttack;
-    private float m_attackCD = GameConstant.AttackCD;
+    private float m_v = GameConstant.vFactor2;
+    private float m_attack = GameConstant.EnemyAttack2;
+    private float m_attackCD = GameConstant.AttackCD2;
     private bool m_isAttack = false;
     private GameObject m_Tower;
     public float PathX1 = 14;
     public float PathX2 = -8;
     public float PathY1 = 2;
 
-    private float Speed = GameConstant.EnemyMovespeed;
+    private float Speed = GameConstant.EnemyMovespeed2;
 
     private Animator animator;
     // Start is called before the first frame update
