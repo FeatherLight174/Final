@@ -14,6 +14,11 @@ public class Seed : MonoBehaviour
     private float PricePower = GameConstant.PricePower;
     private float PriceGold = GameConstant.PriceGold;
     private float PriceShield = GameConstant.PriceShield;
+    public static bool goldIsFree = false;
+    public static bool towerIsFree = false;
+    private bool day2GoldCanBeFree = true;
+    private bool day2TowerCanBeFree = true;
+
 
     private int enemy = 0;
     private GameObject Placed;
@@ -25,6 +30,19 @@ public class Seed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Clock.Day == 2)
+        {
+            if (day2GoldCanBeFree)
+            {
+                goldIsFree = true;
+                day2GoldCanBeFree = false;
+            }
+            if (day2TowerCanBeFree)
+            {
+                towerIsFree = true;
+                day2TowerCanBeFree = false;
+            }
+        }
         PriceTower = GameConstant.PriceTower;
         PricePower = GameConstant.PricePower;
         PriceGold = GameConstant.PriceGold;
@@ -53,10 +71,18 @@ public class Seed : MonoBehaviour
         {
             if (MouseController.NowMouse == mouseState.Gold)
             {
-                if (GoldAndElectricity.gold >= PriceGold)
+                if (goldIsFree)
                 {
-                    Debug.Log(PriceGold);
+                    GameConstant.PriceGold += 10;
+                    Placed = Instantiate(Gold, transform.position, Quaternion.identity);
+                    m_IsActive = false;
+                    goldIsFree = false;
+                }
+                else if (GoldAndElectricity.gold >= PriceGold)
+                {
+                  
                     GoldAndElectricity.gold -= PriceGold;
+                    
                     GameConstant.PriceGold += 10; 
                     Placed = Instantiate(Gold, transform.position, Quaternion.identity);
                     m_IsActive = false;
@@ -65,7 +91,13 @@ public class Seed : MonoBehaviour
             }
             else if (MouseController.NowMouse == mouseState.Tower)
             {
-                if (GoldAndElectricity.gold >= PriceTower)
+                if (towerIsFree)
+                {
+                    Placed = Instantiate(Tower, transform.position, Quaternion.identity);
+                    m_IsActive = false;
+                    towerIsFree = false;
+                }
+                else if (GoldAndElectricity.gold >= PriceTower)
                 {
                     GoldAndElectricity.gold -= PriceTower;
                     Placed = Instantiate(Tower, transform.position, Quaternion.identity);
@@ -75,6 +107,7 @@ public class Seed : MonoBehaviour
             }
             else if (MouseController.NowMouse == mouseState.Power)
             {
+
                 if (GoldAndElectricity.gold >= PricePower)
                 {
                     GoldAndElectricity.gold -= PricePower;
