@@ -34,7 +34,8 @@ public class Rout1Path1 : MonoBehaviour
         {
             if (gameObject.transform.position.x >= PathX1)
             {
-                Debug.Log("SSSSSS");
+                animator.SetBool("Left", true);
+                
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
             }
             else if (gameObject.transform.position.y <= PathY1)
