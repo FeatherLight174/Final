@@ -103,6 +103,7 @@ MonoBehaviour:
   Power: {fileID: 4354446950988630538, guid: 1587089a9f814ce4780a71557fe4a7f2, type: 3}
   Shield: {fileID: 6211003041880742178, guid: 1fd5d8abb7630c447bf39c8bdc945546, type: 3}
   QuickTower: {fileID: 6211003041880742178, guid: 98f30acc9d6d686489869e8fb224afcb, type: 3}
+  Cammo: {fileID: 6211003041880742178, guid: 1d0b35198d7194e49bc657f3ebc4e8a6, type: 3}
 --- !u!61 &-2444011954706994697
 BoxCollider2D:
   m_ObjectHideFlags: 0

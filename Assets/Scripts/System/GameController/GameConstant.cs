@@ -5,7 +5,7 @@ public class GameConstant : MonoBehaviour
     public static float SellFactor = 0.5f;
     public static float PriceQuickTower = 75;
     public static float PriceTower = 50;
-    public static float PriceShield  = 10;
+    public static float PriceShield  = 30;
 
     //时间系统
     //包含了一天是多长时间，在这一天当中的小时
@@ -17,8 +17,8 @@ public class GameConstant : MonoBehaviour
     //Home
     public static float[] HomeGoldProduce = new float[3] { 2, 3, 3 }; 
     public static float[] HomeGoldProduceCD = new float[3] { 2,2,1 };
-    public static float[] HomePowerProduce = new float[3] {0,2,3};
-    public static float[] HomePowerProduceCD = new float[3] { 2,2,2 };
+    public static float[] HomePowerProduce = new float[3] {0,1,3};
+    public static float[] HomePowerProduceCD = new float[3] { 2,1,2 };
     public static float[] HomeHP = new float[3] { 1000,2000,4000};
     public static float Homelevel2 = 100;
     public static float Homelevel3 = 250;
@@ -43,10 +43,10 @@ public class GameConstant : MonoBehaviour
     public static float HPTower = 100;
 
     //Shield
-    public static float HPShield = 500;
+    public static float HPShield = 750;
 
     //Cammo
-    public static float PriceCammo = 1000;
+    public static float PriceCammo = 100;
 
     //源石虫
     //记录了敌人的血量，速度因数，普通敌人人的攻击力，攻击间隔
@@ -94,13 +94,13 @@ public class GameConstant : MonoBehaviour
      * 2. 爆破塔
     */
     public static float[,] towerHealth = new float[4, 3]
-    {{100f, 150f, 250f}, {100f, 150f, 250f}, {150f, 250f, 400f}, {100f, 150f, 250f}};
+    {{150f, 200f, 300f}, {150f, 200f, 300f}, {200f, 300f, 450f}, {100f, 150f, 250f}};
     public static float[,] towerRange = new float[4, 3]
     {{4f, 5f, 6f}, {6f, 7.5f, 9f}, {3f, 4f, 5f}, {4f, 5f, 6f}};
     public static float[] towerRangeNightFactor = new float[4]
     {0.75f, 0.75f, 0.75f, 0.9f};
     public static float[,] towerShootSpeed = new float[4, 3]
-    {{1f, 1.5f, 2f}, {3f, 4f ,5f}, {0.5f, 0.75f, 1f}, {1f, 1.5f, 2f}};
+    {{1f, 1.5f, 2f}, {3f, 4f ,5f}, {0.75f, 1f, 1.5f}, {1f, 1.5f, 2f}};
     public static float[,] towerRotateSpeed = new float[4, 3]
     {{90f, 105f, 120f}, {120f, 135f, 150f}, {75f, 90f, 105f}, {120f, 135f, 150f}};
     public static float[,] towerDamage = new float[4, 3]
@@ -122,7 +122,7 @@ public class GameConstant : MonoBehaviour
     public static float[] wallPowerConsumption = new float[3]
     {0f, 1f, 2f};
     public static float[] wallUpgradeCost = new float[3]
-    {50f, 75f, 100f};
+    {30f, 50f, 75f};
 
     //  Bullet
     // [塔编号, 塔等级]子弹伤害、速度

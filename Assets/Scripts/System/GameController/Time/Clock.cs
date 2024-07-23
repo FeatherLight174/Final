@@ -14,8 +14,8 @@ public class Clock : MonoBehaviour
     private bool m_isAfter = false;
     
     public static float DayTime = 0;
-    public static int Day = 2;
-    public static int NowHour = 5;
+    public static int Day = 1;
+    public static int NowHour = 6;
 
 
     public float RedMin = 76;
@@ -95,7 +95,11 @@ public class Clock : MonoBehaviour
         }
         else if (NowHour >= 7 && NowHour <= 10)
         {
-            m_nowBlue +=  Time.deltaTime / (GameConstant.HourTime * 4);
+            m_nowBlue -=  Time.deltaTime / (GameConstant.HourTime * 4);
+            if(m_nowBlue <= BlueMin)
+            {
+                m_nowBlue = BlueMin;    
+            }
         }
         else if (NowHour > 10 && NowHour <= 18)
         {
@@ -104,12 +108,20 @@ public class Clock : MonoBehaviour
         else if (NowHour >= 19 && NowHour <= 20)
         {
             m_nowBlue += Time.deltaTime / GameConstant.HourTime;
+            if(m_nowBlue >= BlueMax)
+            {
+                m_nowBlue = BlueMax;
+            }
         }
 
         // Red color transition
         if (NowHour >= 7 && NowHour < 12)
         {
             m_nowRed += Time.deltaTime / (4 * GameConstant.HourTime);
+            if(m_nowRed >= RedMax)
+            {
+                m_nowRed = RedMax;
+            }
         }
         else if (NowHour >= 20 || NowHour <= 6)
         {
@@ -121,7 +133,11 @@ public class Clock : MonoBehaviour
         }
         else if (NowHour >= 18 && NowHour < 20)
         {
-            m_nowRed += Time.deltaTime / (2 * GameConstant.HourTime);
+            m_nowRed -= Time.deltaTime / (2 * GameConstant.HourTime);
+            if(m_nowRed <= RedMin)
+            {
+                m_nowRed = RedMin;
+            }
         }
 
         // Green color transition
@@ -131,7 +147,11 @@ public class Clock : MonoBehaviour
         }
         else if (NowHour >= 11 && NowHour <= 12)
         {
-            m_nowGreen += Time.deltaTime / (2 * GameConstant.HourTime);
+            m_nowGreen -= Time.deltaTime / (2 * GameConstant.HourTime);
+            if(m_nowGreen <= GreenMin)
+            {
+                m_nowGreen = GreenMin;
+            }
         }
         else if (NowHour > 12 && NowHour < 15)
         {
@@ -150,6 +170,10 @@ public class Clock : MonoBehaviour
         if (NowHour >= 6 && NowHour <= 8)
         {
             m_nowIntensity += Time.deltaTime / (3 * GameConstant.HourTime);
+            if (m_nowIntensity >= IntensityMax)
+            {
+                m_nowIntensity = IntensityMax;
+            }
         }
         else if (NowHour > 8 && NowHour < 18)
         {
@@ -158,6 +182,10 @@ public class Clock : MonoBehaviour
         else if (NowHour >= 18 || NowHour <= 20)
         {
             m_nowIntensity -= Time.deltaTime / (3 * GameConstant.HourTime);
+            if(m_nowIntensity <= IntensityMin)
+            {
+                m_nowIntensity = IntensityMin;
+            }
         }
         else if (NowHour > 20 || NowHour < 5)
         {
