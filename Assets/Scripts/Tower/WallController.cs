@@ -71,7 +71,14 @@ public class WallController : MonoBehaviour
         {
             powerPercentage = powerGet / powerConsumption;
         }
-        scriptHPManagement.HP += powerPercentage * Time.deltaTime * wallRecovery;
+        if (scriptHPManagement.HP + powerPercentage * Time.deltaTime * wallRecovery > scriptHPManagement.MaxHP)
+        {
+            scriptHPManagement.HP = scriptHPManagement.MaxHP;
+        }
+        else
+        {
+            scriptHPManagement.HP += powerPercentage * Time.deltaTime * wallRecovery;
+        }
     }
 
     public void Sell()

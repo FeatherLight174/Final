@@ -2,20 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class R4oute1Path : MonoBehaviour
+public class R4oute4Path : MonoBehaviour
 {
 
     private float Speed = GameConstant.EnemyMovespeed2;
 
-    public float PosX1 = -23.5f;
-    private float PosX2 = -13.5f;
-    public float PosX3 = -8.5f;
+    public float PosX4 = -25;
+    public float PosX5 = -14;
+    public float PosX6 = -8;
 
-
-
-    public float PosY1 = -7;
-    public float PosY2 = -3;
-    public float PosY3 = 0;
+    public float PosY5 = -7.5f;
+    public float PosY6 = -4.2f;
+    public float PosY7 = 1;
 
     private HPManagement m_HpManager;
     private Animator animator;
@@ -30,18 +28,14 @@ public class R4oute1Path : MonoBehaviour
     private float m_attackAfter = GameConstant.EnemyAttack2After;
     private bool m_isAttack = false;
     public bool IsAttacked = false;
-    bool m_isup = false;
-    bool m_isup2 = false;
+    public int timeStep = 7;
 
     void Start()
     {
-        PosX2 = Random.Range(-16, -13);
         m_HpManager = GetComponent<HPManagement>();
         animator = GetComponent<Animator>();
         m_nowHp = m_HpManager.HP;
     }
-
-    // Update is called once per frame
     void Update()
     {
         m_nowHp = m_HpManager.HP;
@@ -58,38 +52,59 @@ public class R4oute1Path : MonoBehaviour
         }
         if (!m_isAttack)
         {
-            if (gameObject.transform.position.x <= PosX1)
+
+            
+            if (gameObject.transform.position.x >= PosX4 && (timeStep == 7 || timeStep == 8))
+            {
+                animator.SetBool("Left", true);
+                animator.SetBool("Right", false);
+                gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
+                if (timeStep == 7)
+                {
+                    timeStep += 1;
+                }
+            }
+            else if (gameObject.transform.position.y >= PosY5 && (timeStep == 8 || timeStep == 9))
+            {
+                gameObject.transform.position += Vector3.down * Speed * Time.deltaTime;
+                if (timeStep == 8)
+                {
+                    timeStep += 1;
+                }
+            }
+            else if (gameObject.transform.position.x <= PosX5 && (timeStep == 9 || timeStep == 10))
             {
                 animator.SetBool("Left", false);
                 animator.SetBool("Right", true);
-                gameObject.transform.position -= Vector3.left * Speed * Time.deltaTime;
-                m_isup = true;
+                gameObject.transform.position += Vector3.right * Speed * Time.deltaTime;
+                if (timeStep == 9)
+                {
+                    timeStep += 1;
+                }
             }
-            else if (gameObject.transform.position.y <= PosY1)
-            {
-                
-                gameObject.transform.position -= Vector3.down * Speed * Time.deltaTime;
-
-            }
-            else if (gameObject.transform.position.x <= PosX2)
-            {
-                gameObject.transform.position -= Vector3.left * Speed * Time.deltaTime;
-            }
-            else if (gameObject.transform.position.y <= PosY2)
+            else if (gameObject.transform.position.y <= PosY6 && (timeStep == 10 || timeStep == 11))
             {
                 gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
+                if (timeStep == 10)
+                {
+                    timeStep += 1;
+                }
             }
-            else if (gameObject.transform.position.x <= PosX3)
+            else if (gameObject.transform.position.x <= PosX6 && (timeStep == 11 || timeStep == 12))
             {
-                gameObject.transform.position -= Vector3.left * Speed * Time.deltaTime;
-                gameObject.transform.position -= Vector3.left * Speed * Time.deltaTime;
-                m_isup2 = true;
+                animator.SetBool("Left", false);
+                animator.SetBool("Right", true);
+                gameObject.transform.position += Vector3.right * Speed * Time.deltaTime;
+                if (timeStep == 11)
+                {
+                    timeStep += 1;
+                }
             }
-            else if (gameObject.transform.position.y <= PosY3)
+            else if (gameObject.transform.position.y <= PosY7 && (timeStep == 11 || timeStep == 12))
             {
                 gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
+               
             }
-          
 
         }
         else if (m_Tower == null)
@@ -163,4 +178,3 @@ public class R4oute1Path : MonoBehaviour
     }
 
 }
-

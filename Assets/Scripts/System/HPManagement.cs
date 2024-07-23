@@ -53,7 +53,8 @@ public class HPManagement : MonoBehaviour
 
     public void SetHP(float MAX)
     {
+        HP = HP / MaxHP;
         MaxHP = MAX;
-        HP = HP / MaxHP * MAX;
+        HP = HP * MAX;
     }
 }
