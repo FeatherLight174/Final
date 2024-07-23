@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class FreezeBulletExplosion : MonoBehaviour
 {
@@ -43,6 +44,8 @@ public class FreezeBulletExplosion : MonoBehaviour
 
     private float m_Timer;
 
+    private Light2D lightRange;
+
     void Start()
     {
         if (Clock.NowHour >= 6 && Clock.NowHour < 18)
@@ -60,12 +63,15 @@ public class FreezeBulletExplosion : MonoBehaviour
             damage = damage * damageNightFactor;
         }
         rangeScale.localScale = new Vector3(2 * range, 2 * range, 1f);
+        lightRange = GetComponent<Light2D>();
     }
 
     void Update()
     {
         m_Timer += Time.deltaTime;
-        rangeSprite.color = new Color(1f, 0.5f, 0f, 0.5f * (duration - m_Timer) / duration);
+        rangeSprite.color = new Color(1f, 0.5f, 0f, 0.5f * (duration - m_Timer) / duration); 
+        lightRange.intensity = (duration - m_Timer) / duration;
+        lightRange.pointLightOuterRadius = range;
         if (m_Timer > duration)
         {
             Destroy(gameObject);

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class ExplosiveBulletExplosion : MonoBehaviour
 {
@@ -43,6 +44,8 @@ public class ExplosiveBulletExplosion : MonoBehaviour
 
     private float m_Timer;
 
+    private Light2D lightRange;
+
     void Start()
     {
         if (Clock.NowHour >= 6 && Clock.NowHour < 18)
@@ -60,6 +63,7 @@ public class ExplosiveBulletExplosion : MonoBehaviour
             damage = damage * damageNightFactor;
         }
         rangeScale.localScale = new Vector3(2 * range, 2 * range, 1f);
+        lightRange = GetComponent<Light2D>();
     }
 
     void Update()
@@ -67,6 +71,8 @@ public class ExplosiveBulletExplosion : MonoBehaviour
         m_Timer += Time.deltaTime;
         rangeSprite.color = new Color(0f, 1f, 1f, 0.5f * (duration - m_Timer) / duration);
         GetComponent<SpriteRenderer>().color = new Color(0f, 1f, 1f, 1f * (duration - m_Timer) / duration);
+        lightRange.intensity = (duration - m_Timer) / duration;
+        lightRange.pointLightOuterRadius = range;
         if (m_Timer > duration)
         {
             Destroy(gameObject);
