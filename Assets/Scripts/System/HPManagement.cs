@@ -16,6 +16,10 @@ public class HPManagement : MonoBehaviour
             PlayDeathSound();
             HP = 0;
         }
+        if (HP > MaxHP)
+        {
+            HP = MaxHP;
+        }
     }
 
     void PlayDeathSound()
@@ -49,7 +53,8 @@ public class HPManagement : MonoBehaviour
 
     public void SetHP(float MAX)
     {
-        HP = HP / MaxHP * MAX;
+        HP = HP / MaxHP;
         MaxHP = MAX;
+        HP = HP * MAX;
     }
 }

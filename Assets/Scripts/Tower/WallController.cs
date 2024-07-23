@@ -52,6 +52,10 @@ public class WallController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (dayTime != Clock.NowHour)
+        {
+            GetPower();
+        }
         dayTime = Clock.NowHour;
         if (dayTime >= 6 && dayTime < 18)
         {
@@ -67,7 +71,14 @@ public class WallController : MonoBehaviour
         {
             powerPercentage = powerGet / powerConsumption;
         }
-        scriptHPManagement.HP += powerPercentage * Time.deltaTime * wallRecovery;
+        if (scriptHPManagement.HP + powerPercentage * Time.deltaTime * wallRecovery > scriptHPManagement.MaxHP)
+        {
+            scriptHPManagement.HP = scriptHPManagement.MaxHP;
+        }
+        else
+        {
+            scriptHPManagement.HP += powerPercentage * Time.deltaTime * wallRecovery;
+        }
     }
 
     public void Sell()
@@ -91,6 +102,23 @@ public class WallController : MonoBehaviour
             GoldAndElectricity.gold -= (int)(GameConstant.wallUpgradeCost[wallLevel]);
             scriptHPManagement.SetHP(GameConstant.wallUpgradeCost[wallLevel]);
             wallLevel++;
+            Debug.Log("Upgraded.");
+        }
+        else
+        {
+            Debug.Log("Failed.");
+        }
+    }
+    private void GetPower()
+    {
+        if (GoldAndElectricity.electricity >= powerConsumption)
+        {
+            GoldAndElectricity.electricity -= powerConsumption;
+            powerGet = powerConsumption;
+        }
+        else
+        {
+            powerGet = 0;
         }
     }
 }

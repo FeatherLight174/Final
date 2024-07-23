@@ -124,6 +124,8 @@ public class TowerController : MonoBehaviour
         homeOrBase = GameObject.FindWithTag("Base");
         rangeNightFactor = GameConstant.towerRangeNightFactor[towerIndex];
         lightComponent = GetComponent<Light2D>();
+        powerConsumption = GameConstant.towerPowerConsumption[towerIndex, towerLevel - 1];
+        GetPower();
     }
 
     // Update is called once per frame
@@ -161,7 +163,11 @@ public class TowerController : MonoBehaviour
         if (consumesPower == true)
         {
             // 电量百分比
-            powerPercentage = Mathf.Max(powerGet / powerConsumption, 1f);
+            powerPercentage = powerGet / powerConsumption;
+            if (powerPercentage > 1f)
+            {
+                powerPercentage = 1;
+            }
             // 真实范围计算
             // rangeReal = range * (1 + (rangeBoostFactor - 1) * powerPercentage) + rangeBoostConstant * powerPercentage;
             rangeReal = range * powerPercentage;
@@ -272,7 +278,7 @@ public class TowerController : MonoBehaviour
     }
     private void Shoot()
     {
-            Instantiate(bullets[(int)(towerLevel - 1)], new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.25f), transform.rotation);
+        Instantiate(bullets[(int)(towerLevel - 1)], new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.25f), transform.rotation);
     }
 
 
@@ -294,11 +300,16 @@ public class TowerController : MonoBehaviour
         sellPanel.SetActive(false);
         upgradePanel.SetActive(false);
         rangePanel.SetActive(false);
-        if (GoldAndElectricity.gold >= GameConstant.towerUpgradeCost[towerIndex, towerLevel])
+        if (GoldAndElectricity.gold >= GameConstant.towerUpgradeCost[towerIndex, towerLevel] && Base.level > towerLevel)
         {
             GoldAndElectricity.gold -= (int)(GameConstant.towerUpgradeCost[towerIndex, towerLevel]);
             scriptHPManagement.SetHP(GameConstant.towerHealth[towerIndex, towerLevel]);
             towerLevel++;
+            Debug.Log("Upgraded.");
+        }
+        else
+        {
+            Debug.Log("Failed.");
         }
     }
     private void GetPower()
@@ -312,5 +323,6 @@ public class TowerController : MonoBehaviour
         {
             powerGet = 0;
         }
+        Debug.Log(powerGet);
     }
 }

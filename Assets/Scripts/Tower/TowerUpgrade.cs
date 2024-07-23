@@ -12,6 +12,14 @@ public class TowerUpgrade : MonoBehaviour
             tower.towerLevel = Base.level;
             GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
         }
+        else if (GameConstant.towerUpgradeCost[tower.towerIndex, tower.towerLevel] > GoldAndElectricity.gold)
+        {
+            GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().color = new Color(0f, 1f, 0f, 1f);
+        }
     }
     private void OnMouseDown()
     {
