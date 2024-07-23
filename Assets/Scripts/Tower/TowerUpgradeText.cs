@@ -21,13 +21,27 @@ public class TowerUpgradeText : MonoBehaviour
     void Update()
     {
         towerLevel = tower.towerLevel;
-        towerUpgradeCost = GameConstant.towerUpgradeCost[tower.towerIndex, towerLevel];
+        if (towerLevel < 3)
+        {
+            towerUpgradeCost = GameConstant.towerUpgradeCost[tower.towerIndex, towerLevel];
+        }
+        else
+        {
+            towerUpgradeCost = 0;
+        }
         price = 0;
         for (int i = 0; i < towerLevel; i++)
         {
             price += GameConstant.towerUpgradeCost[tower.towerIndex, i];
         }
         towerSellPrice = (int)(price * health.HP / health.MaxHP * GameConstant.SellFactor);
-        GetComponent<TextMeshPro>().text = "Upgrade: " + towerUpgradeCost.ToString() + " gold\n\nSell: " + towerSellPrice.ToString() + " gold";
+        if (towerSellPrice > 0)
+        {
+            GetComponent<TextMeshPro>().text = "Upgrade: " + towerUpgradeCost.ToString() + " gold\n\nSell: " + towerSellPrice.ToString() + " gold";
+        }
+        else
+        {
+            GetComponent<TextMeshPro>().text = "Max level reach\n\nSell: " + towerSellPrice.ToString() + " gold";
+        }
     }
 }

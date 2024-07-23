@@ -15,7 +15,7 @@ public class Clock : MonoBehaviour
     
     public static float DayTime = 0;
     public static int Day = 1;
-    public static int NowHour = 6;
+    public static int NowHour = 16;
 
 
     public float RedMin = 76;
@@ -153,7 +153,7 @@ public class Clock : MonoBehaviour
         }
         else if (NowHour >= 18 || NowHour <= 20)
         {
-            m_nowIntensity += Time.deltaTime / (3 * GameConstant.HourTime);
+            m_nowIntensity -= Time.deltaTime / (3 * GameConstant.HourTime);
         }
         else if (NowHour > 20 || NowHour < 5)
         {
