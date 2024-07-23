@@ -14,8 +14,8 @@ public class Clock : MonoBehaviour
     private bool m_isAfter = false;
     
     public static float DayTime = 0;
-    public static int Day = 1;
-    public static int NowHour = 16;
+    public static int Day = 2;
+    public static int NowHour = 5;
 
 
     public float RedMin = 76;
@@ -140,6 +140,10 @@ public class Clock : MonoBehaviour
         else if (NowHour >= 15 && NowHour <= 16)
         {
             m_nowGreen += Time.deltaTime / (2 * GameConstant.HourTime);
+            if(m_nowGreen >= GreenMax)
+            {
+                m_nowGreen = GreenMax;
+            }
         }
 
         // Intensity transition
