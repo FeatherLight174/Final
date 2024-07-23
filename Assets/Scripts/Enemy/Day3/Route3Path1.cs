@@ -2,25 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rout2Path1_2 : MonoBehaviour
+public class Rout3Path1 : MonoBehaviour
 {
 
     private float Speed = GameConstant.EnemyMovespeed2;
 
-    public float PosX1 = 14;
-    public float PosX2 = 13;
-    public float PosX3 = 12;
-    public float PosX4 = 3.5f;
-    public float PosX5 = 0;
-    public float PosX6 = -9;
+    public float PosX1 = 0;
+    public float PosX2 = -5;
+    public float PosX3 = -9;
 
 
-    public float PosY1 = -3;
-    public float PosY2 = -5;
-    public float PosY3 = -6;
-    public float PosY4 = -5;
-    public float PosY5 = -1;
-    public float PosY6 = 0;
+
+    public float PosY1 = -8;
+    public float PosY2 = -10;
+    public float PosY3 = 2;
 
     private HPManagement m_HpManager;
     private Animator animator;
@@ -30,10 +25,9 @@ public class Rout2Path1_2 : MonoBehaviour
     public float showTime = 3f;
     private float m_DieTimer = 0;
     private float m_v = GameConstant.vFactor2;
-    private float m_attackPre = GameConstant.EnemyAttack2Pre;
-    private float m_attackAfter = GameConstant.EnemyAttack2After;
-    private float m_attackCD = GameConstant.AttackCD2;
     private float m_attack = GameConstant.EnemyAttack2;
+    private float m_attacPre = GameConstant.EnemyAttack2Pre;
+    private float m_attackAfter = GameConstant.EnemyAttack2After;
     private bool m_isAttack = false;
     public bool IsAttacked = false;
     bool m_isup = false;
@@ -63,19 +57,14 @@ public class Rout2Path1_2 : MonoBehaviour
         if (!m_isAttack)
         {
 
-            if (gameObject.transform.position.x >= PosX1)
+            if (gameObject.transform.position.y <= PosY1 && !m_isup)
             {
                 animator.SetBool("Left", true);
                 animator.SetBool("Right", false);
-                gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
-
+                gameObject.transform.position -= Vector3.down * Speed * Time.deltaTime;
+                m_isup = true;
             }
-            else if (gameObject.transform.position.y >= PosY1 && !m_isup)
-            {
-
-                gameObject.transform.position += Vector3.down * Speed * Time.deltaTime;
-            }
-            else if (gameObject.transform.position.x >= PosX2)
+            else if (gameObject.transform.position.x >= PosX1)
             {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
             }
@@ -83,51 +72,29 @@ public class Rout2Path1_2 : MonoBehaviour
             {
                 gameObject.transform.position -= Vector3.up * Speed * Time.deltaTime;
             }
+            else if (gameObject.transform.position.x >= PosX2)
+            {
+                gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
+            }
+            else if (gameObject.transform.position.y >= PosY3)
+            {
+                gameObject.transform.position -= Vector3.up * Speed * Time.deltaTime;
+            }
             else if (gameObject.transform.position.x >= PosX3)
             {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
             }
-            else if (gameObject.transform.position.y >= PosY3 && !m_isup)
-            {
-                gameObject.transform.position -= Vector3.up * Speed * Time.deltaTime;
-            }
-            else if (gameObject.transform.position.x >= PosX4)
-            {
-                m_isup = true;
-                gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
-            }
-            else if (gameObject.transform.position.y <= PosY4)
-            {
-                //Debug.Log("strr");
-                gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
-            }
-            else if (gameObject.transform.position.x >= PosX5)
-            {
-                gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
-            }
-            else if (gameObject.transform.position.y <= PosY5)
-            {
-                gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
-            }
-            else if (gameObject.transform.position.x >= PosX6)
-            {
-                //Debug.Log("STSTR");
-                gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
-            }
-            else if (gameObject.transform.position.y <= PosY6)
-            {
-                gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
-            }
-        }
-            else if (m_Tower == null)
-            {
-                m_isAttack = false;
-                animator.SetBool("Attack", false);
-            }
 
         }
+        else if (m_Tower == null)
+        {
+            m_isAttack = false;
+            animator.SetBool("Attack", false);
+        }
 
-    
+    }
+
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
@@ -169,7 +136,7 @@ public class Rout2Path1_2 : MonoBehaviour
     {
         while (m_isAttack && m_Tower != null)
         {
-            yield return new WaitForSeconds(m_attackPre);
+            yield return new WaitForSeconds(m_attacPre);
             // 调用建筑的减少血量方法
             m_Tower.GetComponent<HPManagement>().TakeDamage(m_attack);
             yield return new WaitForSeconds(m_attackAfter);
