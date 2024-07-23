@@ -95,6 +95,11 @@ public class WallController : MonoBehaviour
             GoldAndElectricity.gold -= (int)(GameConstant.wallUpgradeCost[wallLevel]);
             scriptHPManagement.SetHP(GameConstant.wallUpgradeCost[wallLevel]);
             wallLevel++;
+            Debug.Log("Upgraded.");
+        }
+        else
+        {
+            Debug.Log("Failed.");
         }
     }
     private void GetPower()

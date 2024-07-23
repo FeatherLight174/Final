@@ -298,11 +298,16 @@ public class TowerController : MonoBehaviour
         sellPanel.SetActive(false);
         upgradePanel.SetActive(false);
         rangePanel.SetActive(false);
-        if (GoldAndElectricity.gold >= GameConstant.towerUpgradeCost[towerIndex, towerLevel])
+        if (GoldAndElectricity.gold >= GameConstant.towerUpgradeCost[towerIndex, towerLevel] && Base.level > towerLevel)
         {
             GoldAndElectricity.gold -= (int)(GameConstant.towerUpgradeCost[towerIndex, towerLevel]);
             scriptHPManagement.SetHP(GameConstant.towerHealth[towerIndex, towerLevel]);
             towerLevel++;
+            Debug.Log("Upgraded.");
+        }
+        else
+        {
+            Debug.Log("Failed.");
         }
     }
     private void GetPower()
