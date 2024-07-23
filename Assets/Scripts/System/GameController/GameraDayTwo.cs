@@ -24,7 +24,7 @@ public class GameraDayTwo : MonoBehaviour
             m_timer += Time.deltaTime;
             if (m_timer <= 1)
             {
-                Debug.Log("move");
+
                 transform.position += move * Time.deltaTime;
                 Camera.main.orthographicSize += 2 * Time.deltaTime;
             }

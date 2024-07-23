@@ -2,22 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoldAndElectricity : MonoBehaviour
-{   
-    public static float gold;
-    public static float electricity;
-
+public class babysitter : MonoBehaviour
+{
+    public GameObject tower;
     // Start is called before the first frame update
     void Start()
     {
-        gold = 50;
-        electricity = 0;
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if((Clock.Day == 2)&&(Clock.NowHour == 6)){
+            tower.SetActive(true);
+        }
     }
 }

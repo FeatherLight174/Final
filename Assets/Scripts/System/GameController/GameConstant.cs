@@ -36,8 +36,8 @@ public class GameConstant : MonoBehaviour
     //Power
     public static float HPPower = 500;
     public static float PricePower = 100;
-    public static float PowerCD = 1;
-    public static float PowerProduce = 10;
+    public static float PowerCD = 15;
+    public static float PowerProduce = 3;
 
 
     public static float HPTower = 100;
@@ -81,7 +81,7 @@ public class GameConstant : MonoBehaviour
     public static float HPEnemy4 = 300;
     public static float vFactor4 = 1.0f;
     public static float EnemyAttack4 = 40;
-    public static float EnemyMovespeed4 = 1.5f;
+    public static float EnemyMovespeed4 = 2f;
     public static float EnemyAttack4Pre = 0.4f;
     public static float EnemyAttack4After = 0.7f;
     public static float AttackCD4;
