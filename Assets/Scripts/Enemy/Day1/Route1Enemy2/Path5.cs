@@ -10,7 +10,7 @@ public class Path5 : MonoBehaviour
     private float m_v = GameConstant.vFactor2;
     private float m_attack = GameConstant.EnemyAttack2;
     private float m_attackPre = GameConstant.EnemyAttack2Pre;
-    private float m_attackAfter = GameConstant.EenmyAttack2After;
+    private float m_attackAfter = GameConstant.EnemyAttack2After;
     private bool m_isAttack = false;
     private GameObject m_Tower;
     public Vector3 Position1 = new Vector3(-3, 3, 0);
