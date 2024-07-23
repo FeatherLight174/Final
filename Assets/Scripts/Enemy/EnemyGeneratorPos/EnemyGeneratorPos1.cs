@@ -558,7 +558,7 @@ public class EnemyGeneratorPos1 : MonoBehaviour
                     m_timer = 0;
                     day2_20_count--;
                 }
-
+            }
         }
         else if ((Clock.NowHour == 21) && (Clock.Day == 2))
         {

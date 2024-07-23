@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ExplosiveBulletExplosion : MonoBehaviour
+public class FreezeBulletExplosion : MonoBehaviour
 {
     // 多次击中问题校正
     // public bool hasHit = false;
@@ -65,8 +65,7 @@ public class ExplosiveBulletExplosion : MonoBehaviour
     void Update()
     {
         m_Timer += Time.deltaTime;
-        rangeSprite.color = new Color(0f, 1f, 1f, 0.5f * (duration - m_Timer) / duration);
-        GetComponent<SpriteRenderer>().color = new Color(0f, 1f, 1f, 1f * (duration - m_Timer) / duration);
+        rangeSprite.color = new Color(1f, 0.5f, 0f, 0.5f * (duration - m_Timer) / duration);
         if (m_Timer > duration)
         {
             Destroy(gameObject);
@@ -81,6 +80,5 @@ public class ExplosiveBulletExplosion : MonoBehaviour
             pierceCount--;
             //Debug.Log("Hit.");
         }
-        
     }
 }

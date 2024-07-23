@@ -141,4 +141,4 @@ MonoBehaviour:
   rangePowerBoostFactor: 0
   rangePowerBoostConstant: 0
   pierceCount: 1
-  explosion: {fileID: 2375399260246832811, guid: 43bb9957e3e6db441a55c89fdee4119a, type: 3}
+  explosion: {fileID: 2375399260246832811, guid: adb3833d62939f041b92100798c65ecc, type: 3}
