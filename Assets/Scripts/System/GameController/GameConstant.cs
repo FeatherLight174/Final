@@ -50,7 +50,9 @@ public class GameConstant : MonoBehaviour
     public static float vFactor = 1.0f;
     public static float EnemyAttack = 10;
     public static float EnemyMovespeed = 0.75f;
-    public static float AttackCD = 1.5f;
+    public static float AttackPre;
+    public static float AttackAfter;
+    public static float AttackCD;
 
     // 破阵者
     public static float HPEnemy2 = 250;
@@ -58,6 +60,9 @@ public class GameConstant : MonoBehaviour
     public static float EnemyAttack2 = 25;
     public static float EnemyMovespeed2 = 3f;
     public static float AttackCD2 = 0.5f;
+    public static float EnemyAttack2Pre;
+    public static float EnemyAttack2After;
+
 
     // Towers
     // 注意改new float[行, 列]的行、列值
