@@ -558,13 +558,6 @@ public class EnemyGeneratorPos1 : MonoBehaviour
                     m_timer = 0;
                     day2_20_count--;
                 }
-                if (m_timer2 >= day2_interval7)
-                {
-                    Instantiate(enemy[1], gameObject.transform.position, Quaternion.identity);
-                    m_timer2 = 0;
-                    day2_20_count_2--;
-                }
-            }
 
         }
         else if ((Clock.NowHour == 21) && (Clock.Day == 2))
@@ -600,12 +593,6 @@ public class EnemyGeneratorPos1 : MonoBehaviour
                     day2_22_count--;
                 }
             }
-            if (m_timer2 >= day2_interval5)
-            {
-                Instantiate(enemy[1], gameObject.transform.position, Quaternion.identity);
-                m_timer = 0;
-                day2_22_count_2--;
-            }
 
         }
         else if ((Clock.NowHour == 23) && (Clock.Day == 2))
@@ -621,6 +608,34 @@ public class EnemyGeneratorPos1 : MonoBehaviour
             }
 
         }
+        else if ((Clock.NowHour == 0) && (Clock.Day == 3))
+        {
+            if (day3_0_count > 0)
+            {
+                if (m_timer >= day2_interval4)
+                {
+                    Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
+                    m_timer = 0;
+                    day3_0_count--;
+                }
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     }

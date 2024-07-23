@@ -20,6 +20,7 @@ public class EnemyGeneratorPos2 : MonoBehaviour
     private int day2_interval3 = 3;
     private int day2_interval4 = 4;
     private int day2_interval5 = 5;
+    private int day2_interval7 = 7;
 
     private int day2_9_count = 2;
     private int day2_10_count = 2;
