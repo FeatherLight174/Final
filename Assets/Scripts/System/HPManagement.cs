@@ -58,4 +58,9 @@ public class HPManagement : MonoBehaviour
         MaxHP = MAX;
         HP = HP * MAX;
     }
+
+    public void AddHP(float adder)
+    {
+        HP += adder;
+    }
 }
