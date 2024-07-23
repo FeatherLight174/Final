@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class R3oute2Path : MonoBehaviour
+public class R4oute2Path : MonoBehaviour
 {
 
     private float Speed = GameConstant.EnemyMovespeed2;
 
-    public float PosX1 = 2.5f;
-    public float PosX2 = -4;
-    public float PosX3 = -9;
+    public float PosX1 = -25;
+    private float PosX2 = -14.5f;
+    public float PosX3 = -10;
 
 
 
     public float PosY1 = -8;
-    public float PosY2 = -10;
-    public float PosY3 = 1;
+    public float PosY2 = -4.5f;
+    public float PosY3 = 0;
 
     private HPManagement m_HpManager;
     private Animator animator;
@@ -35,6 +35,7 @@ public class R3oute2Path : MonoBehaviour
 
     void Start()
     {
+        PosX2 = Random.Range(-16, -13);
         m_HpManager = GetComponent<HPManagement>();
         animator = GetComponent<Animator>();
         m_nowHp = m_HpManager.HP;
@@ -57,36 +58,37 @@ public class R3oute2Path : MonoBehaviour
         }
         if (!m_isAttack)
         {
-
-            if (gameObject.transform.position.y <= PosY1 && !m_isup)
+            if (gameObject.transform.position.x <= PosX1)
             {
-                animator.SetBool("Left", true);
-                animator.SetBool("Right", false);
-                gameObject.transform.position -= Vector3.down * Speed * Time.deltaTime;
-                
-            }
-            else if (gameObject.transform.position.x >= PosX1)
-            {
-                gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
+                gameObject.transform.position -= Vector3.left * Speed * Time.deltaTime;
                 m_isup = true;
             }
-            else if (gameObject.transform.position.y >= PosY2 && !m_isup2)
+            else if (gameObject.transform.position.y <= PosY1)
             {
-                gameObject.transform.position -= Vector3.up * Speed * Time.deltaTime;
+                animator.SetBool("Left", false);
+                animator.SetBool("Right", true);
+                gameObject.transform.position -= Vector3.down * Speed * Time.deltaTime;
+
             }
-            else if (gameObject.transform.position.x >= PosX2)
+            else if (gameObject.transform.position.x <= PosX2)
             {
-                gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
+                gameObject.transform.position -= Vector3.left * Speed * Time.deltaTime;
+            }
+            else if (gameObject.transform.position.y <= PosY2)
+            {
+                gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
+            }
+            else if (gameObject.transform.position.x <= PosX3)
+            {
+                gameObject.transform.position -= Vector3.left * Speed * Time.deltaTime;
+                gameObject.transform.position -= Vector3.left * Speed * Time.deltaTime;
                 m_isup2 = true;
             }
             else if (gameObject.transform.position.y <= PosY3)
             {
                 gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
             }
-            else if (gameObject.transform.position.x >= PosX3)
-            {
-                gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
-            }
+
 
         }
         else if (m_Tower == null)

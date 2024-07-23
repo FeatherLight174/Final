@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2327171229361684862}
   - component: {fileID: 190491233633193252}
   m_Layer: 0
-  m_Name: BulletT2L2
+  m_Name: BulletT3L1
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 1, g: 0.49630833, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -135,10 +135,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasHit: 0
   isExplosive: 1
-  bulletIndex: 2
-  bulletLevel: 1
+  bulletIndex: 3
+  bulletLevel: 0
   maxRangeTimes: 1
   rangePowerBoostFactor: 0
   rangePowerBoostConstant: 0
   pierceCount: 1
-  explosion: {fileID: 2375399260246832811, guid: 5a47c26ede04d594e84660759554492e, type: 3}
+  explosion: {fileID: 2375399260246832811, guid: d28420056591a494795d465f1d9a8e76, type: 3}

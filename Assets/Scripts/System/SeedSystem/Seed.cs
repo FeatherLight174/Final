@@ -11,11 +11,13 @@ public class Seed : MonoBehaviour
     public GameObject Power;
     public GameObject Shield;
     public GameObject QuickTower;
+    public GameObject Cammo;
     private float PriceTower = GameConstant.PriceTower;
     private float PricePower = GameConstant.PricePower;
     private float PriceGold = GameConstant.PriceGold;
     private float PriceShield = GameConstant.PriceShield;
     private float PriceQuickTower = GameConstant.PriceQuickTower;
+    private float PriceCammo = GameConstant.PriceCammo;
     public static bool goldIsFree = false;
     public static bool towerIsFree = false;
     private bool day2GoldCanBeFree = true;
@@ -138,6 +140,16 @@ public class Seed : MonoBehaviour
                     m_IsActive = false;
                 }
                 MouseController.NowMouse= mouseState.None;
+            }
+            else if (MouseController.NowMouse == mouseState.Cammo)
+            {
+                if (GoldAndElectricity.gold >= PriceCammo)
+                {
+                    GoldAndElectricity.gold -= PriceCammo;
+                    Placed = Instantiate(Cammo, transform.position, Quaternion.identity);
+                    m_IsActive = false;
+                }
+                MouseController.NowMouse = mouseState.None;
             }
         }
         

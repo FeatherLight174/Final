@@ -9,6 +9,7 @@ TagManager:
   - Bullet
   - Base
   - Obstacle
+  - Freeze
   layers:
   - Default
   - TransparentFX
