@@ -15,7 +15,7 @@ public class Clock : MonoBehaviour
     private bool m_isAfter = false;
     
     public static float DayTime = 0;
-    public static int Day = 1;
+    public static int Day = 4;
     public static int NowHour = 6;
 
 

@@ -62,11 +62,13 @@ public class R4oute3Path : MonoBehaviour
 
             if (gameObject.transform.position.y <= PosY1 &&(timeStep == 0 || timeStep == 1))
             {
-                animator.SetBool("Left", true);
-                animator.SetBool("Right", false);
+                Debug.Log("Speed"+Speed);
+                
                 if(timeStep == 0)
                 {
                     timeStep = 1;
+                    animator.SetBool("Left", true);
+                    animator.SetBool("Right", false);
                 }
                 gameObject.transform.position -= Vector3.down * Speed * Time.deltaTime;
 
