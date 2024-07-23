@@ -31,6 +31,7 @@ public class Rout3Path1 : MonoBehaviour
     private bool m_isAttack = false;
     public bool IsAttacked = false;
     bool m_isup = false;
+    bool m_isup2 = false;
 
     void Start()
     {
@@ -62,23 +63,25 @@ public class Rout3Path1 : MonoBehaviour
                 animator.SetBool("Left", true);
                 animator.SetBool("Right", false);
                 gameObject.transform.position -= Vector3.down * Speed * Time.deltaTime;
-                m_isup = true;
+                
             }
             else if (gameObject.transform.position.x >= PosX1)
             {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
+                m_isup = true;
             }
-            else if (gameObject.transform.position.y >= PosY2 && !m_isup)
+            else if (gameObject.transform.position.y >= PosY2 && !m_isup2)
             {
                 gameObject.transform.position -= Vector3.up * Speed * Time.deltaTime;
             }
             else if (gameObject.transform.position.x >= PosX2)
             {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
+                m_isup2 = true;
             }
-            else if (gameObject.transform.position.y >= PosY3)
+            else if (gameObject.transform.position.y <= PosY3)
             {
-                gameObject.transform.position -= Vector3.up * Speed * Time.deltaTime;
+                gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
             }
             else if (gameObject.transform.position.x >= PosX3)
             {
