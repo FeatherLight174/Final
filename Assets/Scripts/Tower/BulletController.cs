@@ -11,6 +11,8 @@ public class BulletController : MonoBehaviour
     // 是否夜
     private bool isNight;
 
+    public bool isExplosive = false;
+
     // （在常数表查找）子弹种类（与塔索引相同）
     public int bulletIndex;
     // （在常数表查找）子弹等级（注意写索引，一级索引为0）
@@ -42,6 +44,8 @@ public class BulletController : MonoBehaviour
     public int pierceCount = 1;
 
     private GameObject m_enemy;
+
+    public GameObject explosion;
 
     void Start()
     {
@@ -84,10 +88,13 @@ public class BulletController : MonoBehaviour
     private void OnDestroy()
     {
         // 例如爆破子弹在销毁时生成一个爆炸
+        if (isExplosive)
+        {
+            Instantiate(explosion, new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.25f), Quaternion.identity);
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //Debug.Log("Hit sth.");
         if (pierceCount <= 0)
         {
             hasHit = true;
@@ -100,15 +107,16 @@ public class BulletController : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             m_enemy = other.gameObject;
-            //Debug.Log("DIE");
-            //if (m_enemy.GetComponent<HPManagement>().HP <= GameConstant.BulletAttack)
-            //{
-            //m_enemy.GetComponent<AudioSource>().Play();
-            //Debug.Log("DIE");
-            //}
-            m_enemy.GetComponent<HPManagement>().TakeDamage(damage);
-            pierceCount--;
-            //Debug.Log("Hit.");
+            if (isExplosive)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            else
+            {
+                m_enemy.GetComponent<HPManagement>().TakeDamage(damage);
+                pierceCount--;
+            }
         }
         
     }
