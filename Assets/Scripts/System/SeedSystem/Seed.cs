@@ -22,7 +22,8 @@ public class Seed : MonoBehaviour
     public static bool towerIsFree = false;
     private bool day2GoldCanBeFree = true;
     private bool day2TowerCanBeFree = true;
-
+    private bool day3GoldCanBeFree = true;
+    private bool day3TowerCanBeFree = true;
 
     private int enemy = 0;
     private GameObject Placed;
@@ -47,6 +48,20 @@ public class Seed : MonoBehaviour
                 day2TowerCanBeFree = false;
             }
         }
+        if (Clock.Day == 3)
+        {
+            if (day3GoldCanBeFree)
+            {
+                goldIsFree = true;
+                day3GoldCanBeFree = false;
+            }
+            if (day3TowerCanBeFree)
+            {
+                towerIsFree = true;
+                day3TowerCanBeFree = false;
+            }
+        }
+
         PriceTower = GameConstant.PriceTower;
         PricePower = GameConstant.PricePower;
         PriceGold = GameConstant.PriceGold;

@@ -15,10 +15,10 @@ public class GameConstant : MonoBehaviour
     public static float SpeedFactorNight = 0.75f;
  
     //Home
-    public static float[] HomeGoldProduce = new float[3] { 2, 3, 3 }; 
-    public static float[] HomeGoldProduceCD = new float[3] { 2,2,1 };
-    public static float[] HomePowerProduce = new float[3] {0,1,3};
-    public static float[] HomePowerProduceCD = new float[3] { 2,1,2 };
+    public static float[] HomeGoldProduce = new float[3] { 1, 2, 3 }; 
+    public static float[] HomeGoldProduceCD = new float[3] { 1,1,1 };
+    public static float[] HomePowerProduce = new float[3] {0,1,2};
+    public static float[] HomePowerProduceCD = new float[3] { 15,15,15 };
     public static float[] HomeHP = new float[3] { 1000,2000,4000};
     public static float Homelevel2 = 100;
     public static float Homelevel3 = 250;
@@ -27,10 +27,10 @@ public class GameConstant : MonoBehaviour
 
     //Gold
     public static float[] HPGold = new float[3] { 100,150,200};
-    public static float PriceGold = 30;
+    public static float PriceGold = 25;
     public static float[] GoldCD = new float[3] { 5, 4, 4 };
     public static float[] GoldLevelProduce = new float[3] { 2, 3, 5 };
-    public static float GoldLevel2 = 80;
+    public static float GoldLevel2 = 70;
     public static float GoldLevel3 = 300;
 
     //Power
@@ -104,7 +104,7 @@ public class GameConstant : MonoBehaviour
     public static float[,] towerRotateSpeed = new float[4, 3]
     {{90f, 105f, 120f}, {120f, 135f, 150f}, {75f, 90f, 105f}, {120f, 135f, 150f}};
     public static float[,] towerDamage = new float[4, 3]
-    {{10f, 12f, 15f}, {3f, 3.5f, 4f}, {25f, 40f, 60f}, {2f, 2f, 2.5f}};
+    {{10f, 12f, 15f}, {3f, 3.5f, 4f}, {35f, 50f, 75f}, {2f, 2f, 2.5f}};
     public static float[] towerDamageNightFactor = new float[4]
     {1.3f, 1.3f, 1.6f, 1.3f};
     public static float[,] towerBulletSpeed = new float[4, 3]
