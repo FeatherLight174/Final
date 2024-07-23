@@ -76,29 +76,30 @@ public class GameConstant : MonoBehaviour
     // 注意改new float[行, 列]的行、列值
     /* 塔编号目录
      * new float[塔编号, 等级(0开始)]
-     * 0. 测试塔（之后得改的！）
-     * 1. ？
+     * 0. 箭塔
+     * 1. 快速低伤箭塔
+     * 2. 爆破塔
     */
-    public static float[,] towerHealth = new float[2, 3]
-    {{100f, 150f, 250f}, {100f, 150f, 250f}};
-    public static float[,] towerRange = new float[2, 3]
-    {{4f, 5f, 6f}, {6f, 7.5f, 9f}};
-    public static float[] towerRangeNightFactor = new float[2]
-    {0.75f, 0.75f};
-    public static float[,] towerShootSpeed = new float[2, 3]
-    {{1f, 1.5f, 2f}, {3f, 4f ,5f}};
-    public static float[,] towerRotateSpeed = new float[2, 3]
-    {{90f, 105f, 120f}, {120f, 135f, 150f}};
-    public static float[,] towerDamage = new float[2, 3]
-    {{10f, 12f, 15f}, {3f, 3.5f, 4f}};
-    public static float[] towerDamageNightFactor = new float[2]
-    {1.3f, 1.3f};
-    public static float[,] towerBulletSpeed = new float[2, 3]
-    {{8f, 9f, 10f}, {10f, 11f, 12f}};
-    public static float[,] towerPowerConsumption = new float[2, 3]
-    {{0f, 0f, 0f}, {0f, 0f, 0f}};
-    public static float[,] towerUpgradeCost = new float[2, 3]
-    {{50f, 50f, 80f}, {75f, 75f, 75f}};
+    public static float[,] towerHealth = new float[3, 3]
+    {{100f, 150f, 250f}, {100f, 150f, 250f}, {100f, 150f, 250f}};
+    public static float[,] towerRange = new float[3, 3]
+    {{4f, 5f, 6f}, {6f, 7.5f, 9f}, {3f, 4f, 5f}};
+    public static float[] towerRangeNightFactor = new float[3]
+    {0.75f, 0.75f, 0.75f};
+    public static float[,] towerShootSpeed = new float[3, 3]
+    {{1f, 1.5f, 2f}, {3f, 4f ,5f}, {1f, 1.5f, 2f}};
+    public static float[,] towerRotateSpeed = new float[3, 3]
+    {{90f, 105f, 120f}, {120f, 135f, 150f}, {75f, 90f, 105f}};
+    public static float[,] towerDamage = new float[3, 3]
+    {{10f, 12f, 15f}, {3f, 3.5f, 4f}, {8f, 11f, 14f}};
+    public static float[] towerDamageNightFactor = new float[3]
+    {1.3f, 1.3f, 1.7f};
+    public static float[,] towerBulletSpeed = new float[3, 3]
+    {{8f, 9f, 10f}, {10f, 11f, 12f}, {6f, 7f, 8f}};
+    public static float[,] towerPowerConsumption = new float[3, 3]
+    {{0f, 0f, 0f}, {0f, 0f, 0f}, {10f, 20f, 40f}};
+    public static float[,] towerUpgradeCost = new float[3, 3]
+    {{50f, 50f, 80f}, {75f, 75f, 75f}, {100f, 150f, 200f}};
 
     // Wall
     public static float[] wallHealth = new float[3]
@@ -110,9 +111,7 @@ public class GameConstant : MonoBehaviour
     public static float[] wallUpgradeCost = new float[3]
     {50f, 50f, 100f};
 
-    //Bullet
-    //普通子弹
-    //public static float BulletAttack = 10;
+    //  Bullet
     // [塔编号, 塔等级]子弹伤害、速度
     // 子弹的伤害、速度写在了Towers里（上面）
 }
