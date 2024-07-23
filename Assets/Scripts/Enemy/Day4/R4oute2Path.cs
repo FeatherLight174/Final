@@ -14,7 +14,7 @@ public class R4oute2Path : MonoBehaviour
 
 
     public float PosY1 = -8;
-    public float PosY2 = -4.5f;
+    public float PosY2 = -4f;
     public float PosY3 = 0;
 
     private HPManagement m_HpManager;

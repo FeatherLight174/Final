@@ -7,7 +7,7 @@ public class R4oute1Path : MonoBehaviour
 
     private float Speed = GameConstant.EnemyMovespeed2;
 
-    public float PosX1 = -23.5f;
+    public float PosX1 = -24f;
     private float PosX2 = -13.5f;
     public float PosX3 = -8.5f;
 
