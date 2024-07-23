@@ -16,7 +16,7 @@ public class Goldmine : MonoBehaviour
 
 
     // Current level
-    private int level = 1;
+    public int level = 1;
 
     // Level function
     private float[] goldMineCD = GameConstant.GoldCD;

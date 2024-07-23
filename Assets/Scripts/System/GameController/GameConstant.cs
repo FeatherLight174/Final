@@ -76,6 +76,15 @@ public class GameConstant : MonoBehaviour
     public static float EnemyAttack3After = 1.8f;
     public static float AttackCD3;
 
+
+    // 血刃
+    public static float HPEnemy4 = 300;
+    public static float vFactor4 = 1.0f;
+    public static float EnemyAttack4 = 40;
+    public static float EnemyMovespeed4 = 1.5f;
+    public static float EnemyAttack4Pre = 0.4f;
+    public static float EnemyAttack4After = 0.7f;
+    public static float AttackCD4;
     // Towers
     // 注意改new float[行, 列]的行、列值
     /* 塔编号目录
