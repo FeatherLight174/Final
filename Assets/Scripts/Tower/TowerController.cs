@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -12,6 +13,7 @@ public class TowerController : MonoBehaviour
     public GameObject upgradePanel;
     private Light2D lightComponent;
     public Light2D lightRange;
+    public GameObject textPanel;
     // 卖出钱比例
     private float sellRate = GameConstant.SellFactor;
 
@@ -77,6 +79,7 @@ public class TowerController : MonoBehaviour
     // 建筑电力消耗量
     private float powerConsumption;
     private float powerPercentage;
+    private float powerTimer;
 
     // 建筑子弹速度（弃用）
     // public float bulletSpeed;
@@ -131,9 +134,14 @@ public class TowerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dayTime != Clock.NowHour)
+        if (dayTime != Clock.NowHour || powerTimer > 0)
+        {
+            powerTimer += Time.deltaTime;
+        }
+        if (powerTimer > 0.5f)
         {
             GetPower();
+            powerTimer = 0;
         }
         dayTime = Clock.NowHour;
         if (dayTime >= 6 && dayTime < 18)
@@ -287,6 +295,7 @@ public class TowerController : MonoBehaviour
         sellPanel.SetActive(false);
         upgradePanel.SetActive(false);
         rangePanel.SetActive(false);
+        textPanel.SetActive(false);
         currentCost = 0;
         for (int i = 0; i < towerLevel; i++)
         {
@@ -300,6 +309,7 @@ public class TowerController : MonoBehaviour
         sellPanel.SetActive(false);
         upgradePanel.SetActive(false);
         rangePanel.SetActive(false);
+        textPanel.SetActive(false);
         if (GoldAndElectricity.gold >= GameConstant.towerUpgradeCost[towerIndex, towerLevel] && Base.level > towerLevel)
         {
             GoldAndElectricity.gold -= (int)(GameConstant.towerUpgradeCost[towerIndex, towerLevel]);

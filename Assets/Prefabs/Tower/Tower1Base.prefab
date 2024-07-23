@@ -519,6 +519,7 @@ MonoBehaviour:
   sellPanel: {fileID: 8941662186441827994}
   upgradePanel: {fileID: 2979271691775435818}
   lightRange: {fileID: 1530538989501897749}
+  textPanel: {fileID: 1891784380220796807}
   scriptHPManagement: {fileID: 2422648091977231588}
   basePart: {fileID: 6211003041880742178}
   dayTime: 0

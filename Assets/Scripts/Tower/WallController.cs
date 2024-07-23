@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class WallController : MonoBehaviour
     // UI相关
     public GameObject sellPanel;
     public GameObject upgradePanel;
+    public GameObject textPanel;
     // 卖出钱比例
     private float sellRate = GameConstant.SellFactor;
 
@@ -20,6 +22,7 @@ public class WallController : MonoBehaviour
     private float powerConsumption;
     // [0, 1] 的数字，代表是否满电
     private float powerPercentage;
+    private float powerTimer;
 
     // 底座
     public GameObject basePart;
@@ -52,9 +55,14 @@ public class WallController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dayTime != Clock.NowHour)
+        if (dayTime != Clock.NowHour || powerTimer > 0)
+        {
+            powerTimer += Time.deltaTime;
+        }
+        if (powerTimer > 0.5f)
         {
             GetPower();
+            powerTimer = 0;
         }
         dayTime = Clock.NowHour;
         if (dayTime >= 6 && dayTime < 18)
@@ -85,6 +93,7 @@ public class WallController : MonoBehaviour
     {
         sellPanel.SetActive(false);
         upgradePanel.SetActive(false);
+        textPanel.SetActive(false);
         currentCost = 0;
         for (int i = 0; i < wallLevel; i++)
         {
@@ -97,6 +106,7 @@ public class WallController : MonoBehaviour
     {
         sellPanel.SetActive(false);
         upgradePanel.SetActive(false);
+        textPanel.SetActive(false);
         if (GoldAndElectricity.gold >= GameConstant.wallUpgradeCost[wallLevel])
         {
             GoldAndElectricity.gold -= (int)(GameConstant.wallUpgradeCost[wallLevel]);
