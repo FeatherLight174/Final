@@ -7,16 +7,16 @@ public class Path9 : MonoBehaviour
 {
 
     //public NavMeshAgent Nav;
-    private float m_v = GameConstant.vFactor2;
-    private float m_attack = GameConstant.EnemyAttack2;
-    private float m_attackCD = GameConstant.AttackCD2;
+    private float m_v = GameConstant.vFactor3;
+    private float m_attack = GameConstant.EnemyAttack3;
+    private float m_attackCD = GameConstant.AttackCD3;
     private bool m_isAttack = false;
     private GameObject m_Tower;
     public Vector3 Position1 = new Vector3(-3, 3, 0);
     public float PathY1 = 1;
     public Vector3 Position2 = new Vector3(-3,1, 0);
     public Vector3 Position3 = new Vector3(-8,2, 0);
-    private float Speed = GameConstant.EnemyMovespeed2;
+    private float Speed = GameConstant.EnemyMovespeed3;
     private Animator animator;
     private bool isDead = false;
     // Start is called before the first frame update
