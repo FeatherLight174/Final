@@ -10,6 +10,7 @@ TagManager:
   - Base
   - Obstacle
   - Freeze
+  - BloodBlade
   layers:
   - Default
   - TransparentFX

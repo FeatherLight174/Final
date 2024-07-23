@@ -37,7 +37,7 @@ public class ability : MonoBehaviour
             if (m_nowHP <= m_HP.MaxHP * 0.85)
             {
 
-                m_HP.SetHP(m_HP.MaxHP * 0.2f + m_nowHP);
+                m_HP.AddHP(m_HP.MaxHP * 0.2f);
                 Destroy(collision.gameObject);
             }
         }

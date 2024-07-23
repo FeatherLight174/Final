@@ -206,9 +206,16 @@ public class TowerController : MonoBehaviour
         // 找到所有敌人，放在组enemies中
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject[] bloodBlades = GameObject.FindGameObjectsWithTag("BloodBlade");
-        GameObject[] totalEnemies = new GameObject[enemies.Length + bloodBlades.Length];
-        Array.Copy(enemies, totalEnemies, enemies.Length);
-        Array.Copy(bloodBlades, 0, totalEnemies, enemies.Length, bloodBlades.Length);
+        GameObject[] totalEnemies;
+        if (bloodBlades != null)
+        {
+            totalEnemies = new GameObject[enemies.Length + bloodBlades.Length];
+            Array.Copy(enemies, totalEnemies, enemies.Length);
+            Array.Copy(bloodBlades, 0, totalEnemies, enemies.Length, bloodBlades.Length);
+        }
+        else{
+            totalEnemies = enemies;
+        }
         // 对每个敌人计算
         enemyToBase = new Vector3[totalEnemies.Length];
         enemyToTower = new Vector3[totalEnemies.Length];
