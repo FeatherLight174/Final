@@ -68,8 +68,8 @@ public class GameConstant : MonoBehaviour
     public static float vFactor3 = 1.0f;
     public static float EnemyAttack3 = 50;
     public static float EnemyMovespeed3 = 0.5f;
-    public static float AttackPre3 = 2f;
-    public static float AttackAfter3 = 1.8f;
+    public static float EnemyAttack3Pre = 2f;
+    public static float EnemyAttack3After = 1.8f;
     public static float AttackCD3;
 
     // Towers
