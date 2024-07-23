@@ -55,7 +55,7 @@ public class PopupController : MonoBehaviour
             }
             if (!gameObject.GetComponent<Collider2D>().OverlapPoint(mousePosition))
             {
-                Debug.Log("sssss");
+                //Debug.Log("sssss");
                 return;
             }
             // 尝试点击其他物体

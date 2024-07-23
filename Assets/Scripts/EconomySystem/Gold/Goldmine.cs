@@ -68,7 +68,7 @@ public class Goldmine : MonoBehaviour
         if(flag % 2 == 0)
         {
 
-            if (level < 3)
+            if ((level < 3) && (level < Base.level))
             {
                 //Debug.Log(true);
                 upgradePanel.SetActive(true);
@@ -95,7 +95,7 @@ public class Goldmine : MonoBehaviour
         if (flag % 2 == 0)
         {
 
-            if (level < 3)
+            if ((level < 3)&&( level < Base.level))
             {
                 upgradePanel.SetActive(true);
             }
