@@ -5,7 +5,7 @@ using UnityEngine;
 public class R4oute3Path : MonoBehaviour
 {
 
-    private float Speed = GameConstant.EnemyMovespeed2;
+    private float Speed = GameConstant.EnemyMovespeed5;
 
     public float PosX1 = -18;
     public float PosX2 = -22f;
@@ -29,10 +29,10 @@ public class R4oute3Path : MonoBehaviour
 
     public float showTime = 3f;
     private float m_DieTimer = 0;
-    private float m_v = GameConstant.vFactor2;
-    private float m_attack = GameConstant.EnemyAttack2;
-    private float m_attackPre = GameConstant.EnemyAttack2Pre;
-    private float m_attackAfter = GameConstant.EnemyAttack2After;
+    private float m_v = GameConstant.vFactor5;
+    private float m_attack = GameConstant.EnemyAttack5;
+    private float m_attackPre = GameConstant.EnemyAttack5Pre;
+    private float m_attackAfter = GameConstant.EnemyAttack5After;
     private bool m_isAttack = false;
     public bool IsAttacked = false;
     public int timeStep = 0;

@@ -59,7 +59,7 @@ public class Rout1Path1 : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(222222);
+
         if (collision.gameObject.CompareTag("Building") || collision.gameObject.CompareTag("Base"))
         {
 

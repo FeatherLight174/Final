@@ -327,7 +327,7 @@ MonoBehaviour:
   PosX1: -25
   PosX3: -10
   PosY1: -8
-  PosY2: -4.5
+  PosY2: -4
   PosY3: 0
   showTime: 3
   IsAttacked: 0

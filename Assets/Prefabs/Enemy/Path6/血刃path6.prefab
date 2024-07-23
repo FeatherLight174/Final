@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235a8bf8af2b5074cb1f625338887b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PosX1: -23.5
+  PosX1: -24
   PosX3: -8.5
   PosY1: -7
   PosY2: -3
