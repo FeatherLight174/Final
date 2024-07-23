@@ -1370,6 +1370,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower1Base
       objectReference: {fileID: 0}
+    - target: {fileID: 6211003041880742178, guid: 98f30acc9d6d686489869e8fb224afcb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8884861049668746824, guid: 98f30acc9d6d686489869e8fb224afcb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2
@@ -2436,6 +2440,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower0Base
       objectReference: {fileID: 0}
+    - target: {fileID: 6211003041880742178, guid: e156aa54208664643a2856cc8c433278, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8884861049668746824, guid: e156aa54208664643a2856cc8c433278, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2968,6 +2976,10 @@ PrefabInstance:
     - target: {fileID: 6211003041880742178, guid: 1d0b35198d7194e49bc657f3ebc4e8a6, type: 3}
       propertyPath: m_Name
       value: Tower2Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211003041880742178, guid: 1d0b35198d7194e49bc657f3ebc4e8a6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8884861049668746824, guid: 1d0b35198d7194e49bc657f3ebc4e8a6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4221,6 +4233,7 @@ MonoBehaviour:
   enemy:
   - {fileID: 5526956762559256171, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
   - {fileID: 5526956762559256171, guid: 8305c5d5fbdcbbd48a15e4ca3b3b40e4, type: 3}
+  - {fileID: 5526956762559256171, guid: 99bcedadab8a6984f9b41d511a4e6957, type: 3}
   TimerMorning: 1
   TimerAfternoon: 1
   TimerNight: 1
