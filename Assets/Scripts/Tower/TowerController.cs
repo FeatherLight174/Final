@@ -124,6 +124,8 @@ public class TowerController : MonoBehaviour
         homeOrBase = GameObject.FindWithTag("Base");
         rangeNightFactor = GameConstant.towerRangeNightFactor[towerIndex];
         lightComponent = GetComponent<Light2D>();
+        powerConsumption = GameConstant.towerPowerConsumption[towerIndex, towerLevel - 1];
+        GetPower();
     }
 
     // Update is called once per frame
