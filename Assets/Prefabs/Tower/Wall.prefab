@@ -425,6 +425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sellPanel: {fileID: 8941662186441827994}
   upgradePanel: {fileID: 2979271691775435818}
+  textPanel: {fileID: 3660686874423801898}
   scriptHPManagement: {fileID: 2422648091977231588}
   powerGet: 0
   basePart: {fileID: 6211003041880742178}

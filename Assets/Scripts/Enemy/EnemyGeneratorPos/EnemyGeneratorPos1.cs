@@ -171,7 +171,7 @@ public class EnemyGeneratorPos1 : MonoBehaviour
                 GameConstant.EnemyAttack /= 1.5f;
                 GameConstant.EnemyMovespeed2 /= 2f;
                 GameConstant.EnemyAttack2 /= 1.2f;
-                GameConstant.EnemyMovespeed2 /= 1.5f;
+                GameConstant.EnemyMovespeed3 /= 1.5f;
                 GameConstant.EnemyAttack3 /= 1.6f;
                 hasDown = true;
             }
