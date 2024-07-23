@@ -73,7 +73,6 @@ public class TowerController : MonoBehaviour
     public float powerGet;
     // 建筑电力消耗量
     private float powerConsumption;
-    // [0, 1] 的数字，代表是否满电
     private float powerPercentage;
 
     // 建筑子弹速度（弃用）
@@ -126,6 +125,10 @@ public class TowerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (dayTime != Clock.NowHour)
+        {
+            GetPower();
+        }
         dayTime = Clock.NowHour;
         if (dayTime >= 6 && dayTime < 18)
         {
@@ -152,11 +155,14 @@ public class TowerController : MonoBehaviour
             // 电量百分比
             powerPercentage = Mathf.Max(powerGet / powerConsumption, 1f);
             // 真实范围计算
-            rangeReal = range * (1 + (rangeBoostFactor - 1) * powerPercentage) + rangeBoostConstant * powerPercentage;
+            // rangeReal = range * (1 + (rangeBoostFactor - 1) * powerPercentage) + rangeBoostConstant * powerPercentage;
+            rangeReal = range * powerPercentage;
             // 真实攻速计算
-            shootSpeedReal = shootSpeed * (1 + (shootSpeedBoostFactor - 1) * powerPercentage) + shootSpeedBoostConstant * powerPercentage;
+            // shootSpeedReal = shootSpeed * (1 + (shootSpeedBoostFactor - 1) * powerPercentage) + shootSpeedBoostConstant * powerPercentage;
+            shootSpeedReal = shootSpeed * powerPercentage;
             // 真实转速计算
-            rotateSpeedReal = rotateSpeed * (1 + (rotateSpeedBoostFactor - 1) * powerPercentage) + rotateSpeedBoostConstant * powerPercentage;
+            // rotateSpeedReal = rotateSpeed * (1 + (rotateSpeedBoostFactor - 1) * powerPercentage) + rotateSpeedBoostConstant * powerPercentage;
+            rotateSpeedReal = rotateSpeed * powerPercentage;
         }
         else
         {
@@ -256,14 +262,7 @@ public class TowerController : MonoBehaviour
     }
     private void Shoot()
     {
-        if (powerPercentage >= 1f)
-        {
-            Instantiate(bullets[(int)(towerLevel + 2)], new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.25f), transform.rotation);
-        }
-        else
-        {
             Instantiate(bullets[(int)(towerLevel - 1)], new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.25f), transform.rotation);
-        }
     }
 
 
@@ -290,6 +289,18 @@ public class TowerController : MonoBehaviour
             GoldAndElectricity.gold -= (int)(GameConstant.towerUpgradeCost[towerIndex, towerLevel]);
             scriptHPManagement.SetHP(GameConstant.towerHealth[towerIndex, towerLevel]);
             towerLevel++;
+        }
+    }
+    private void GetPower()
+    {
+        if (GoldAndElectricity.electricity >= powerConsumption)
+        {
+            GoldAndElectricity.electricity -= powerConsumption;
+            powerGet = powerConsumption;
+        }
+        else
+        {
+            powerGet = 0;
         }
     }
 }

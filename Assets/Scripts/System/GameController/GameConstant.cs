@@ -63,8 +63,9 @@ public class GameConstant : MonoBehaviour
     // 注意改new float[行, 列]的行、列值
     /* 塔编号目录
      * new float[塔编号, 等级(0开始)]
-     * 0. 测试塔（之后得改的！）
-     * 1. ？
+     * 0. 箭塔
+     * 1. 快速低伤箭塔
+     * 2. 爆破塔
     */
     public static float[,] towerHealth = new float[3, 3]
     {{100f, 150f, 250f}, {100f, 150f, 250f}, {100f, 150f, 250f}};
