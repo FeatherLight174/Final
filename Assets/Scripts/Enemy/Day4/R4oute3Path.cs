@@ -8,13 +8,13 @@ public class R4oute3Path : MonoBehaviour
     private float Speed = GameConstant.EnemyMovespeed2;
 
     public float PosX1 = -18;
-    private float PosX2 = -14.5f;
-    public float PosX3 = -10;
+    private float PosX2 = -22f;
+    public float PosX3 = -18;
 
 
 
     public float PosY1 = -1;
-    public float PosY2 = -4.5f;
+    public float PosY2 = -5f;
     public float PosY3 = 0;
 
     private HPManagement m_HpManager;
@@ -53,6 +53,10 @@ public class R4oute3Path : MonoBehaviour
             {
                 animator.SetBool("Left", true);
                 animator.SetBool("Right", false);
+                if(timeStep == 0)
+                {
+                    timeStep = 1;
+                }
                 gameObject.transform.position -= Vector3.down * Speed * Time.deltaTime;
 
             }
