@@ -16584,8 +16584,8 @@ GameObject:
   - component: {fileID: 1597594388}
   - component: {fileID: 1597594387}
   - component: {fileID: 1597594392}
-  - component: {fileID: 1597594391}
   - component: {fileID: 1597594393}
+  - component: {fileID: 1597594394}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -16673,32 +16673,12 @@ Transform:
   m_GameObject: {fileID: 1597594386}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: -11, z: -2}
+  m_LocalPosition: {x: -4, y: 0, z: -2}
   m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1597594391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597594386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0af099e8437ad54f8c8bb043f786a3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PosX1: 0
-  PosX2: -5
-  PosX3: -9
-  PosY1: -8
-  PosY2: -10
-  PosY3: 2
-  showTime: 3
-  IsAttacked: 0
 --- !u!114 &1597594392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16711,8 +16691,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f5912eed921a241a785e6a15a2d845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
-  MaxHP: 0
+  HP: 100
+  MaxHP: 100
   destroy: {fileID: 0}
 --- !u!95 &1597594393
 Animator:
@@ -16735,6 +16715,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1597594394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597594386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 900ba36e03f790b4a9089813970c9c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PosX1: 3
+  PosX2: -4
+  PosX3: -9
+  PosY1: -8
+  PosY2: -10
+  PosY3: 0
+  showTime: 3
+  IsAttacked: 0
 --- !u!1001 &1609545358
 PrefabInstance:
   m_ObjectHideFlags: 0
