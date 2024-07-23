@@ -36,8 +36,8 @@ public class GameConstant : MonoBehaviour
     //Power
     public static float HPPower = 500;
     public static float PricePower = 100;
-    public static float PowerCD = 1;
-    public static float PowerProduce = 10;
+    public static float PowerCD = 15;
+    public static float PowerProduce = 3;
 
 
     public static float HPTower = 100;
@@ -81,7 +81,7 @@ public class GameConstant : MonoBehaviour
     public static float HPEnemy4 = 300;
     public static float vFactor4 = 1.0f;
     public static float EnemyAttack4 = 40;
-    public static float EnemyMovespeed4 = 1.5f;
+    public static float EnemyMovespeed4 = 2f;
     public static float EnemyAttack4Pre = 0.4f;
     public static float EnemyAttack4After = 0.7f;
     public static float AttackCD4;
@@ -92,27 +92,29 @@ public class GameConstant : MonoBehaviour
      * 0. ¼ýËþ
      * 1. ¿ìËÙµÍÉË¼ýËþ
      * 2. ±¬ÆÆËþ
+     * 3. ±ù¶³Ëþ
+     * 4. ´©´ÌËþ
     */
-    public static float[,] towerHealth = new float[4, 3]
-    {{150f, 200f, 300f}, {150f, 200f, 300f}, {200f, 300f, 450f}, {100f, 150f, 250f}};
-    public static float[,] towerRange = new float[4, 3]
-    {{4f, 5f, 6f}, {6f, 7.5f, 9f}, {3f, 4f, 5f}, {4f, 5f, 6f}};
-    public static float[] towerRangeNightFactor = new float[4]
-    {0.75f, 0.75f, 0.75f, 0.9f};
-    public static float[,] towerShootSpeed = new float[4, 3]
-    {{1f, 1.5f, 2f}, {3f, 4f ,5f}, {0.75f, 1f, 1.5f}, {1f, 1.5f, 2f}};
-    public static float[,] towerRotateSpeed = new float[4, 3]
-    {{90f, 105f, 120f}, {120f, 135f, 150f}, {75f, 90f, 105f}, {120f, 135f, 150f}};
-    public static float[,] towerDamage = new float[4, 3]
-    {{10f, 12f, 15f}, {3f, 3.5f, 4f}, {35f, 50f, 75f}, {2f, 2f, 2.5f}};
-    public static float[] towerDamageNightFactor = new float[4]
-    {1.3f, 1.3f, 1.6f, 1.3f};
-    public static float[,] towerBulletSpeed = new float[4, 3]
-    {{8f, 9f, 10f}, {10f, 11f, 12f}, {6f, 7f, 8f}, {6f, 7f, 8f}};
-    public static float[,] towerPowerConsumption = new float[4, 3]
-    {{0f, 0f, 0f}, {0f, 0f, 0f}, {2f, 2f, 2f}, {2f, 2f, 2f}};
-    public static float[,] towerUpgradeCost = new float[4, 3]
-    {{50f, 60f, 90f}, {75f, 90f, 120f}, {100f, 150f, 200f}, {100f, 150f, 200f}};
+    public static float[,] towerHealth = new float[5, 3]
+    {{150f, 200f, 300f}, {150f, 200f, 300f}, {200f, 300f, 450f}, {100f, 150f, 250f}, {100f, 150f, 250f}};
+    public static float[,] towerRange = new float[5, 3]
+    {{4f, 5f, 6f}, {6f, 7.5f, 9f}, {3f, 4f, 5f}, {4f, 5f, 6f}, {6f, 7.5f, 9f}};
+    public static float[] towerRangeNightFactor = new float[5]
+    {0.75f, 0.75f, 0.75f, 0.9f, 0.4f};
+    public static float[,] towerShootSpeed = new float[5, 3]
+    {{1f, 1.5f, 2f}, {3f, 4f ,5f}, {0.75f, 1f, 1.5f}, {1f, 1.5f, 2f}, {0.75f, 1f, 1.5f}};
+    public static float[,] towerRotateSpeed = new float[5, 3]
+    {{90f, 105f, 120f}, {120f, 135f, 150f}, {75f, 90f, 105f}, {120f, 135f, 150f}, {60f, 65f, 75f}};
+    public static float[,] towerDamage = new float[5, 3]
+    {{10f, 12f, 15f}, {3f, 3.5f, 4f}, {35f, 50f, 75f}, {2f, 2f, 2.5f}, {10f, 12f, 15f}};
+    public static float[] towerDamageNightFactor = new float[5]
+    {1.3f, 1.3f, 1.6f, 1.3f, 1.2f};
+    public static float[,] towerBulletSpeed = new float[5, 3]
+    {{8f, 9f, 10f}, {10f, 11f, 12f}, {6f, 7f, 8f}, {6f, 7f, 8f}, {18f, 24f, 30f}};
+    public static float[,] towerPowerConsumption = new float[5, 3]
+    {{0f, 0f, 0f}, {0f, 0f, 0f}, {2f, 2f, 2f}, {2f, 2f, 2f}, {3f, 3f, 3f}};
+    public static float[,] towerUpgradeCost = new float[5, 3]
+    {{50f, 60f, 90f}, {75f, 90f, 120f}, {100f, 150f, 200f}, {100f, 150f, 200f}, {120f, 160f, 200f}};
 
     // Wall
     public static float[] wallHealth = new float[3]

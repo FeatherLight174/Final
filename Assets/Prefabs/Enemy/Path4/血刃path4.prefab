@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 6798640470520907721}
   - component: {fileID: -8238072876935714274}
   - component: {fileID: 8510216922658971832}
-  - component: {fileID: -1710897951826974806}
   - component: {fileID: 7940697637272231117}
   m_Layer: 6
   m_Name: "\u8840\u5203path4"
@@ -313,26 +312,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsAttacked: 0
   showTime: 2
---- !u!114 &-1710897951826974806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5526956762559256171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0af099e8437ad54f8c8bb043f786a3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PosX1: 0
-  PosX2: -5
-  PosX3: -9
-  PosY1: -8
-  PosY2: -10
-  PosY3: 2
-  showTime: 3
-  IsAttacked: 0
 --- !u!114 &7940697637272231117
 MonoBehaviour:
   m_ObjectHideFlags: 0

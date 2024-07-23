@@ -48,12 +48,12 @@ public class EnemyGeneratorPos4 : MonoBehaviour
     private int day4_4_count = 0;
     private int day4_5_count = 0;
 
-    private int day4_6_count = 0;
-    private int day4_7_count = 0;
-    private int day4_8_count = 0;
-    private int day4_9_count = 0;
-    private int day4_10_count = 0;
-    private int day4_11_count = 0;
+    private int day4_6_count = 5;
+    private int day4_7_count = 5;
+    private int day4_8_count = 5;
+    private int day4_9_count = 5;
+    private int day4_10_count = 5;
+    private int day4_11_count = 5;
 
     private int day4_12_count = 0;
     private int day4_13_count = 0;
@@ -375,7 +375,7 @@ public class EnemyGeneratorPos4 : MonoBehaviour
         {
             if (day4_6_count > 0)
             {
-                if (m_timer >= day2_interval4)
+                if (m_timer >= 0.5f)
                 {
                     Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                     m_timer = 0;
@@ -388,7 +388,7 @@ public class EnemyGeneratorPos4 : MonoBehaviour
         {
             if (day4_7_count > 0)
             {
-                if (m_timer >= day2_interval4)
+                if (m_timer >= 0.5f)
                 {
                     Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                     m_timer = 0;
@@ -401,7 +401,7 @@ public class EnemyGeneratorPos4 : MonoBehaviour
         {
             if (day4_8_count > 0)
             {
-                if (m_timer >= day2_interval4)
+                if (m_timer >= 0.5f)
                 {
                     Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                     m_timer = 0;
@@ -414,7 +414,7 @@ public class EnemyGeneratorPos4 : MonoBehaviour
         {
             if (day4_9_count > 0)
             {
-                if (m_timer >= day2_interval4)
+                if (m_timer >= 0.5f)
                 {
                     Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                     m_timer = 0;
@@ -427,7 +427,7 @@ public class EnemyGeneratorPos4 : MonoBehaviour
         {
             if (day4_10_count > 0)
             {
-                if (m_timer >= day2_interval4)
+                if (m_timer >= 0.5f)
                 {
                     Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                     m_timer = 0;
@@ -440,7 +440,7 @@ public class EnemyGeneratorPos4 : MonoBehaviour
         {
             if (day4_11_count > 0)
             {
-                if (m_timer >= day2_interval4)
+                if (m_timer >= 0.5f)
                 {
                     Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                     m_timer = 0;

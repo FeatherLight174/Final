@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class R4oute1Path : MonoBehaviour
+public class R4oute1Path_4 : MonoBehaviour
 {
 
-    private float Speed = GameConstant.EnemyMovespeed2;
+    private float Speed = GameConstant.EnemyMovespeed4;
 
     public float PosX1 = -24f;
     private float PosX2 = -13.5f;
@@ -24,10 +24,10 @@ public class R4oute1Path : MonoBehaviour
 
     public float showTime = 3f;
     private float m_DieTimer = 0;
-    private float m_v = GameConstant.vFactor2;
-    private float m_attack = GameConstant.EnemyAttack2;
-    private float m_attackPre = GameConstant.EnemyAttack2Pre;
-    private float m_attackAfter = GameConstant.EnemyAttack2After;
+    private float m_v = GameConstant.vFactor4;
+    private float m_attack = GameConstant.EnemyAttack4;
+    private float m_attackPre = GameConstant.EnemyAttack4Pre;
+    private float m_attackAfter = GameConstant.EnemyAttack4After;
     private bool m_isAttack = false;
     public bool IsAttacked = false;
     bool m_isup = false;
