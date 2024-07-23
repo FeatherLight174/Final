@@ -69,8 +69,7 @@ public class ExplosiveBulletExplosion : MonoBehaviour
     void Update()
     {
         m_Timer += Time.deltaTime;
-        rangeSprite.color = new Color(0f, 1f, 1f, 0.5f * (duration - m_Timer) / duration);
-        GetComponent<SpriteRenderer>().color = new Color(0f, 1f, 1f, 1f * (duration - m_Timer) / duration);
+        rangeSprite.color = new Color(1f, 0.5f, 0f, 0.5f * (duration - m_Timer) / duration);
         lightRange.intensity = (duration - m_Timer) / duration;
         lightRange.pointLightOuterRadius = range;
         if (m_Timer > duration)
