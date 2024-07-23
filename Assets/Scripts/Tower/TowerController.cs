@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class TowerController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class TowerController : MonoBehaviour
     public GameObject rangePanel;
     public GameObject sellPanel;
     public GameObject upgradePanel;
+    private Light2D lightComponent;
+    public Light2D lightRange;
     // Âô³öÇ®±ÈÀý
     private float sellRate = GameConstant.SellFactor;
 
@@ -120,6 +123,7 @@ public class TowerController : MonoBehaviour
     {
         homeOrBase = GameObject.FindWithTag("Base");
         rangeNightFactor = GameConstant.towerRangeNightFactor[towerIndex];
+        lightComponent = GetComponent<Light2D>();
     }
 
     // Update is called once per frame
@@ -133,10 +137,14 @@ public class TowerController : MonoBehaviour
         if (dayTime >= 6 && dayTime < 18)
         {
             isNight = false;
+            lightComponent.intensity = 1f;
+            lightRange.intensity = 0f;
         }
         else 
         {
             isNight = true;
+            lightComponent.intensity = 1f;
+            lightRange.intensity = 0.3f;
         }
         powerConsumption = GameConstant.towerPowerConsumption[towerIndex, towerLevel - 1];
         range = GameConstant.towerRange[towerIndex, towerLevel - 1];
@@ -175,6 +183,8 @@ public class TowerController : MonoBehaviour
             rangeReal = rangeReal * rangeNightFactor;
         }
         rangePanel.transform.localScale = new Vector3(2f * rangeReal, 2f * rangeReal, 1f);
+        lightComponent.pointLightOuterRadius = rangeReal;
+        lightRange.pointLightOuterRadius = rangeReal;
         // Ìîµ¯
         shootTimer += Time.deltaTime;
         shootInterval = 1 / shootSpeedReal;

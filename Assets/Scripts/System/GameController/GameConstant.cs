@@ -17,11 +17,11 @@ public class GameConstant : MonoBehaviour
     //Home
     public static float[] HomeGoldProduce = new float[3] { 2, 3, 3 }; 
     public static float[] HomeGoldProduceCD = new float[3] { 2,2,1 };
-    public static float[] HomePowerProduce = new float[3] {0,0,5};
-    public static float[] HomePowerProduceCD = new float[3] { 2,2,10 };
+    public static float[] HomePowerProduce = new float[3] {0,2,3};
+    public static float[] HomePowerProduceCD = new float[3] { 2,2,2 };
     public static float[] HomeHP = new float[3] { 1000,2000,4000};
-    public static float Homelevel2 = 500;
-    public static float Homelevel3 = 2000;
+    public static float Homelevel2 = 100;
+    public static float Homelevel3 = 250;
 
 
 

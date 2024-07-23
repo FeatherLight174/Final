@@ -13,8 +13,7 @@ public class EnemyGeneratorPos2 : MonoBehaviour
     private float m_timer = 0;
     private float m_timer2 = 0;
     // Night and Day
-    private bool hasUp = false;
-    private bool hasDown = false;
+
 
     // Day2
     private int day2_interval2 = 2;
