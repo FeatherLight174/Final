@@ -42,6 +42,7 @@ public class BulletController : MonoBehaviour
 
     // ×Óµ¯´©Í¸ÊýÁ¿
     public int pierceCount = 1;
+    public int pierceNightConstant = 0;
 
     private GameObject m_enemy;
 
@@ -66,6 +67,7 @@ public class BulletController : MonoBehaviour
         {
             range = range * rangeNightFactor;
             damage = damage * damageNightFactor;
+            pierceCount += pierceNightConstant;
         }
 
         duration = maxRangeTimes * range / speed;

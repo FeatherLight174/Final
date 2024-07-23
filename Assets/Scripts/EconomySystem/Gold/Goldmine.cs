@@ -8,6 +8,7 @@ public class Goldmine : MonoBehaviour
     //
     public GameObject upgradePanel;
     public GameObject sellPanel;
+    public GameObject textPanel;
 
     // Cost
     private float goldMineCost = GameConstant.PriceGold;
@@ -74,6 +75,7 @@ public class Goldmine : MonoBehaviour
                 upgradePanel.SetActive(true);
             }
 
+            textPanel.SetActive(true);
 
             sellPanel.SetActive(true);
             //feature.SetActive(true);
@@ -82,7 +84,8 @@ public class Goldmine : MonoBehaviour
         {
 
             upgradePanel.SetActive(false);
-            
+
+            textPanel.SetActive(false);
             sellPanel.SetActive(false);
             //feature.SetActive(false);
         }
@@ -101,6 +104,7 @@ public class Goldmine : MonoBehaviour
             }
 
 
+            textPanel.SetActive(true);
             sellPanel.SetActive(true);
             //feature.SetActive(true);
         }
@@ -109,6 +113,7 @@ public class Goldmine : MonoBehaviour
 
             upgradePanel.SetActive(false);
 
+            textPanel.SetActive(false);
             sellPanel.SetActive(false);
             //feature.SetActive(false);
         }
@@ -131,6 +136,7 @@ public class Goldmine : MonoBehaviour
             GoldAndElectricity.gold -= upgrade_2;
             currentCost += upgrade_2;
             Hp.SetHP(GameConstant.HPGold[level - 1]);
+            textPanel.SetActive(false);
             upgradePanel.SetActive(false);
             sellPanel.SetActive(false);
             flag++;
@@ -142,6 +148,7 @@ public class Goldmine : MonoBehaviour
             GoldAndElectricity.gold -= upgrade_3;
             currentCost += upgrade_3;
             Hp.SetHP(GameConstant.HPGold[level - 1]);
+            textPanel.SetActive(false);
             upgradePanel.SetActive(false);
             sellPanel.SetActive(false);
             flag++;

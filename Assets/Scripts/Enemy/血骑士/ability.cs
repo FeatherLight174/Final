@@ -11,7 +11,7 @@ public class ability : MonoBehaviour
     {
         m_HP = GetComponent<HPManagement>();
         m_nowHP = m_HP.HP;
-    }
+    } 
 
     // Update is called once per frame
     void Update()
