@@ -10,7 +10,7 @@ public class GoldAndElectricity : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gold = 10000;
+        gold = 100;
         electricity = 100;
         Debug.Log(gold);
     }

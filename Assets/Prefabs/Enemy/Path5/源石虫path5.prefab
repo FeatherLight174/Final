@@ -11,14 +11,14 @@ GameObject:
   - component: {fileID: 6610786161847543633}
   - component: {fileID: 5733093301337142444}
   - component: {fileID: 4126019836676058198}
-  - component: {fileID: 4989939955800474387}
   - component: {fileID: 1476476672232053174}
   - component: {fileID: 2391332180332875013}
   - component: {fileID: 6798640470520907721}
   - component: {fileID: -8238072876935714274}
   - component: {fileID: 8510216922658971832}
+  - component: {fileID: 5078162451790603103}
   m_Layer: 6
-  m_Name: "\u6E90\u77F3\u866Bpath1 1"
+  m_Name: "\u6E90\u77F3\u866Bpath5"
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,22 +121,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4989939955800474387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5526956762559256171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0507e30763df1b443b424bb7a07f7356, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Position1: {x: -3, y: 3, z: 0}
-  PathY1: 1
-  Position2: {x: -3, y: 1, z: 0}
-  Position3: {x: -8, y: 2, z: 0}
 --- !u!61 &1476476672232053174
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -328,6 +312,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsAttacked: 0
   showTime: 2
+--- !u!114 &5078162451790603103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526956762559256171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 900ba36e03f790b4a9089813970c9c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PosX1: 2.5
+  PosX2: -4
+  PosX3: -9
+  PosY1: -8
+  PosY2: -10
+  PosY3: 1
+  showTime: 3
+  IsAttacked: 0
 --- !u!1001 &1026734284787811577
 PrefabInstance:
   m_ObjectHideFlags: 0
