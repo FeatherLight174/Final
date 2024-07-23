@@ -87,6 +87,9 @@ public class TowerController : MonoBehaviour
     // 建筑攻击力（弃用）
     // public float damage;
 
+    // 反转索敌
+    public bool invert = false;
+
     // 敌人存储
     public GameObject[] enemies;
 
@@ -233,15 +236,43 @@ public class TowerController : MonoBehaviour
         bool foundEnemy = false;
         minValidEnemyBaseDistanceIndex = 0;
         // 每个敌人以“打擂台”判断最接近基地
-        for (int i = 0;i < enemies.Length;i++)
+        if (!invert)
         {
-            if (enemyWithinRange[i] == true)
+            for (int i = 0; i < enemies.Length; i++)
             {
-                foundEnemy = true;
+                if (enemyWithinRange[i] == true)
+                {
+                    foundEnemy = true;
+                }
+                if (distanceEnemyBase[i] < distanceEnemyBase[minValidEnemyBaseDistanceIndex] && enemyWithinRange[i] == true)
+                {
+                    minValidEnemyBaseDistanceIndex = i;
+                }
             }
-            if (distanceEnemyBase[i] < distanceEnemyBase[minValidEnemyBaseDistanceIndex] && enemyWithinRange[i] == true)
+        }
+        else
+        {
+            for (int i = 0; i < enemies.Length; i++)
             {
-                minValidEnemyBaseDistanceIndex = i;
+                if (enemyWithinRange[i] == true)
+                {
+                    foundEnemy = true;
+                }
+                if (distanceEnemyBase[i] < distanceEnemyBase[minValidEnemyBaseDistanceIndex] && enemyWithinRange[i] == true)
+                {
+                    minValidEnemyBaseDistanceIndex = i;
+                }
+            }
+            for (int i = 0; i < enemies.Length; i++)
+            {
+                if (enemyWithinRange[i] == true)
+                {
+                    foundEnemy = true;
+                }
+                if (distanceEnemyBase[i] > distanceEnemyBase[minValidEnemyBaseDistanceIndex] && enemyWithinRange[i] == true)
+                {
+                    minValidEnemyBaseDistanceIndex = i;
+                }
             }
         }
         // 索到敌人
