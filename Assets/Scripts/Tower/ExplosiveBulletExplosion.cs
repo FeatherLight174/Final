@@ -79,7 +79,7 @@ public class ExplosiveBulletExplosion : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy") && m_Timer <= 0.1f)
+        if ((other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("BloodBlade")) && m_Timer <= 0.1f)
         {
             m_enemy = other.gameObject;
             m_enemy.GetComponent<HPManagement>().TakeDamage(damage);

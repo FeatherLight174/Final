@@ -104,7 +104,7 @@ public class BulletController : MonoBehaviour
         {
             return;
         }
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("BloodBlade"))
         {
             m_enemy = other.gameObject;
             if (isExplosive)
