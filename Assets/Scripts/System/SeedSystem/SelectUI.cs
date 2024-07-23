@@ -45,4 +45,9 @@ public class SelectUI : MonoBehaviour
     {
         MouseController.NowMouse = mouseState.TowerQuick;
     }
+
+    public void CammoEvent()
+    {
+        MouseController.NowMouse = mouseState.Cammo;
+    }
 }

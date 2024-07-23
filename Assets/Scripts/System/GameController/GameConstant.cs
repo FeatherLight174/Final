@@ -42,7 +42,11 @@ public class GameConstant : MonoBehaviour
 
     public static float HPTower = 100;
 
+    //Shield
     public static float HPShield = 500;
+
+    //Cammo
+    public static float PriceCammo = 1000;
 
     //源石虫
     //记录了敌人的血量，速度因数，普通敌人人的攻击力，攻击间隔

@@ -95,7 +95,7 @@ public class Clock : MonoBehaviour
         }
         else if (NowHour >= 7 && NowHour <= 10)
         {
-            m_nowBlue = Mathf.Lerp(m_nowBlue, BlueMin, Time.deltaTime / (GameConstant.HourTime * 4));
+            m_nowBlue +=  Time.deltaTime / (GameConstant.HourTime * 4);
         }
         else if (NowHour > 10 && NowHour <= 18)
         {
@@ -103,13 +103,13 @@ public class Clock : MonoBehaviour
         }
         else if (NowHour >= 19 && NowHour <= 20)
         {
-            m_nowBlue = Mathf.Lerp(m_nowBlue, BlueMax, Time.deltaTime / GameConstant.HourTime);
+            m_nowBlue += Time.deltaTime / GameConstant.HourTime;
         }
 
         // Red color transition
         if (NowHour >= 7 && NowHour < 12)
         {
-            m_nowRed = Mathf.Lerp(m_nowRed, RedMax, Time.deltaTime / (4 * GameConstant.HourTime));
+            m_nowRed += Time.deltaTime / (4 * GameConstant.HourTime);
         }
         else if (NowHour >= 20 || NowHour <= 6)
         {
@@ -121,7 +121,7 @@ public class Clock : MonoBehaviour
         }
         else if (NowHour >= 18 && NowHour < 20)
         {
-            m_nowRed = Mathf.Lerp(m_nowRed, RedMin, Time.deltaTime / (2 * GameConstant.HourTime));
+            m_nowRed += Time.deltaTime / (2 * GameConstant.HourTime);
         }
 
         // Green color transition
@@ -131,7 +131,7 @@ public class Clock : MonoBehaviour
         }
         else if (NowHour >= 11 && NowHour <= 12)
         {
-            m_nowGreen = Mathf.Lerp(m_nowGreen, GreenMin, Time.deltaTime / (2 * GameConstant.HourTime));
+            m_nowGreen += Time.deltaTime / (2 * GameConstant.HourTime);
         }
         else if (NowHour > 12 && NowHour < 15)
         {
@@ -139,13 +139,13 @@ public class Clock : MonoBehaviour
         }
         else if (NowHour >= 15 && NowHour <= 16)
         {
-            m_nowGreen = Mathf.Lerp(m_nowGreen, GreenMax, Time.deltaTime / (2 * GameConstant.HourTime));
+            m_nowGreen += Time.deltaTime / (2 * GameConstant.HourTime);
         }
 
         // Intensity transition
         if (NowHour >= 6 && NowHour <= 8)
         {
-            m_nowIntensity = Mathf.Lerp(m_nowIntensity, IntensityMax, Time.deltaTime / (3 * GameConstant.HourTime));
+            m_nowIntensity += Time.deltaTime / (3 * GameConstant.HourTime);
         }
         else if (NowHour > 8 && NowHour < 18)
         {
@@ -153,7 +153,7 @@ public class Clock : MonoBehaviour
         }
         else if (NowHour >= 18 || NowHour <= 20)
         {
-            m_nowIntensity = Mathf.Lerp(m_nowIntensity, IntensityMin, Time.deltaTime / (3 * GameConstant.HourTime));
+            m_nowIntensity += Time.deltaTime / (3 * GameConstant.HourTime);
         }
         else if (NowHour > 20 || NowHour < 5)
         {
