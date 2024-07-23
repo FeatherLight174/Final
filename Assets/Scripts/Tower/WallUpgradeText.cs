@@ -23,7 +23,7 @@ public class WallUpgradeText : MonoBehaviour
         wallLevel = tower.wallLevel;
         if (wallLevel < 3)
         {
-            wallUpgradeCost = GameConstant.towerUpgradeCost[tower.wallIndex, wallLevel];
+            wallUpgradeCost = GameConstant.wallUpgradeCost[wallLevel];
         }
         else
         {
@@ -32,7 +32,7 @@ public class WallUpgradeText : MonoBehaviour
         price = 0;
         for (int i = 0; i < wallLevel; i++)
         {
-            price += GameConstant.towerUpgradeCost[tower.wallIndex, i];
+            price += GameConstant.wallUpgradeCost[i];
         }
         wallSellPrice = (int)(price * health.HP / health.MaxHP * GameConstant.SellFactor);
         if (wallSellPrice > 0)

@@ -11,7 +11,7 @@ public class GoldAndElectricity : MonoBehaviour
     void Start()
     {
         gold = 100;
-        electricity = 100000;
+        electricity = 0;
 
     }
 

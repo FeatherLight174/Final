@@ -111,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradePanel: {fileID: 4515882142936296867}
   sellPanel: {fileID: 1050096912552349478}
+  textPanel: {fileID: 3762951023168675773}
   level: 1
 --- !u!61 &-2437723080321653613
 BoxCollider2D:
