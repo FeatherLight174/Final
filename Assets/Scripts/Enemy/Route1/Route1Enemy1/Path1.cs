@@ -11,8 +11,8 @@ public class Path1 : MonoBehaviour
     private float m_nowHp;
     private float m_v = GameConstant.vFactor;
     private float m_attack = GameConstant.EnemyAttack;
-    private float m_attackPre = GameConstant.EnemyAttack2Pre;
-    private float m_attackAfter = GameConstant.EnemyAttack2After;
+    private float m_attackPre = GameConstant.AttackPre;
+    private float m_attackAfter = GameConstant.AttackAfter;
     private bool m_isAttack = false;
     private GameObject m_Tower;
     public Vector3 Position1 = new Vector3(-3, 3, 0);
@@ -92,11 +92,13 @@ public class Path1 : MonoBehaviour
 
     IEnumerator AttackBuilding()
     {
-        while (m_isAttack && m_Tower != null)
-        {
+        while (m_isAttack && m_Tower != null) { 
             yield return new WaitForSeconds(m_attackPre);
             // 调用建筑的减少血量方法
-            m_Tower.GetComponent<HPManagement>().TakeDamage(m_attack);
+            if (m_Tower != null)
+            {
+                m_Tower.GetComponent<HPManagement>().TakeDamage(m_attack);
+            }
             yield return new WaitForSeconds(m_attackAfter);
         }
     }

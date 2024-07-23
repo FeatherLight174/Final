@@ -32,6 +32,8 @@ public class Rout2Path1 : MonoBehaviour
     private float m_v = GameConstant.vFactor;
     private float m_attack = GameConstant.EnemyAttack;
     private float m_attackCD = GameConstant.AttackCD;
+    private float m_attackPre = GameConstant.AttackPre;
+    private float m_attackAfter = GameConstant.AttackAfter;
     private bool m_isAttack = false;
     public bool IsAttacked = false;
     bool m_isup = false;
@@ -166,9 +168,13 @@ public class Rout2Path1 : MonoBehaviour
     {
         while (m_isAttack && m_Tower != null)
         {
+            yield return new WaitForSeconds(m_attackPre);
             // 调用建筑的减少血量方法
-            m_Tower.GetComponent<HPManagement>().TakeDamage(m_attack);
-            yield return new WaitForSeconds(m_attackCD);
+            if (m_Tower != null)
+            {
+                m_Tower.GetComponent<HPManagement>().TakeDamage(m_attack);
+            }
+            yield return new WaitForSeconds(m_attackAfter);
         }
     }
 
