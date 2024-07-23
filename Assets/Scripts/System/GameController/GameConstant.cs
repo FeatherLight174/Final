@@ -28,7 +28,7 @@ public class GameConstant : MonoBehaviour
     //Gold
     public static float[] HPGold = new float[3] { 100,150,200};
     public static float PriceGold = 30;
-    public static float[] GoldCD = new float[3] { 8, 8, 6 };
+    public static float[] GoldCD = new float[3] { 5, 5, 4 };
     public static float[] GoldLevelProduce = new float[3] { 2, 4, 6 };
     public static float GoldLevel2 = 120;
     public static float GoldLevel3 = 300;
