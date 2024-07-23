@@ -60,13 +60,14 @@ public class R4oute1Path : MonoBehaviour
         {
             if (gameObject.transform.position.x <= PosX1)
             {
+                animator.SetBool("Left", false);
+                animator.SetBool("Right", true);
                 gameObject.transform.position -= Vector3.left * Speed * Time.deltaTime;
                 m_isup = true;
             }
             else if (gameObject.transform.position.y <= PosY1)
             {
-                animator.SetBool("Left", false);
-                animator.SetBool("Right", true);
+                
                 gameObject.transform.position -= Vector3.down * Speed * Time.deltaTime;
 
             }
