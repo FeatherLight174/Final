@@ -1,22 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Path9 : MonoBehaviour
 {
 
     //public NavMeshAgent Nav;
-    private float m_v = GameConstant.vFactor2;
-    private float m_attack = GameConstant.EnemyAttack2;
-    private float m_attackCD = GameConstant.AttackCD2;
+    private float m_v = GameConstant.vFactor3;
+    private float m_attack = GameConstant.EnemyAttack3;
+    private float m_attackPre = GameConstant.EnemyAttack3Pre;
+    private float m_attackAfter = GameConstant.EnemyAttack3After;
     private bool m_isAttack = false;
     private GameObject m_Tower;
     public Vector3 Position1 = new Vector3(-3, 3, 0);
     public float PathY1 = 1;
-    public Vector3 Position2 = new Vector3(-3,1, 0);
-    public Vector3 Position3 = new Vector3(-8,2, 0);
-    private float Speed = GameConstant.EnemyMovespeed2;
+    public Vector3 Position2 = new Vector3(-3, 1, 0);
+    public Vector3 Position3 = new Vector3(-8, 2, 0);
+    private float Speed = GameConstant.EnemyMovespeed3;
     private Animator animator;
     private bool isDead = false;
     // Start is called before the first frame update
@@ -35,27 +35,27 @@ public class Path9 : MonoBehaviour
             animator.SetBool("Die", true);
 
         }
-        if (!m_isAttack&&!isDead)
+        if (!m_isAttack && !isDead)
         {
             if (gameObject.transform.position.x >= Position1.x)
             {
                 animator.SetBool("Left", true);
                 animator.SetBool("Right", false);
-                gameObject.transform.position += Vector3.left * Speed*Time.deltaTime;
+                gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
             }
             else if (gameObject.transform.position.y >= Position2.y)
             {
                 gameObject.transform.position -= Vector3.up * Speed * Time.deltaTime;
             }
-            else if(gameObject.transform.position.x >= Position3.x)
+            else if (gameObject.transform.position.x >= Position3.x)
             {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
-                
+
             }
         }
-        else if(m_Tower == null)
+        else if (m_Tower == null)
         {
-             m_isAttack=false;
+            m_isAttack = false;
             animator.SetBool("Attack", false);
         }
     }
@@ -64,7 +64,7 @@ public class Path9 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Building") || collision.gameObject.CompareTag("Base"))
         {
-            
+
             m_Tower = collision.gameObject;
             m_isAttack = true;
             animator.SetBool("Attack", true);
@@ -88,14 +88,16 @@ public class Path9 : MonoBehaviour
         while (m_isAttack && m_Tower != null)
         {
             // 调用建筑的减少血量方法
+            yield return new WaitForSeconds(m_attackPre);
             m_Tower.GetComponent<HPManagement>().TakeDamage(m_attack);
-            yield return new WaitForSeconds(m_attackCD);
+            yield return new WaitForSeconds(m_attackAfter);
         }
     }
 
 
-    private void OnMouseDown() {
-        
+    private void OnMouseDown()
+    {
+
         return;
     }
 }

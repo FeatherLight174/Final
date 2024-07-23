@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4126019836676058198}
   - component: {fileID: 1476476672232053174}
   - component: {fileID: 2391332180332875013}
-  - component: {fileID: 4426392386679087934}
   - component: {fileID: 4776162308024854738}
   - component: {fileID: 7766393300850937633}
+  - component: {fileID: 2252438194219117885}
   m_Layer: 6
   m_Name: "\u5C60\u592Bpath1"
   m_TagString: Enemy
@@ -186,22 +186,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4426392386679087934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5526956762559256171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a85ffd283069e234cbf6fcb106da6241, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Position1: {x: -3, y: 3, z: 0}
-  PathY1: 1
-  Position2: {x: -3, y: 1, z: 0}
-  Position3: {x: -8, y: 2, z: 0}
 --- !u!114 &4776162308024854738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +215,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsAttacked: 0
   showTime: 2
+--- !u!114 &2252438194219117885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526956762559256171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0143306801bddf54ab7a00fb30d21f4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Position1: {x: -3, y: 3, z: 0}
+  PathY1: 1
+  Position2: {x: -3, y: 1, z: 0}
+  Position3: {x: -8, y: 2, z: 0}
 --- !u!1001 &6704093518763651600
 PrefabInstance:
   m_ObjectHideFlags: 0
