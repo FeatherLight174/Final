@@ -186,7 +186,7 @@ MonoBehaviour:
   Sell: {fileID: 1050096912552349478}
   Upgrade: {fileID: 4515882142936296867}
   Range: {fileID: 4959280660925589531}
-  textShown: {fileID: 0}
+  textShown: {fileID: 3762951023168675773}
 --- !u!114 &4194291995548262126
 MonoBehaviour:
   m_ObjectHideFlags: 0
