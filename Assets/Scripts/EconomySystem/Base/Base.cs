@@ -68,6 +68,7 @@ public class Base : MonoBehaviour
         {
             if (level < 3)
             {
+                Debug.Log(11111111111111);
                 upgradePanel.SetActive(true);
             }
             //feature.SetActive(true);

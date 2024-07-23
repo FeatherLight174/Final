@@ -17,18 +17,18 @@ public class GameConstant : MonoBehaviour
     //Home
     public static float[] HomeGoldProduce = new float[3] { 2, 3, 3 }; 
     public static float[] HomeGoldProduceCD = new float[3] { 2,2,1 };
-    public static float[] HomePowerProduce = new float[3] {0,0,5};
-    public static float[] HomePowerProduceCD = new float[3] { 2,2,10 };
+    public static float[] HomePowerProduce = new float[3] {0,2,3};
+    public static float[] HomePowerProduceCD = new float[3] { 2,2,2 };
     public static float[] HomeHP = new float[3] { 1000,2000,4000};
-    public static float Homelevel2 = 500;
-    public static float Homelevel3 = 2000;
+    public static float Homelevel2 = 100;
+    public static float Homelevel3 = 250;
 
 
 
     //Gold
     public static float[] HPGold = new float[3] { 100,150,200};
     public static float PriceGold = 30;
-    public static float[] GoldCD = new float[3] { 8, 8, 6 };
+    public static float[] GoldCD = new float[3] { 5, 5, 4 };
     public static float[] GoldLevelProduce = new float[3] { 2, 4, 6 };
     public static float GoldLevel2 = 120;
     public static float GoldLevel3 = 300;
@@ -68,8 +68,8 @@ public class GameConstant : MonoBehaviour
     public static float vFactor3 = 1.0f;
     public static float EnemyAttack3 = 50;
     public static float EnemyMovespeed3 = 0.5f;
-    public static float AttackPre3 = 2f;
-    public static float AttackAfter3 = 1.8f;
+    public static float EnemyAttack3Pre = 2f;
+    public static float EnemyAttack3After = 1.8f;
     public static float AttackCD3;
 
     // Towers

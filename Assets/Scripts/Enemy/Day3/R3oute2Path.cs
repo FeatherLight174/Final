@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rout3Path1 : MonoBehaviour
+public class R3oute2Path : MonoBehaviour
 {
 
     private float Speed = GameConstant.EnemyMovespeed2;
