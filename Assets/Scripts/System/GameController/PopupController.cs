@@ -7,6 +7,7 @@ public class PopupController : MonoBehaviour
     public GameObject Upgrade;
     public GameObject Range;
     private TowerBeingAttacked towerAttacked;
+    public GameObject textShown;
 
     private int m_firstTime = 1;
 
@@ -21,6 +22,7 @@ public class PopupController : MonoBehaviour
         }
         Upgrade.SetActive(false);
         Range.SetActive(false);
+        textShown.SetActive(false);
     }
 
     void Update()
@@ -51,6 +53,7 @@ public class PopupController : MonoBehaviour
                 //Debug.Log("testS");
                 Sell.SetActive(false);
                 Upgrade.SetActive(false);
+                textShown.SetActive(false);
                 return;
             }
             if (!gameObject.GetComponent<Collider2D>().OverlapPoint(mousePosition))
@@ -66,6 +69,7 @@ public class PopupController : MonoBehaviour
                 Sell.SetActive(true);
                 Upgrade.SetActive(true);
                 Range.SetActive(true);
+                textShown.SetActive(true);
                 towerAttacked.IsAttacked = towerAttacked.showTime;
             }
 
@@ -74,6 +78,7 @@ public class PopupController : MonoBehaviour
                 Sell.SetActive(false);
                 Upgrade.SetActive(false);
                 Range.SetActive(false);
+                textShown.SetActive(false);
                 m_firstTime = 0;
             }
         }
