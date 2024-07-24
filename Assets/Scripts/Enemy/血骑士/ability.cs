@@ -11,6 +11,8 @@ public class ability : MonoBehaviour
     public int MAXSP = 5;
     public bool IsIntensify = false;
     public float damage = 10;
+    private float timer = 1;
+    private float m_time = 0;   
     private GameObject[] DamageObject;
     public float CD = 1;
     // Start is called before the first frame update
@@ -23,15 +25,26 @@ public class ability : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_nowHP = m_HP.HP;
-        if (Clock.IsNight)
+        m_time += Time.deltaTime;
+        if (m_time >= timer)
         {
-            m_HP.SetHP(m_nowHP - SunDamage);
+            m_nowHP = m_HP.HP;
+            if (!Clock.IsNight)
+            {
+
+                Debug.Log("XXXX");
+                m_HP.TakeDamage(SunDamage);
+            }
+            m_time = 0;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Building"))
+        {
+            StartCoroutine(AttackBuilding(collision.gameObject));
+        }
         if (collision.gameObject.CompareTag("BloodBlade"))
         {
             if (m_nowHP <= m_HP.MaxHP * 0.85)

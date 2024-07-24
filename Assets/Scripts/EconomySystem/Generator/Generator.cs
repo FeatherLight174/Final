@@ -15,6 +15,7 @@ public class Generator : MonoBehaviour
     private float generatingCD = GameConstant.PowerCD;
     private float electricityPerTime = GameConstant.PowerProduce;
     private float m_Timer;
+    private int clock;
 
     // HP
     private float fullHP = GameConstant.HPPower;
@@ -51,14 +52,13 @@ public class Generator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Clock.NowHour >= 8) && (Clock.NowHour <= 18))
+        if (clock != Clock.NowHour)
         {
-            m_Timer += Time.deltaTime;
-        }
-        if (m_Timer >= generatingCD)
-        {
-            GoldAndElectricity.electricity += electricityPerTime;
-            m_Timer = 0;
+            clock = Clock.NowHour;
+            if ((clock >= 8) && (clock <= 18))
+            {
+                GoldAndElectricity.electricity += electricityPerTime;
+            }
         }
         if ((!sellPanel.activeSelf))
         {

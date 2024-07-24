@@ -125,14 +125,18 @@ public class WallController : MonoBehaviour
     }
     private void GetPower()
     {
-        if (GoldAndElectricity.electricity >= powerConsumption)
+        if ((int)GoldAndElectricity.electricity >= (int)powerConsumption)
         {
-            GoldAndElectricity.electricity -= powerConsumption;
-            powerGet = powerConsumption;
+            GoldAndElectricity.electricity -= (int)powerConsumption;
+            powerGet = (int)powerConsumption;
         }
         else
         {
             powerGet = 0;
+        }
+        if (powerConsumption > 0)
+        {
+            Debug.Log(powerGet);
         }
     }
 }
