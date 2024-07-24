@@ -20,10 +20,14 @@ public class Seed : MonoBehaviour
     private float PriceCammo = GameConstant.PriceCammo;
     public static bool goldIsFree = false;
     public static bool towerIsFree = false;
+    public static bool PowerIsFree = false;
     private bool day2GoldCanBeFree = true;
     private bool day2TowerCanBeFree = true;
     private bool day3GoldCanBeFree = true;
     private bool day3TowerCanBeFree = true;
+    private bool day4GoldCanBeFree = true;
+    private bool day4TowerCanBeFree = true;
+    private bool day4PowerCanBeFree = true;
 
     private int enemy = 0;
     private GameObject Placed;
@@ -61,7 +65,24 @@ public class Seed : MonoBehaviour
                 day3TowerCanBeFree = false;
             }
         }
-
+        if (Clock.Day == 4)
+        {
+            if (day3GoldCanBeFree)
+            {
+                goldIsFree = true;
+                day3GoldCanBeFree = false;
+            }
+            if (day3TowerCanBeFree)
+            {
+                towerIsFree = true;
+                day3TowerCanBeFree = false;
+            }
+            if (day3PowerCanBeFree)
+            {
+                PowerIsFree = true;
+                day3PowerCanBeFree = false;
+            }
+        }
         PriceTower = GameConstant.PriceTower;
         PricePower = GameConstant.PricePower;
         PriceGold = GameConstant.PriceGold;
@@ -126,8 +147,13 @@ public class Seed : MonoBehaviour
             }
             else if (MouseController.NowMouse == mouseState.Power)
             {
-
-                if (GoldAndElectricity.gold >= PricePower)
+                if (PowerIsFree)
+                {
+                    Placed = Instantiate(Power, transform.position, Quaternion.identity);
+                    m_IsActive = false;
+                    PowerIsFree = false;
+                }
+                else if (GoldAndElectricity.gold >= PricePower)
                 {
                     GoldAndElectricity.gold -= PricePower;
                     Placed = Instantiate(Power, transform.position, Quaternion.identity);

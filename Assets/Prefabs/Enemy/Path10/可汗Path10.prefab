@@ -16,7 +16,8 @@ GameObject:
   - component: {fileID: 6798640470520907721}
   - component: {fileID: -8238072876935714274}
   - component: {fileID: 8510216922658971832}
-  - component: {fileID: 2715840102858788405}
+  - component: {fileID: 6513189350932317514}
+  - component: {fileID: 6009598522130402444}
   m_Layer: 6
   m_Name: "\u53EF\u6C57Path10"
   m_TagString: Enemy
@@ -312,7 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsAttacked: 0
   showTime: 2
---- !u!114 &2715840102858788405
+--- !u!114 &6513189350932317514
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -332,28 +333,49 @@ MonoBehaviour:
   PosX6: -9
   PosX7: -2.5
   PosX8: 13
-  PosX9: 14.5
-  PosX10: 12.5
-  PosX11: 3.5
+  PosX9: 14
+  PosX10: 12
+  PosX11: 3
   PosX12: 0.5
   PosX13: -8.5
   PosY1: -1
   PosY2: -5
   PosY3: -1
   PosY4: 3
-  PosY5: -7.5
+  PosY5: -7
   PosY6: -4
-  PosY7: -5.5
+  PosY7: -6
   PosY8: 2.5
-  PosY9: 1.5
+  PosY9: 1
   PosY10: -4
-  PosY11: -5.5
+  PosY11: -5
   PosY12: -5
-  PosY13: -1.5
+  PosY13: -1
   PosY14: 0
   showTime: 3
   IsAttacked: 0
   timeStep: 0
+  Idle1Time: 5
+--- !u!114 &6009598522130402444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526956762559256171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 252d141ab5f3fa442a3cff71f213bc6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CD: 30
+  DamageBefore: 5.2
+  enemies: []
+  buildings: []
+  targetSprite: {fileID: 0}
+  targetObject: {fileID: 0}
+  skillDamage: 1000
+  range: 0
 --- !u!1001 &1026734284787811577
 PrefabInstance:
   m_ObjectHideFlags: 0
