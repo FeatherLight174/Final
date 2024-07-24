@@ -30,6 +30,11 @@ public class R4oute1Path_4 : MonoBehaviour
     private float m_attackAfter = GameConstant.EnemyAttack4After;
     private bool m_isAttack = false;
     public bool IsAttacked = false;
+    private bool m_IsFreeze = false;
+    private float m_FreezeTime = 3;
+    private float m_freetimer = 0;
+    private bool m_isTouched = false;
+
     bool m_isup = false;
     bool m_isup2 = false;
 
@@ -101,20 +106,14 @@ public class R4oute1Path_4 : MonoBehaviour
     }
 
 
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Freeze"))
         {
-            BulletController bullet = collision.gameObject.GetComponent<BulletController>();
-            if (bullet.hasHit)
-            {
-                return;
-            }
-            IsAttacked = true;
+            m_freetimer = 0;
+            m_IsFreeze = true;
         }
-
     }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Building") || collision.gameObject.CompareTag("Base"))
