@@ -36,7 +36,7 @@ public class GameConstant : MonoBehaviour
 
     //Power
     public static float HPPower = 500;
-    public static float PricePower = 100;
+    public static float PricePower = 80;
     public static float PowerCD = 15;
     public static float PowerProduce = 3;
 
