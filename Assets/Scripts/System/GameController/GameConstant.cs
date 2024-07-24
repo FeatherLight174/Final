@@ -62,16 +62,16 @@ public class GameConstant : MonoBehaviour
     // ∆∆’Û’ﬂ
     public static float HPEnemy2 = 250;
     public static float vFactor2 = 1.0f;
-    public static float EnemyAttack2 = 25;
-    public static float EnemyMovespeed2 = 2f;
+    public static float EnemyAttack2 = 20;
+    public static float EnemyMovespeed2 = 1.5f;
     public static float AttackCD2 = 0.5f;
     public static float EnemyAttack2Pre = 0.2f;
     public static float EnemyAttack2After = 0.3f;
 
     // Õ¿∑Ú
-    public static float HPEnemy3 = 1000;
+    public static float HPEnemy3 = 800;
     public static float vFactor3 = 1.0f;
-    public static float EnemyAttack3 = 75;
+    public static float EnemyAttack3 = 90;
     public static float EnemyMovespeed3 = 0.5f;
     public static float EnemyAttack3Pre = 2f;
     public static float EnemyAttack3After = 1.8f;
@@ -81,7 +81,7 @@ public class GameConstant : MonoBehaviour
     // —™»–
     public static float HPEnemy4 = 300;
     public static float vFactor4 = 1.0f;
-    public static float EnemyAttack4 = 40;
+    public static float EnemyAttack4 = 30;
     public static float EnemyMovespeed4 = 2f;
     public static float EnemyAttack4Pre = 0.4f;
     public static float EnemyAttack4After = 0.7f;
