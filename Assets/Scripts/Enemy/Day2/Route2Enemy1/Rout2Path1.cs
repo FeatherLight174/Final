@@ -37,7 +37,10 @@ public class Rout2Path1 : MonoBehaviour
     private bool m_isAttack = false;
     public bool IsAttacked = false;
     bool m_isup = false;
-
+    private bool m_IsFreeze = false;
+    private float m_FreezeTime = 3;
+    private float m_freetimer = 0;
+    private bool m_isTouched = false;
     void Start()
     {
         m_HpManager = GetComponent<HPManagement>();
@@ -48,6 +51,19 @@ public class Rout2Path1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (m_IsFreeze)
+        {
+            Speed *= 0.5f;
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(66 / 255, 197 / 255, 1, 1);
+            m_freetimer += Time.deltaTime;
+            if (m_freetimer >= m_FreezeTime)
+            {
+                Speed /= 0.5f;
+                m_IsFreeze = false;
+                m_freetimer = 0;
+                gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+            }
+        }
         m_nowHp = m_HpManager.HP;
         if (m_nowHp <= 0)
         {
@@ -61,8 +77,6 @@ public class Rout2Path1 : MonoBehaviour
             }
         }
         if (!m_isAttack)
-        {
-
             if (gameObject.transform.position.x >= PosX1)
             {
                 animator.SetBool("Left", true);
@@ -73,72 +87,111 @@ public class Rout2Path1 : MonoBehaviour
             else if (gameObject.transform.position.y >= PosY1 && !m_isup)
             {
                 gameObject.transform.position += Vector3.down * Speed * Time.deltaTime;
+                if (gameObject.transform.position.x > PosX1)
+                {
+                    gameObject.transform.position = new Vector3(PosX1 - 0.01f, gameObject.transform.position.y, gameObject.transform.position.z);
+                }
             }
             else if (gameObject.transform.position.x >= PosX2)
             {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
+                if (gameObject.transform.position.y > PosY1)
+                {
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x, PosY1 - 0.01f, gameObject.transform.position.z);
+                }
             }
             else if (gameObject.transform.position.y >= PosY2 && !m_isup)
             {
                 gameObject.transform.position -= Vector3.up * Speed * Time.deltaTime;
+                if (gameObject.transform.position.x > PosX2)
+                {
+                    gameObject.transform.position = new Vector3(PosX2 - 0.01f, gameObject.transform.position.y, gameObject.transform.position.z);
+                }
             }
             else if (gameObject.transform.position.x >= PosX3)
             {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
+                if (gameObject.transform.position.y > PosY2)
+                {
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x, PosY2 - 0.01f, gameObject.transform.position.z);
+                }
             }
             else if (gameObject.transform.position.y >= PosY3 && !m_isup)
             {
                 gameObject.transform.position -= Vector3.up * Speed * Time.deltaTime;
+                if (gameObject.transform.position.x > PosX3)
+                {
+                    gameObject.transform.position = new Vector3(PosX3 - 0.01f, gameObject.transform.position.y, gameObject.transform.position.z);
+                }
             }
             else if (gameObject.transform.position.x >= PosX4)
             {
                 m_isup = true;
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
+                if (gameObject.transform.position.y > PosY3)
+                {
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x, PosY3 - 0.01f, gameObject.transform.position.z);
+                }
             }
             else if (gameObject.transform.position.y <= PosY4)
             {
                 //Debug.Log("strr");
                 gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
+                if (gameObject.transform.position.x > PosX4)
+                {
+                    gameObject.transform.position = new Vector3(PosX4 - 0.01f, gameObject.transform.position.y, gameObject.transform.position.z);
+                }
             }
             else if (gameObject.transform.position.x >= PosX5)
             {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
+                if (gameObject.transform.position.y < PosY4)
+                {
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x, PosY4 + 0.01f, gameObject.transform.position.z);
+                }
             }
             else if (gameObject.transform.position.y <= PosY5)
             {
                 gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
+                if (gameObject.transform.position.x > PosX5)
+                {
+                    gameObject.transform.position = new Vector3(PosX5 - 0.01f, gameObject.transform.position.y, gameObject.transform.position.z);
+                }
             }
             else if (gameObject.transform.position.x >= PosX6)
             {
                 //Debug.Log("STSTR");
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
+                if (gameObject.transform.position.y < PosY5)
+                {
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x, PosY5 + 0.01f, gameObject.transform.position.z);
+                }
             }
             else if (gameObject.transform.position.y <= PosY6)
             {
                 gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
+                if (gameObject.transform.position.x > PosX6)
+                {
+                    gameObject.transform.position = new Vector3(PosX6 - 0.01f, gameObject.transform.position.y, gameObject.transform.position.z);
+                }
             }
-        }
+    
             else if (m_Tower == null)
             {
                 m_isAttack = false;
                 animator.SetBool("Attack", false);
             }
 
-        }
+    }
 
-    
-    void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Freeze"))
         {
-            BulletController bullet = collision.gameObject.GetComponent<BulletController>();
-            if (bullet.hasHit)
-            {
-                return;
-            }
-            IsAttacked = true;
+            m_freetimer = 0;
+            m_IsFreeze = true;
         }
-
     }
 
     void OnCollisionEnter2D(Collision2D collision)

@@ -19,6 +19,10 @@ public class Path9 : MonoBehaviour
     private float Speed = GameConstant.EnemyMovespeed3;
     private Animator animator;
     private bool isDead = false;
+    private bool m_IsFreeze = false;
+    private float m_FreezeTime = 3;
+    private float m_freetimer = 0;
+    private bool m_isTouched = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +34,19 @@ public class Path9 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (m_IsFreeze)
+        {
+            Speed *= 0.5f;
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(66 / 255, 197 / 255, 1, 1);
+            m_freetimer += Time.deltaTime;
+            if (m_freetimer >= m_FreezeTime)
+            {
+                Speed /= 0.5f;
+                m_IsFreeze = false;
+                m_freetimer = 0;
+                gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+            }
+        }
         if (gameObject.GetComponent<HPManagement>().HP <= 0)
         {
             animator.SetBool("Die", true);
@@ -46,11 +63,18 @@ public class Path9 : MonoBehaviour
             else if (gameObject.transform.position.y >= Position2.y)
             {
                 gameObject.transform.position -= Vector3.up * Speed * Time.deltaTime;
+                if (gameObject.transform.position.x > Position1.x)
+                {
+                    gameObject.transform.position = new Vector3(Position1.x - 0.01f, gameObject.transform.position.y, gameObject.transform.position.z);
+                }
             }
             else if (gameObject.transform.position.x >= Position3.x)
             {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
-
+                if (gameObject.transform.position.y > Position2.y)
+                {
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.y, Position2.y - 0.01f, gameObject.transform.position.z);
+                }
             }
         }
         else if (m_Tower == null)
@@ -71,7 +95,14 @@ public class Path9 : MonoBehaviour
             StartCoroutine(AttackBuilding());
         }
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Freeze"))
+        {
+            m_freetimer = 0;
+            m_IsFreeze = true;
+        }
+    }
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Building") || collision.gameObject.CompareTag("Base"))
