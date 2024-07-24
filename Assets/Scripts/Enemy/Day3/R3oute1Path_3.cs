@@ -98,19 +98,7 @@ public class R3oute1Path_3 : MonoBehaviour
     }
 
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            BulletController bullet = collision.gameObject.GetComponent<BulletController>();
-            if (bullet.hasHit)
-            {
-                return;
-            }
-            IsAttacked = true;
-        }
-
-    }
+    
 
     void OnCollisionEnter2D(Collision2D collision)
     {
