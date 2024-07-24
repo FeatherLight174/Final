@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
+using TMPro;
 using UnityEngine;
 
 public class Boss : MonoBehaviour
@@ -16,9 +17,9 @@ public class Boss : MonoBehaviour
     public float PosX6 = -9;
     public float PosX7 = -2.5f;
     public float PosX8 = 13;
-    public float PosX9 = 14.5f;
-    public float PosX10 = 12.5f;
-    public float PosX11 = 3.5f;
+    public float PosX9 = 14f;
+    public float PosX10 = 12f;
+    public float PosX11 = 3f;
     public float PosX12 = 0.5f;
     public float PosX13 = -8.5f;
 
@@ -26,15 +27,15 @@ public class Boss : MonoBehaviour
     public float PosY2 = -5f;
     public float PosY3 = -1;
     public float PosY4 = 3;
-    public float PosY5 = -7.5f;
-    public float PosY6 = -4.2f;
-    public float PosY7 = -5.5f;
+    public float PosY5 = -7f;
+    public float PosY6 = -4f;
+    public float PosY7 = -6f;
     public float PosY8 = 2.5f;
-    public float PosY9 = 1.5f;
+    public float PosY9 = 1f;
     public float PosY10 = -4;
-    public float PosY11 = -5.5f;
+    public float PosY11 = -5f;
     public float PosY12 = -5;
-    public float PosY13 = -1.5f;
+    public float PosY13 = -1f;
     public float PosY14 = 0;
 
     private HPManagement m_HpManager;
@@ -52,6 +53,19 @@ public class Boss : MonoBehaviour
     public bool IsAttacked = false;
     public int timeStep = 0;
 
+    private bool m_ismove = false;
+    public float Idle1Time = 5;
+    private bool m_isIdle1 = false;
+    private bool m_isIdle2 = false;
+    private float Idle2Time = 5;
+    private float Idle3Time = 5;
+    private bool m_isIdle3 = false;
+    private float Idle4Time = 5;
+    private bool m_isIdle4 = false;
+    private float Idle5Time = 5;
+    private bool m_isIdle5 = false;
+    private float m_timer = 0;
+
     void Start()
     {
         m_HpManager = GetComponent<HPManagement>();
@@ -60,8 +74,8 @@ public class Boss : MonoBehaviour
     }
     void Update()
     {
-        time += Time.deltaTime;
-        Debug.Log(time);
+        //time += Time.deltaTime;
+        //Debug.Log(time);
         m_nowHp = m_HpManager.HP;
         if (m_nowHp <= 0)
         {
@@ -76,11 +90,18 @@ public class Boss : MonoBehaviour
         }
         if (!m_isAttack)
         {
+            if (m_timer < Idle1Time && !m_isIdle1)
+            {
+                m_timer += Time.deltaTime;
+            }
 
-            if (gameObject.transform.position.y <= PosY1 && (timeStep == 0 || timeStep == 1))
+            else if (gameObject.transform.position.y <= PosY1 && (timeStep == 0 || timeStep == 1))
             {
                 animator.SetBool("Left", true);
                 animator.SetBool("Right", false);
+                animator.SetBool("Move", true);
+                m_isIdle1 = true;
+                m_timer = 0;
                 if (timeStep == 0)
                 {
                     timeStep = 1;
@@ -137,10 +158,25 @@ public class Boss : MonoBehaviour
             }
             else if (gameObject.transform.position.y <= PosY4 && (timeStep == 6 || timeStep == 7))
             {
-                gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
-                if (timeStep == 6)
+                if (!m_isIdle2)
                 {
-                    timeStep += 1;
+                    Debug.Log("SSSSSSSSSS");
+                    m_timer += Time.deltaTime;
+                    animator.SetBool("Move", false);
+                    if (m_timer >= Idle2Time)
+                    {
+                        m_isIdle2 = true;
+                        m_timer = 0;
+                    }
+                }
+                else
+                {
+                    animator.SetBool("Move", true);
+                    gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
+                    if (timeStep == 6)
+                    {
+                        timeStep += 1;
+                    }
                 }
             }
             else if (gameObject.transform.position.x >= PosX4 && (timeStep == 7 || timeStep == 8))
@@ -173,10 +209,24 @@ public class Boss : MonoBehaviour
             }
             else if (gameObject.transform.position.y <= PosY6 && (timeStep == 10 || timeStep == 11))
             {
-                gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
-                if (timeStep == 10)
+                if (!m_isIdle3)
                 {
-                    timeStep += 1;
+                    m_timer += Time.deltaTime;
+                    if (m_timer >= Idle3Time)
+                    {
+                        animator.SetBool("Move", false);
+                        m_timer = 0;
+                        m_isIdle3 = true;
+                    }
+                }
+                else
+                {
+                    animator.SetBool("Move", true);
+                    gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
+                    if (timeStep == 10)
+                    {
+                        timeStep += 1;
+                    }
                 }
             }
             else if (gameObject.transform.position.x <= PosX6 && (timeStep == 11 || timeStep == 12))
@@ -200,12 +250,26 @@ public class Boss : MonoBehaviour
             }
             else if (gameObject.transform.position.x <= PosX7 && (timeStep == 13 || timeStep == 14))
             {
-                gameObject.transform.position += Vector3.right * Speed * Time.deltaTime;
-                if (timeStep == 13)
+                if (!m_isIdle4)
                 {
-                    timeStep += 1;
+                    m_timer += Time.deltaTime;
+                    if (m_timer >= Idle4Time)
+                    {
+                        animator.SetBool("Move", false);
+                        m_timer = 0;
+                        m_isIdle4 = true;
+                    }
                 }
+                else
+                {
+                    animator.SetBool("Move", true);
+                    gameObject.transform.position += Vector3.right * Speed * Time.deltaTime;
+                    if (timeStep == 13)
+                    {
+                        timeStep += 1;
+                    }
 
+                }
             }
             else if (gameObject.transform.position.y <= PosY8 && (timeStep == 14 || timeStep == 15))
             {
@@ -233,10 +297,24 @@ public class Boss : MonoBehaviour
             }
             else if (gameObject.transform.position.x <= PosX9 && (timeStep == 17 || timeStep == 18))
             {
-                gameObject.transform.position += Vector3.right * Speed * Time.deltaTime;
-                if (timeStep == 17)
+                if (!m_isIdle5)
                 {
-                    timeStep += 1;
+                    m_timer += Time.deltaTime;
+                    if (m_timer >= Idle5Time)
+                    {
+                        animator.SetBool("Move", false);
+                        m_timer = 0;
+                        m_isIdle5 = true;
+                    }
+                }
+                else
+                {
+                    animator.SetBool("Move", true);
+                    gameObject.transform.position += Vector3.right * Speed * Time.deltaTime;
+                    if (timeStep == 17)
+                    {
+                        timeStep += 1;
+                    }
                 }
             }
             else if (gameObject.transform.position.y >= PosY10 && (timeStep == 18 || timeStep == 19))
@@ -305,10 +383,10 @@ public class Boss : MonoBehaviour
                     timeStep += 1;
                 }
             }
-            else if (gameObject.transform.position.y <= PosY14 )
+            else if (gameObject.transform.position.y <= PosY14)
             {
                 gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
-                
+
             }
 
         }
@@ -316,24 +394,13 @@ public class Boss : MonoBehaviour
         {
             m_isAttack = false;
             animator.SetBool("Attack", false);
+            StopCoroutine(AttackBuilding());
         }
 
     }
 
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            BulletController bullet = collision.gameObject.GetComponent<BulletController>();
-            if (bullet.hasHit)
-            {
-                return;
-            }
-            IsAttacked = true;
-        }
-
-    }
+    
 
     void OnCollisionEnter2D(Collision2D collision)
     {
