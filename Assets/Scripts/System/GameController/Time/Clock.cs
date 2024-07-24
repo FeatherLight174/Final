@@ -47,45 +47,53 @@ public class Clock : MonoBehaviour
 
     void Update()
     {
-        if(NowHour >= 20 || NowHour <= 4)
+        if (Day < 5)
         {
-            IsNight = true;
-        }
-        else if(NowHour >= 5 && NowHour <= 19)
-        {
-            IsNight = false;
-        }
-        if(NowHour == 22 && !m_isNight)
-        {
-            Night.Play();
-            Afternoon.Pause();
-            m_isNight = true;
-        }
-        else if(NowHour == 13 && !m_isAfter)
-        {
-            Afternoon.Play();
-            morning.Pause();
-            m_isAfter = true;
-        }
-        else if(NowHour == 7 && !m_isMorning)
-        {
-            morning.Play();
-            m_isMorning = true;
-        }
-        DayTime += Time.deltaTime;
-        if (DayTime >= GameConstant.HourTime)
-        {
-            NowHour++;
-            
-            DayTime = 0;
-            if (NowHour == 24)
+
+            if (NowHour >= 19 || NowHour <= 7)
             {
-                Day++;
-                m_isAfter = false;
-                m_isMorning = false;
-                m_isNight = false;
-                NowHour = 0;
+                IsNight = true;
             }
+            else if (NowHour >= 8 && NowHour <= 18)
+            {
+                IsNight = false;
+            }
+            if (NowHour == 22 && !m_isNight)
+            {
+                Night.Play();
+                Afternoon.Pause();
+                m_isNight = true;
+            }
+            else if (NowHour == 13 && !m_isAfter)
+            {
+                Afternoon.Play();
+                morning.Pause();
+                m_isAfter = true;
+            }
+            else if (NowHour == 7 && !m_isMorning)
+            {
+                morning.Play();
+                m_isMorning = true;
+            }
+            DayTime += Time.deltaTime;
+            if (DayTime >= GameConstant.HourTime)
+            {
+                NowHour++;
+
+                DayTime = 0;
+                if (NowHour == 24)
+                {
+                    Day++;
+                    m_isAfter = false;
+                    m_isMorning = false;
+                    m_isNight = false;
+                    NowHour = 0;
+                }
+            }
+        }
+        else if (Day >= 5)
+        {
+            // Boss“Ù¿÷
         }
 
         UpdateLightProperties();
