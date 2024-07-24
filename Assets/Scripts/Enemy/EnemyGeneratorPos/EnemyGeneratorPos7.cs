@@ -23,7 +23,7 @@ public class EnemyGeneratorPos7 : MonoBehaviour
     private int day4_8_count = 1;
     private int day4_9_count = 0;
     private int day4_10_count = 0;
-    private int day4_11_count = 1;
+    private int day4_11_count = 0;
 
     private int day4_12_count = 1;
     private int day4_13_count = 0;

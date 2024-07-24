@@ -129,13 +129,13 @@ public class EnemyGeneratorPos1 : MonoBehaviour
 
     private int day4_12_count_3 = 1;
     private int day4_12_count_2 = 2;
-    private int day4_13_count_3 = 1;
+    private int day4_13_count_3 = 0;
     private int day4_13_count_2 = 0;
     private int day4_14_count_3 = 1;
     private int day4_14_count_2 = 1;
     private int day4_15_count_3 = 1;
-    private int day4_15_count_2 = 2;
-    private int day4_16_count_3 = 2;
+    private int day4_15_count_2 = 0;
+    private int day4_16_count_3 = 0;
     private int day4_16_count_2 = 0;
     private int day4_17_count_3 = 1;
     private int day4_17_count_2 = 2;

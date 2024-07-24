@@ -79,7 +79,7 @@ public class EnemyGeneratorPos3 : MonoBehaviour
 
     private int day4_6_count = 1;
     private int day4_7_count = 5;
-    private int day4_8_count = 1;
+    private int day4_8_count = 0;
     private int day4_9_count = 5;
     private int day4_10_count = 1;
     private int day4_11_count = 5;
@@ -91,11 +91,11 @@ public class EnemyGeneratorPos3 : MonoBehaviour
     private int day4_16_count = 3;
     private int day4_17_count = 6;
 
-    private int day4_18_count = 2;
+    private int day4_18_count = 1;
     private int day4_19_count = 2;
-    private int day4_20_count = 2;
+    private int day4_20_count = 1;
     private int day4_21_count = 2;
-    private int day4_22_count = 6;
+    private int day4_22_count = 4;
     private int day4_23_count = 0;
 
     private int day5_0_count = 0;
