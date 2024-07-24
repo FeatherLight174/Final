@@ -13,6 +13,8 @@ public class BossTimeChange : MonoBehaviour
     private GameObject knight;
     public GameObject[] buildings;
 
+    public GameObject targetSprite;
+
     public float skillDamage;
 
     private Vector3[] buildingToSelf;
@@ -78,14 +80,17 @@ public class BossTimeChange : MonoBehaviour
                 minValidTowerDistanceIndex = i;
             }
         }
-        if (foundTower)
+        if (foundTower && Clock.IsNight)
         {
             m_DamageTimer += Time.deltaTime;
+            Instantiate(targetSprite);
             if (m_DamageTimer > DamageBefore)
             {
+                Destroy(targetSprite);
                 m_DamageTimer = 0;
                 DamageTower(skillDamage);
             }
+            
         }
             m_Timer += Time.deltaTime;
         if (m_Timer > CD)
