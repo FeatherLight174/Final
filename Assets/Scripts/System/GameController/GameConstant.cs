@@ -121,11 +121,11 @@ public class GameConstant : MonoBehaviour
     public static float[] towerRangeNightFactor = new float[5]
     {0.75f, 0.75f, 0.75f, 0.9f, 0.4f};
     public static float[,] towerShootSpeed = new float[5, 3]
-    {{1f, 1.5f, 2f}, {5f, 6f ,8f}, {0.75f, 1f, 1.5f}, {1f, 1.5f, 2f}, {0.75f, 1f, 1.5f}};
+    {{1f, 1.5f, 2f}, {4f, 5f ,7f}, {0.75f, 1f, 1.5f}, {1f, 1.5f, 2f}, {0.75f, 1f, 1.5f}};
     public static float[,] towerRotateSpeed = new float[5, 3]
     {{90f, 105f, 120f}, {120f, 135f, 150f}, {75f, 90f, 105f}, {120f, 135f, 150f}, {60f, 65f, 75f}};
     public static float[,] towerDamage = new float[5, 3]
-    {{12f, 15f, 20f}, {2f, 2.5f, 3f}, {35f, 60f, 90f}, {2f, 2f, 2.5f}, {10f, 12f, 15f}};
+    {{12f, 15f, 20f}, {2.5f, 3f, 4f}, {35f, 60f, 90f}, {2f, 2f, 2.5f}, {10f, 12f, 15f}};
     public static float[] towerDamageNightFactor = new float[5]
     {1.3f, 1.3f, 1.6f, 1.3f, 1.2f};
     public static float[,] towerBulletSpeed = new float[5, 3]
