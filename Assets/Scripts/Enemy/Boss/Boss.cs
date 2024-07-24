@@ -90,6 +90,7 @@ public class Boss : MonoBehaviour
         }
         if (!GetComponent<BossTimeChange>().m_isInSkilled)
         {
+
             if (!m_isAttack)
             {
                 if (m_timer < Idle1Time && !m_isIdle1)
@@ -405,6 +406,7 @@ public class Boss : MonoBehaviour
             }
 
         }
+
     }
 
     

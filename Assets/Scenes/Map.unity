@@ -13153,6 +13153,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b00aa9c545cd76244ba41e9defca7c8c, type: 3}
+--- !u!1 &954833076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6211003041880742178, guid: e156aa54208664643a2856cc8c433278, type: 3}
+  m_PrefabInstance: {fileID: 1940789134}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &961252635
 GameObject:
   m_ObjectHideFlags: 0
@@ -25975,10 +25980,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1476476672232053174, guid: 3c7284d2063947a4b8e4a9eb420623f3, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476476672232053174, guid: 3c7284d2063947a4b8e4a9eb420623f3, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476476672232053174, guid: 3c7284d2063947a4b8e4a9eb420623f3, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 7.4074073
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476476672232053174, guid: 3c7284d2063947a4b8e4a9eb420623f3, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 7.4074073
+      objectReference: {fileID: 0}
     - target: {fileID: 5526956762559256171, guid: 3c7284d2063947a4b8e4a9eb420623f3, type: 3}
       propertyPath: m_Name
       value: "\u53EF\u6C57Path10"
       objectReference: {fileID: 0}
+    - target: {fileID: 6009598522130402444, guid: 3c7284d2063947a4b8e4a9eb420623f3, type: 3}
+      propertyPath: targetSprite
+      value: 
+      objectReference: {fileID: 954833076}
     - target: {fileID: 6610786161847543633, guid: 3c7284d2063947a4b8e4a9eb420623f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.888918

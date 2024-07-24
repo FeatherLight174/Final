@@ -32,6 +32,8 @@ public class BossTimeChange : MonoBehaviour
     private float m_skillTimer = 0;
     private bool m_isSkilled = false;
 
+    private bool m_isLocked = false;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -94,11 +96,16 @@ public class BossTimeChange : MonoBehaviour
         }
         if (foundTower && Clock.IsNight && m_skillTimer >= SkillCoolDown)
         {
-            Debug.Log("Cooolllllll");
             animator.SetBool("Skill",true);
+            if (!m_isLocked)
+            {
+                targetObject = Instantiate(targetSprite);
+                m_isLocked = true;
+            }
+            Debug.Log(000000000000);
             m_isInSkilled = true;
             m_DamageTimer += Time.deltaTime;
-            targetObject = Instantiate(targetSprite);
+            
             if (!Clock.IsNight)
             {
                 Destroy(targetObject);
@@ -117,17 +124,20 @@ public class BossTimeChange : MonoBehaviour
                 Destroy(targetObject);
                 if(m_DamageTimer > DamageBefore + SkillPost)
                 {
+                    Debug.Log(11234567);
                     m_DamageTimer = 0;
                     m_isInSkilled = false;
                     m_skillTimer = 0;
                     m_isSkilled = false;
                     animator.SetBool("Skill", false);
+                    m_isLocked = false;
                 }
                 
             }
             
             
         }
+        animator.SetBool("Skill", false);
             m_Timer += Time.deltaTime;
         if (m_Timer > CD)
         {
@@ -143,7 +153,7 @@ public class BossTimeChange : MonoBehaviour
     }
     void DamageTower(float damage)
     {
-        Debug.Log("enter");
+
         buildings[minValidTowerDistanceIndex].GetComponent<HPManagement>().TakeDamage(damage);
     }
 }
