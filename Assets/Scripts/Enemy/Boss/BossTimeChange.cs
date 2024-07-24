@@ -16,6 +16,7 @@ public class BossTimeChange : MonoBehaviour
     public GameObject[] buildings;
 
     bool foundTower = false;
+    bool foundTrue = false;
     public GameObject targetSprite;
     public GameObject targetObject;
 
@@ -97,6 +98,18 @@ public class BossTimeChange : MonoBehaviour
                     minValidTowerDistanceIndex = i;
                 }
             }
+        }
+        foundTrue = false;
+        for (int i = 0; i < buildings.Length; i++)
+        {
+            if (buildingWithinRange[i] == true)
+            {
+                foundTrue = true;
+            }
+        }
+        if (!foundTrue)
+        {
+            foundTower = false;
         }
         if (!foundTower && m_DamageTimer > 0)
         {
