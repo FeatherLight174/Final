@@ -2,9 +2,9 @@ using UnityEngine;
 public class GameConstant : MonoBehaviour
 {
 
-    public static float SellFactor = 0.5f;
-    public static float PriceQuickTower = 75;
-    public static float PriceTower = 50;
+    public static float SellFactor = 0.6f;
+    public static float PriceQuickTower = 70;
+    public static float PriceTower = 45;
     public static float PriceShield  = 30;
     public static float FreezeTime = 3;
 
