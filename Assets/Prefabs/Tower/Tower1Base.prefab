@@ -343,7 +343,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1762229946336945446}
   - component: {fileID: 3878822247067156533}
-  - component: {fileID: 1530538989501897749}
   m_Layer: 0
   m_Name: TowerSprite
   m_TagString: Untagged
@@ -418,13 +417,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1530538989501897749
+--- !u!1 &5348328993066187652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2113516862452496986}
+  - component: {fileID: 8600738458044223163}
+  m_Layer: 0
+  m_Name: Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2113516862452496986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348328993066187652}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 622029344787466776}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+--- !u!114 &8600738458044223163
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4225646160477872717}
+  m_GameObject: {fileID: 5348328993066187652}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
@@ -457,7 +488,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 60
   m_PointLightOuterAngle: 180
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
+  m_PointLightOuterRadius: 4.1
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -502,6 +533,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1762229946336945446}
+  - {fileID: 2113516862452496986}
   m_Father: {fileID: 8884861049668746824}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &5716830625695122399
@@ -519,7 +551,7 @@ MonoBehaviour:
   rangePanel: {fileID: 6524938235564979107}
   sellPanel: {fileID: 8941662186441827994}
   upgradePanel: {fileID: 2979271691775435818}
-  lightRange: {fileID: 1530538989501897749}
+  lightRange: {fileID: 0}
   textPanel: {fileID: 1891784380220796807}
   scriptHPManagement: {fileID: 2422648091977231588}
   basePart: {fileID: 6211003041880742178}
