@@ -6,7 +6,7 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
     private float time = 0;
-    private float Speed = GameConstant.EnemyMovespeed2;
+    private float Speed = GameConstant.EnemyMovespeed6;
 
     public float PosX1 = -18;
     public float PosX2 = -22f;
@@ -44,10 +44,10 @@ public class Boss : MonoBehaviour
 
     public float showTime = 3f;
     private float m_DieTimer = 0;
-    private float m_v = GameConstant.vFactor2;
-    private float m_attack = GameConstant.EnemyAttack2;
-    private float m_attackPre = GameConstant.EnemyAttack2Pre;
-    private float m_attackAfter = GameConstant.EnemyAttack2After;
+    private float m_v = GameConstant.vFactor6;
+    private float m_attack = GameConstant.EnemyAttack6;
+    private float m_attackPre = GameConstant.EnemyAttack6Pre;
+    private float m_attackAfter = GameConstant.EnemyAttack6After;
     private bool m_isAttack = false;
     public bool IsAttacked = false;
     public int timeStep = 0;
