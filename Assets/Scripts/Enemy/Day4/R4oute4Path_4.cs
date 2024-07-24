@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class R4oute4Path : MonoBehaviour
+public class R4oute4Path_4 : MonoBehaviour
 {
 
     private float Speed = GameConstant.EnemyMovespeed4;
@@ -53,7 +53,7 @@ public class R4oute4Path : MonoBehaviour
         if (!m_isAttack)
         {
 
-            
+
             if (gameObject.transform.position.x >= PosX4 && (timeStep == 7 || timeStep == 8))
             {
                 animator.SetBool("Left", true);
@@ -103,7 +103,7 @@ public class R4oute4Path : MonoBehaviour
             else if (gameObject.transform.position.y <= PosY7 && (timeStep == 11 || timeStep == 12))
             {
                 gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
-               
+
             }
 
         }
