@@ -121,19 +121,19 @@ public class GameConstant : MonoBehaviour
     public static float[] towerRangeNightFactor = new float[5]
     {0.75f, 0.75f, 0.75f, 0.9f, 0.4f};
     public static float[,] towerShootSpeed = new float[5, 3]
-    {{1f, 1.5f, 2f}, {3f, 4f ,5f}, {0.75f, 1f, 1.5f}, {1f, 1.5f, 2f}, {0.75f, 1f, 1.5f}};
+    {{1f, 1.5f, 2f}, {5f, 6f ,8f}, {0.75f, 1f, 1.5f}, {1f, 1.5f, 2f}, {0.75f, 1f, 1.5f}};
     public static float[,] towerRotateSpeed = new float[5, 3]
     {{90f, 105f, 120f}, {120f, 135f, 150f}, {75f, 90f, 105f}, {120f, 135f, 150f}, {60f, 65f, 75f}};
     public static float[,] towerDamage = new float[5, 3]
-    {{10f, 12f, 15f}, {3f, 3.5f, 4f}, {35f, 50f, 75f}, {2f, 2f, 2.5f}, {10f, 12f, 15f}};
+    {{12f, 15f, 20f}, {2f, 2.5f, 3f}, {35f, 60f, 90f}, {2f, 2f, 2.5f}, {10f, 12f, 15f}};
     public static float[] towerDamageNightFactor = new float[5]
     {1.3f, 1.3f, 1.6f, 1.3f, 1.2f};
     public static float[,] towerBulletSpeed = new float[5, 3]
     {{8f, 9f, 10f}, {12f, 13f, 14f}, {6f, 7f, 8f}, {6f, 7f, 8f}, {18f, 24f, 30f}};
     public static float[,] towerPowerConsumption = new float[5, 3]
-    {{0f, 0f, 0f}, {0f, 0f, 0f}, {2f, 2f, 2f}, {2f, 2f, 2f}, {3f, 3f, 3f}};
+    {{0f, 0f, 0f}, {0f, 0f, 0f}, {2f, 3f, 4f}, {2f, 3f, 4f}, {3f, 3f, 3f}};
     public static float[,] towerUpgradeCost = new float[5, 3]
-    {{40f, 60f, 90f}, {70f, 90f, 120f}, {100f, 150f, 200f}, {100f, 150f, 200f}, {120f, 160f, 200f}};
+    {{45f, 60f, 90f}, {70f, 90f, 120f}, {100f, 150f, 200f}, {100f, 150f, 200f}, {120f, 160f, 200f}};
 
     // Wall
     public static float[] wallHealth = new float[3]
