@@ -36,8 +36,8 @@ public class GameConstant : MonoBehaviour
     //Power
     public static float HPPower = 500;
     public static float PricePower = 100;
-    public static float PowerCD = 1;
-    public static float PowerProduce = 10;
+    public static float PowerCD = 15;
+    public static float PowerProduce = 3;
 
 
     public static float HPTower = 100;
@@ -68,7 +68,7 @@ public class GameConstant : MonoBehaviour
     public static float EnemyAttack2After = 0.3f;
 
     // 屠夫
-    public static float HPEnemy3 = 1200;
+    public static float HPEnemy3 = 1000;
     public static float vFactor3 = 1.0f;
     public static float EnemyAttack3 = 75;
     public static float EnemyMovespeed3 = 0.5f;
@@ -81,10 +81,19 @@ public class GameConstant : MonoBehaviour
     public static float HPEnemy4 = 300;
     public static float vFactor4 = 1.0f;
     public static float EnemyAttack4 = 40;
-    public static float EnemyMovespeed4 = 1.5f;
+    public static float EnemyMovespeed4 = 2f;
     public static float EnemyAttack4Pre = 0.4f;
     public static float EnemyAttack4After = 0.7f;
     public static float AttackCD4;
+
+    // 血骑士
+    public static float HPEnemy5 = 2500;
+    public static float vFactor5 = 1.0f;
+    public static float EnemyAttack5 = 100;
+    public static float EnemyMovespeed5 = 1f;
+    public static float EnemyAttack5Pre = 1.3f;
+    public static float EnemyAttack5After = 0.9f;
+    public static float AttackCD5;
     // Towers
     // 注意改new float[行, 列]的行、列值
     /* 塔编号目录

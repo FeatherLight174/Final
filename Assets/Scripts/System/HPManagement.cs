@@ -8,6 +8,7 @@ public class HPManagement : MonoBehaviour
     public float MaxHP;
     public AudioSource destroy;
 
+    
     // Update is called once per frame
     void Update()
     {
@@ -56,5 +57,10 @@ public class HPManagement : MonoBehaviour
         HP = HP / MaxHP;
         MaxHP = MAX;
         HP = HP * MAX;
+    }
+
+    public void AddHP(float adder)
+    {
+        HP += adder;
     }
 }

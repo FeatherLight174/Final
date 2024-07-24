@@ -11,6 +11,7 @@ public class Clock : MonoBehaviour
     public AudioSource morning;
     private bool m_isMorning = false;
     public AudioSource Afternoon;
+    public static bool IsNight;
     private bool m_isAfter = false;
     
     public static float DayTime = 0;
@@ -46,6 +47,14 @@ public class Clock : MonoBehaviour
 
     void Update()
     {
+        if(NowHour >= 20 || NowHour <= 4)
+        {
+            IsNight = true;
+        }
+        else if(NowHour >= 5 && NowHour <= 19)
+        {
+            IsNight = false;
+        }
         if(NowHour == 22 && !m_isNight)
         {
             Night.Play();

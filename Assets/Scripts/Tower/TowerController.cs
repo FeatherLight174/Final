@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -86,9 +87,6 @@ public class TowerController : MonoBehaviour
 
     // 建筑攻击力（弃用）
     // public float damage;
-
-    // 反转索敌
-    public bool invert = false;
 
     // 敌人存储
     public GameObject[] enemies;
@@ -207,17 +205,28 @@ public class TowerController : MonoBehaviour
         shootInterval = 1 / shootSpeedReal;
         // 找到所有敌人，放在组enemies中
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] bloodBlades = GameObject.FindGameObjectsWithTag("BloodBlade");
+        GameObject[] totalEnemies;
+        if (bloodBlades != null)
+        {
+            totalEnemies = new GameObject[enemies.Length + bloodBlades.Length];
+            Array.Copy(enemies, totalEnemies, enemies.Length);
+            Array.Copy(bloodBlades, 0, totalEnemies, enemies.Length, bloodBlades.Length);
+        }
+        else{
+            totalEnemies = enemies;
+        }
         // 对每个敌人计算
-        enemyToBase = new Vector3[enemies.Length];
-        enemyToTower = new Vector3[enemies.Length];
-        enemyWithinRange = new bool[enemies.Length];
-        distanceEnemyBase = new float[enemies.Length];
-        for (int i = 0; i < enemies.Length; i++)
+        enemyToBase = new Vector3[totalEnemies.Length];
+        enemyToTower = new Vector3[totalEnemies.Length];
+        enemyWithinRange = new bool[totalEnemies.Length];
+        distanceEnemyBase = new float[totalEnemies.Length];
+        for (int i = 0; i < totalEnemies.Length; i++)
         {
             // 敌人到基地向量
-            enemyToBase[i] = homeOrBase.transform.position - enemies[i].transform.position;
+            enemyToBase[i] = homeOrBase.transform.position - totalEnemies[i].transform.position;
             // 敌人到塔向量
-            enemyToTower[i] = transform.position - enemies[i].transform.position;
+            enemyToTower[i] = transform.position - totalEnemies[i].transform.position;
             // 检测敌人是否在塔内部
             if (enemyToTower[i].magnitude <= rangeReal)
             {
@@ -236,43 +245,15 @@ public class TowerController : MonoBehaviour
         bool foundEnemy = false;
         minValidEnemyBaseDistanceIndex = 0;
         // 每个敌人以“打擂台”判断最接近基地
-        if (!invert)
+        for (int i = 0;i < totalEnemies.Length;i++)
         {
-            for (int i = 0; i < enemies.Length; i++)
+            if (enemyWithinRange[i] == true)
             {
-                if (enemyWithinRange[i] == true)
-                {
-                    foundEnemy = true;
-                }
-                if (distanceEnemyBase[i] < distanceEnemyBase[minValidEnemyBaseDistanceIndex] && enemyWithinRange[i] == true)
-                {
-                    minValidEnemyBaseDistanceIndex = i;
-                }
+                foundEnemy = true;
             }
-        }
-        else
-        {
-            for (int i = 0; i < enemies.Length; i++)
+            if (distanceEnemyBase[i] < distanceEnemyBase[minValidEnemyBaseDistanceIndex] && enemyWithinRange[i] == true)
             {
-                if (enemyWithinRange[i] == true)
-                {
-                    foundEnemy = true;
-                }
-                if (distanceEnemyBase[i] < distanceEnemyBase[minValidEnemyBaseDistanceIndex] && enemyWithinRange[i] == true)
-                {
-                    minValidEnemyBaseDistanceIndex = i;
-                }
-            }
-            for (int i = 0; i < enemies.Length; i++)
-            {
-                if (enemyWithinRange[i] == true)
-                {
-                    foundEnemy = true;
-                }
-                if (distanceEnemyBase[i] > distanceEnemyBase[minValidEnemyBaseDistanceIndex] && enemyWithinRange[i] == true)
-                {
-                    minValidEnemyBaseDistanceIndex = i;
-                }
+                minValidEnemyBaseDistanceIndex = i;
             }
         }
         // 索到敌人
