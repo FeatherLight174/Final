@@ -16,6 +16,8 @@ public class Rout1Path1_2 : MonoBehaviour
     public float PathY1 = 2;
 
     private float Speed = GameConstant.EnemyMovespeed2;
+    private bool m_IsFreeze = false;
+    private float m_FreezeTime = 3;
 
     
 
