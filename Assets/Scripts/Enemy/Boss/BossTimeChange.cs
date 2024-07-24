@@ -83,33 +83,18 @@ public class BossTimeChange : MonoBehaviour
         }
         // 防止默认索0号塔
         // 每个敌人以“打擂台”判断最接近基地
-        if (m_DamageTimer == 0)
-        {
-            foundTower = false;
-            minValidTowerDistanceIndex = 0;
-            for (int i = 0; i < buildings.Length; i++)
-            {
-                if (buildingWithinRange[i] == true)
-                {
-                    foundTower = true;
-                }
-                if (distanceBuilding[i] < distanceBuilding[minValidTowerDistanceIndex] && buildingWithinRange[i] == true)
-                {
-                    minValidTowerDistanceIndex = i;
-                }
-            }
-        }
-        foundTrue = false;
+        foundTower = false;
+        minValidTowerDistanceIndex = 0;
         for (int i = 0; i < buildings.Length; i++)
         {
             if (buildingWithinRange[i] == true)
             {
-                foundTrue = true;
+                foundTower = true;
             }
-        }
-        if (!foundTrue)
-        {
-            foundTower = false;
+            if (distanceBuilding[i] < distanceBuilding[minValidTowerDistanceIndex] && buildingWithinRange[i] == true)
+            {
+                minValidTowerDistanceIndex = i;
+            }
         }
         if (!foundTower && m_DamageTimer > 0)
         {
