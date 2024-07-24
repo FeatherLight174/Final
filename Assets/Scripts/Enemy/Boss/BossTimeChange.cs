@@ -80,7 +80,7 @@ public class BossTimeChange : MonoBehaviour
                 minValidTowerDistanceIndex = i;
             }
         }
-        if (foundTower)
+        if (foundTower && Clock.IsNight)
         {
             m_DamageTimer += Time.deltaTime;
             Instantiate(targetSprite);
