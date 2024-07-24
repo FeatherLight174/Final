@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class BossTimeChange : MonoBehaviour
 {
+    public Animator animator;
     private float m_Timer;
     private float m_DamageTimer;
     public float CD;
@@ -24,15 +26,21 @@ public class BossTimeChange : MonoBehaviour
     private bool[] buildingWithinRange;
     private float[] distanceBuilding;
     int minValidTowerDistanceIndex = 0;
+    public float SkillPost;
+    public bool m_isInSkilled = false;
+    public float SkillCoolDown;
+    private float m_skillTimer = 0;
+    private bool m_isSkilled = false;
 
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*m_skillTimer += Time.deltaTime;
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         for (int i = 0; i < enemies.Length; i++)
         {
@@ -45,7 +53,7 @@ public class BossTimeChange : MonoBehaviour
         {
             m_Timer = 0;
             TimeChange(0);
-        }
+        }*/
         buildings = GameObject.FindGameObjectsWithTag("Building");
 
         for (int i = 0; i < buildings.Length; i++)
@@ -81,16 +89,39 @@ public class BossTimeChange : MonoBehaviour
                 minValidTowerDistanceIndex = i;
             }
         }
-        if (foundTower && Clock.IsNight)
+        if (foundTower && Clock.IsNight && m_skillTimer >= SkillCoolDown)
         {
+            animator.SetBool("Skill",true);
+            m_isInSkilled = true;
             m_DamageTimer += Time.deltaTime;
             targetObject = Instantiate(targetSprite);
-            if (m_DamageTimer > DamageBefore || !Clock.IsNight)
+            if (!Clock.IsNight)
             {
                 Destroy(targetObject);
                 m_DamageTimer = 0;
-                DamageTower(skillDamage);
+                m_isInSkilled = false;
+                m_skillTimer = 0;
             }
+            else if (m_DamageTimer > DamageBefore )
+            {
+                if (!m_isSkilled)
+                {
+                    DamageTower(skillDamage);
+                    m_isSkilled = true;
+                }
+
+                Destroy(targetObject);
+                if(m_DamageTimer > DamageBefore + SkillPost)
+                {
+                    m_DamageTimer = 0;
+                    m_isInSkilled = false;
+                    m_skillTimer = 0;
+                    m_isSkilled = false;
+                    animator.SetBool("Skill", false);
+                }
+                
+            }
+            
             
         }
             m_Timer += Time.deltaTime;

@@ -67,20 +67,20 @@ public class Seed : MonoBehaviour
         }
         if (Clock.Day == 4)
         {
-            if (day3GoldCanBeFree)
+            if (day4GoldCanBeFree)
             {
                 goldIsFree = true;
-                day3GoldCanBeFree = false;
+                day4GoldCanBeFree = false;
             }
-            if (day3TowerCanBeFree)
+            if (day4TowerCanBeFree)
             {
                 towerIsFree = true;
-                day3TowerCanBeFree = false;
+                day4TowerCanBeFree = false;
             }
-            if (day3PowerCanBeFree)
+            if (day4PowerCanBeFree)
             {
                 PowerIsFree = true;
-                day3PowerCanBeFree = false;
+                day4PowerCanBeFree = false;
             }
         }
         PriceTower = GameConstant.PriceTower;
