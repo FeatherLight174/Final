@@ -320,6 +320,7 @@ public class TowerController : MonoBehaviour
         else
         {
             firstShot = true;
+            GetComponent<Animator>().SetBool("IsShooting", false);
         }
     }
     private void Shoot()
