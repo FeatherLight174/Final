@@ -491,6 +491,10 @@ PrefabInstance:
       propertyPath: size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1616196874834643910, guid: 5a60c9580b5057243bbfcd81b7a83438, type: 3}
+      propertyPath: y_Offset
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3710635216801315836, guid: 5a60c9580b5057243bbfcd81b7a83438, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.9
