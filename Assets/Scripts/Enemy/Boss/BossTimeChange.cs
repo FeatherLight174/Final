@@ -59,10 +59,12 @@ public class BossTimeChange : MonoBehaviour
         }*/
         buildings = GameObject.FindGameObjectsWithTag("Building");
 
+        buildingToSelf = new Vector3[(int)buildings.Length]; 
+        buildingWithinRange = new bool[(int)buildings.Length];
+        distanceBuilding = new float[(int)buildings.Length];
         for (int i = 0; i < buildings.Length; i++)
         {
             // 塔到自身向量
-            Debug.Log(i);
             buildingToSelf[i] = transform.position - buildings[i].transform.position;
             // 检测塔是否在范围内
             if (buildingToSelf[i].magnitude <= range)
