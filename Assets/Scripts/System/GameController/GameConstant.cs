@@ -6,6 +6,7 @@ public class GameConstant : MonoBehaviour
     public static float PriceQuickTower = 75;
     public static float PriceTower = 50;
     public static float PriceShield  = 30;
+    public static float FreezeTime = 3;
 
     //时间系统
     //包含了一天是多长时间，在这一天当中的小时

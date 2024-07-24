@@ -17,6 +17,8 @@ public class Rout1Path1_2 : MonoBehaviour
 
     private float Speed = GameConstant.EnemyMovespeed2;
 
+    
+
     private Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,7 @@ public class Rout1Path1_2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (gameObject.GetComponent<HPManagement>().HP <= 0)
         {
             animator.SetBool("Die", true);
