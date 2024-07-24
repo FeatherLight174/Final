@@ -40,8 +40,8 @@ public class BossTimeChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*m_skillTimer += Time.deltaTime;
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        m_skillTimer += Time.deltaTime;
+        /*enemies = GameObject.FindGameObjectsWithTag("Enemy");
         for (int i = 0; i < enemies.Length; i++)
         {
             if (enemies[i].transform.Find("Range").gameObject.CompareTag("Knight"))
@@ -94,6 +94,7 @@ public class BossTimeChange : MonoBehaviour
         }
         if (foundTower && Clock.IsNight && m_skillTimer >= SkillCoolDown)
         {
+            Debug.Log("Cooolllllll");
             animator.SetBool("Skill",true);
             m_isInSkilled = true;
             m_DamageTimer += Time.deltaTime;
@@ -142,6 +143,7 @@ public class BossTimeChange : MonoBehaviour
     }
     void DamageTower(float damage)
     {
+        Debug.Log("enter");
         buildings[minValidTowerDistanceIndex].GetComponent<HPManagement>().TakeDamage(damage);
     }
 }
