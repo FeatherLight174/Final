@@ -21805,6 +21805,7 @@ MonoBehaviour:
   enemy:
   - {fileID: 5526956762559256171, guid: db7e32c6012e7a54e857ed2d85166a7d, type: 3}
   - {fileID: 5526956762559256171, guid: f60e4c795b402d243a596e9ef05a87f5, type: 3}
+  - {fileID: 5526956762559256171, guid: f60e4c795b402d243a596e9ef05a87f5, type: 3}
   TimerMorning: 1
   TimerAfternoon: 1
   TimerNight: 1
