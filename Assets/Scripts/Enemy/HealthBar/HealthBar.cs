@@ -11,6 +11,8 @@ public class HealthBar : MonoBehaviour
     private float currentHP;
     private float alphaValue;
     public float fadeTime;
+    public float y_Offset = 0.6f;
+    public float size = 1f;
     void Start()
     {
         valueBar = GetComponent<SpriteRenderer>();
@@ -29,8 +31,8 @@ public class HealthBar : MonoBehaviour
             alphaValue = Mathf.Max(alphaValue - Time.deltaTime * fadeTime, 0f);
         }
         currentHP = healthScript.HP;
-        transform.localScale = new Vector3(0.95f * currentHP / maxHP, 0.16f, 1f);
-        transform.localPosition = new Vector3(-0.475f * (1 - currentHP / maxHP), 0.6f, -0.5f);
+        transform.localScale = size * new Vector3(0.95f * currentHP / maxHP, 0.16f, 1f);
+        transform.localPosition = new Vector3(-0.475f * (1 - currentHP / maxHP), y_Offset, -0.5f);
         valueBar.color = new Color(Mathf.Min(2f * (1f - currentHP / maxHP), 1f), 0.75f * Mathf.Min(1.5f * currentHP / maxHP, 1f), 0f, alphaValue);
     }
 }
