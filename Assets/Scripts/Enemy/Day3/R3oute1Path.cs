@@ -136,7 +136,14 @@ public class R3oute1Path : MonoBehaviour
     }
 
 
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Freeze"))
+        {
+            m_freetimer = 0;
+            m_IsFreeze = true;
+        }
+    }
 
     void OnCollisionEnter2D(Collision2D collision)
     {

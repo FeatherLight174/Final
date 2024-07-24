@@ -33,6 +33,12 @@ public class R4oute2Path : MonoBehaviour
     bool m_isup = false;
     bool m_isup2 = false;
 
+    private bool m_IsFreeze = false;
+    private float m_FreezeTime = 3;
+    private float m_freetimer = 0;
+    private bool m_isTouched = false;
+
+
     void Start()
     {
         PosX2 = Random.Range(-16, -13);
@@ -101,18 +107,13 @@ public class R4oute2Path : MonoBehaviour
     }
 
 
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.CompareTag("Freeze"))
         {
-            BulletController bullet = collision.gameObject.GetComponent<BulletController>();
-            if (bullet.hasHit)
-            {
-                return;
-            }
-            IsAttacked = true;
+            m_freetimer = 0;
+            m_IsFreeze = true;
         }
-
     }
 
     void OnCollisionEnter2D(Collision2D collision)
