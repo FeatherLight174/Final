@@ -32,7 +32,7 @@ public class HealthBar : MonoBehaviour
         }
         currentHP = healthScript.HP;
         transform.localScale = size * new Vector3(0.95f * currentHP / maxHP, 0.16f, 1f);
-        transform.localPosition = new Vector3(-0.475f * (1 - currentHP / maxHP), y_Offset, -0.5f);
+        transform.localPosition = new Vector3(size * -0.475f * (1 - currentHP / maxHP), y_Offset, -0.5f);
         valueBar.color = new Color(Mathf.Min(2f * (1f - currentHP / maxHP), 1f), 0.75f * Mathf.Min(1.5f * currentHP / maxHP, 1f), 0f, alphaValue);
     }
 }
