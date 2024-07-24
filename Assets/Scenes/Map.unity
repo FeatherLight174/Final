@@ -14918,6 +14918,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8667206263835229360, guid: b00aa9c545cd76244ba41e9defca7c8c, type: 3}
   m_PrefabInstance: {fileID: 1067031847}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1075154159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1075154160}
+  - component: {fileID: 1075154161}
+  m_Layer: 0
+  m_Name: pos10
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1075154160
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075154159}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20, y: -33, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1173670658}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1075154161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075154159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5932388c48d4ed4090f0f1a20e7bb83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy:
+  - {fileID: 5526956762559256171, guid: 3c7284d2063947a4b8e4a9eb420623f3, type: 3}
+  TimerMorning: 1
+  TimerAfternoon: 1
+  TimerNight: 1
+  TimerDawn: 1
+  factor: 0.5
 --- !u!4 &1084051117 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8667206263835229360, guid: b00aa9c545cd76244ba41e9defca7c8c, type: 3}
@@ -15722,6 +15773,7 @@ Transform:
   - {fileID: 206734664}
   - {fileID: 2102349642}
   - {fileID: 1368926759}
+  - {fileID: 1075154160}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1178530091
