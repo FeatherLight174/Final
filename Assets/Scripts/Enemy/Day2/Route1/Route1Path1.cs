@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Rout1Path1 : MonoBehaviour
 {
@@ -14,8 +15,13 @@ public class Rout1Path1 : MonoBehaviour
     public float PathX1 = 14;
     public float PathX2 = -8;
     public float PathY1 = 2;
+    private bool m_IsFreeze = false;
+    private float m_FreezeTime = 3;
+    private float m_freetimer = 0;
+    private bool m_isTouched = false;
 
     private float Speed = GameConstant.EnemyMovespeed;
+
 
     private Animator animator;
     // Start is called before the first frame update
@@ -27,6 +33,19 @@ public class Rout1Path1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (m_IsFreeze)
+        {
+            Speed *= 0.5f;
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(66 / 255, 197 / 255, 1, 1);
+            m_freetimer += Time.deltaTime;
+            if (m_freetimer >= m_FreezeTime)
+            {
+                Speed /= 0.5f;
+                m_IsFreeze = false;
+                m_freetimer = 0;
+                gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+            }
+        }
         if (gameObject.GetComponent<HPManagement>().HP <= 0)
         {
             animator.SetBool("Die", true);
@@ -43,10 +62,18 @@ public class Rout1Path1 : MonoBehaviour
             else if (gameObject.transform.position.y <= PathY1)
             {
                 gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
+                if (gameObject.transform.position.x > PathX1)
+                {
+                    gameObject.transform.position = new Vector3(PathX1-0.01f, gameObject.transform.position.y, gameObject.transform.position.z);
+                }
             }
             else if (gameObject.transform.position.x >= PathX2)
             {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
+                if (gameObject.transform.position.y < PathY1)
+                {
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x, PathY1 + 0.01f, gameObject.transform.position.z);
+                }
             }
         }
         else if (m_Tower == null)
@@ -69,7 +96,14 @@ public class Rout1Path1 : MonoBehaviour
             StartCoroutine(AttackBuilding());
         }
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Freeze"))
+        {
+            m_freetimer = 0;
+            m_IsFreeze = true;
+        }
+    }
     void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Building") || collision.gameObject.CompareTag("Base"))

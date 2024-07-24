@@ -32,6 +32,10 @@ public class R3oute1Path_3 : MonoBehaviour
     public bool IsAttacked = false;
     bool m_isup = false;
     bool m_isup2 = false;
+    private bool m_IsFreeze = false;
+    private float m_FreezeTime = 3;
+    private float m_freetimer = 0;
+    private bool m_isTouched = false;
 
     void Start()
     {
@@ -43,6 +47,19 @@ public class R3oute1Path_3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (m_IsFreeze)
+        {
+            Speed *= 0.5f;
+            gameObject.GetComponent<SpriteRenderer>().color = new Color(66 / 255, 197 / 255, 1, 1);
+            m_freetimer += Time.deltaTime;
+            if (m_freetimer >= m_FreezeTime)
+            {
+                Speed /= 0.5f;
+                m_IsFreeze = false;
+                m_freetimer = 0;
+                gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
+            }
+        }
         m_nowHp = m_HpManager.HP;
         if (m_nowHp <= 0)
         {
@@ -68,24 +85,44 @@ public class R3oute1Path_3 : MonoBehaviour
             else if (gameObject.transform.position.x >= PosX1)
             {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
+                if (gameObject.transform.position.y < PosY1)
+                {
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x, PosY1 + 0.01f, gameObject.transform.position.z);
+                }
                 m_isup = true;
             }
             else if (gameObject.transform.position.y >= PosY2 && !m_isup2)
             {
                 gameObject.transform.position -= Vector3.up * Speed * Time.deltaTime;
+                if (gameObject.transform.position.x > PosX1)
+                {
+                    gameObject.transform.position = new Vector3(PosX1 - 0.01f, gameObject.transform.position.y, gameObject.transform.position.z);
+                }
             }
             else if (gameObject.transform.position.x >= PosX2)
             {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
                 m_isup2 = true;
+                if (gameObject.transform.position.y > PosY2)
+                {
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x, PosY2 - 0.01f, gameObject.transform.position.z);
+                }
             }
             else if (gameObject.transform.position.y <= PosY3)
             {
                 gameObject.transform.position += Vector3.up * Speed * Time.deltaTime;
+                if (gameObject.transform.position.x > PosX2)
+                {
+                    gameObject.transform.position = new Vector3(PosX2 - 0.01f, gameObject.transform.position.y, gameObject.transform.position.z);
+                }
             }
             else if (gameObject.transform.position.x >= PosX3)
             {
                 gameObject.transform.position += Vector3.left * Speed * Time.deltaTime;
+                if (gameObject.transform.position.y < PosY3)
+                {
+                    gameObject.transform.position = new Vector3(gameObject.transform.position.x, PosY3 + 0.01f, gameObject.transform.position.z);
+                }
             }
 
         }
@@ -98,7 +135,20 @@ public class R3oute1Path_3 : MonoBehaviour
     }
 
 
-    
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            BulletController bullet = collision.gameObject.GetComponent<BulletController>();
+            if (bullet.hasHit)
+            {
+                return;
+            }
+            IsAttacked = true;
+        }
+
+    }
+
 
     void OnCollisionEnter2D(Collision2D collision)
     {
