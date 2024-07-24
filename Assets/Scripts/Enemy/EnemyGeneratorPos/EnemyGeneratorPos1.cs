@@ -147,6 +147,14 @@ public class EnemyGeneratorPos1 : MonoBehaviour
     private int day4_22_count = 0;
     private int day4_23_count_3 = 5;
 
+    private int day5_1_count = 0;
+    private int day5_2_count = 0;
+    private int day5_3_count = 0;
+    private int day5_4_count = 0;
+    private int day5_5_count = 0;
+    private int day5_6_count = 0;
+    private int day5_7_count = 0;
+    private int day5_8_count = 0;
 
     // Update is called once per frame
     void Update()
@@ -164,6 +172,7 @@ public class EnemyGeneratorPos1 : MonoBehaviour
                 GameConstant.EnemyAttack2 = GameConstant.EnemyAttack2 * 1.2f;
                 GameConstant.EnemyMovespeed3 = GameConstant.EnemyMovespeed3 * 1.2f;
                 GameConstant.EnemyAttack3 = GameConstant.EnemyAttack3 * 1.6f;
+                GameConstant.EnemyMovespeed4 = GameConstant.EnemyMovespeed3 * 2f;
                 hasUp = true;
             }
             
@@ -179,6 +188,7 @@ public class EnemyGeneratorPos1 : MonoBehaviour
                 GameConstant.EnemyAttack2 /= 1.2f;
                 GameConstant.EnemyMovespeed3 /= 1.2f;
                 GameConstant.EnemyAttack3 /= 1.6f;
+                GameConstant.EnemyMovespeed4 /= 2f;
                 hasDown = true;
             }
             
