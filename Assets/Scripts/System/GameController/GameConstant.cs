@@ -133,11 +133,11 @@ public class GameConstant : MonoBehaviour
     public static float[,] towerPowerConsumption = new float[5, 3]
     {{0f, 0f, 0f}, {0f, 0f, 0f}, {2f, 2f, 2f}, {2f, 2f, 2f}, {3f, 3f, 3f}};
     public static float[,] towerUpgradeCost = new float[5, 3]
-    {{50f, 60f, 90f}, {75f, 90f, 120f}, {100f, 150f, 200f}, {100f, 150f, 200f}, {120f, 160f, 200f}};
+    {{40f, 60f, 90f}, {70f, 90f, 120f}, {100f, 150f, 200f}, {100f, 150f, 200f}, {120f, 160f, 200f}};
 
     // Wall
     public static float[] wallHealth = new float[3]
-    {500f, 1000f, 2000f};
+    {750f, 1000f, 2000f};
     public static float[] wallRecovery = new float[3]
     {0f, 10f, 30f};
     public static float[] wallPowerConsumption = new float[3]
