@@ -27,6 +27,8 @@ public class Base : MonoBehaviour
     private float upgrade_2 = GameConstant.Homelevel2;
     private float upgrade_3 = GameConstant.Homelevel3;
 
+    private float clock;
+
     // Panel flag
     private int flag = 0;
 
@@ -50,11 +52,10 @@ public class Base : MonoBehaviour
             GoldAndElectricity.gold += goldPerTime[level - 1];
             m_TimerGold = 0;
         }
-        m_TimerElectricity += Time.deltaTime;
-        if (m_TimerElectricity >= GeneratingCD[level - 1])
+        if (clock != Clock.NowHour)
         {
+            clock = Clock.NowHour;
             GoldAndElectricity.electricity += ElectricityPerTime[level - 1];
-            m_TimerElectricity = 0;
         }
 
 
