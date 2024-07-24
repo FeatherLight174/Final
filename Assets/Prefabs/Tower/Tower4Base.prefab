@@ -550,7 +550,7 @@ MonoBehaviour:
   rangePanel: {fileID: 6524938235564979107}
   sellPanel: {fileID: 8941662186441827994}
   upgradePanel: {fileID: 2979271691775435818}
-  lightRange: {fileID: 0}
+  lightRange: {fileID: 2117855001736854215}
   textPanel: {fileID: 4907862757305527213}
   scriptHPManagement: {fileID: 2422648091977231588}
   basePart: {fileID: 6211003041880742178}
