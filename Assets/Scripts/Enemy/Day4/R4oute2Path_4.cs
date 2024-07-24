@@ -82,7 +82,7 @@ public class R4oute2Path : MonoBehaviour
             else if (gameObject.transform.position.x <= PosX3)
             {
                 gameObject.transform.position -= Vector3.left * Speed * Time.deltaTime;
-                gameObject.transform.position -= Vector3.left * Speed * Time.deltaTime;
+                
                 m_isup2 = true;
             }
             else if (gameObject.transform.position.y <= PosY3)
