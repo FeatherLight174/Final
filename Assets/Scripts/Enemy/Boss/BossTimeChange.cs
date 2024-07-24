@@ -44,12 +44,9 @@ public class BossTimeChange : MonoBehaviour
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         for (int i = 0; i < enemies.Length; i++)
         {
-            if (enemies[i].transform.Find("Range") != null)
+            if (enemies[i].transform.Find("Range").gameObject.CompareTag("Knight"))
             {
-                if (enemies[i].transform.Find("Range").gameObject.CompareTag("Knight"))
-                {
-                    knight = enemies[i].transform.Find("Range").gameObject;
-                }
+                knight = enemies[i].transform.Find("Range").gameObject;
             }
         }
         if (knight.GetComponent<ability>().IsIntensify)
@@ -62,7 +59,6 @@ public class BossTimeChange : MonoBehaviour
         for (int i = 0; i < buildings.Length; i++)
         {
             // 塔到自身向量
-            Debug.Log(i);
             buildingToSelf[i] = transform.position - buildings[i].transform.position;
             // 检测塔是否在范围内
             if (buildingToSelf[i].magnitude <= range)
