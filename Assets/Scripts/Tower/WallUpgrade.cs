@@ -12,7 +12,7 @@ public class WallUpgrade : MonoBehaviour
             tower.wallLevel = Base.level;
             GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
         }
-        else if (GameConstant.towerUpgradeCost[tower.wallLevel, tower.wallLevel] > GoldAndElectricity.gold)
+        else if (GameConstant.wallUpgradeCost[tower.wallLevel] > GoldAndElectricity.gold)
         {
             GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
         }
@@ -23,6 +23,7 @@ public class WallUpgrade : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        Debug.Log("Mouse clicked upgrade");
         if (tower.wallLevel < Base.level)
         {
             tower.Upgrade();

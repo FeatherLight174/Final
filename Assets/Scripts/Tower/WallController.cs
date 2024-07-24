@@ -19,7 +19,7 @@ public class WallController : MonoBehaviour
     // 实际获取电量
     public float powerGet;
     // 建筑电力消耗量
-    private float powerConsumption;
+    public float powerConsumption;
     // [0, 1] 的数字，代表是否满电
     private float powerPercentage;
     private float powerTimer;
@@ -110,9 +110,13 @@ public class WallController : MonoBehaviour
         if (GoldAndElectricity.gold >= GameConstant.wallUpgradeCost[wallLevel])
         {
             GoldAndElectricity.gold -= (int)(GameConstant.wallUpgradeCost[wallLevel]);
-            scriptHPManagement.SetHP(GameConstant.wallUpgradeCost[wallLevel]);
+            scriptHPManagement.SetHP(GameConstant.wallHealth[wallLevel]);
             wallLevel++;
-            Debug.Log("Upgraded.");
+            powerConsumption = GameConstant.wallPowerConsumption[wallLevel - 1];
+            if ((int)wallLevel == (int)2)
+            {
+                GetPower();
+            }
         }
         else
         {

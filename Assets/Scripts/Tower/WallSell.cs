@@ -7,6 +7,7 @@ public class WallSell : MonoBehaviour
     public WallController tower;
     private void OnMouseDown()
     {
+        Debug.Log("Mouse clicked sell");
         tower.Sell();
     }
 }

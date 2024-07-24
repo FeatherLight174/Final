@@ -77,7 +77,7 @@ public class TowerController : MonoBehaviour
     // 实际获取电量
     public float powerGet;
     // 建筑电力消耗量
-    private float powerConsumption;
+    public float powerConsumption;
     private float powerPercentage;
     private float powerTimer;
 
