@@ -16,6 +16,10 @@ public class Rout1Path1_2 : MonoBehaviour
     public float PathY1 = 2;
 
     private float Speed = GameConstant.EnemyMovespeed2;
+    private bool m_IsFreeze = false;
+    private float m_FreezeTime = 3;
+
+    
 
     private Animator animator;
     // Start is called before the first frame update
@@ -27,6 +31,7 @@ public class Rout1Path1_2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (gameObject.GetComponent<HPManagement>().HP <= 0)
         {
             animator.SetBool("Die", true);
