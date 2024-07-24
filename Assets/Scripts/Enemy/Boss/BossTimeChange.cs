@@ -14,6 +14,7 @@ public class BossTimeChange : MonoBehaviour
     public GameObject[] buildings;
 
     public GameObject targetSprite;
+    public GameObject targetObject;
 
     public float skillDamage;
 
@@ -83,10 +84,10 @@ public class BossTimeChange : MonoBehaviour
         if (foundTower && Clock.IsNight)
         {
             m_DamageTimer += Time.deltaTime;
-            Instantiate(targetSprite);
-            if (m_DamageTimer > DamageBefore)
+            targetObject = Instantiate(targetSprite);
+            if (m_DamageTimer > DamageBefore || !Clock.IsNight)
             {
-                Destroy(targetSprite);
+                Destroy(targetObject);
                 m_DamageTimer = 0;
                 DamageTower(skillDamage);
             }

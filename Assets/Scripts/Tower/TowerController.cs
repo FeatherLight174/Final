@@ -29,6 +29,9 @@ public class TowerController : MonoBehaviour
     // 是否夜晚
     private bool isNight;
 
+    public float CDBefore;
+    private bool shot;
+    private bool firstShot;
 
     // 塔编号
     public int towerIndex;
@@ -130,6 +133,7 @@ public class TowerController : MonoBehaviour
         lightComponent = GetComponent<Light2D>();
         powerConsumption = GameConstant.towerPowerConsumption[towerIndex, towerLevel - 1];
         GetPower();
+        firstShot = true;
     }
 
     // Update is called once per frame
@@ -201,7 +205,6 @@ public class TowerController : MonoBehaviour
         lightComponent.pointLightOuterRadius = rangeReal;
         lightRange.pointLightOuterRadius = rangeReal;
         // 填弹
-        shootTimer += Time.deltaTime;
         shootInterval = 1 / shootSpeedReal;
         // 找到所有敌人，放在组enemies中
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -287,13 +290,36 @@ public class TowerController : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            GetComponent<Animator>().SetBool("IsShooting", false);
+            shootTimer = 0;
+            shot = false;
+        }
         if (foundEnemy && (Mathf.Abs(Mathf.Atan((-Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) + enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x) / (1 + Mathf.Tan(transform.eulerAngles.z / 180f * Mathf.PI) * enemyToTower[minValidEnemyBaseDistanceIndex].y / enemyToTower[minValidEnemyBaseDistanceIndex].x)) / Mathf.PI * 180f) <= angleDelta))
         {
+            if (firstShot)
+            {
+                firstShot = false;
+                GetComponent<Animator>().SetBool("IsShooting", true);
+            }
+            shootTimer += Time.deltaTime;
+            if (shootTimer >= CDBefore && !shot)
+            {
+                Shoot();
+                shot = true;
+                GetComponent<Animator>().SetBool("IsShooting", false);
+            }
             if (shootTimer >= shootInterval)
             {
                 shootTimer = 0;
-                Shoot();
+                shot = false;
+                GetComponent<Animator>().SetBool("IsShooting", true);
             }
+        }
+        else
+        {
+            firstShot = true;
         }
     }
     private void Shoot()
