@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2, y: 0, z: -0.5}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6d607885d2bbb744abf41713ece723e2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -120,7 +120,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.15
 --- !u!114 &5635630912907188282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,9 +134,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasHit: 0
+  isExplosive: 0
   bulletIndex: 1
   bulletLevel: 1
   maxRangeTimes: 2
   rangePowerBoostFactor: 0
   rangePowerBoostConstant: 0
   pierceCount: 1
+  pierceNightConstant: 0
+  explosion: {fileID: 0}
