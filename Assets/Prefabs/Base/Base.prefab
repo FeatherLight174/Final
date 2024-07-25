@@ -579,6 +579,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4051032298841557032, guid: c90bf7dfb8a6de84abb611d918b871b2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b11f5a27adbefa649812548ee1d867c4, type: 3}
+    - target: {fileID: 4051032298841557032, guid: c90bf7dfb8a6de84abb611d918b871b2, type: 3}
       propertyPath: m_Color.b
       value: 0.16218695
       objectReference: {fileID: 0}
@@ -647,7 +651,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
