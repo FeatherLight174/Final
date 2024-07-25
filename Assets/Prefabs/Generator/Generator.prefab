@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e221851653978b04086e1b6318ef27bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sell: {fileID: 9173654683790007317}
+  Sell: {fileID: 6160170114690023067}
   Upgrade: {fileID: 1899905241591213971}
   Range: {fileID: 1571091707133952303}
   textShown: {fileID: 6148134090059261364}
