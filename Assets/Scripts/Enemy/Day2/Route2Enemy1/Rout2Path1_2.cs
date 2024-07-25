@@ -10,7 +10,7 @@ public class Rout2Path1_2 : MonoBehaviour
     public float PosX1 = 14;
     public float PosX2 = 13;
     public float PosX3 = 12;
-    public float PosX4 = 3.5f;
+    public float PosX4 = 4f;
     public float PosX5 = 0;
     public float PosX6 = -9;
 

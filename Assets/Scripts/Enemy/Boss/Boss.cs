@@ -15,12 +15,12 @@ public class Boss : MonoBehaviour
     public float PosX4 = -25;
     public float PosX5 = -14;
     public float PosX6 = -9;
-    public float PosX7 = -2.5f;
+    public float PosX7 = -3f;
     public float PosX8 = 13;
     public float PosX9 = 14f;
     public float PosX10 = 12f;
     public float PosX11 = 3f;
-    public float PosX12 = 0.5f;
+    public float PosX12 = 0f;
     public float PosX13 = -8.5f;
 
     public float PosY1 = -1;
@@ -30,7 +30,7 @@ public class Boss : MonoBehaviour
     public float PosY5 = -7f;
     public float PosY6 = -4f;
     public float PosY7 = -6f;
-    public float PosY8 = 2.5f;
+    public float PosY8 = 2f;
     public float PosY9 = 1f;
     public float PosY10 = -4;
     public float PosY11 = -5f;
