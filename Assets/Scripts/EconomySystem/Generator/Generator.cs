@@ -60,11 +60,11 @@ public class Generator : MonoBehaviour
             if ((clock >= 8) && (clock <= 18))
             {
                 GoldAndElectricity.electricity += electricityPerTime;
-                animator.SetBool("Working", true);
+                animator.SetBool("IsWorking", true);
             }
             else
             {
-                animator.SetBool("Working", false);
+                animator.SetBool("IsWorking", false);
             }
         }
         if ((!sellPanel.activeSelf))

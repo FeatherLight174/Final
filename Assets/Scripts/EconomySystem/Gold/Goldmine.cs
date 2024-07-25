@@ -27,6 +27,7 @@ public class Goldmine : MonoBehaviour
     // Upgrade
     private float upgrade_2 = GameConstant.GoldLevel2;
     private float upgrade_3 = GameConstant.GoldLevel3;
+    private Animator animator;
 
     // Panel flag
     private int flag = 0;
@@ -35,6 +36,7 @@ public class Goldmine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         currentCost = goldMineCost;
         level = 1;
         m_Timer = 0;
@@ -46,11 +48,17 @@ public class Goldmine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((Clock.NowHour >= 8)&&(Clock.NowHour <= 18))
+        if ((Clock.NowHour >= 8) && (Clock.NowHour <= 18))
         {
             m_Timer += Time.deltaTime;
+            animator.SetBool("IsWorking", true);
         }
-        if (m_Timer >= goldMineCD[level - 1])
+        else
+        {
+
+            animator.SetBool("IsWorking", false);
+        }
+            if (m_Timer >= goldMineCD[level - 1])
         {
 
             GoldAndElectricity.gold += goldPerTime[level - 1];
