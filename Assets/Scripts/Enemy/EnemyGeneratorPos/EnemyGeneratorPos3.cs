@@ -124,8 +124,8 @@ public class EnemyGeneratorPos3 : MonoBehaviour
     private int hour11count_3 = 0;
     private int hour12count_3 = 0;
     private int hour13count_3 = 0;
-    private int hour14count_3 = 0;
-    private int hour15count_3 = 0;
+    private int hour14count_3 = 3;
+    private int hour15count_3 = 3;
     private int hour16count_3 = 0;
     private int hour17count_3 = 0;
     // Start is called before the first frame update

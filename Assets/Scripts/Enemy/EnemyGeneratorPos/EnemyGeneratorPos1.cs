@@ -171,8 +171,8 @@ public class EnemyGeneratorPos1 : MonoBehaviour
     private int hour9count_3 = 0;
     private int hour10count_3 = 0;
     private int hour11count_3 = 0;
-    private int hour12count_3 = 0;
-    private int hour13count_3 = 0;
+    private int hour12count_3 = 4;
+    private int hour13count_3 = 4;
     private int hour14count_3 = 0;
     private int hour15count_3 = 0;
     private int hour16count_3 = 0;
@@ -1604,7 +1604,7 @@ public class EnemyGeneratorPos1 : MonoBehaviour
             {
                 if (hour12count_3 > 0)
                 {
-                    if (m_timer >= 2)
+                    if (m_timer >= 4)
                     {
                         Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
@@ -1616,7 +1616,7 @@ public class EnemyGeneratorPos1 : MonoBehaviour
             {
                 if (hour13count_3 > 0)
                 {
-                    if (m_timer >= 2)
+                    if (m_timer >= 4)
                     {
                         Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;

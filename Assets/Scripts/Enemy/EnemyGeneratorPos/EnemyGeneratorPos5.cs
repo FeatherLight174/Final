@@ -91,14 +91,14 @@ public class EnemyGeneratorPos5 : MonoBehaviour
 
     private int hour8count_3 = 0;
     private int hour9count_3 = 0;
-    private int hour10count_3 = 0;
-    private int hour11count_3 = 0;
-    private int hour12count_3 = 0;
-    private int hour13count_3 = 0;
-    private int hour14count_3 = 0;
-    private int hour15count_3 = 0;
-    private int hour16count_3 = 0;
-    private int hour17count_3 = 0;
+    private int hour10count_3 = 1;
+    private int hour11count_3 = 1;
+    private int hour12count_3 = 1;
+    private int hour13count_3 = 1;
+    private int hour14count_3 = 1;
+    private int hour15count_3 = 1;
+    private int hour16count_3 = 1;
+    private int hour17count_3 = 1;
     // Start is called before the first frame update
     void Start()
     {

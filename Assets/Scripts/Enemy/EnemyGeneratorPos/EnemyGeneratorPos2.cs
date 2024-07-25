@@ -125,8 +125,8 @@ public class EnemyGeneratorPos2 : MonoBehaviour
 
     private int hour8count_3 = 0;
     private int hour9count_3 = 0;
-    private int hour10count_3 = 0;
-    private int hour11count_3 = 0;
+    private int hour10count_3 = 4;
+    private int hour11count_3 = 4;
     private int hour12count_3 = 0;
     private int hour13count_3 = 0;
     private int hour14count_3 = 0;
@@ -1204,9 +1204,9 @@ public class EnemyGeneratorPos2 : MonoBehaviour
             {
                 if (hour8count_3 > 0)
                 {
-                    if (m_timer >= 2)
+                    if (m_timer >= 1)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour8count_3--;
                     }
@@ -1218,7 +1218,7 @@ public class EnemyGeneratorPos2 : MonoBehaviour
                 {
                     if (m_timer >= 2)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour9count_3--;
                     }
@@ -1228,7 +1228,7 @@ public class EnemyGeneratorPos2 : MonoBehaviour
             {
                 if (hour10count_3 > 0)
                 {
-                    if (m_timer >= 2)
+                    if (m_timer >= 3)
                     {
                         Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
@@ -1240,7 +1240,7 @@ public class EnemyGeneratorPos2 : MonoBehaviour
             {
                 if (hour11count_3 > 0)
                 {
-                    if (m_timer >= 2)
+                    if (m_timer >= 3)
                     {
                         Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
