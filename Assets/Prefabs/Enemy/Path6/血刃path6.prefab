@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 5889834779627230814}
   m_Layer: 6
   m_Name: "\u8840\u5203path6"
-  m_TagString: Enemy
+  m_TagString: BloodBlade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

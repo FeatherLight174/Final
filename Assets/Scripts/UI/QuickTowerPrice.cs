@@ -20,7 +20,7 @@ public class QuickTowerPrice : MonoBehaviour
             tmpText.text = "Tower: Free!";
         }*/
 
-            tmpText.text = "QuickTower: " + GameConstant.PriceQuickTower;
+            tmpText.text = "åóËþ: " + GameConstant.PriceQuickTower;
         
 
     }

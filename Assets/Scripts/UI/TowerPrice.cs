@@ -17,11 +17,11 @@ public class TowerPrice : MonoBehaviour
     {
         if (Seed.towerIsFree)
         {
-            tmpText.text = "Tower: Free!";
+            tmpText.text = "¼ýËþ: Free!";
         }
         else
         {
-            tmpText.text = "Tower: " + GameConstant.PriceTower;
+            tmpText.text = "¼ýËþ: " + GameConstant.PriceTower;
         }
        
     }

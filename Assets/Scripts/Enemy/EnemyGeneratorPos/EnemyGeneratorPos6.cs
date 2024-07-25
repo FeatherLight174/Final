@@ -54,7 +54,7 @@ public class EnemyGeneratorPos6 : MonoBehaviour
     private int hour0count_3 = 0;
     private int hour1count_3 = 2;
     private int hour2count_3 = 0;
-    private int hour3count_3 = 2;
+    private int hour3count_3 = 0;
     private int hour4count_3 = 0;
     private int hour5count_3 = 2;
     private int hour6count_3 = 0;
@@ -411,7 +411,7 @@ public class EnemyGeneratorPos6 : MonoBehaviour
                 
     hour1count_3 = 2;
     hour2count_3 = 0;
-    hour3count_3 = 2;
+    hour3count_3 = 0;
     hour4count_3 = 0;
     hour5count_3 = 2;
     hour6count_3 = 0;

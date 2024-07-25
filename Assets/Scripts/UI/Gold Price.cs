@@ -17,11 +17,11 @@ public class GoldPrice : MonoBehaviour
     {
         if (Seed.goldIsFree)
         {
-            tmpText.text = "Goldmine: Free!" ;
+            tmpText.text = "½ð¿ó: Free!" ;
         }
         else
         {
-            tmpText.text = "Goldmine: " + GameConstant.PriceGold;
+            tmpText.text = "½ð¿ó: " + GameConstant.PriceGold;
         }
         
         

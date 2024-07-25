@@ -81,7 +81,7 @@ public class EnemyGeneratorPos5 : MonoBehaviour
     private bool dayOutOfRange = false;
 
     private int hour0count_3 = 1;
-    private int hour0count_4 = 1;
+    private int hour0count_4 = 0;
     private int hour1count_3 = 1;
     private int hour2count_3 = 1;
     private int hour3count_3 = 1;
@@ -781,7 +781,7 @@ public class EnemyGeneratorPos5 : MonoBehaviour
             else if (Clock.NowHour == 1)
             {
     hour0count_3 = 1;
-    hour0count_4 = 1;
+    hour0count_4 = 0;
                 if (hour1count_3 > 0)
                 {
                     if (m_timer >= 2)
