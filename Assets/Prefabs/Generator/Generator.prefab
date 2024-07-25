@@ -493,6 +493,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7157047859765058474}
     m_Modifications:
+    - target: {fileID: -2183230375649316559, guid: 5c033a74cb037cd499191e3af4911974, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: -2183230375649316559, guid: 5c033a74cb037cd499191e3af4911974, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.64
+      objectReference: {fileID: 0}
     - target: {fileID: 285878347276396446, guid: 5c033a74cb037cd499191e3af4911974, type: 3}
       propertyPath: generator
       value: 
@@ -545,6 +553,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5042289183850177828, guid: 5c033a74cb037cd499191e3af4911974, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0a1bebd7ab15a1c49bf2dd0d4bcec50a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

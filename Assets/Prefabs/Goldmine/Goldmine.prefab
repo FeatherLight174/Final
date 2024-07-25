@@ -662,6 +662,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3370829094843267253}
     m_Modifications:
+    - target: {fileID: -9007176310083955691, guid: a0388a390c4539b44a1c6c800b1f63c8, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: -9007176310083955691, guid: a0388a390c4539b44a1c6c800b1f63c8, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.64
+      objectReference: {fileID: 0}
     - target: {fileID: -5868331096309056875, guid: a0388a390c4539b44a1c6c800b1f63c8, type: 3}
       propertyPath: goldmine
       value: 
@@ -726,6 +734,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8394903474128249011, guid: a0388a390c4539b44a1c6c800b1f63c8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0a1bebd7ab15a1c49bf2dd0d4bcec50a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -753,10 +765,22 @@ PrefabInstance:
       propertyPath: goldmine
       value: 
       objectReference: {fileID: -3609014603895119036}
+    - target: {fileID: -2828903101036415700, guid: cbeb59c51eabdfd498d40c1e2b35889a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.64
+      objectReference: {fileID: 0}
+    - target: {fileID: -2828903101036415700, guid: cbeb59c51eabdfd498d40c1e2b35889a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.64
+      objectReference: {fileID: 0}
     - target: {fileID: -2687826030281712692, guid: cbeb59c51eabdfd498d40c1e2b35889a, type: 3}
       propertyPath: popupObject
       value: 
       objectReference: {fileID: 4515882142936296867}
+    - target: {fileID: 4338911773943762610, guid: cbeb59c51eabdfd498d40c1e2b35889a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b11f5a27adbefa649812548ee1d867c4, type: 3}
     - target: {fileID: 5883026790365631710, guid: cbeb59c51eabdfd498d40c1e2b35889a, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
