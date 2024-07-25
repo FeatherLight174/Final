@@ -44,7 +44,7 @@ public class EnemyGeneratorPos10 : MonoBehaviour
     private int day5_2_count = 0;
     private int day5_3_count = 0;
     private int day5_4_count = 0;
-    private int day5_5_count = 0;
+    private int day5_5_count = 1;
     private int day5_6_count = 0;
     private int day5_7_count = 0;
 
@@ -397,15 +397,15 @@ public class EnemyGeneratorPos10 : MonoBehaviour
         }
         else if ((Clock.NowHour == 8) && (Clock.Day == 5))
         {
-            if (day5_5_count > 0)
+            
+            if (day5_8_count > 0)
             {
 
-                if (m_timer >= day2_interval4)
-                {
-                    Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
-                    m_timer = 0;
-                    day5_5_count--;
-                }
+
+
+                Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
+                day5_8_count--;
+
 
 
             }

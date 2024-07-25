@@ -197,7 +197,7 @@ public class EnemyGeneratorPos1 : MonoBehaviour
                     GameConstant.EnemyMovespeed2 = GameConstant.EnemyMovespeed2 * 2f;
                     GameConstant.EnemyAttack2 = GameConstant.EnemyAttack2 * 1.2f;
                     GameConstant.EnemyMovespeed3 = GameConstant.EnemyMovespeed3 * 1.2f;
-                    GameConstant.EnemyAttack3 = GameConstant.EnemyAttack3 * 1.6f;
+                    GameConstant.EnemyAttack3 = GameConstant.EnemyAttack3 * 1.5f;
                     GameConstant.EnemyMovespeed4 = GameConstant.EnemyMovespeed4 * 2f;
                     hasUp = true;
                 }
@@ -213,7 +213,7 @@ public class EnemyGeneratorPos1 : MonoBehaviour
                     GameConstant.EnemyMovespeed2 /= 2f;
                     GameConstant.EnemyAttack2 /= 1.2f;
                     GameConstant.EnemyMovespeed3 /= 1.2f;
-                    GameConstant.EnemyAttack3 /= 1.6f;
+                    GameConstant.EnemyAttack3 /= 1.5f;
                     GameConstant.EnemyMovespeed4 /= 2f;
                     hasDown = true;
                 }

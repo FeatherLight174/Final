@@ -88,7 +88,7 @@ public class Boss : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if (!GetComponent<BossTimeChange>().m_isInSkilled)
+        if (!GetComponent<BossTimeChange>().m_isInSkilled && !GetComponent<BossTimeChange>().Victory)
         {
 
             if (!m_isAttack)
