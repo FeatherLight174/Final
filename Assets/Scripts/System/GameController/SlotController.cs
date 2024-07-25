@@ -15,8 +15,10 @@ public class SlotController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(MouseController.NowMouse != mouseState.None){
+        if (MouseController.NowMouse != mouseState.None)
+        {
             gm.SetActive(true);
+            Debug.Log("asdfghj");
         }
         else
         {
