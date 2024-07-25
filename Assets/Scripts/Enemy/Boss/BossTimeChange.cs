@@ -115,6 +115,14 @@ public class BossTimeChange : MonoBehaviour
                 Destroy(targetObject);
             }
         }
+        if (!Clock.IsNight)
+        {
+            Destroy(targetObject);
+            m_DamageTimer = 0;
+            m_isInSkilled = false;
+            m_skillTimer = 0;
+            animator.SetBool("Skill", false);
+        }
         if (foundTower && Clock.IsNight && m_skillTimer >= SkillCoolDown)
         {
             animator.SetBool("Skill",true);
@@ -127,14 +135,7 @@ public class BossTimeChange : MonoBehaviour
             m_isInSkilled = true;
             m_DamageTimer += Time.deltaTime;
             
-            if (!Clock.IsNight)
-            {
-                Destroy(targetObject);
-                m_DamageTimer = 0;
-                m_isInSkilled = false;
-                m_skillTimer = 0;
-            }
-            else if (m_DamageTimer > DamageBefore)
+            if (m_DamageTimer > DamageBefore)
             {
                 if (!m_isSkilled)
                 {

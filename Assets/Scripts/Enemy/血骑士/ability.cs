@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ability : MonoBehaviour
 {
-    public float SunDamage = 10;
+    private float SunDamage = 30;
     private HPManagement m_HP;
     private float m_nowHP;
     public int SP = 0;
