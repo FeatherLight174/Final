@@ -7503,6 +7503,7 @@ MonoBehaviour:
   - {fileID: 5526956762559256171, guid: 39db97fb45c0f4f48b1ea8ece2213363, type: 3}
   - {fileID: 5526956762559256171, guid: 8305c5d5fbdcbbd48a15e4ca3b3b40e4, type: 3}
   - {fileID: 5526956762559256171, guid: 99bcedadab8a6984f9b41d511a4e6957, type: 3}
+  - {fileID: 5526956762559256171, guid: ce128eab3cd142441939e36c42abedbc, type: 3}
   TimerMorning: 1
   TimerAfternoon: 1
   TimerNight: 1
@@ -9107,6 +9108,7 @@ MonoBehaviour:
   - {fileID: 5526956762559256171, guid: ac2ce4dd852eec0408ecbccc043351e9, type: 3}
   - {fileID: 5526956762559256171, guid: ac2ce4dd852eec0408ecbccc043351e9, type: 3}
   - {fileID: 5526956762559256171, guid: 96e5fdfb5defb2b488867d64351f32db, type: 3}
+  - {fileID: 5526956762559256171, guid: 3aea6ea1ebe9e474fa3492a3a1ff41c0, type: 3}
   TimerMorning: 1
   TimerAfternoon: 1
   TimerNight: 1
@@ -12309,6 +12311,7 @@ MonoBehaviour:
   - {fileID: 5526956762559256171, guid: 0255eb94dc0d49f47a99d517ec4daad5, type: 3}
   - {fileID: 5526956762559256171, guid: d20d8e7a0ae827f47bfe8af63a9463da, type: 3}
   - {fileID: 5526956762559256171, guid: d20d8e7a0ae827f47bfe8af63a9463da, type: 3}
+  - {fileID: 5526956762559256171, guid: 895c885bf828c9e45b9f283623f6f1c8, type: 3}
   TimerMorning: 1
   TimerAfternoon: 1
   TimerNight: 1

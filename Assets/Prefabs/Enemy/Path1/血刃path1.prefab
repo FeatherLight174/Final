@@ -12,14 +12,13 @@ GameObject:
   - component: {fileID: 5733093301337142444}
   - component: {fileID: 4126019836676058198}
   - component: {fileID: 1476476672232053174}
+  - component: {fileID: 2391332180332875013}
   - component: {fileID: 6798640470520907721}
   - component: {fileID: -8238072876935714274}
   - component: {fileID: 8510216922658971832}
-  - component: {fileID: 4022838313288843954}
-  - component: {fileID: 841919090827253367}
-  - component: {fileID: -7210007170998686011}
+  - component: {fileID: -6379997366263688309}
   m_Layer: 6
-  m_Name: "\u8840\u5203path9_2"
+  m_Name: "\u8840\u5203path1"
   m_TagString: BloodBlade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,6 +166,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
+--- !u!95 &2391332180332875013
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526956762559256171}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b659bd77104cd6419c89789ef44f750, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &6798640470520907721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsAttacked: 0
   showTime: 2
---- !u!114 &4022838313288843954
+--- !u!114 &-6379997366263688309
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -301,60 +321,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5526956762559256171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 791104c1f37ef2c428610f46fc384748, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d729e5eb0ec265449d7e7853d14134b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PosX4: -25
-  PosX5: -14
-  PosX6: -8
-  PosY5: -7.5
-  PosY6: -4
-  PosY7: 1
-  showTime: 3
-  IsAttacked: 0
-  timeStep: 7
---- !u!114 &841919090827253367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5526956762559256171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f51fe08a8f4a7a468eb6d2f243759c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PosX4: -25
-  PosX5: -14
-  PosX6: -8
-  PosY5: -7.5
-  PosY6: -4
-  PosY7: 1
-  showTime: 3
-  IsAttacked: 0
-  timeStep: 7
---- !u!95 &-7210007170998686011
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5526956762559256171}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6b659bd77104cd6419c89789ef44f750, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  Position1: {x: -3, y: 3, z: 0}
+  PathY1: 1
+  Position2: {x: -3, y: 1, z: 0}
+  Position3: {x: -8, y: 2, z: 0}
 --- !u!1001 &1026734284787811577
 PrefabInstance:
   m_ObjectHideFlags: 0
