@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3006177683353288425}
   - component: {fileID: 5430017103977233390}
   - component: {fileID: -2444011954706994697}
+  - component: {fileID: 3605261472481005976}
   m_Layer: 0
   m_Name: EmptySlot
   m_TagString: Untagged
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.9528302, g: 0.9528302, b: 0.43746287, a: 0}
+  m_Sprite: {fileID: 21300000, guid: 1ed963829452cdb47894af1baf59c79e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.12156863}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -149,3 +150,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3605261472481005976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6074642717650329047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3bae75bc612d94d97a34d029faab85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
