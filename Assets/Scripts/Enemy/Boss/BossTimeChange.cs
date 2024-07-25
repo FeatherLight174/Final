@@ -132,7 +132,7 @@ public class BossTimeChange : MonoBehaviour
                 targetObject = Instantiate(targetSprite, transform.position - buildingToSelf[minValidTowerDistanceIndex], Quaternion.identity);
                 m_isLocked = true;
             }
-            Debug.Log(000000000000);
+            //Debug.Log(000000000000);
             m_isInSkilled = true;
             m_DamageTimer += Time.deltaTime;
             
