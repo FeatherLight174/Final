@@ -12,6 +12,9 @@ public class Clock : MonoBehaviour
     private bool m_isMorning = false;
     public AudioSource Afternoon;
     public static bool IsNight;
+    public AudioSource Boss;
+    public float Boss_Time = 120;
+    private float timer = 0;
     private bool m_isAfter = false;
     
     public static float DayTime = 0;
@@ -95,6 +98,11 @@ public class Clock : MonoBehaviour
         }
         else if (Day >= 5)
         {
+            timer += Time.deltaTime;
+            if(timer >= Boss_Time)
+            {
+                Boss.Play();
+            }
             // Boss“Ù¿÷
         }
 
