@@ -126,8 +126,11 @@ public class TowerController : MonoBehaviour
     // 已在该塔上花费的钱（卖出时计算）
     private float currentCost;
 
+    private AudioSource m_Audiosource;
+
     void Start()
     {
+        m_Audiosource = GetComponent<AudioSource>();
         homeOrBase = GameObject.FindWithTag("Base");
         rangeNightFactor = GameConstant.towerRangeNightFactor[towerIndex];
         lightComponent = GetComponent<Light2D>();
@@ -325,6 +328,7 @@ public class TowerController : MonoBehaviour
     }
     private void Shoot()
     {
+        m_Audiosource.Play();
         Instantiate(bullets[(int)(towerLevel - 1)], new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.25f), transform.rotation);
     }
 

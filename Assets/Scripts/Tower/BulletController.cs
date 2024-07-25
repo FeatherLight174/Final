@@ -50,7 +50,6 @@ public class BulletController : MonoBehaviour
 
     void Start()
     {
-        m_Audiosource = GetComponent<AudioSource>();
         if (Clock.NowHour >= 6 && Clock.NowHour < 18)
         {
             isNight = false;
@@ -109,7 +108,6 @@ public class BulletController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("BloodBlade"))
         {
-            m_Audiosource.Play();
             m_enemy = other.gameObject;
             if (isExplosive)
             {
