@@ -90,6 +90,7 @@ public class Boss : MonoBehaviour
         }
         if (!GetComponent<BossTimeChange>().m_isInSkilled)
         {
+
             if (!m_isAttack)
             {
                 if (m_timer < Idle1Time && !m_isIdle1)
@@ -215,10 +216,11 @@ public class Boss : MonoBehaviour
                 {
                     if (!m_isIdle3)
                     {
+                        animator.SetBool("Move", false);
                         m_timer += Time.deltaTime;
                         if (m_timer >= Idle3Time)
                         {
-                            animator.SetBool("Move", false);
+                            
                             m_timer = 0;
                             m_isIdle3 = true;
                         }
@@ -256,10 +258,11 @@ public class Boss : MonoBehaviour
                 {
                     if (!m_isIdle4)
                     {
+                        animator.SetBool("Move", false);
                         m_timer += Time.deltaTime;
                         if (m_timer >= Idle4Time)
                         {
-                            animator.SetBool("Move", false);
+                            
                             m_timer = 0;
                             m_isIdle4 = true;
                         }
@@ -303,10 +306,11 @@ public class Boss : MonoBehaviour
                 {
                     if (!m_isIdle5)
                     {
+                        animator.SetBool("Move", false);
                         m_timer += Time.deltaTime;
                         if (m_timer >= Idle5Time)
                         {
-                            animator.SetBool("Move", false);
+                            
                             m_timer = 0;
                             m_isIdle5 = true;
                         }
@@ -402,6 +406,7 @@ public class Boss : MonoBehaviour
             }
 
         }
+
     }
 
     

@@ -15,6 +15,8 @@ public class BossTimeChange : MonoBehaviour
     private GameObject knight;
     public GameObject[] buildings;
 
+    bool foundTower = false;
+    bool foundTrue = false;
     public GameObject targetSprite;
     public GameObject targetObject;
 
@@ -32,6 +34,8 @@ public class BossTimeChange : MonoBehaviour
     private float m_skillTimer = 0;
     private bool m_isSkilled = false;
 
+    private bool m_isLocked = false;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -40,16 +44,13 @@ public class BossTimeChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*m_skillTimer += Time.deltaTime;
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        m_skillTimer += Time.deltaTime;
+        /*enemies = GameObject.FindGameObjectsWithTag("Enemy");
         for (int i = 0; i < enemies.Length; i++)
         {
-            if (enemies[i].transform.Find("Range") != null)
+            if (enemies[i].transform.Find("Range").gameObject.CompareTag("Knight"))
             {
-                if (enemies[i].transform.Find("Range").gameObject.CompareTag("Knight"))
-                {
-                    knight = enemies[i].transform.Find("Range").gameObject;
-                }
+                knight = enemies[i].transform.Find("Range").gameObject;
             }
         }
         if (knight.GetComponent<ability>().IsIntensify)
@@ -59,10 +60,12 @@ public class BossTimeChange : MonoBehaviour
         }*/
         buildings = GameObject.FindGameObjectsWithTag("Building");
 
+        buildingToSelf = new Vector3[(int)buildings.Length]; 
+        buildingWithinRange = new bool[(int)buildings.Length];
+        distanceBuilding = new float[(int)buildings.Length];
         for (int i = 0; i < buildings.Length; i++)
         {
             // 塔到自身向量
-            Debug.Log(i);
             buildingToSelf[i] = transform.position - buildings[i].transform.position;
             // 检测塔是否在范围内
             if (buildingToSelf[i].magnitude <= range)
@@ -79,9 +82,9 @@ public class BossTimeChange : MonoBehaviour
             }
         }
         // 防止默认索0号塔
-        bool foundTower = false;
-        minValidTowerDistanceIndex = 0;
         // 每个敌人以“打擂台”判断最接近基地
+        foundTower = false;
+        minValidTowerDistanceIndex = 0;
         for (int i = 0; i < buildings.Length; i++)
         {
             if (buildingWithinRange[i] == true)
@@ -93,12 +96,37 @@ public class BossTimeChange : MonoBehaviour
                 minValidTowerDistanceIndex = i;
             }
         }
+        if (!foundTower && m_DamageTimer > 0)
+        {
+            if (m_DamageTimer < DamageBefore + SkillPost)
+            {
+                animator.SetBool("Skill", true);
+                m_DamageTimer += Time.deltaTime;
+            }
+            else
+            {
+                m_DamageTimer = 0;
+                m_DamageTimer = 0;
+                m_isInSkilled = false;
+                m_skillTimer = 0;
+                m_isSkilled = false;
+                animator.SetBool("Skill", false);
+                m_isLocked = false;
+                Destroy(targetObject);
+            }
+        }
         if (foundTower && Clock.IsNight && m_skillTimer >= SkillCoolDown)
         {
             animator.SetBool("Skill",true);
+            if (!m_isLocked)
+            {
+                targetObject = Instantiate(targetSprite, transform.position - buildingToSelf[minValidTowerDistanceIndex], Quaternion.identity);
+                m_isLocked = true;
+            }
+            Debug.Log(000000000000);
             m_isInSkilled = true;
             m_DamageTimer += Time.deltaTime;
-            targetObject = Instantiate(targetSprite);
+            
             if (!Clock.IsNight)
             {
                 Destroy(targetObject);
@@ -106,7 +134,7 @@ public class BossTimeChange : MonoBehaviour
                 m_isInSkilled = false;
                 m_skillTimer = 0;
             }
-            else if (m_DamageTimer > DamageBefore )
+            else if (m_DamageTimer > DamageBefore)
             {
                 if (!m_isSkilled)
                 {
@@ -122,6 +150,7 @@ public class BossTimeChange : MonoBehaviour
                     m_skillTimer = 0;
                     m_isSkilled = false;
                     animator.SetBool("Skill", false);
+                    m_isLocked = false;
                 }
                 
             }
@@ -143,6 +172,7 @@ public class BossTimeChange : MonoBehaviour
     }
     void DamageTower(float damage)
     {
+
         buildings[minValidTowerDistanceIndex].GetComponent<HPManagement>().TakeDamage(damage);
     }
 }
