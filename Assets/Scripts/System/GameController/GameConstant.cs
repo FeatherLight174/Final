@@ -88,7 +88,7 @@ public class GameConstant : MonoBehaviour
     public static float AttackCD4;
 
     // ÑªÆïÊ¿
-    public static float HPEnemy5 = 2500;
+    public static float HPEnemy5 = 2000;
     public static float vFactor5 = 1.0f;
     public static float EnemyAttack5 = 100;
     public static float EnemyMovespeed5 = 0.6f;

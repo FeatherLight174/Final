@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Esc : MonoBehaviour
 {
+    private bool pause = false;
+    private bool twice = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,44 @@ public class Esc : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            if(pause)
+            {
+                pause = false;
+            }
+            else
+            {
+                pause = true;
+            }
         }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if (twice)
+            {
+                twice = false;
+
+            }
+            else
+            {
+                twice= true;
+            }
+        }
+        if (pause&&twice)
+        {
+            Time.timeScale = 0;
+        }
+        else if (pause && !twice)
+        {
+            Time.timeScale = 0;
+        }
+        else if (!pause && twice)
+        {
+            Time.timeScale = 2;
+        }
+        else if(!pause && !twice)
+        {
+            Time.timeScale = 1;
+        }
+        
+        
     }
 }
