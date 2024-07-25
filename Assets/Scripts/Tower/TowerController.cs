@@ -357,6 +357,7 @@ public class TowerController : MonoBehaviour
             GoldAndElectricity.gold -= (int)(GameConstant.towerUpgradeCost[towerIndex, towerLevel]);
             scriptHPManagement.SetHP(GameConstant.towerHealth[towerIndex, towerLevel]);
             towerLevel++;
+            GetPower();
             Debug.Log("Upgraded.");
         }
         else
