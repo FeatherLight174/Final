@@ -397,15 +397,15 @@ public class EnemyGeneratorPos10 : MonoBehaviour
         }
         else if ((Clock.NowHour == 8) && (Clock.Day == 5))
         {
-            if (day5_5_count > 0)
+            
+            if (day5_8_count > 0)
             {
 
-                if (m_timer >= day2_interval4)
-                {
-                    Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
-                    m_timer = 0;
-                    day5_5_count--;
-                }
+
+
+                Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
+                day5_8_count--;
+
 
 
             }

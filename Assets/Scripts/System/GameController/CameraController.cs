@@ -3,7 +3,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     private  float moveSpeed = 10f; // 控制摄像机移动速度
-    private bool enable = false;
+    private bool enable = true;
     void Update()
     {
         Vector3 move = new Vector3();
