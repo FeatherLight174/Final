@@ -440,7 +440,7 @@ public class Boss : MonoBehaviour
         {
             yield return new WaitForSeconds(m_attackPre);
             // 调用建筑的减少血量方法
-            if (m_Tower != null)
+            if (m_Tower != null && GetComponent<BossTimeChange>().m_isInSkilled) 
             {
                 m_Tower.GetComponent<HPManagement>().TakeDamage(m_attack);
             }
