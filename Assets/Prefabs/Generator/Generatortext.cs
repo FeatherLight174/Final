@@ -21,7 +21,7 @@ public class GeneratorText : MonoBehaviour
         
         SellPrice = (int)(price * health.HP / health.MaxHP * GameConstant.SellFactor);
         
-        GetComponent<TextMeshPro>().text = "\nSell: " + SellPrice.ToString() + " gold" + "效率:" + "5"+ "电量/小时" + "生命:" + health.HP + "/" + health.MaxHP;
+        GetComponent<TextMeshPro>().text = "\nSell: " + SellPrice.ToString() + " gold\n" + "效率:" + "5"+ "电量/小时" + "\n生命:" + health.HP + "/" + health.MaxHP;
        
        
     }

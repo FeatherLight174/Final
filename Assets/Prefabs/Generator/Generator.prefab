@@ -329,7 +329,6 @@ GameObject:
   - component: {fileID: 195508359809421500}
   - component: {fileID: 29262934648663494}
   - component: {fileID: 6809360243639616723}
-  - component: {fileID: 6495723653534014240}
   - component: {fileID: 664322636537587213}
   m_Layer: 0
   m_Name: Text
@@ -377,7 +376,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2910798567754485634, guid: c9d903ed24afb51489625c33ba993b71, type: 2}
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -421,8 +420,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Max level reach\nSell: *** gold\n\u653B\u51FB\u529B***\n\u653B\u901F***\u53D1/\u79D2\n\u603B\u8840\u91CF***\n\u8017\u7535:***"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c9d903ed24afb51489625c33ba993b71, type: 2}
-  m_sharedMaterial: {fileID: 2910798567754485634, guid: c9d903ed24afb51489625c33ba993b71, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -491,20 +490,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 29262934648663494}
   m_maskType: 0
---- !u!114 &6495723653534014240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6148134090059261364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b21f455887018cc43989b1d1cdf4808a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tower: {fileID: 0}
-  health: {fileID: 0}
 --- !u!114 &664322636537587213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,8 +502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc2edf788605d4746988d6e7f0711d77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 0}
-  health: {fileID: 0}
+  tower: {fileID: 1534044938498098678}
+  health: {fileID: 3304970453915932544}
 --- !u!1 &9173654683790007317
 GameObject:
   m_ObjectHideFlags: 0
