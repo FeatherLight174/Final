@@ -5,6 +5,7 @@ using MouseState;
 
 public class Seed : MonoBehaviour
 {
+    public GameObject slot;
     private bool m_IsActive = true;
     public GameObject Gold;
     public GameObject Tower;
@@ -100,6 +101,15 @@ public class Seed : MonoBehaviour
         {
             m_IsActive = true;
         }
+        if(MouseController.NowMouse != mouseState.None)
+        {
+            slot.SetActive(true);
+            Debug.Log("enter") ;
+        }
+        else
+        {
+            slot.SetActive(false);
+        }
     }
 
     
@@ -107,6 +117,7 @@ public class Seed : MonoBehaviour
     {
         // 当鼠标点击触发器时执行此方法
         //Debug.Log("Clicked on object: ");
+
         if (m_IsActive)
         {
             if (MouseController.NowMouse == mouseState.Gold)
@@ -193,7 +204,8 @@ public class Seed : MonoBehaviour
                 MouseController.NowMouse = mouseState.None;
             }
         }
-        
+
+
     }    // 调用其他方法处理点击事件，例如改变物体颜色
         
 }

@@ -202,7 +202,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2910798567754485634, guid: c9d903ed24afb51489625c33ba993b71, type: 2}
+  - {fileID: 2910798567754485634, guid: 09ede2a5854aac641810d2b8eeff93ba, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -246,8 +246,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Upgrade ***gold\nSell: ***gold\n\u8840\u91CF***/***;"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c9d903ed24afb51489625c33ba993b71, type: 2}
-  m_sharedMaterial: {fileID: 2910798567754485634, guid: c9d903ed24afb51489625c33ba993b71, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 09ede2a5854aac641810d2b8eeff93ba, type: 2}
+  m_sharedMaterial: {fileID: 2910798567754485634, guid: 09ede2a5854aac641810d2b8eeff93ba, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -313,7 +313,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_renderer: {fileID: 2997913860448117172}
   m_maskType: 0
 --- !u!114 &5016183777832107735

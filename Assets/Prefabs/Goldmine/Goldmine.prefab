@@ -474,7 +474,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Upgrade*** gold\nSell***gold\"\n\u6548\u7387***\u91D1\u5E01/\u5C0F\u65F6\n\u751F\u547D***/***;"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 09ede2a5854aac641810d2b8eeff93ba, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -541,7 +541,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_renderer: {fileID: 3659743366940680288}
   m_maskType: 0
 --- !u!114 &114152250242275178

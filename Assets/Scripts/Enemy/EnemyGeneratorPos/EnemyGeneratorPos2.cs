@@ -1107,6 +1107,25 @@ public class EnemyGeneratorPos2 : MonoBehaviour
         {
             if (Clock.NowHour == 0)
             {
+                
+    hour1count_3 = 1;
+    hour2count_3 = 1;
+    hour3count_3 = 1;
+    hour4count_3 = 1;
+    hour5count_3 = 1;
+    hour6count_3 = 1;
+    hour7count_3 = 1;
+
+    hour8count_3 = 0;
+    hour9count_3 = 0;
+    hour10count_3 = 4;
+    hour11count_3 = 4;
+    hour12count_3 = 0;
+    hour13count_3 = 0;
+    hour14count_3 = 0;
+    hour15count_3 = 0;
+    hour16count_3 = 0;
+    hour17count_3 = 0;
                 if (hour0count_3 > 0)
                 {
                     if (m_timer >= 2)
@@ -1128,6 +1147,8 @@ public class EnemyGeneratorPos2 : MonoBehaviour
             }
             else if (Clock.NowHour == 1)
             {
+    hour0count_3 = 1;
+    hour0count_4 = 1;
                 if (hour1count_3 > 0)
                 {
                     if (m_timer >= 2)
