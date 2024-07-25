@@ -37,13 +37,17 @@ public class GoldUpgradeText : MonoBehaviour
             price = GameConstant.PriceGold + GameConstant.GoldLevel2 + GameConstant.GoldLevel3;
         }
         SellPrice = (int)(price * health.HP / health.MaxHP * GameConstant.SellFactor);
-        if (UpgradeCost > 0)
+        if (Level ==  1)
         {
-            GetComponent<TextMeshPro>().text = "Upgrade: " + UpgradeCost.ToString() + " gold\n\nSell: " + SellPrice.ToString() + " gold";
+            GetComponent<TextMeshPro>().text = "Upgrade: " + UpgradeCost.ToString() + " gold\n\nSell: " + SellPrice.ToString() + " gold" + "效率:" + "6"+"金币/小时" + "生命:" + health.HP + "/" + health.MaxHP;
         } 
+        else if(Level == 2)
+        {
+            GetComponent<TextMeshPro>().text = "Upgrade: " + UpgradeCost.ToString() + " gold\n\nSell: " + SellPrice.ToString() + " gold" + "效率:" + "11.25" + "金币/小时" + "生命:" + health.HP + "/" + health.MaxHP;
+        }
         else
         {
-            GetComponent<TextMeshPro>().text = "Max level reached\n\nSell: " + SellPrice.ToString() + " gold";
+            GetComponent<TextMeshPro>().text = "Max level reached\n\nSell: " + SellPrice.ToString() + " gold" + "效率:" + GameConstant.GoldLevelProduce[Level - 1] + "金币/小时" + "生命:" + health.HP + "/" + health.MaxHP;
         }
     }
 }

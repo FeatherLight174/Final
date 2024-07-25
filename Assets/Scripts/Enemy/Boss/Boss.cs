@@ -165,7 +165,7 @@ public class Boss : MonoBehaviour
                 {
                     if (!m_isIdle2)
                     {
-                        Debug.Log("SSSSSSSSSS");
+                        //Debug.Log("SSSSSSSSSS");
                         m_timer += Time.deltaTime;
                         animator.SetBool("Move", false);
                         if (m_timer >= Idle2Time)
