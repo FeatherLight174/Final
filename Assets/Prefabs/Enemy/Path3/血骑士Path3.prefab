@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5b34f68efefa640b55343841e4d1b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SunDamage: 50
   SP: 0
   MAXSP: 5
   IsIntensify: 0
