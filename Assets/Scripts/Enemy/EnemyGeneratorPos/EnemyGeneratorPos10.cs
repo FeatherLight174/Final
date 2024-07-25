@@ -44,7 +44,7 @@ public class EnemyGeneratorPos10 : MonoBehaviour
     private int day5_2_count = 0;
     private int day5_3_count = 0;
     private int day5_4_count = 0;
-    private int day5_5_count = 1;
+    private int day5_5_count = 0;
     private int day5_6_count = 0;
     private int day5_7_count = 0;
 

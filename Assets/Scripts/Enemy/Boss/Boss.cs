@@ -54,15 +54,15 @@ public class Boss : MonoBehaviour
     public int timeStep = 0;
 
     private bool m_ismove = false;
-    public float Idle1Time = 5;
+    public float Idle1Time = 15;
     private bool m_isIdle1 = false;
     private bool m_isIdle2 = false;
-    private float Idle2Time = 5;
-    private float Idle3Time = 5;
+    private float Idle2Time = 15;
+    private float Idle3Time = 15;
     private bool m_isIdle3 = false;
-    private float Idle4Time = 5;
+    private float Idle4Time = 15;
     private bool m_isIdle4 = false;
-    private float Idle5Time = 5;
+    private float Idle5Time = 15;
     private bool m_isIdle5 = false;
     private float m_timer = 0;
 
@@ -440,7 +440,7 @@ public class Boss : MonoBehaviour
         {
             yield return new WaitForSeconds(m_attackPre);
             // 调用建筑的减少血量方法
-            if (m_Tower != null && GetComponent<BossTimeChange>().m_isInSkilled) 
+            if (m_Tower != null && !GetComponent<BossTimeChange>().m_isInSkilled) 
             {
                 m_Tower.GetComponent<HPManagement>().TakeDamage(m_attack);
             }
