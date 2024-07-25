@@ -135,7 +135,6 @@ public class TowerController : MonoBehaviour
         rangeNightFactor = GameConstant.towerRangeNightFactor[towerIndex];
         lightComponent = GetComponent<Light2D>();
         powerConsumption = GameConstant.towerPowerConsumption[towerIndex, towerLevel - 1];
-        GetPower();
         firstShot = true;
     }
 
