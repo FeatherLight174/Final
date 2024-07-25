@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8510216922658971832}
   - component: {fileID: 4022838313288843954}
   - component: {fileID: 841919090827253367}
+  - component: {fileID: -7210007170998686011}
   m_Layer: 6
   m_Name: "\u8840\u5203path9_2"
   m_TagString: BloodBlade
@@ -333,6 +334,27 @@ MonoBehaviour:
   showTime: 3
   IsAttacked: 0
   timeStep: 7
+--- !u!95 &-7210007170998686011
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526956762559256171}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b659bd77104cd6419c89789ef44f750, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1026734284787811577
 PrefabInstance:
   m_ObjectHideFlags: 0

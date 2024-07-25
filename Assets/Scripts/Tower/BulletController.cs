@@ -7,7 +7,7 @@ public class BulletController : MonoBehaviour
 {
     // 多次击中问题校正
     public bool hasHit = false;
-
+    private AudioSource m_Audiosource;
     // 是否夜
     private bool isNight;
 
@@ -50,6 +50,7 @@ public class BulletController : MonoBehaviour
 
     void Start()
     {
+        m_Audiosource = GetComponent<AudioSource>();
         if (Clock.NowHour >= 6 && Clock.NowHour < 18)
         {
             isNight = false;
@@ -108,6 +109,7 @@ public class BulletController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("BloodBlade"))
         {
+            m_Audiosource.Play();
             m_enemy = other.gameObject;
             if (isExplosive)
             {

@@ -15,8 +15,8 @@ public class Clock : MonoBehaviour
     private bool m_isAfter = false;
     
     public static float DayTime = 0;
-    public static int Day = 1;
-    public static int NowHour = 19;
+    public static int Day = 5;
+    public static int NowHour = 7;
 
 
     public float RedMin = 76;
@@ -47,17 +47,33 @@ public class Clock : MonoBehaviour
 
     void Update()
     {
+        if (NowHour >= 19 || NowHour <= 7)
+        {
+            IsNight = true;
+        }
+        else if (NowHour >= 8 && NowHour <= 18)
+        {
+            IsNight = false;
+        }
+        DayTime += Time.deltaTime;
+        if (DayTime >= GameConstant.HourTime)
+        {
+            NowHour++;
+
+            DayTime = 0;
+            if (NowHour == 24)
+            {
+                Day++;
+                m_isAfter = false;
+                m_isMorning = false;
+                m_isNight = false;
+                NowHour = 0;
+            }
+        }
         if (Day < 5)
         {
 
-            if (NowHour >= 19 || NowHour <= 7)
-            {
-                IsNight = true;
-            }
-            else if (NowHour >= 8 && NowHour <= 18)
-            {
-                IsNight = false;
-            }
+            
             if (NowHour == 22 && !m_isNight)
             {
                 Night.Play();
@@ -75,21 +91,7 @@ public class Clock : MonoBehaviour
                 morning.Play();
                 m_isMorning = true;
             }
-            DayTime += Time.deltaTime;
-            if (DayTime >= GameConstant.HourTime)
-            {
-                NowHour++;
-
-                DayTime = 0;
-                if (NowHour == 24)
-                {
-                    Day++;
-                    m_isAfter = false;
-                    m_isMorning = false;
-                    m_isNight = false;
-                    NowHour = 0;
-                }
-            }
+            
         }
         else if (Day >= 5)
         {
