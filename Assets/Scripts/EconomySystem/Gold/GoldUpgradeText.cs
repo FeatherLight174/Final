@@ -47,7 +47,7 @@ public class GoldUpgradeText : MonoBehaviour
         }
         else
         {
-            GetComponent<TextMeshPro>().text = "Max level reached\n\nSell: " + SellPrice.ToString() + " gold" + "效率:" + GameConstant.GoldLevelProduce[Level - 1] + "金币/小时" + "生命:" + health.HP + "/" + health.MaxHP;
+            GetComponent<TextMeshPro>().text = "Max level reached\n\nSell: " + SellPrice.ToString() + " gold" + "效率:" +  + "金币/小时" + "生命:" + health.HP + "/" + health.MaxHP;
         }
     }
 }
