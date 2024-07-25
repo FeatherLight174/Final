@@ -35,13 +35,13 @@ public class WallUpgradeText : MonoBehaviour
             price += GameConstant.wallUpgradeCost[i];
         }
         wallSellPrice = (int)(price * health.HP / health.MaxHP * GameConstant.SellFactor);
-        if (wallSellPrice > 0)
+        if (wallLevel <= 2)
         {
-            GetComponent<TextMeshPro>().text = "Upgrade: " + wallUpgradeCost.ToString() + " gold\n\nSell: " + wallSellPrice.ToString() + " gold";
+            GetComponent<TextMeshPro>().text = "Upgrade: " + wallUpgradeCost.ToString() + " gold\n\nSell: " + wallSellPrice.ToString() + " gold\n" + "ÑªÁ¿:" + health.HP + "/" + health.MaxHP;
         }
-        else 
+        else if(wallLevel == 3)
         {
-            GetComponent<TextMeshPro>().text = "Max level reached\n\nSell: " + wallSellPrice.ToString() + " gold";
+            GetComponent<TextMeshPro>().text = "Max level reached\n\nSell: " + wallSellPrice.ToString() + " gold\n" + "ÑªÁ¿:" + health.HP + "/" + health.MaxHP; ;
         }
     }
 }

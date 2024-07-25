@@ -35,13 +35,19 @@ public class TowerUpgradeText : MonoBehaviour
             price += GameConstant.towerUpgradeCost[tower.towerIndex, i];
         }
         towerSellPrice = (int)(price * health.HP / health.MaxHP * GameConstant.SellFactor);
-        if (towerSellPrice > 0)
+        if (towerLevel == 1)
         {
-            GetComponent<TextMeshPro>().text = "Upgrade: " + towerUpgradeCost.ToString() + " gold\n\nSell: " + towerSellPrice.ToString() + " gold";
+            GetComponent<TextMeshPro>().text = "Upgrade: " + towerUpgradeCost.ToString() + " gold\nSell: " + towerSellPrice.ToString() + " gold\n" + "攻击力:" + GameConstant.towerDamage[tower.towerIndex,towerLevel -1].ToString() + "\n"+"攻速:"+ GameConstant.towerShootSpeed[tower.towerIndex, towerLevel - 1].ToString() + "发/秒\n总血量:" + GameConstant.towerHealth[tower.towerIndex, towerLevel - 1].ToString()+ "耗电量:" + GameConstant.towerPowerConsumption[tower.towerIndex,towerLevel - 1];
         }
-        else
+        else if(towerLevel == 2)
         {
-            GetComponent<TextMeshPro>().text = "Max level reach\n\nSell: " + towerSellPrice.ToString() + " gold";
+            GetComponent<TextMeshPro>().text = "Upgrade: " + towerUpgradeCost.ToString() + " gold\nSell: " + towerSellPrice.ToString() + " gold\n" + "攻击力:" + GameConstant.towerDamage[tower.towerIndex, towerLevel - 1].ToString() + "\n" + "攻速:" + GameConstant.towerShootSpeed[tower.towerIndex, towerLevel - 1].ToString() + "发/秒\n总血量:" + GameConstant.towerHealth[tower.towerIndex, towerLevel - 1].ToString() + "耗电量:" + GameConstant.towerPowerConsumption[tower.towerIndex, towerLevel - 1];
         }
+      
+        else if(towerLevel == 3)
+        {
+            GetComponent<TextMeshPro>().text = "Max level reach\nSell: " + towerSellPrice.ToString() + "gold\n" + "攻击力:" + GameConstant.towerDamage[tower.towerIndex, towerLevel - 1].ToString() + "\n" + "攻速:" + GameConstant.towerShootSpeed[tower.towerIndex, towerLevel - 1].ToString() + "发/秒\n总血量:" + GameConstant.towerHealth[tower.towerIndex, towerLevel - 1].ToString() + "耗电量:" + GameConstant.towerPowerConsumption[tower.towerIndex, towerLevel - 1];
+        }
+      
     }
 }
