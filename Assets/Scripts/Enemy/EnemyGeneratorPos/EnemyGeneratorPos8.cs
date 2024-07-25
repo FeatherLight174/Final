@@ -50,11 +50,11 @@ public class EnemyGeneratorPos8 : MonoBehaviour
 
     private bool dayOutOfRange = false;
 
-    private int hour0count_3 = 0;
+    private int hour0count_3 = 1;
     private int hour1count_3 = 0;
     private int hour2count_3 = 0;
     private int hour3count_3 = 0;
-    private int hour4count_3 = 0;
+    private int hour4count_3 = 1;
     private int hour5count_3 = 0;
     private int hour6count_3 = 0;
     private int hour7count_3 = 0;
@@ -63,7 +63,7 @@ public class EnemyGeneratorPos8 : MonoBehaviour
     private int hour9count_3 = 0;
     private int hour10count_3 = 0;
     private int hour11count_3 = 0;
-    private int hour12count_3 = 0;
+    private int hour12count_3 = 1;
     private int hour13count_3 = 0;
     private int hour14count_3 = 0;
     private int hour15count_3 = 0;
@@ -431,7 +431,7 @@ public class EnemyGeneratorPos8 : MonoBehaviour
                 {
                     if (m_timer >= 2)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour0count_3--;
                     }
@@ -443,7 +443,7 @@ public class EnemyGeneratorPos8 : MonoBehaviour
                 {
                     if (m_timer >= 2)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour1count_3--;
                     }
@@ -455,7 +455,7 @@ public class EnemyGeneratorPos8 : MonoBehaviour
                 {
                     if (m_timer >= 2)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour2count_3--;
                     }
@@ -467,7 +467,7 @@ public class EnemyGeneratorPos8 : MonoBehaviour
                 {
                     if (m_timer >= 2)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour3count_3--;
                     }
@@ -479,7 +479,7 @@ public class EnemyGeneratorPos8 : MonoBehaviour
                 {
                     if (m_timer >= 2)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour4count_3--;
                     }
@@ -491,7 +491,7 @@ public class EnemyGeneratorPos8 : MonoBehaviour
                 {
                     if (m_timer >= 2)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour5count_3--;
                     }
@@ -503,7 +503,7 @@ public class EnemyGeneratorPos8 : MonoBehaviour
                 {
                     if (m_timer >= 2)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour6count_3--;
                     }
@@ -515,7 +515,7 @@ public class EnemyGeneratorPos8 : MonoBehaviour
                 {
                     if (m_timer >= 2)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour7count_3--;
                     }
@@ -527,7 +527,7 @@ public class EnemyGeneratorPos8 : MonoBehaviour
                 {
                     if (m_timer >= 2)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour8count_3--;
                     }
@@ -539,7 +539,7 @@ public class EnemyGeneratorPos8 : MonoBehaviour
                 {
                     if (m_timer >= 2)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour9count_3--;
                     }
@@ -551,7 +551,7 @@ public class EnemyGeneratorPos8 : MonoBehaviour
                 {
                     if (m_timer >= 2)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour10count_3--;
                     }
@@ -563,7 +563,7 @@ public class EnemyGeneratorPos8 : MonoBehaviour
                 {
                     if (m_timer >= 2)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour11count_3--;
                     }
@@ -575,7 +575,7 @@ public class EnemyGeneratorPos8 : MonoBehaviour
                 {
                     if (m_timer >= 2)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour12count_3--;
                     }
@@ -587,7 +587,7 @@ public class EnemyGeneratorPos8 : MonoBehaviour
                 {
                     if (m_timer >= 2)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour13count_3--;
                     }
@@ -599,7 +599,7 @@ public class EnemyGeneratorPos8 : MonoBehaviour
                 {
                     if (m_timer >= 2)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour14count_3--;
                     }
@@ -611,7 +611,7 @@ public class EnemyGeneratorPos8 : MonoBehaviour
                 {
                     if (m_timer >= 2)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour15count_3--;
                     }
@@ -623,7 +623,7 @@ public class EnemyGeneratorPos8 : MonoBehaviour
                 {
                     if (m_timer >= 2)
                     {
-                        Instantiate(enemy[2], gameObject.transform.position, Quaternion.identity);
+                        Instantiate(enemy[0], gameObject.transform.position, Quaternion.identity);
                         m_timer = 0;
                         hour16count_3--;
                     }
