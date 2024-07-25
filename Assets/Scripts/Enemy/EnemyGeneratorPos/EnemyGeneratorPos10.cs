@@ -48,7 +48,7 @@ public class EnemyGeneratorPos10 : MonoBehaviour
     private int day5_6_count = 0;
     private int day5_7_count = 0;
 
-    private int day5_8_count = 0;
+    private int day5_8_count = 1;
 
     // Start is called before the first frame update
     void Start()
