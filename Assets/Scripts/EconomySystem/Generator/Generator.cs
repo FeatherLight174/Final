@@ -16,6 +16,7 @@ public class Generator : MonoBehaviour
     private float electricityPerTime = GameConstant.PowerProduce;
     private float m_Timer;
     private int clock;
+    private Animator animator;
 
     // HP
     private float fullHP = GameConstant.HPPower;
@@ -28,6 +29,7 @@ public class Generator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         Hp = gameObject.GetComponent<HPManagement>();
         m_Timer = 0;
         currentHP = fullHP;
@@ -58,6 +60,11 @@ public class Generator : MonoBehaviour
             if ((clock >= 8) && (clock <= 18))
             {
                 GoldAndElectricity.electricity += electricityPerTime;
+                animator.SetBool("Working", true);
+            }
+            else
+            {
+                animator.SetBool("Working", false);
             }
         }
         if ((!sellPanel.activeSelf))
