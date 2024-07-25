@@ -9,6 +9,7 @@ public class BossTimeChange : MonoBehaviour
     public Animator animator;
     private float m_Timer;
     private float m_DamageTimer;
+    public bool Victory;
     public float CD;
     public float DamageBefore;
     public GameObject[] enemies;
@@ -163,6 +164,17 @@ public class BossTimeChange : MonoBehaviour
         {
             m_Timer = 0;
             TimeChange(0);
+        }
+        if (m_Timer > 0 && m_Timer < 1.75)
+        {
+            Victory = true;
+            animator.SetBool("Victory", true);
+
+        }
+        else
+        {
+            Victory = false;
+            animator.SetBool("Victory", false);
         }
     }
 

@@ -15,6 +15,8 @@ public class ability : MonoBehaviour
     private float m_time = 0;   
     private GameObject[] DamageObject;
     public float CD = 1;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,7 +78,8 @@ public class ability : MonoBehaviour
     }
     IEnumerator AttackBuilding(GameObject collision)
     {
-        while (collision != null)
+        int x = 5;
+        while (collision != null && x != 0 )
         {
             // 调用建筑的减少血量方法
             if (collision.GetComponent<HPManagement>() != null)
@@ -84,6 +87,7 @@ public class ability : MonoBehaviour
                 collision.GetComponent<HPManagement>().TakeDamage(damage);
             }
             yield return new WaitForSeconds(CD);
+            x--;
         }
     }
 }
