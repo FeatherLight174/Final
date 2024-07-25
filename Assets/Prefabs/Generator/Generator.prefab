@@ -440,7 +440,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2910798567754485634, guid: c9d903ed24afb51489625c33ba993b71, type: 2}
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -484,8 +484,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Max level reach\nSell: *** gold\n\u653B\u51FB\u529B***\n\u653B\u901F***\u53D1/\u79D2\n\u603B\u8840\u91CF***\n\u8017\u7535:***"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c9d903ed24afb51489625c33ba993b71, type: 2}
-  m_sharedMaterial: {fileID: 2910798567754485634, guid: c9d903ed24afb51489625c33ba993b71, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

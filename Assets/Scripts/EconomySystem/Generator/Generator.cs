@@ -38,7 +38,7 @@ public class Generator : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (flag % 2 == 0)
+        /*if (flag % 2 == 0)
         {
             sellPanel.SetActive(true);
             //feature.SetActive(true);
@@ -48,7 +48,7 @@ public class Generator : MonoBehaviour
             sellPanel.SetActive(false);
             //feature.SetActive(false);
         }
-        flag++;
+        flag++;*/
     }
 
     // Update is called once per frame

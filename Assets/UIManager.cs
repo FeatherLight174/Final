@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
     }
 
     // 显示塔的信息
-   /* public void ShowTowerInfo(Tower tower)
+    /*public void ShowTowerInfo(Tower tower)
     {
         infoPanel.SetActive(true);
         nameText.text = "Name: " + tower.towerName;
