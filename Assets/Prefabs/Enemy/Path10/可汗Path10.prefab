@@ -373,13 +373,13 @@ MonoBehaviour:
   DamageBefore: 5.2
   enemies: []
   buildings: []
-  targetSprite: {fileID: 0}
+  targetSprite: {fileID: 8423779620691552742, guid: 7769cbec28ec6e8469577ccae99fddec, type: 3}
   targetObject: {fileID: 0}
   skillDamage: 1000
   range: 10
   SkillPost: 1.3
   m_isInSkilled: 0
-  SkillCoolDown: 10
+  SkillCoolDown: 30
 --- !u!1001 &1026734284787811577
 PrefabInstance:
   m_ObjectHideFlags: 0
