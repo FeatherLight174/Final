@@ -33,34 +33,45 @@ public class Intro : MonoBehaviour
         {
             Intro1.SetActive(true);
             IsIntro1 = true;
-            Debug.Log("XXX");
+            Esc.pause = true;
+            Time.timeScale = 0;
         }
 
         else if(Clock.Day == 2 && Clock.NowHour == 3 && !IsIntro2)
         {
-             Intro2.SetActive(true);
-             IsIntro2 = true;
+            Intro2.SetActive(true);
+            IsIntro2 = true;
+            Esc.pause = true;
+            Time.timeScale = 0;
         }
 
         else if(Clock.Day == 3 && Clock.NowHour == 4 && !IsIntro3)
         {
             Intro3 .SetActive(true);
             IsIntro3 = true;
+            Esc.pause = true;
+            Time.timeScale = 0;
         }
         else if(Clock.Day == 4 && Clock.NowHour == 6 && !IsIntro4)
         {
             Intro4 .SetActive(true);
             IsIntro4 = true;
+            Esc.pause = true;
+            Time.timeScale = 0;
         }
         else if(Clock.Day == 4 && Clock.NowHour == 12 && !IsIntro5)
         {
             Intro5.SetActive(true);
             IsIntro5 = true;
+            Esc.pause = true;
+            Time.timeScale = 0;
         }
         else if(Clock.Day == 5 && Clock.NowHour == 6 && !IsIntro6)
         {
             Intro6.SetActive(true);
             IsIntro6 = true;
+            Esc.pause = true;
+            Time.timeScale = 0;
         }
         //else if(Clock.Day == 3 && Clock.NowHour)
     }

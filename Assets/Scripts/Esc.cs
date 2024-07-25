@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Esc : MonoBehaviour
 {
-    private bool pause = false;
+    public static bool pause = false;
     private bool twice = false;
     // Start is called before the first frame update
     void Start()

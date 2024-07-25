@@ -2,22 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoldAndElectricity : MonoBehaviour
-{   
-    public static float gold;
-    public static float electricity;
+public class ClickContinue : MonoBehaviour
+{
 
     // Start is called before the first frame update
     void Start()
     {
-        gold = 50;
-        electricity = 0;
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+    }
 
+    public void Click()
+    {
+        Esc.pause = false;
+        Time.timeScale = 1;
     }
 }
