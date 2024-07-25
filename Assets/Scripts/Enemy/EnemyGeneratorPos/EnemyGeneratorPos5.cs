@@ -755,7 +755,7 @@ public class EnemyGeneratorPos5 : MonoBehaviour
                     {
                         Instantiate(enemy[4], gameObject.transform.position, Quaternion.identity);
                         m_timer2 = 0;
-                        hour0count_3--;
+                        hour0count_4--;
                     }
                 }
             }

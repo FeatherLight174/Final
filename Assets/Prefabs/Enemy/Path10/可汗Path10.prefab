@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  CD: 240
+  CD: 10
   DamageBefore: 5.2
   enemies: []
   buildings: []
