@@ -97,7 +97,7 @@ public class GameConstant : MonoBehaviour
     public static float AttackCD5;
 
     // 可汗
-    public static float HPEnemy6 = 25000;
+    public static float HPEnemy6 = 22500;
     public static float vFactor6 = 1.0f;
     public static float EnemyAttack6 = 300;
     public static float EnemyMovespeed6 = 0.5f;
@@ -139,11 +139,11 @@ public class GameConstant : MonoBehaviour
     public static float[] wallHealth = new float[3]
     {750f, 1200f, 2000f};
     public static float[] wallRecovery = new float[3]
-    {0f, 10f, 30f};
+    {0f, 10f, 20f};
     public static float[] wallPowerConsumption = new float[3]
-    {0f, 1f, 2f};
+    {0f, 1f, 3f};
     public static float[] wallUpgradeCost = new float[3]
-    {30f, 50f, 75f};
+    {30f, 50f, 100f};
 
     //  Bullet
     // [塔编号, 塔等级]子弹伤害、速度

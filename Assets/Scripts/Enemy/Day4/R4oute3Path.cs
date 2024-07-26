@@ -18,7 +18,7 @@ public class R4oute3Path : MonoBehaviour
     public float PosY2 = -5f;
     public float PosY3 = -1;
     public float PosY4 = 3;
-    public float PosY5 = -7.5f;
+    private float PosY5 = -8f;
     private float PosY6 = -4f;
     public float PosY7 = 1;
 

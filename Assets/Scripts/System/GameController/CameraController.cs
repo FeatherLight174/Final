@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        if((transform.position.x <= -12)||(transform.position.x >=2)||(transform.position.y <= -7)||(transform.position.y >= -2))
+        if((transform.position.x <= -20)||(transform.position.x >=2)||(transform.position.y <= -7)||(transform.position.y >= -2))
         {
             isborder = true;
         }
@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour
 
         if (isborder)
         {
-            if ((transform.position.x <= -12))
+            if ((transform.position.x <= -20))
             {
                 move.x += 1;
             }

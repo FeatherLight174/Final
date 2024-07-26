@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5b34f68efefa640b55343841e4d1b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SunDamage: 50
   SP: 0
   MAXSP: 5
   IsIntensify: 0
@@ -304,7 +303,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
 --- !u!95 &2391332180332875013
 Animator:
@@ -339,8 +338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f5912eed921a241a785e6a15a2d845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 2500
-  MaxHP: 2500
+  HP: 2000
+  MaxHP: 2000
   destroy: {fileID: -8238072876935714274}
 --- !u!82 &-8238072876935714274
 AudioSource:

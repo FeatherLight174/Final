@@ -18,8 +18,8 @@ public class Clock : MonoBehaviour
     private bool m_isAfter = false;
     
     public static float DayTime = 0;
-    public static int Day = 5;
-    public static int NowHour = 3;
+    public static int Day = 1;
+    public static int NowHour = 6;
 
 
     public float RedMin = 76;
@@ -37,6 +37,7 @@ public class Clock : MonoBehaviour
     private float m_nowIntensity;
 
     private Light2D m_sunLight;
+    private bool isPlaying = false  ;
     
 
     void Start()
@@ -98,10 +99,13 @@ public class Clock : MonoBehaviour
         }
         else if (Day >= 5)
         {
+            Debug.Log("SSSSS");
             timer += Time.deltaTime;
-            if(timer >= Boss_Time)
+            if((timer >= Boss_Time)&&(!isPlaying))
             {
+                Debug.Log("boss");
                 Boss.Play();
+                isPlaying = true;
             }
             // Boss“Ù¿÷
         }

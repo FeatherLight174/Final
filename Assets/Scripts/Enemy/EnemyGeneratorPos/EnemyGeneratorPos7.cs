@@ -463,7 +463,7 @@ public class EnemyGeneratorPos7 : MonoBehaviour
             }
             else if (Clock.NowHour == 3)
             {
-                if (hour0count_3 > 0)
+                if (hour3count_3 > 0)
                 {
                     if (m_timer >= 2)
                     {

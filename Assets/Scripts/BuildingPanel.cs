@@ -11,6 +11,9 @@ public class BuildingPanel : MonoBehaviour
     public GameObject Intro5;
     public GameObject Intro6;
     public GameObject Intro7;
+    public GameObject Intro8;
+    public GameObject Intro9;
+    public GameObject Intro10;
     private float m_timer = 0;
 
     public bool IsIntro1 = false;
@@ -20,6 +23,9 @@ public class BuildingPanel : MonoBehaviour
     public bool IsIntro5 = false;
     public bool IsIntro6 = false;
     public bool IsIntro7 = false;
+    public bool IsIntro8 = false;
+    public bool IsIntro9 = false;
+    public bool IsIntro10 = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,12 +58,12 @@ public class BuildingPanel : MonoBehaviour
                 Time.timeScale = 0;
                 m_timer = 0;
             }
-                
+
         }
 
         else if (Clock.Day == 1 && Clock.NowHour == 6 && !IsIntro2 && IsIntro1 && IsIntro7)
         {
-            if(m_timer >= 1f)
+            if (m_timer >= 1f)
             {
                 Intro2.SetActive(true);
                 IsIntro2 = true;
@@ -65,7 +71,7 @@ public class BuildingPanel : MonoBehaviour
                 Time.timeScale = 0;
                 m_timer = 0;
             }
-            
+
         }
 
         else if (Clock.Day == 1 && Clock.NowHour == 6 && !IsIntro3 && IsIntro2 && IsIntro1 && IsIntro7)
@@ -78,7 +84,19 @@ public class BuildingPanel : MonoBehaviour
                 Time.timeScale = 0;
                 m_timer = 0;
             }
-                
+
+        }
+        else if (Clock.Day == 1 && Clock.NowHour == 6 && !IsIntro9 && IsIntro2 && IsIntro1 && IsIntro7 && IsIntro3)
+        {
+            if (m_timer >= 1f)
+            {
+                Intro9.SetActive(true);
+                IsIntro9 = true;
+                Esc.pause = true;
+                Time.timeScale = 0;
+                m_timer = 0;
+            }
+
         }
         else if (Clock.Day == 2 && Clock.NowHour == 6 && !IsIntro4)
         {
@@ -97,7 +115,7 @@ public class BuildingPanel : MonoBehaviour
                 Esc.pause = true;
                 Time.timeScale = 0;
             }
-                
+
         }
         else if (Clock.Day == 3 && Clock.NowHour == 6 && !IsIntro6)
         {
@@ -106,5 +124,20 @@ public class BuildingPanel : MonoBehaviour
             Esc.pause = true;
             Time.timeScale = 0;
         }
+        else if (Clock.Day == 3 && Clock.NowHour == 7 && !IsIntro8)
+        {
+            Intro8.SetActive(true);
+            IsIntro8 = true;
+            Esc.pause = true;
+            Time.timeScale = 0;
+        }
+        else if (Clock.Day == 2 && Clock.NowHour == 0 && !IsIntro10)
+        {
+            Intro10.SetActive(true);
+            IsIntro10 = true;
+            Esc.pause = true;
+            Time.timeScale = 0;
+        }
+
     }
 }

@@ -165,7 +165,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
 --- !u!95 &2391332180332875013
 Animator:
@@ -200,8 +200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f5912eed921a241a785e6a15a2d845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 30000
-  MaxHP: 30000
+  HP: 22500
+  MaxHP: 22500
   destroy: {fileID: -8238072876935714274}
 --- !u!82 &-8238072876935714274
 AudioSource:
@@ -325,33 +325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52b71ececc495234cb2fb615f8795bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PosX1: -18
-  PosX2: -22
-  PosX3: -20
-  PosX4: -25
-  PosX5: -14
-  PosX6: -9
-  PosX7: -2.5
-  PosX8: 13
-  PosX9: 14
-  PosX10: 12
-  PosX11: 3
-  PosX12: 0.5
-  PosX13: -8.5
-  PosY1: -1
-  PosY2: -5
-  PosY3: -1
-  PosY4: 3
-  PosY5: -7
-  PosY6: -4
-  PosY7: -6
-  PosY8: 2.5
-  PosY9: 1
-  PosY10: -4
-  PosY11: -5
-  PosY12: -5
-  PosY13: -1
-  PosY14: 0
   showTime: 3
   IsAttacked: 0
   timeStep: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Esc : MonoBehaviour
 {
     public static bool pause = false;
-    private bool twice = false;
+    public static bool twice = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +15,11 @@ public class Esc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if(pause)
             {

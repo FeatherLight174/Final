@@ -3,40 +3,41 @@ using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
     private float time = 0;
     private float Speed = GameConstant.EnemyMovespeed6;
 
-    public float PosX1 = -18;
-    public float PosX2 = -22f;
-    public float PosX3 = -20;
-    public float PosX4 = -25;
-    public float PosX5 = -14;
-    public float PosX6 = -9;
-    public float PosX7 = -3f;
-    public float PosX8 = 13;
-    public float PosX9 = 14f;
-    public float PosX10 = 12f;
-    public float PosX11 = 3f;
-    public float PosX12 = 0f;
-    public float PosX13 = -8.5f;
+    private float PosX1 = -18;
+    private float PosX2 = -22f;
+    private float PosX3 = -20;
+    private float PosX4 = -25;
+    private float PosX5 = -14;
+    private float PosX6 = -9;
+    private float PosX7 = -3f;
+    private float PosX8 = 13;
+    private float PosX9 = 14f;
+    private float PosX10 = 12f;
+    private float PosX11 = 3f;
+    private float PosX12 = 0f;
+    private float PosX13 = -8.5f;
 
-    public float PosY1 = -1;
-    public float PosY2 = -5f;
-    public float PosY3 = -1;
-    public float PosY4 = 3;
-    public float PosY5 = -7f;
-    public float PosY6 = -4f;
-    public float PosY7 = -6f;
-    public float PosY8 = 2f;
-    public float PosY9 = 1f;
-    public float PosY10 = -4;
-    public float PosY11 = -5f;
-    public float PosY12 = -5;
-    public float PosY13 = -1f;
-    public float PosY14 = 0;
+    private float PosY1 = -1;
+    private float PosY2 = -5f;
+    private float PosY3 = -1;
+    private float PosY4 = 3;
+    private float PosY5 = -7f;
+    private float PosY6 = -4f;
+    private float PosY7 = -6f;
+    private float PosY8 = 2f;
+    private float PosY9 = 1f;
+    private float PosY10 = -4;
+    private float PosY11 = -5f;
+    private float PosY12 = -5;
+    private float PosY13 = -1f;
+    private float PosY14 = 0;
 
     private HPManagement m_HpManager;
     private Animator animator;
@@ -85,6 +86,7 @@ public class Boss : MonoBehaviour
             animator.SetBool("Die", true);
             if (m_DieTimer >= 0.5f)
             {
+                SceneManager.LoadScene(11);
                 Destroy(gameObject);
             }
         }

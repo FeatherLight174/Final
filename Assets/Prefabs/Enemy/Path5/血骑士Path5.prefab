@@ -154,7 +154,6 @@ GameObject:
   - component: {fileID: 6798640470520907721}
   - component: {fileID: -8238072876935714274}
   - component: {fileID: 8510216922658971832}
-  - component: {fileID: 5047227761592137319}
   - component: {fileID: 328215747078531728}
   m_Layer: 6
   m_Name: "\u8840\u9A91\u58EBPath5"
@@ -304,7 +303,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
 --- !u!95 &2391332180332875013
 Animator:
@@ -339,8 +338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f5912eed921a241a785e6a15a2d845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 2500
-  MaxHP: 2500
+  HP: 2000
+  MaxHP: 2000
   destroy: {fileID: -8238072876935714274}
 --- !u!82 &-8238072876935714274
 AudioSource:
@@ -452,21 +451,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsAttacked: 0
   showTime: 2
---- !u!114 &5047227761592137319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5526956762559256171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1937b24a01dc4664384e2c0e9e89c526, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PathX1: 14
-  PathX2: -8
-  PathY1: 2
 --- !u!114 &328215747078531728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,7 +463,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a15b5c38ab06a614799fb72f9928c587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PosX1: 2.5
   PosX2: -4
   PosX3: -9
   PosY1: -8

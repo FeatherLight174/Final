@@ -171,8 +171,8 @@ public class EnemyGeneratorPos1 : MonoBehaviour
     private int hour9count_3 = 0;
     private int hour10count_3 = 0;
     private int hour11count_3 = 0;
-    private int hour12count_3 = 4;
-    private int hour13count_3 = 4;
+    private int hour12count_3 = 3;
+    private int hour13count_3 = 3;
     private int hour14count_3 = 0;
     private int hour15count_3 = 0;
     private int hour16count_3 = 0;
@@ -1471,8 +1471,8 @@ public class EnemyGeneratorPos1 : MonoBehaviour
     hour9count_3 = 0;
     hour10count_3 = 0;
     hour11count_3 = 0;
-    hour12count_3 = 4;
-    hour13count_3 = 4;
+    hour12count_3 = 3;
+    hour13count_3 = 3;
     hour14count_3 = 0;
     hour15count_3 = 0;
     hour16count_3 = 0;
@@ -1514,7 +1514,7 @@ public class EnemyGeneratorPos1 : MonoBehaviour
             }
             else if (Clock.NowHour == 3)
             {
-                if (hour0count_3 > 0)
+                if (hour3count_3 > 0)
                 {
                     if (m_timer >= 2)
                     {
